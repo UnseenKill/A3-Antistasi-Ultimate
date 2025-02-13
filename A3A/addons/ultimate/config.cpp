@@ -16,6 +16,22 @@ class CfgPatches
     };
 };
 
+class CfgEditorCategories
+{
+	class A3U_EditorCategory
+	{
+		displayName = "Antistasi Ultimate";
+	};
+};
+
+class CfgEditorSubcategories
+{
+	class A3U_EditorSubcategoryStatics
+	{
+		displayName = "Static Holders";
+	};
+};
+
 #include "CfgFunctions.hpp"
 
 class cfgWeapons
@@ -28,6 +44,7 @@ class cfgVehicles
 {
     class Item_Base_F;
     class Thing;
+    #include "cfgVehicles.hpp"
     #include "patches\cfgVehicles.hpp"
 };
 
