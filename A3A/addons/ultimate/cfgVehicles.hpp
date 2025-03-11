@@ -19,5 +19,5 @@ class A3U_StaticHolderSmall: A3U_StaticHolderBase
 {
     model = QPATHTOFOLDER(data\staticHolders\static_small);
     displayName = "Static Holder (Small)";
-    SCOPESTATICS;
+    scope = 2;
 };
