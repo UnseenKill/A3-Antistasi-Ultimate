@@ -146,7 +146,7 @@ while {time < _bleedOut && _unit getVariable ["incapacitated",false] && alive _u
 		diag_log 123;
 		diag_log _helper;
 		if (isNull _helper) then { ///can add a parametr here for snobs
-			_helper = [_unit, independent] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
+			_helper = [_unit, teamPlayer] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
 			diag_log 321;
 			diag_log _helper;
 		};
