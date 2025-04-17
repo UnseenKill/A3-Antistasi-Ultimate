@@ -16,6 +16,8 @@ if ({if ((isPlayer _x) and {_x distance _unit < distanceSPWN2}) exitWith {1}} co
 
 _unit setFatigue 1;			// Doesn't do anything since Arma stamina rework?
 
+private _helper = objNull;
+
 private _nextRequest = 0;
 while { (alive _unit) && (time < _bleedOutTime) && (_unit getVariable ["incapacitated",false]) } do
 {
