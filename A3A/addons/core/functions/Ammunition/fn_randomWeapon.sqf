@@ -1,17 +1,30 @@
 /*
-    Equip unit with random weapon of preferred type using A3A_rebelGear
-    Adds magazines by mass. Uses default magazine of selected weapon
-
-Parameters:
-    0. <OBJECT> Rebel unit to equip with primary weapon.
-    1. <STRING> Preferred weapon type ("Rifles", "MachineGuns" etc).
-    2. <NUMBER> Optional, total mass of carried magazines to add.
-
-Returns:
-    Nothing
-
-Environment:
-    Scheduled, any machine
+    Author:
+        jwoodruff40, wersal454
+    
+    Description:
+        Equip unit with random weapon of preferred type using A3A_rebelGear
+        Adds magazines by mass. Uses random compatible and unlocked magazine of selected weapon.
+    
+    Params:
+        _unit <OBJECT> <Default: None> the unit to equip
+        _weaponType <STRING> <Default: None> the type of weapon, e.g. "MachineGuns"
+        _totalMagWeight <SCALAR> <Default: 50> total mass of weapon magazines to add
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        N/A
+    
+    Environment:
+        Scheduled, any machine
+    
+    Usage:
+        [_unit, "MachineGuns", 150] call A3A_fnc_equipRebel;
+    
+    Return:
+        Nothing
 */
 
 #include "..\..\script_component.hpp"
@@ -21,8 +34,10 @@ params ["_unit", "_weaponType", ["_totalMagWeight", 50]];
 
 call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from server if we're out of date
 
+private _isPrimary = _weaponType isNotEqualTo "Handguns";
+
 private _pool = A3A_rebelGear get _weaponType;
-if (_pool isEqualTo []) then {
+if (_isPrimary && {_pool isEqualTo []}) then {
     _pool = A3A_rebelGear get "Rifles";
     if (_pool isEqualTo []) then {
         _pool = A3A_rebelGear get "SMGs";
@@ -39,14 +54,6 @@ private _weapon = selectRandomWeighted _pool;
 
 if (isNil "_weapon") exitWith {};
 
-// Probably shouldn't ever be executed
-if !(primaryWeapon _unit isEqualTo "") then {
-    if (_weapon == primaryWeapon _unit) exitWith {};
-    private _magazines = getArray (configFile / "CfgWeapons" / (primaryWeapon _unit) / "magazines");
-    {_unit removeMagazines _x} forEach _magazines;			// Broken, doesn't remove mags globally. Pain to fix.
-    _unit removeWeapon (primaryWeapon _unit);
-};
-
 private _categories = _weapon call A3A_fnc_equipmentClassToCategories;
 if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
     // lookup real underbarrel GL magazine, because not everything is 40mm
@@ -59,58 +66,51 @@ if ("GrenadeLaunchers" in _categories && {"Rifles" in _categories} ) then {
 
 private _magazine = selectRandom ((A3A_rebelGear get "Magazines") get _weapon);
 private _magweight = 5 max getNumber (configFile >> "CfgMagazines" >> _magazine >> "mass");
+diag_log [_weapon, _magazine, _totalMagWeight, _magWeight, round (random 0.5 + _totalMagWeight / _magWeight)];
 
 _unit addWeapon _weapon;
-if ("Handguns" in _categories) then {
-    _unit addHandgunItem _magazine;
-} else {
-    _unit addPrimaryWeaponItem _magazine;
-};
+_unit addWeaponItem [_weapon, _magazine];
 _unit addMagazines [_magazine, round (random 0.5 + _totalMagWeight / _magWeight)];
 
 
 // Optics
-private _compatOptics = A3A_rebelOpticsCache get _weapon;
+private _compatOptics = A3A_rebelOpticsCache getOrDefault [_weapon, []];
 if (isNil "_compatOptics") then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
-    _compatOptics = _compatItems arrayIntersect call {
-        if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsMid" };
-        if (_weaponType == "SniperRifles") exitWith { A3A_rebelGear get "OpticsLong" };
-        A3A_rebelGear get "OpticsClose";
+    private _opticType = switch (_weaponType) do {
+        case ("Handguns"): { "OpticsAll" };
+        case ("Rifles");
+        case ("MachineGuns"): { "OpticsMid" };
+        case ("SniperRifles"): { "OpticsLong" };
+        default { "OpticsClose" };
     };
+    _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get _opticType);
     if (_compatOptics isEqualTo []) then {
-        _compatOptics = _compatItems arrayIntersect call {
-            if (_weaponType in ["Rifles", "MachineGuns"]) exitWith { A3A_rebelGear get "OpticsClose" };
-            A3A_rebelGear get "OpticsMid";
-        };
+        _compatOptics = _compatItems arrayIntersect (A3A_rebelGear get "OpticsAll");
     };
     // save in cache
     A3A_rebelOpticsCache set [_weapon, _compatOptics];
 };
 
 // Silencers/Muzzles
-private _compatSilencers = A3A_rebelSilencersCache get _weapon;
+private _compatSilencers = A3A_rebelSilencersCache getOrDefault [_weapon, []];
 if (isNil "_compatSilencers") then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
-    _compatSilencers = _compatItems arrayIntersect call {
-        A3A_rebelGear get "MuzzleAttachments";
-    };
+    _compatSilencers = _compatItems arrayIntersect (A3A_rebelGear get "MuzzleAttachments");
     // save in cache
     A3A_rebelSilencersCache set [_weapon, _compatSilencers];
 };
 
 // Bipods
-private _compatBipods = A3A_rebelBipodsCache get _weapon;
-if (isNil "_compatBipods") then {
+private _compatBipods = A3A_rebelBipodsCache getOrDefault [_weapon, []];
+if (_isPrimary && {isNil "_compatBipods"}) then {
     private _compatItems = compatibleItems _weapon; // cached, should be fast
-    _compatBipods = _compatItems arrayIntersect call {
-        A3A_rebelGear get "Bipods";
-    };
+    _compatBipods = _compatItems arrayIntersect (A3A_rebelGear get "Bipods");
     // save in cache
     A3A_rebelBipodsCache set [_weapon, _compatBipods];
 };
 
 //// silencers and bipods
-if (_compatOptics isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatOptics) };
-if (_compatSilencers isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatSilencers) };
-if (_compatBipods isNotEqualTo []) then { _unit addPrimaryWeaponItem (selectRandom _compatBipods) };
+if (_compatOptics isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatOptics] };
+if (_compatSilencers isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatSilencers] };
+if (_compatBipods isNotEqualTo []) then { _unit addWeaponItem [_weapon, selectRandom _compatBipods] };

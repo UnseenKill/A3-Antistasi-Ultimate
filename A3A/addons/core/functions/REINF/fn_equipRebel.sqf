@@ -1,15 +1,29 @@
 /*
-    Fully equips a rebel infantry unit based on their class and unlocked gear
-
-Parameters:
-    0. <OBJECT> Unit to equip
-    1. <NUMBER> Recruit type: 0 recruit, 1 HC squad, 2 garrison. Doesn't currently have any effect
-
-Returns:
-    Nothing
-
-Environment:
-    Scheduled, any machine
+    Author:
+        jwoodruff40, wersal454
+    
+    Description:
+        Fully equips a rebel infantry unit based on their class and unlocked gear
+    
+    Params:
+        _unit <OBJECT> <Default: None> the unit to equip
+        _recruitType <SCALAR> <Default: 0> the type of recruit; 0 = player or player's squad, 1 = high command unit, 2 = garrison unit
+        _forceClass <STRING> <Default: ""> to override the unit type, e.g. "unitUnarmed"
+    
+    Dependencies:
+        N/A
+    
+    Scope:
+        N/A
+    
+    Environment:
+        Scheduled, any machine
+    
+    Usage:
+        [_unit, 0] call A3A_fnc_equipRebel;
+    
+    Return:
+        Nothing
 */
 
 /*
@@ -29,7 +43,6 @@ call A3A_fnc_fetchRebelGear;        // Send current version of rebelGear from se
 private _unitType = if (_forceClass != "") then {_forceClass} else {_unit getVariable "unitType"};
 private _typeTag = _unitType splitString "_" select 3;
 private _customLoadout = rebelLoadouts get _unitType;
-//private _overrideLoadout = rebelLoadoutOverrides get _unitType;
 
 private _fnc_addSecondary = {
     params ["_unit"];
@@ -43,7 +56,7 @@ private _fnc_addSecondary = {
 
     {
         if ("Disposable" in (_x call A3A_fnc_equipmentClassToCategories)) then { _dLaunchers append [_x, _rlaunchers select (_rlaunchers find _x) + 1 ] };
-    } forEach (_rlaunchers select {typeName _x == "STRING"});
+    } forEach (_rlaunchers select {_x isEqualType ""});
 
     private _launcherPool = createHashMapFromArray [
         ["Rifleman", _dLaunchers],
@@ -141,23 +154,29 @@ private _fnc_addPrimary = {
     params ["_unit"];
 
     private _weaponType = switch (_typeTag) do {
-        case ("Sniper"); case ("Marksman"): { "SniperRifles" };
+        case ("Sniper");
+        case ("Marksman"): { "SniperRifles" };
         case ("MachineGunner"): { "MachineGuns" };
         case ("Grenadier"): { "GrenadeLaunchers" };
         case ("Medic"): { "SMGs" };
         default { "Rifles" };
     };
-    if (!isNil "_weaponType") then {
-        private _totalMagWeight = switch (_typeTag) do {
-            case ("Rifleman"): { 70 };
-            case ("MachineGunner"): { 150 };
-            case ("Medic");
-            case ("AA"): { 40 };
-            default { 50 };
-        };
-        
-        [_unit, _weaponType, _totalMagWeight] call A3A_fnc_randomRifle;
+    
+    private _totalMagWeight = switch (_typeTag) do {
+        case ("Rifleman"): { 70 };
+        case ("MachineGunner"): { 150 };
+        case ("Medic");
+        case ("AA"): { 40 };
+        default { 50 };
     };
+    
+    [_unit, _weaponType, _totalMagWeight] call A3A_fnc_randomWeapon;
+};
+
+private _fnc_addHandgun = {
+    params ["_unit"];
+
+    [_unit, "Handguns", 10] call A3A_fnc_randomWeapon;
 };
 
 private _fnc_addClassEquip = {
@@ -208,9 +227,6 @@ private _fnc_addClassEquip = {
         };
     };
 };
-
-private _handgun = selectRandomWeighted (A3A_rebelGear get "Handguns");
-if !(isNil "_handgun") then { [_unit, "Handguns"] call A3A_fnc_randomHandgun;};
 
 private _fnc_addNightEquip = {
     params ["_unit"];
@@ -302,59 +318,45 @@ private _fnc_addUniform = {
         case ("SquadLeader"): {
             { _uniform addItemCargo _x; } forEach ((["STANDARD", independent] call A3A_fnc_itemset_medicalSupplies) + ([] call A3A_fnc_itemset_miscEssentials));
         };
-        /* ! Handled in _fnc_addClassEquip
-        case ("Medic"): {
-            { _uniform addItemCargo _x; } forEach ((["MEDIC", independent] call A3A_fnc_itemset_medicalSupplies) + ([] call A3A_fnc_itemset_miscEssentials));
-        };
-        */
         default {
             { _uniform addItemCargo _x; } forEach ((["MINIMAL", independent] call A3A_fnc_itemset_medicalSupplies) + ([] call A3A_fnc_itemset_miscEssentials));
         };
     };
 };
 
-/*
-private _addToLoadout = [
-    "_unit call _fnc_addPrimary;",
-    "_unit call _fnc_addSecondary;",
-    "hint 'handguns not implemented'",
-    "_unit call _fnc_addUniform;",
-    "_unit call _fnc_addVest;",
-    "_unit call _fnc_addBackpack;",
-    "_unit call _fnc_addHeadgear;",
-    "_unit call _fnc_addFacewear;"
-];
-*/
+private _unarmedLoadout = (A3A_faction_reb get "loadouts" get "militia_Unarmed") select 0 select 0;
+_unit setUnitLoadout _unarmedLoadout;
 
 if (!isNil "_customLoadout") then {
     // * Apply the loadout, then override it
     _unit setUnitLoadout _customLoadout;
     
-    // * Don't cheese allowing launchers with rifleman. If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it. LAT / AT / AA is guaranteed.
+    if (randomizeRebelLoadoutUniforms) then {
+        _unit call _fnc_addUniform;
+        _unit call _fnc_addHeadgear;
+        _unit call _fnc_addFacewear;
+    };
+
+    // * Don't cheese allowing launchers with rifleman.
+    // * If rifleman and launcher added to loadout, still subject to chance whether rifleman will equip it.
+    // * LAT / AT / AA is guaranteed.
     if (_typeTag == "Rifleman" && {random 20 > tierWar}) then {
         _unit removeWeapon (secondaryWeapon _unit)
     };
-
-    /*
-    // * If unit loadout does not override a given category, use the same functions as when "randomizing" 
-    {
-        if (_x == "petros_knows_best") then { call compile (_addToLoadout select _forEachIndex) };
-    } forEach (_overrideLoadout select [0,8]);
-    */
 } else {
-    //{ call compile _x; } forEach _addToLoadout;
-    _unit call _fnc_addPrimary;
-    _unit call _fnc_addSecondary;
     _unit call _fnc_addUniform;
-    _unit call _fnc_addVest;
-    _unit call _fnc_addBackpack;
     _unit call _fnc_addHeadgear;
     _unit call _fnc_addFacewear;
+    _unit call _fnc_addVest;
+    _unit call _fnc_addBackpack;
+    _unit call _fnc_addPrimary;
+    _unit call _fnc_addSecondary;
+    _unit call _fnc_addHandgun;
+    _unit call _fnc_addNightEquip;
 };
 
 _unit call _fnc_addRadio;
 _unit call _fnc_addClassEquip;
-_unit call _fnc_addNightEquip;
 _unit linkItem (selectRandom (A3A_faction_reb get "compasses"));
 _unit linkItem (selectRandom (A3A_faction_reb get "maps"));
 _unit linkItem (selectRandom (A3A_faction_reb get "watches"));
