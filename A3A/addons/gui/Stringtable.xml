@@ -3383,6 +3383,94 @@
                 <Portuguese>Novo mone save</Portuguese>
                 <Chinesesimp>新的存档名</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_export_game">
+                <Original>Export game</Original>
+                <Czech>Exportovat hru</Czech>
+                <French>Exporter la partie</French>
+                <Italian>Esporta Partita</Italian>
+                <Korean>게임 내보내기</Korean>
+                <Russian>Экспортировать игру</Russian>
+                <Polish>Eksportuj Rozgrywkę</Polish>
+                <Portuguese>Exportar jogo</Portuguese>
+                <Chinesesimp>导出存档</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_export_game_hint">
+                <Original>Please wait while the server is exporting the game.</Original>
+                <Czech>Čekejte, prosím, zatímco server exportuje hru.</Czech>
+                <French>Veuillez patienter pendant que le serveur exporte la partie.</French>
+                <Italian>Attendere mentre il server esporta la partita.</Italian>
+                <Korean>서버가 게임을 내보내는 동안 기다려 주십시오.</Korean>
+                <Russian>Пожалуйста, подождите, пока сервер экспортирует игру.</Russian>
+                <Polish>Proszę czekać, podczas gdy serwer eksportuje rozgrywkę.</Polish>
+                <Portuguese>Por favor, aguarde enquanto o servidor exporta o jogo.</Portuguese>
+                <Chinesesimp>请稍等，服务器正在导出游戏。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_export_game_timeout">
+                <Original>Export timed out</Original>
+                <Czech>Export vypršel</Czech>
+                <French>Exportation expirée</French>
+                <Italian>Esportazione scaduta</Italian>
+                <Korean>내보내기 시간 초과</Korean>
+                <Russian>Время экспорта истекло</Russian>
+                <Polish>Eksport wygasł</Polish>
+                <Portuguese>Tempo de exportação esgotado</Portuguese>
+                <Chinesesimp>导出超时</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_game">
+                <Original>Import game</Original>
+                <Czech>Importovat hru</Czech>
+                <French>Importer la partie</French>
+                <Italian>Importa Partita</Italian>
+                <Korean>게임 가져오기</Korean>
+                <Russian>Импортировать игру</Russian>
+                <Polish>Importuj Rozgrywkę</Polish>
+                <Portuguese>Importar jogo</Portuguese>
+                <Chinesesimp>导入存档</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_game_hint">
+                <Original>Paste a previously exported game here.</Original>
+                <Czech>Sem vložte dříve exportovanou hru.</Czech>
+                <French>Collez ici une partie précédemment exportée.</French>
+                <Italian>Incolla qui una partita precedentemente esportata.</Italian>
+                <Korean>이곳에 이전에 내보낸 게임을 붙여넣습니다.</Korean>
+                <Russian>Вставьте сюда ранее экспортированную игру.</Russian>
+                <Polish>Wklej tutaj wcześniej wyeksportowaną grę.</Polish>
+                <Portuguese>Cole aqui um jogo exportado anteriormente.</Portuguese>
+                <Chinesesimp>在这里粘贴之前导出的存档。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_game_invalid_checksum">
+                <Original>Data was valid JSON but has invalid checksum.</Original>
+                <Czech>Data byla platný JSON, ale má neplatnou kontrolní součet.</Czech>
+                <French>Les données étaient un JSON valide mais ont une somme de contrôle invalide.</French>
+                <Italian>I dati erano un JSON valido ma hanno un checksum non valido.</Italian>
+                <Korean>데이터는 유효한 JSON이지만 잘못된 체크섬이 있습니다.</Korean>
+                <Russian>Данные были допустимым JSON, но имеют недопустимую контрольную сумму.</Russian>
+                <Polish>Dane były poprawnym JSON, ale mają nieprawidłową sumę kontrolną.</Polish>
+                <Portuguese>Os dados eram um JSON válido, mas têm uma soma de verificação inválida.</Portuguese>
+                <Chinesesimp>数据是有效的 JSON，但校验和无效。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_game_invalid_no_json">
+                <Original>Invalid game data. No JSON found.</Original>
+                <Czech>Neplatná herní data. Nebyl nalezen žádný JSON.</Czech>
+                <French>Données de jeu non valides. Aucun JSON trouvé.</French>
+                <Italian>Dati di gioco non validi. Nessun JSON trovato.</Italian>
+                <Korean>잘못된 게임 데이터. 찾을 수 없는 JSON</Korean>
+                <Russian>Неверные данные игры. JSON не найден.</Russian>
+                <Polish>Nieprawidłowe dane gry. Nie znaleziono JSON.</Polish>
+                <Portuguese>Dados de jogo inválidos. Nenhum JSON encontrado.</Portuguese>
+                <Chinesesimp>无效的游戏数据。未找到 JSON。</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_game_invalid_payload">
+                <Original>Data was valid JSON but has invalid payload.</Original>
+                <Czech>Data byla platný JSON, ale má neplatný náklad.</Czech>
+                <French>Les données étaient un JSON valide mais ont une charge utile invalide.</French>
+                <Italian>I dati erano un JSON valido ma hanno un payload non valido.</Italian>
+                <Korean>데이터는 유효한 JSON이지만 잘못된 페이로드가 있습니다.</Korean>
+                <Russian>Данные были допустимым JSON, но имеют недопустимый полезный груз.</Russian>
+                <Polish>Dane były poprawnym JSON, ale mają nieprawidłowy ładunek.</Polish>
+                <Portuguese>Os dados eram um JSON válido, mas têm uma carga útil inválida.</Portuguese>
+                <Chinesesimp>数据是有效的 JSON，但有效负载无效。</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_rename_game">
                 <Original>Rename game</Original>
                 <Czech>Přejmenovat hru</Czech>

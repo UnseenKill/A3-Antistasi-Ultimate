@@ -255,6 +255,35 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     // h = 6 * GRID_H;
                 };
 
+                class ExportImportEditor : A3A_Edit {
+                    idc = A3A_IDC_SETUP_EXIMPORTEDIT;
+                    x = 4 * GRID_W;
+                    y = 12 * GRID_H;
+                    w = 118 * GRID_W;
+                    h = 76 * GRID_H;
+                    font = "LucidaConsoleB";
+                    sizeEx = GUI_TEXT_SIZE_SMALL / 2;
+                    style = ST_MULTI;
+                };
+
+                class ExportButton: A3A_Button {
+                    idc = A3A_IDC_SETUP_EXPORTBUTTON;
+                    text = $STR_antistasi_dialogs_setup_export_game;
+                    onButtonClick = "['exportGame'] call A3A_fnc_setupLoadgameTab";
+                    x = 126 * GRID_W;
+                    y = 70 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 5 * GRID_H;
+                };
+                class ImportButton: A3A_Button {
+                    idc = A3A_IDC_SETUP_IMPORTBUTTON;
+                    text = $STR_antistasi_dialogs_setup_import_game;
+                    onButtonClick = "['importGame'] call A3A_fnc_setupLoadgameTab";
+                    x = 126 * GRID_W;
+                    y = 77 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 5 * GRID_H;
+                };
                 class DeleteButton: A3A_Button {
                     idc = A3A_IDC_SETUP_DELETEBUTTON;
                     text = $STR_antistasi_dialogs_setup_delete_game;

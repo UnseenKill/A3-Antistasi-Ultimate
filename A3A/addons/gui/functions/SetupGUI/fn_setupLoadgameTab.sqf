@@ -17,6 +17,7 @@ Return Value:
 #include "..\..\dialogues\defines.hpp"
 #include "..\..\dialogues\textures.inc"
 #include "..\..\script_component.hpp"
+#define DATA_KEYS "_"
 FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
@@ -88,6 +89,14 @@ switch (_mode) do
         (_display displayCtrl A3A_IDC_SETUP_OLDPARAMSTEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_NAMESPACETEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_HQPOSBUTTON) ctrlShow (_newGame && !cbChecked _copyGameCtrl);
+        (_display displayCtrl A3A_IDC_SETUP_EXIMPORTEDIT) ctrlShow false;
+
+// `toJSON` and `fromJSON` are only available in game versions >= 2.18
+// Do we need to support older versions?
+#if __GAME_VER_MIN__ < 18
+        (_display displayCtrl A3A_IDC_SETUP_EXPORTBUTTON) ctrlShow false;
+        (_display displayCtrl A3A_IDC_SETUP_IMPORTBUTTON) ctrlShow false;
+#endif
 
         // If we're selecting a game to load, load factions if available
         private _factions = [_saveData get "factions", _saveData get "addonVics", _saveData get "DLC"];
@@ -288,6 +297,157 @@ switch (_mode) do
     case ("setHQPos"):
     {
         createDialog "A3A_SetupHQPosDialog";
+    };
+
+    case ("toggleExportImport"):
+    {
+        _params params["_ctrlIDC"];
+
+        private _ctrl = _display displayCtrl _ctrlIDC;
+        private _hasClose = _ctrl getVariable["hasCloseAction", false];
+        private _newCaption = ([localize "STR_antistasi_dialogs_hqpos_close", _ctrl getVariable["prevCaption", ""]] select _hasClose);
+
+        _ctrl setVariable["hasCloseAction", !_hasClose];
+
+        _ctrl setVariable["prevCaption", ctrlText _ctrl];
+        _ctrl ctrlSetText _newCaption;
+
+        (_display displayCtrl A3A_IDC_SETUP_EXIMPORTEDIT) ctrlShow (!_hasClose);
+        (_display displayCtrl A3A_IDC_SETUP_SAVESLISTBOX) ctrlShow _hasClose;
+
+        {
+            if (_x isNotEqualTo _ctrlIDC) then {
+                (_display displayCtrl _x) ctrlShow _hasClose;
+            };
+        } forEach [A3A_IDC_SETUP_DELETEBUTTON, A3A_IDC_SETUP_RENAMEBUTTON, A3A_IDC_SETUP_EXPORTBUTTON, A3A_IDC_SETUP_IMPORTBUTTON];
+
+        _hasClose;
+    };
+
+    case ("exportGame"):
+    {
+        private _index = _listboxCtrl getVariable ["rowIndex", -1];
+        if (_index == -1) exitWith {};
+
+        if (["toggleExportImport", [A3A_IDC_SETUP_EXPORTBUTTON]] call A3A_fnc_setupLoadgameTab) exitWith {};
+
+        [_display, _index] spawn {
+            params["_display", "_index"];
+
+            private _ctrl = _display displayCtrl A3A_IDC_SETUP_EXIMPORTEDIT;
+            private _saveData = A3A_setup_saveData select _index;
+            private _timeout = diag_tickTime + 30; // Arbitrary timeout to prevent infinite wait
+            private _id = _saveData get "gameID";
+
+            _ctrl ctrlSetText localize "STR_antistasi_dialogs_setup_export_game_hint";
+
+            private["_waitUUID"];
+
+            // Create wait UUID that signals export is done
+            while { true } do {
+                _waitUUID = [] call CBA_fnc_createUUID;
+
+                // Make sure the UUID is _actually_ unique
+                if (missionNamespace getVariable[_waitUUID, false] isEqualTo false) then {
+                    break;
+                };
+            };
+
+            [_id, _waitUUID] remoteExec["A3A_fnc_exportSave", 2];
+
+            waitUntil {
+                (diag_tickTime > _timeout) || { missionNamespace getVariable[_waitUUID, false] isNotEqualTo false }
+            };
+
+            if (missionNamespace getVariable[_waitUUID, false] isEqualTo false) exitWith {
+                _ctrl ctrlSetText localize "STR_antistasi_dialogs_setup_export_game_timeout";
+            };
+
+            private _data = createHashMapFromArray[
+                ["saveData", _saveData],
+                ["variables", missionNamespace getVariable _waitUUID]
+            ];
+
+            keys _data apply {
+                _data set[format["%1_crc", _x], hashValue(_data get _x)];
+            };
+
+            _data set[DATA_KEYS, ["saveData","variables"]];
+
+            _ctrl ctrlSetText toJSON _data;
+            _ctrl ctrlSetTextSelection[0, count ctrlText _ctrl];
+            ctrlSetFocus _ctrl;
+
+            if (isServer) then {
+                copyToClipboard toJSON _data;
+                systemChat "Savegame exported to clipboard";
+            };
+        };
+    };
+
+    case ("importGame"):
+    {
+        if !(["toggleExportImport", [A3A_IDC_SETUP_IMPORTBUTTON]] call A3A_fnc_setupLoadgameTab) exitWith {
+            private _ctrl = _display displayCtrl A3A_IDC_SETUP_EXIMPORTEDIT;
+            _ctrl ctrlSetText format["/* %1 */", localize "STR_antistasi_dialogs_setup_import_game_hint"];
+            _ctrl ctrlSetTextSelection[0, count ctrlText _ctrl];
+            ctrlSetFocus _ctrl;
+        };
+
+        [_display] spawn {
+            params["_display"];
+
+            private _ctrl = _display displayCtrl A3A_IDC_SETUP_EXIMPORTEDIT;
+            private _raw = ctrlText _ctrl;
+            private _data = fromJSON _raw;
+
+            try {
+                if (isNil "_data") exitWith { throw "STR_antistasi_dialogs_setup_import_game_invalid_no_json" };
+
+                if !(_data isEqualType createHashMap) exitWith {
+                    Warning_1("Imported data is not a hashmap: %1",_data);
+                    throw "STR_antistasi_dialogs_setup_import_game_invalid_payload";
+                };
+
+                if !(DATA_KEYS in _data) exitWith {
+                    Warning_1("Imported data is missing the '_' key: %1",_data);
+                    throw "STR_antistasi_dialogs_setup_import_game_invalid_payload";
+                };
+
+                private _wantKeys = _data get DATA_KEYS;
+
+                (_data get DATA_KEYS) apply {
+                    private _key = _x;
+                    private _keyCRC = format["%1_crc", _key];
+
+                    if !(_key in _data) then {
+                        Warning_1("Imported data is missing the key %1",_key);
+                        throw "STR_antistasi_dialogs_setup_import_game_invalid_payload";
+                    };
+
+                    if !(_keyCRC in _data) then {
+                        Warning_1("Imported data is missing the key %1",_keyCRC);
+                        throw "STR_antistasi_dialogs_setup_import_game_invalid_payload";
+                    };
+
+                    private _wantCRC = _data get _keyCRC;
+                    private _haveCRC = hashValue(_data get _key);
+
+                    if (_wantCRC isNotEqualTo _haveCRC) then {
+                        Warning_3("CRC mismatch for '%1': want %2, got %3",_key,_wantCRC,_haveCRC);
+                        // Hashmaps' keys are in random order, so no CRC validation... >-(
+                        //throw "STR_antistasi_dialogs_setup_import_game_invalid_checksum";
+                    };
+                };
+
+                [_data get "saveData", _data get "variables"] remoteExec["A3A_fnc_importSave", 2];
+                systemChat "Savegame is being imported. Please wait...";
+                while { dialog } do { closeDialog 0 }; // A3A_fnc_importSave will reopen the dialog
+            } catch {
+                systemChat localize _exception;
+                playSound "A3AP_UiFailure";
+            };
+        };
     };
 
     case ("deleteGame"):
