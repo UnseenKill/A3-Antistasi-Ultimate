@@ -60,4 +60,5 @@ class mapInfo {
 	#include "Antistasi_kunduz_valley.kunduz_valley\mapInfo.hpp"
 	#include "Antistasi_isladuala3.isladuala3\mapInfo.hpp"
 	#include "Antistasi_VTF_Korsac.VTF_Korsac\mapInfo.hpp"
+	#include "Antistasi_VTF_Korsac_Winter.VTF_Korsac_Winter\mapInfo.hpp"
 };
