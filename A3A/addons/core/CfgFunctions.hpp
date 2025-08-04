@@ -190,6 +190,7 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class zoneCountUnits {};
             class checkWinCondition {};
             class checkLossCondition {};
         };
