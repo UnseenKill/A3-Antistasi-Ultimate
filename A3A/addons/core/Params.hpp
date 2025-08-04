@@ -721,6 +721,14 @@ class Params
         texts[] = {"5", "10", "15", "20"};
         default = 5;
     };
+    class A3A_useExtendedCaptureArea: ExperimentalParams
+    {
+        title = $STR_A3A_Params_useExtendedCaptureArea_title;
+        tooltip = $STR_A3A_Params_useExtendedCaptureArea_tooltip;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+    };
 
     class BalanceParams
     {

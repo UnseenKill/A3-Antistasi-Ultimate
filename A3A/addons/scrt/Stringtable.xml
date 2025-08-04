@@ -5505,19 +5505,26 @@
                 <Korean>각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
                 <French>Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
+            <Key ID="STR_A3A_Params_useExtendedCaptureArea_title">
+                <Original>Use Extended Capture Area</Original>
+                <Russian>Использовать расширенную зону захвата</Russian>
+                <Chinesesimp>使用扩展捕获区域</Chinesesimp>
+                <Korean>확장된 점령 지역 사용</Korean>
+                <French>Utiliser une zone de capture étendue</French>
+            </Key>
+            <Key ID="STR_A3A_Params_useExtendedCaptureArea_tooltip">
+                <Original>When capturing/defending locations, use an additional circular area around the flag to consider unit presences.</Original>
+                <Russian>При захвате/защите локаций использовать дополнительную круговую зону вокруг флага для учета присутствия юнитов.</Russian>
+                <Chinesesimp>捕获/防御位置时，使用围绕旗帜的额外圆形区域来考虑单位存在。</Chinesesimp>
+                <Korean>위치를 점령/방어할 때, 깃발 주위에 있는 추가 원형 지역을 사용하여 유닛의 존재를 고려합니다.</Korean>
+                <French>Lors de la capture/défense des emplacements, utilisez une zone circulaire supplémentaire autour du drapeau pour tenir compte de la présence des unités.</French>
+            </Key>
             <Key ID="STR_params_pistolStart">
                 <Original>Start with only unlocked handguns</Original>
                 <Russian>Начните только с разблокированным пистолетом</Russian>
                 <Chinesesimp>仅从未锁定的手枪开始</Chinesesimp>
                 <Korean>잠금 해제된 권총으로만 시작</Korean>
                 <French>Commencez avec uniquement des armes de poing déverrouillées</French>
-            </Key>
-            <Key ID="STR_params_loadoutsToGenerate">
-                <Original>[Experimental] Number of loadouts to generate for each unit type (WARNING: increases load time)</Original>
-                <Russian>[Экспериментально] Количество комплектов снаряжения для каждого типа юнитов (ВНИМАНИЕ: увеличивает время загрузки)</Russian>
-                <Chinesesimp>[实验性]每种单位类型要生成的配置数量（警告：会增加加载时间）</Chinesesimp>
-                <Korean>[실험적] 각 단위 유형에 대해 생성할 로드아웃 수(경고: 로드 시간 증가)</Korean>
-                <French>[Expérimental] Nombre de chargements à générer pour chaque type d'unité (ATTENTION : augmente le temps de chargement)</French>
             </Key>
             <Key ID="STR_params_allowFuturisticUnfairSupports">
                 <Original>Allow futuristic-unfair supports to be used by the enemy</Original>
