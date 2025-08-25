@@ -20,6 +20,7 @@ class CfgPatches {
 #include "CfgMarkers.hpp"
 #include "CfgWeapons.hpp"
 class A3A {
+    #include "IntelMessages.hpp"
     #include "Templates.hpp"
     #include "Params.hpp"
 
