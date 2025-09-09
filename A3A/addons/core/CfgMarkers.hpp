@@ -297,5 +297,10 @@ class CfgMarkers
 		name = "South Lombakkan Defence Forces";
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+	class a3u_flag_PLA : flag_NATO 
+	{
+		name = "People's Liberation Army";
+		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
 	};
 };
