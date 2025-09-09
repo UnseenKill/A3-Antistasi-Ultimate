@@ -817,6 +817,14 @@ class Params
         texts[] = {"∞", "16", "24", "32"};
         default = 24;
     };
+    class A3A_rebelGarrisonGroupSize: BalanceParams
+    {
+        title = $STR_params_rebelGarrisonGroupSize;
+        tooltip = $STR_params_rebelGarrisonGroupSize_desc;
+        values[] = {2, 4, 6, 8, 10, 12, 14, 16};
+        texts[] = {"2", "4", "6", "8", "10", "12", "14", "16"};
+        default = 8;
+    };
     class A3A_UAVSpawnChance: BalanceParams
     {
         title = $STR_params_UAVSpawnChance;
