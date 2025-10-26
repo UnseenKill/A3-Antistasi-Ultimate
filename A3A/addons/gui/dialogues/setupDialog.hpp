@@ -164,10 +164,10 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 126 * GRID_W;
                     y = 4 * GRID_H;
                     w = 30 * GRID_W;
-                    h = 34 * GRID_H;
+                    h = 37 * GRID_H;
 
                     class controls {
-                        class ParamsPresets: A3A_Text {
+                        class GameOptions: A3A_Text {
                             idc = A3A_IDC_SETUP_LOADGAMEOPTIONS;
                             text = $STR_antistasi_dialogs_setup_load_game_options;
                             x = 0;
@@ -178,12 +178,12 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
                         };
-                        class ParamsPresetsBackground: A3A_Background {
+                        class GameOptionsBackground: A3A_Background {
                             idc = -1;
                             x = 0;
                             y = 4 * GRID_H;
                             w = 30 * GRID_W;
-                            h = 30 * GRID_H;
+                            h = 26 * GRID_H;
                         };
                         class NewGameCheck: A3A_Checkbox {
                             idc = A3A_IDC_SETUP_NEWGAMECHECKBOX;
