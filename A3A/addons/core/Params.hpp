@@ -89,6 +89,18 @@ class Params
         title = $STR_params_areRivalsEnabled;
         values[] = {0,1};
         texts[] = {$STR_params_areRivalsEnabled_0, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
         default = 1;
         lockOnSave = 1;
     };
@@ -220,6 +232,23 @@ class Params
         title = $STR_params_enable_HR_cap;
         values[] = {0,25,50,75,100,200};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,"x0.25","x0.5","x0.75","x1.0","x2.0"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 100;
+                hard = 50;
+            };
+            class small : solo {};
+            class medium
+            {
+                easy = 100;
+                medium = 50;
+                hard = 25;
+            };
+            class large : medium {};
+        };
         default = 0;
     };
     class A3A_idleTimeout: BasicParams

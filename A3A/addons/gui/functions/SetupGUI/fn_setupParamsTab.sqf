@@ -267,20 +267,24 @@ switch (_mode) do
             //case (lbCurSel _presetCstmCtrl isNotEqualTo -1): { /* what follows is pseudo-code */ (saveData get ["customParamPresets", createHashMap]) get (lbValue lbCurSel _presetCstmCtrl)};
             case (lbCurSel _presetDiffCtrl isNotEqualTo -1): { ["getPresetParams", [lbCurSel _presetSizeCtrl, lbCurSel _presetDiffCtrl]] call A3A_fnc_setupParamsTab };
         };
+        //private _presetParamsHM = [createHashmap, createHashmapFromArray _selectedPreset] select (_selectedPreset isEqualType []);
+        private _presetParamsHM = if (_selectedPreset isEqualType []) then { createHashmapFromArray _selectedPreset } else { createHashmap };
         
         // Should be array of [varname, value] pairs
         // Written by setupLoadgameTab
-		private _savedParams = [_display getVariable ["savedParams", []], _selectedPreset] select (_selectedPreset isEqualType []);
+		private _savedParams = _display getVariable ["savedParams", []];
         private _savedParamsHM = createHashMapFromArray _savedParams;
 
         {
+            private _saveExists = _savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl};
             private _thisCtrl = _x;
             private _cfg = _x getVariable "config";
             private _vals = getArray (_cfg/"values");
+            private _locked = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = _savedParamsHM getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = ([_presetParamsHM, _savedParamsHM] select (_locked && _saveExists)) getOrDefault [configName _cfg, getNumber (_cfg/"default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
@@ -298,8 +302,7 @@ switch (_mode) do
                 _thisCtrl lbSetColor [_forEachIndex, [[0.85, 0.85, 0, 1], [1, 1, 1, 1]] select (_forEachIndex isEqualTo _index)]
             } forEach _vals;
 
-            if (_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}) then { // we're loading an existing save
-                private _locked = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
+            if (_saveExists) then { // we're loading an existing save
                 _x setVariable ["locked", _locked];
 
                 if (_locked) then {
