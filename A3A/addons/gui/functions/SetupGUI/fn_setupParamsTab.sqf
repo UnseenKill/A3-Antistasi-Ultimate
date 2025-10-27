@@ -16,31 +16,32 @@ Debug("Params dialog called with mode %1", _mode);
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 private _paramsTable = _display displayCtrl A3A_IDC_SETUP_PARAMSTABLE;
 private _paramsType = _display displayCtrl A3A_IDC_SETUP_PARAMSTYPE;
+private _presetSizeCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
+private _presetDiffCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
+private _presetCstmCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
 
 switch (_mode) do
 {
     case ("onLoad"):
     {
         // * Populate the preset dropdowns
-        private _presetSizeCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
-        private _soloSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_soloSize_label");
-        private _smallSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_smallSize_label");
-        private _medSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_medSize_label");
-        private _largeSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_largeSize_label");
+        { ["populatePresetLB", [_x]] call A3A_fnc_setupParamsTab } forEach [_presetSizeCtrl, _presetDiffCtrl, _presetCstmCtrl];
 
-        _presetSizeCtrl lbSetValue [_soloSizePrefix, 0];
-        _presetSizeCtrl lbSetValue [_smallSizePrefix, 1];
-        _presetSizeCtrl lbSetValue [_medSizePrefix, 2];
-        _presetSizeCtrl lbSetValue [_largeSizePrefix, 3];
+        { ctrlEnable [_x, false] } forEach [A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON, A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON, A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON];
 
-        private _presetDiffCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
-        private _easyDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_easyDiff_label");
-        private _medDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_medDiff_label");
-        private _hardDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_hardDiff_label");
+        // * Add event handler for custom preset name edit box
+        private _presetNameCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME;
+        _presetNameCtrl ctrlAddEventHandler ["EditChanged", {
+            params ["_control", "_newText"];
 
-        _presetDiffCtrl lbSetValue [_easyDiffPrefix, 0];
-        _presetDiffCtrl lbSetValue [_medDiffPrefix, 1];
-        _presetDiffCtrl lbSetValue [_hardDiffPrefix, 2];
+            private _display = findDisplay A3A_IDD_SETUPDIALOG;
+            private _presetSaveBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON;
+            private _presetRenameBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
+
+            private _newTextValid = (trim _newText) isNotEqualTo "";
+            _presetSaveBtn ctrlEnable (_newTextValid || {lbCurSel _presetCstmCtrl isNotEqualTo -1});
+            _presetRenameBtn ctrlEnable _newTextValid;
+        }];
 
         // * Populate the Parameter Type Dropdown
         private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
@@ -259,16 +260,13 @@ switch (_mode) do
         private _newGameCtrl = _display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX;
         private _copyGameCtrl = _display displayCtrl A3A_IDC_SETUP_COPYGAMECHECKBOX;
 
-        private _presetSizeCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
-        private _presetDiffCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
-        private _presetCstmCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
-
+        
         private _selectedPreset = switch (true) do {
-            //case (lbCurSel _presetCstmCtrl isNotEqualTo -1): { /* what follows is pseudo-code */ (saveData get ["customParamPresets", createHashMap]) get (lbValue lbCurSel _presetCstmCtrl)};
-            case (lbCurSel _presetDiffCtrl isNotEqualTo -1): { ["getPresetParams", [lbCurSel _presetSizeCtrl, lbCurSel _presetDiffCtrl]] call A3A_fnc_setupParamsTab };
+            case (lbCurSel _presetDiffCtrl isNotEqualTo -1): { [lbCurSel _presetSizeCtrl, lbCurSel _presetDiffCtrl] };
+            case (lbCurSel _presetCstmCtrl isNotEqualTo -1): { [lbCurSel _presetCstmCtrl] };
         };
-        //private _presetParamsHM = [createHashmap, createHashmapFromArray _selectedPreset] select (_selectedPreset isEqualType []);
-        private _presetParamsHM = if (_selectedPreset isEqualType []) then { createHashmapFromArray _selectedPreset } else { createHashmap };
+        private _presetParams = if (_selectedPreset isEqualType []) then { ["getPresetParams", [_selectedPreset]] call A3A_fnc_setupParamsTab };
+        private _presetParamsHM = if (!isNil "_presetParams") then { createHashmapFromArray _presetParams } else { createHashmap };
         
         // Should be array of [varname, value] pairs
         // Written by setupLoadgameTab
@@ -330,58 +328,157 @@ switch (_mode) do
 
     case ("getPresetParams"):
     {
-        _params params ["_sizeIndex", "_diffIndex"];
-        private _presetSize = ["solo", "small", "medium", "large"] select (_sizeIndex);
-        private _presetDiff = ["easy", "medium", "hard"] select (_diffIndex);
+        _params params ["_index"];
         
         private _presetParams = [];
-        {
-            private _thisCtrl = _x;
-            private _cfg = _x getVariable "config";
-            private _presetClass = _cfg >> "difficulty" >> _presetSize;
-            private _val = getNumber ([_cfg >> "default", _presetClass >> _presetDiff] select (isClass _presetClass));
-            _presetParams pushBackUnique [configName _cfg, _val];
-        } forEach (_paramsTable getVariable "allCtrls");
+
+        if (count _index > 1) then {
+            _index params ["_sizeIndex", "_diffIndex"];
+            private _presetSize = ["solo", "small", "medium", "large"] select (_sizeIndex);
+            private _presetDiff = ["easy", "medium", "hard"] select (_diffIndex);
+            
+            {
+                private _thisCtrl = _x;
+                private _cfg = _x getVariable "config";
+                private _presetClass = _cfg >> "difficulty" >> _presetSize;
+                private _val = getNumber ([_cfg >> "default", _presetClass >> _presetDiff] select (isClass _presetClass));
+                _presetParams pushBackUnique [configName _cfg, _val];
+            } forEach (_paramsTable getVariable "allCtrls");
+        } else {
+            _presetParams = (parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _index select 0])) select 1;
+        };
 
         _presetParams;
+    };
+
+    case ("populatePresetLB"):
+    {
+        _params params ["_lb"];
+
+        switch (true) do {
+            case (_lb isEqualTo _presetSizeCtrl): {
+                private _presetSizeCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
+                private _soloSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_soloSize_label");
+                private _smallSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_smallSize_label");
+                private _medSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_medSize_label");
+                private _largeSizePrefix = _presetSizeCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_largeSize_label");
+
+                _presetSizeCtrl lbSetValue [_soloSizePrefix, 0];
+                _presetSizeCtrl lbSetValue [_smallSizePrefix, 1];
+                _presetSizeCtrl lbSetValue [_medSizePrefix, 2];
+                _presetSizeCtrl lbSetValue [_largeSizePrefix, 3];
+            };
+            case (_lb isEqualTo _presetDiffCtrl): {
+                private _presetDiffCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
+                private _easyDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_easyDiff_label");
+                private _medDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_medDiff_label");
+                private _hardDiffPrefix = _presetDiffCtrl lbAdd (localize "STR_antistasi_dialogs_setup_params_hardDiff_label");
+
+                _presetDiffCtrl lbSetValue [_easyDiffPrefix, 0];
+                _presetDiffCtrl lbSetValue [_medDiffPrefix, 1];
+                _presetDiffCtrl lbSetValue [_hardDiffPrefix, 2];
+            };
+            case (_lb isEqualTo _presetCstmCtrl): {
+                private _customPresets = [] call A3A_fnc_collectParamPresetData;
+                { ["addPresetToLB", [_x, _y]] call A3A_fnc_setupParamsTab } forEach (_customPresets);
+            };
+        };
+    };
+
+    case ("clearLBSelection"):
+    {
+        _params params ["_lb"];
+
+        lbClear _lb;
+        _lb lbSetCurSel -1;
+        ["populatePresetLB", [_lb]] call A3A_fnc_setupParamsTab;
     };
 
     case ("updatePresetSelections"):
     {
         _params params ["_control", "_lbCurSel"];
 
-        private _presetSizeCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
-        private _presetDiffCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
-        private _presetCstmCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
+        private _presetRenameBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
+        private _presetDeleteBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON;
 
         switch (true) do {
             case (_control isEqualTo _presetSizeCtrl && {_lbCurSel isNotEqualTo -1}): {
                 private _diffIndex = lbCurSel _presetDiffCtrl;
                 if (_diffIndex isEqualTo -1) then { _presetDiffCtrl lbSetCurSel 0 };
-                _presetCstmCtrl lbSetCurSel -1;
+                ["clearLBSelection", [_presetCstmCtrl]] call A3A_fnc_setupParamsTab;
             };
-            case ((_control isEqualTo _presetCstmCtrl && {_lbCurSel isNotEqualTo -1}) || {!(_control in [_presetSizeCtrl, _presetDiffCtrl, _presetCstmCtrl])}): {
-                _presetSizeCtrl lbSetCurSel -1;
-                _presetDiffCtrl lbSetCurSel -1;
+            case (_control isEqualTo _presetDiffCtrl && {_lbCurSel isNotEqualTo -1}): {
+                private _sizeIndex = lbCurSel _presetSizeCtrl;
+                if (_sizeIndex isEqualTo -1) then { _presetSizeCtrl lbSetCurSel 0 };
+                ["clearLBSelection", [_presetCstmCtrl]] call A3A_fnc_setupParamsTab;
+            };
+            case (_control isEqualTo _presetCstmCtrl && {_lbCurSel isNotEqualTo -1}): {
+                ["clearLBSelection", [_presetSizeCtrl]] call A3A_fnc_setupParamsTab;
+                ["clearLBSelection", [_presetDiffCtrl]] call A3A_fnc_setupParamsTab;              
             };
         };
+
+        ctrlEnable [A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON, lbCurSel _presetCstmCtrl isNotEqualTo -1 || {(trim ctrlText A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME) isNotEqualTo ""}];
+        ctrlEnable [A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON, lbCurSel _presetCstmCtrl isNotEqualTo -1];
+
+        ['fillParams'] call A3A_fnc_setupParamsTab;
     };
 
-    /*
+    case ("addPresetToLB"):
+    {
+        _params params ["_presetName", "_presetParams"];
+        
+        private _index = _presetCstmCtrl lbAdd _presetName;
+        _presetCstmCtrl lbSetValue [_index, lbSize _presetCstmCtrl];
+        _presetCstmCtrl lbSetData [_index, str [_presetName, _presetParams]]; // put the preset in lbData so we don't have to call collectParamPresetData again when selecting a preset
+    };
+
     case ("savePreset"):
     {
-        //
+        _params params ["_presetName", "_presetParams", ["_renamePreset", false]];
+
+        private _newPreset = true;
+        if (isNil "_presetName") then {
+            _presetName = trim (ctrlText A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME);
+            if (_presetName isEqualTo "" && {lbcursel _presetCstmCtrl isNotEqualTo -1}) then {
+                _presetName = (parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, lbCurSel _presetCstmCtrl])) select 0;
+                _newPreset = false;
+            };
+        };
+        if (_presetName isEqualTo "") then { _presetName = format ["Preset %1", (lbSize _presetCstmCtrl) + 1] };
+        if (isNil "_presetParams") then { _presetParams = ["getParams"] call A3A_fnc_setupParamsTab };
+        [_presetName, _presetParams] call A3A_fnc_saveParamPreset;
+        
+        // Add the new preset to the custom presets dropdown and select it
+        if (_newPreset || _renamePreset) then {
+            ["addPresetToLB", [_presetName, _presetParams]] call A3A_fnc_setupParamsTab;
+            _presetCstmCtrl lbSetCurSel ((lbSize _presetCstmCtrl) -1);
+        };
+
+        ctrlSetText [A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME, ""];
     };
 
     case ("renamePreset"):
     {
-        //
+        private _presetIndex = lbCurSel A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
+        private _presetData = parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _presetIndex]);
+        private _presetParams = _presetData select 1;
+        private _presetName = _presetData select 0;
+        private _presetNameNew = ctrlText A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME;
+
+        ["deletePreset", [_presetName, _presetIndex]] call A3A_fnc_setupParamsTab;
+        ["savePreset", [_presetNameNew, _presetParams, true]] call A3A_fnc_setupParamsTab;
     };
 
     case ("deletePreset"):
     {
-        //
+        _params params ["_presetName", "_presetIndex"];
+
+        if (isNil "_presetIndex") then { _presetIndex = lbCurSel A3A_IDC_SETUP_PARAMSPRESETS_CSTM };
+        private _presetData = parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _presetIndex]);
+        if (isNil "_presetName") then { _presetName = _presetData select 0 };
+        [_presetName, [], true] call A3A_fnc_saveParamPreset;
+        lbDelete [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _presetIndex];
     };
-    */
 };
 

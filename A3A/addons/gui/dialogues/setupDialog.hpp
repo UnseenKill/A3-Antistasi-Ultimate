@@ -575,7 +575,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class PresetSaveButton: A3A_Button {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON;
                             text = $STR_antistasi_dialogs_setup_params_presets_save_preset;
-                            onButtonClick = "['savePreset'] call A3A_fnc_setupParamsTab";
+                            onButtonClick = "['savePreset', []] call A3A_fnc_setupParamsTab";
                             x = 0;
                             y = 10 * GRID_H;
                             w = 30 * GRID_W;
@@ -584,7 +584,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class PresetRenameButton: A3A_Button {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
                             text = $STR_antistasi_dialogs_setup_params_presets_rename_preset;
-                            onButtonClick = "['renamePreset'] call A3A_fnc_setupParamsTab";
+                            onButtonClick = "['renamePreset', []] call A3A_fnc_setupParamsTab";
                             x = 0;
                             y = 16 * GRID_H;
                             w = 30 * GRID_W;
@@ -593,7 +593,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class PresetDeleteButton: A3A_Button {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON;
                             text = $STR_antistasi_dialogs_setup_params_presets_delete_preset;
-                            onButtonClick = "['deletePreset'] call A3A_fnc_setupParamsTab";
+                            onButtonClick = "['deletePreset', []] call A3A_fnc_setupParamsTab";
                             x = 0;
                             y = 22 * GRID_H;
                             w = 30 * GRID_W;
