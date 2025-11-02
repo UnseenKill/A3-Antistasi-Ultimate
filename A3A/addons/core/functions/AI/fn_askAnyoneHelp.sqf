@@ -17,8 +17,6 @@ private _firstAidKits = ["FirstAidKit","Medikit"] + (A3A_faction_reb get "firstA
 private _unitNeedsFAK = count (_firstAidKits arrayIntersect items _target) == 0;
 
 private _units = [getPos _target, _side, 100] call A3A_fnc_getNearFriendly;
-diag_log 444;
-diag_log _units;
 private _medics = _units select { [_x] call A3A_fnc_isMedic };
 _units = _units - _medics;
 
