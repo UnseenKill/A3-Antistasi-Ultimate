@@ -33,7 +33,7 @@ private _vehWP0 = _crewGroup addWaypoint [_landPos, 0];
 _vehWP0 setWaypointType "MOVE";
 _vehWP0 setWaypointSpeed "FULL";
 _vehWP0 setWaypointCompletionRadius 150;
-_vehWP0 setWaypointBehaviour "CARELESS";
+_vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gunners will engage units more aggressively
 
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
@@ -47,7 +47,7 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
     _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 250);         // to slow down vtols even more
 } else {
     waitUntil {sleep 1; (_helicopter distance2D _landPos) < 1000};
-    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 350);         // to slow down vtols even more
+    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 350);         // to slow down heli
 };
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
@@ -58,7 +58,7 @@ while {_helicopter distance2D _landPos > 675} do {
     sleep 0.3;
 };
 
-_helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vtols even more x2
+_helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vehicle even more x2
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 600};
 
 _helicopter flyInHeight 0;                  // helps to keep it near the ground after landing
@@ -72,82 +72,57 @@ private _midPos = _endPos vectorAdd [0,0,_midHeight];
 private _initialVelocity = (velocity _helicopter);
 _initialVelocity set [2, 0];
 private _velocityVector = +_initialVelocity;
-private _initialSpeed = vectorMagnitude _initialVelocity;
+_initialVelocity = vectorMagnitude _initialVelocity;
+private _initialSpeed = speed _helicopter/3.6;
 
 private _distance = _startPos distance _midPos;
-private _landingTime = _distance / _initialSpeed * 1.35;
+private _landingTime = _distance/_initialVelocity * 1.35;
 
-private _maxAngle = ((_initialSpeed * _initialSpeed / 3600) * 35) min 35;
+private _maxAngle = ((_initialVelocity * _initialVelocity/3600) * 35) min 35;
 
+//Starting land approach with bezier curve
 private _startToMidVector = _midPos vectorDiff _startPos;
 private _midToEndVector = _endPos vectorDiff _midPos;
 
-// Pre-initialize LandGear action
-_helicopter action ["LandGear", _helicopter];
+private _vectorDir = vectorDir _helicopter;
+private _vectorUp = vectorUp _helicopter;
+
+private _interval = 0;
+private _time = 0;
+private _angleStep = 0.25;
+private _angleTarget = 0;
+private _angleIs = 0;
+private _angleDiff = 0;
+private _heightDiff = 0;
+
+/* _helicopter action ["LandGear", _helicopter]; */
 
 private _driver = driver _helicopter;
-private _interval = 0;
-private _lastTime = time;
+while {_interval < 0.9999} do
+{
+    //Update data
+    _vectorDir = vectorDir _helicopter;
+    _vectorUp = vectorUp _helicopter;
 
-while {_interval < 0.9999} do {
-    // Update time
-    private _currentTime = time;
-    private _deltaTime = _currentTime - _lastTime;
-    _lastTime = _currentTime;
+    //Calculating the current angle and what the helicopter should turn too
+    _angleTarget = sin (_interval * 180) * _maxAngle;
+    _angleIs = (asin (_vectorDir select 2));
+    _angleDiff = _angleTarget - _angleIs;
+    if(_angleDiff > _angleStep) then {_angleDiff = _angleStep;};
+    if(_angleDiff < -_angleStep) then {_angleDiff = -_angleStep;};
 
-    // Calculate interval step
-    _interval = _interval + ((_deltaTime / _landingTime) * (1 - (_interval / 2))) min 0.9999;
+    //Calculating the height and back value needed
+    _backFactor = -tan (_angleDiff);
+    _vectorUp = _vectorUp vectorAdd (_vectorDir vectorMultiply _backFactor);
 
-    // Calculate current path points
+    _heightDiff = (sin (_angleIs + _angleDiff)) - (_vectorDir select 2);
+    _vectorDir = _vectorDir vectorAdd [0, 0, _heightDiff];
+
     private _lineStart = _startPos vectorAdd (_startToMidVector vectorMultiply _interval);
     private _lineEnd = _midPos vectorAdd (_midToEndVector vectorMultiply _interval);
 
-    // Update velocity vector
-    _velocityVector = (_lineEnd vectorDiff _lineStart) vectorMultiply (_initialSpeed * (1 - _interval) / vectorMagnitude (_lineEnd vectorDiff _lineStart));
+    _helicopter action ["LandGear", _helicopter]; ///forces vehicle to use landing gear
 
-    // Angle calculation
-    private _angleTarget = sin (pi * _interval) * _maxAngle;
-    private _vectorDir = vectorDir _helicopter;
-    private _angleIs = asin (_vectorDir select 2);
-    private _angleDiff = (_angleTarget - _angleIs) min 0.25 max -0.25;
-
-    // Adjust vectors for pitch control
-    private _backFactor = -tan _angleDiff;
-    private _vectorUp = (vectorUp _helicopter) vectorAdd (_vectorDir vectorMultiply _backFactor);
-    _vectorDir = _vectorDir vectorAdd [0, 0, sin(_angleIs + _angleDiff) - (_vectorDir select 2)];
-
-    // ===========================================
-    // LATERAL ALIGNMENT (ANTI-ROLL)
-    // ===========================================
-    // 1. Calculate current roll angle
-    /* private _vectorRight = _vectorDir vectorCrossProduct _vectorUp;
-    private _rollAngle = asin (_vectorRight select 2);
-    
-    // 2. Smooth roll correction (max 0.5° per frame)
-    private _rollCorrection = -_rollAngle min 0.0087 max -0.0087; // 0.5° in radians
-    
-    // 3. Apply rotation around longitudinal axis (X-axis)
-    private _rotationMatrix = [
-        [1, 0, 0],
-        [0, cos _rollCorrection, -sin _rollCorrection],
-        [0, sin _rollCorrection, cos _rollCorrection]
-    ];
-    
-    // 4. Adjust direction and "up" vectors
-    _vectorDir = [
-        _vectorDir select 0,
-        (_vectorDir select 1) * cos _rollCorrection - (_vectorDir select 2) * sin _rollCorrection,
-        (_vectorDir select 1) * sin _rollCorrection + (_vectorDir select 2) * cos _rollCorrection
-    ];
-    
-    _vectorUp = [
-        _vectorUp select 0,
-        (_vectorUp select 1) * cos _rollCorrection - (_vectorUp select 2) * sin _rollCorrection,
-        (_vectorUp select 1) * sin _rollCorrection + (_vectorUp select 2) * cos _rollCorrection
-    ]; */
-    // ===========================================
-
-    // Apply velocity transformation
     _helicopter setVelocityTransformation [
         _lineStart,
         _lineEnd,
@@ -160,16 +135,15 @@ while {_interval < 0.9999} do {
         _interval
     ];
 
-    // Exit condition checks
-    if (!canMove _helicopter || !alive _driver) exitWith {};
-    if ((getPosASL _helicopter select 2) < 0.25) exitWith {
-        _helicopter setDamage 0; // Reset damage briefly on ground contact
-        sleep 1;
-        _helicopter setDamage damage _helicopter;
-    };
+    _time = time;
+    sleep 0.001;
+    _interval = _interval + (((time - _time)/_landingTime) * (1 - (_interval / 2)));
+    _velocityVector = _lineEnd vectorDiff _lineStart;
+    _velocityVector = (vectorNormalized _velocityVector) vectorMultiply (_initialSpeed * (1 - _interval));
 
-    // Throttle loop execution
-    sleep 0.01;
+    if(!canMove _helicopter || !alive _driver) exitWith {};
+    _dam = damage _helicopter;
+    if ((getPos _helicopter select 2) < 0.25 ) exitwith{_helicopter setdamage 0; sleep 1; _helicopter setdamage _dam;};
 };
 sleep 0.1;
 _helicopter engineOn true; ///keep the engine running
