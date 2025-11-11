@@ -292,7 +292,8 @@ class CfgVehicles {
         //identityTypes[] = {};
         class EventHandlers {
             class ADDON {
-                PostInit = "params ['_unit']; [_unit, false] call A3A_fnc_fiaInit;";
+                PostInit = QUOTE([ARR_2(_this#0,false)] call A3A_fnc_fiaInit);
+                init = QUOTE((_this#0) setVariable[ARR_2(QUOTE(QUOTE(unitType)),getText(configOf(_this#0) >> QQGVAR(unitType)))]);
             };
         };
     };
@@ -307,11 +308,7 @@ class CfgVehicles {
         nameSound = "veh_infantry_s";
         textSingular = "infantry";
         textPlural = "infantry";
-        class EventHandlers : EventHandlers {
-            class ADDON : ADDON {
-                init = "params ['_unit']; _unit setVariable ['unitType', 'loadouts_reb_militia_Rifleman'];";
-            };
-        };
+        GVAR(unitType) = QUOTE(loadouts_reb_militia_Rifleman);
     };
     class A3U_Rebels_SquadLeader : A3U_Rebels_Rifleman {
         displayName = "Squad Leader";
