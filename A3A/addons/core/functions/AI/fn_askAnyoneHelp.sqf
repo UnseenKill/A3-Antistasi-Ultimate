@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_target", "_side"];
+params ["_target"];
 
 private _helped = _target getVariable ["helped", objNull];
 if !(isNull _helped) exitWith { _helped };
