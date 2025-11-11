@@ -5,6 +5,7 @@ params ["_unit", "_injurer"];
 private _bleedOutTime = if (surfaceIsWater (position _unit)) then {time + 60} else {time + 300};
 private _playerNear = false;
 private _group = group _unit;
+private _side = side _unit;
 
 // This is... quite weird
 if ({if ((isPlayer _x) and {_x distance _unit < distanceSPWN2}) exitWith {1}} count allUnits != 0) then
