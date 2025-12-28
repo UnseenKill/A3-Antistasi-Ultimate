@@ -14,11 +14,32 @@ class Params
             lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
             lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
             lockCondition = "false;"; // SQF code run while setup GUI is open that returns true/false to determine if the parameter should be changeable (optional, default "false;" (meaning, not locked))
-            class dependencies { // this block is used to define which other parameters depend on this one, and what values they should take when this parameter is set to a certain value (optional)
-                class AnotherParameterName { // the name of the parameter this one affects (must match the class name in this file){
-                    value = -1; // the value of this parameter that triggers the dependency
-                    dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value'
+            lockConditionTooltip = $STR_antistasi_dialogs_setup_param_locked_bycondition; // stringtable entry for the tooltip to show when the parameter is locked by the lockCondition (optional)
+            class dependencies // this block is used to define which other parameters depend on this one, and what values they should take when this parameter is set to a certain value (optional)
+            {
+                class AnotherParameterName // the name of the parameter this one affects (must match the class name in this file){
+                {
+                    value = -1; // the value of this parameter that triggers the dependency (required if using this block)
+                    dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value' (required if using this block)
                     lockedByDependency = 1; // set to 1 if the dependent parameter should be locked when this dependency is active (optional, default 0)
+                    dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
+                };
+            };
+            class difficulty // this block is used to define different default values based on desired difficulty and amount of players (optional)
+            {
+                class solo // settings for solo players
+                {
+                    easy = 0; // default value for easy difficulty
+                    medium = 1; // default value for medium difficulty
+                    hard = 1; // default value for hard difficulty
+                };
+                class small : solo {}; // settings for small player counts. In this case it inherits the same values from the 'solo' class, but it can have its own defined
+                class medium : solo {}; // settings for medium player counts
+                class large // settings for large player counts. In this case it has its own defined values
+                {
+                    easy = 1;
+                    medium = 1;
+                    hard = 2;
                 };
             };
         };
@@ -125,6 +146,15 @@ class Params
         default = 1;
         lockOnSave = 1;
         lockInGame = 1; // Causes issues in commander menu dialog when changed. Haven't investigated yet.
+        class dependencies
+        {
+            class areRivalsEnabled
+            {
+                value = 3;
+                dependentValue = 0;
+                lockedByDependency = 0;
+            };
+        };
     };
     class areRivalsEnabled: ScenarioParams
     {
@@ -962,11 +992,14 @@ class Params
         values[] = {10,15,20,25,30,35,40,45,50,100,200,500,-1};
         texts[] = {"10","15","20","25","30","35","40","45","50","100","200","500",$STR_params_server_unlock_no_unlocks};
         default = 25;
-        class dependencies {
-            class unlockedUnlimitedAmmo {
+        class dependencies
+        {
+            class unlockedUnlimitedAmmo
+            {
                 value = -1;
                 dependentValue = 0;
                 lockedByDependency = 1;
+                dependencyTooltip = $STR_antistasi_dialogs_setup_unlocks_disabled;
             };
             class allowGuidedLaunchers : unlockedUnlimitedAmmo {};
             class allowUnlockedExplosives : unlockedUnlimitedAmmo {};

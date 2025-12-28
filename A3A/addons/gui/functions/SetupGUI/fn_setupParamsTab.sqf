@@ -103,100 +103,6 @@ switch (_mode) do
                 _allCtrls pushBack _valsCtrl;
 
                 _valsCtrl ctrlAddEventHandler ["LBSelChanged", { ["paramChangedHandler", _this] call A3A_fnc_setupParamsTab; }];
-
-                if (configName _x isEqualTo "gameMode") then {
-                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
-                        params ["_thisCtrl", "_index"];
-                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
-                        private _invDisabled = (_thisCtrl lbValue _index) isEqualTo 3;
-                        private _invSelCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
-                        private _rivEnaCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 1);
-
-                        if (_invDisabled) then {
-                            _invSelCtrl ctrlEnable false;
-                            _invSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_inv_disabled");
-                            _rivEnaCtrl lbSetCurSel 0;
-                            _rivEnaCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_param_warning");
-                        } else {
-                            _invSelCtrl ctrlEnable true;
-                            _invSelCtrl ctrlSetTooltip "";
-                            _rivEnaCtrl ctrlSetTooltip "";
-                        };
-                    }];
-                };
-
-                if (configName _x isEqualTo "areRivalsEnabled") then {
-                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
-                        params ["_thisCtrl", "_index"];
-                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
-                        private _rivDisabled = (_thisCtrl lbValue _index) isEqualTo 0;
-                        private _rivSelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
-
-                        if (_rivDisabled) then {
-                            _rivSelCtrl ctrlEnable false;
-                            _rivSelCtrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_riv_disabled");
-                        } else {
-                            _rivSelCtrl ctrlEnable true;
-                            _rivSelCtrl ctrlSetTooltip "";
-                        };
-                    }];
-                };
-
-                /*if (configName _x isEqualTo "minWeaps") then {
-                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
-                        params ["_thisCtrl", "_index"];
-                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
-                        private _unlocksDisabled = (_thisCtrl lbValue _index) isEqualTo -1;
-                        private _unlockMagazinesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 2);
-                        private _unlockGLaunchersCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 3);
-                        private _unlockExplosivesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 4);
-
-                        if (_unlocksDisabled) then {
-                            for "_i" from 2 to 4 do {
-                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
-                                _ctrl lbSetCurSel 1;
-                                _ctrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_unlocks_disabled");
-                                _ctrl setVariable ["locked", true];
-                                _ctrl ctrlEnable false;
-                            };
-                        } else {
-                            for "_i" from 2 to 4 do {
-                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
-                                _ctrl ctrlSetTooltip "";
-                                _ctrl setVariable ["locked", false];
-                                _ctrl ctrlEnable true;
-                            };
-                        };
-                    }];
-                };
-
-                if (configName _x isEqualTo "minWeaps") then {
-                    _valsCtrl ctrlAddEventHandler ["LBSelChanged", {
-                        params ["_thisCtrl", "_index"];
-                        private _display = findDisplay A3A_IDD_SETUPDIALOG;
-                        private _unlocksDisabled = (_thisCtrl lbValue _index) isEqualTo -1;
-                        private _unlockMagazinesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 2);
-                        private _unlockGLaunchersCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 3);
-                        private _unlockExplosivesCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 4);
-
-                        if (_unlocksDisabled) then {
-                            for "_i" from 2 to 4 do {
-                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
-                                _ctrl lbSetCurSel 1;
-                                _ctrl ctrlSetTooltip (localize "STR_antistasi_dialogs_setup_unlocks_disabled");
-                                _ctrl setVariable ["locked", true];
-                                _ctrl ctrlEnable false;
-                            };
-                        } else {
-                            for "_i" from 2 to 4 do {
-                                private _ctrl = _display displayCtrl (ctrlIDC _thisCtrl + _i);
-                                _ctrl ctrlSetTooltip "";
-                                _ctrl setVariable ["locked", false];
-                                _ctrl ctrlEnable true;
-                            };
-                        };
-                    }];
-                };*/
             };
         } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE/"A3A"/"Params"));
 
@@ -302,20 +208,7 @@ switch (_mode) do
                 _thisCtrl lbSetColor [_forEachIndex, [[0.85, 0.85, 0, 1], [1, 1, 1, 1]] select (_forEachIndex isEqualTo _index)]
             } forEach _vals;
 
-            /*if (_saveExists) then { // we're loading an existing save
-                _x setVariable ["locked", _locked];
-
-                if (_locked) then {
-                    _x ctrlEnable false;
-                    _x ctrlSetTooltip (localize (["STR_antistasi_dialogs_setup_param_locked_saveexists", "STR_antistasi_dialogs_setup_param_locked_ingame"] select (_lockInGame)));
-                };
-            } else {
-                // reset params to enabled if we're creating a new game or if all we did was load old params (to create a new game)
-                _x setVariable ["locked", _lockByCond];
-                _x ctrlEnable true;
-                _x ctrlSetTooltip "";
-            };*/
-            ["updateParamLock", [_x, _saveExists]] call A3A_fnc_setupParamsTab;
+            ["updateParamLock", [[_x], _saveExists]] call A3A_fnc_setupParamsTab;
         } forEach (_paramsTable getVariable "allCtrls");
     };
 
@@ -489,7 +382,8 @@ switch (_mode) do
 
     case ("updateParamLock"):
     {
-        _params params ["_thisCtrl", ["_saveExists", false]];
+        _params params ["_controls", ["_saveExists", false]];
+        _controls params ["_thisCtrl", "_depCtrl"];
 
         private _fnc_setLock = {
             params ["_lock", "_lockReason"];
@@ -503,10 +397,14 @@ switch (_mode) do
         switch true do {
             case (_saveExists && {getNumber (_cfg/"lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
             case (!isNil {serverInitDone} && {getNumber (_cfg/"lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
-            case (call compile getText (_cfg/"lockCondition")): { [true, localize "STR_antistasi_dialogs_setup_param_locked_bycondition"] };
             case (_thisCtrl getVariable ["lockedByDependency", false]): {
+                private _dependencyTooltip = if (!isNil "_depCtrl") then { getTextRaw ((_depCtrl getVariable "config")/"dependencies"/(configName _cfg)/"dependencyTooltip") } else { "" };
+                if (isNil "_dependencyTooltip" || {_dependencyTooltip isEqualTo ""}) then { _dependencyTooltip = "STR_antistasi_dialogs_setup_param_locked_bydependency" };
+                [true, localize _dependencyTooltip]
+            };
+            case (call compile getText (_cfg/"lockCondition")): {
                 private _lockCondTooltip = getTextRaw (_cfg/"lockConditionTooltip");
-                if (isNil "_lockCondTooltip" || _lockCondTooltip isEqualTo "") then { _lockCondTooltip = "STR_antistasi_dialogs_setup_param_locked_bydependency" };
+                if (isNil "_lockCondTooltip" || {_lockCondTooltip isEqualTo ""}) then { _lockCondTooltip = "STR_antistasi_dialogs_setup_param_locked_bycondition" };
                 [true, localize _lockCondTooltip]
             };
             default { [false, ""] }
@@ -521,11 +419,9 @@ switch (_mode) do
         private _newGame = cbChecked (_display displayCtrl A3A_IDC_SETUP_NEWGAMECHECKBOX);
         _display setVariable ["paramsChangedSinceReset", _newGame];
         
-        
         // update dependent param values
         private _allValsCtrls = _paramsTable getVariable "allValsCtrls";
         private _dependencies = "true" configClasses ((_thisCtrl getVariable "config")/"dependencies");
-        if (_dependencies isEqualTo []) exitWith {};
         
         {
             private _cfg = _x;
@@ -543,13 +439,33 @@ switch (_mode) do
                 if (_depIdx isEqualTo -1) exitWith {};
                 _depCtrl lbSetCurSel _depIdx;
 
-                _depCtrl setVariable ["lockedByDependency", true];
+                _depCtrl setVariable ["lockedByDependency", _lockByDep];
             } else {
                 _depCtrl setVariable ["lockedByDependency", false];
             };
 
-            ["updateParamLock", [_depCtrl]] call A3A_fnc_setupParamsTab;
+            ["updateParamLock", [[_depCtrl, _thisCtrl]]] call A3A_fnc_setupParamsTab;
         } forEach (_dependencies);
+
+        // specific cases that change available faction selections
+        // these are evaluated after dependencies mostly for different tooltip handling
+        if (configName (_thisCtrl getVariable "config") isEqualTo "gameMode") then {
+            private _invDisabled = (_thisCtrl lbValue _index) isEqualTo 3;
+            private _invSelCtrl = _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
+            private _rivEnaCtrl = _display displayCtrl (ctrlIDC _thisCtrl + 1); // ! fragile if param order changes, should fix
+
+            _invSelCtrl ctrlEnable !_invDisabled;
+            _invSelCtrl ctrlSetTooltip (localize (["", "STR_antistasi_dialogs_setup_inv_disabled"] select _invDisabled));
+            _rivEnaCtrl ctrlSetTooltip (localize (["", "STR_antistasi_dialogs_setup_riv_param_warning"] select _invDisabled));
+        };
+
+        if (configName (_thisCtrl getVariable "config") isEqualTo "areRivalsEnabled") then {
+            private _rivDisabled = (_thisCtrl lbValue _index) isEqualTo 0;
+            private _rivSelCtrl = _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
+
+            _rivSelCtrl ctrlEnable !_rivDisabled;
+            _rivSelCtrl ctrlSetTooltip (localize (["", "STR_antistasi_dialogs_setup_riv_disabled"] select _rivDisabled));
+        };
     };
 };
 
