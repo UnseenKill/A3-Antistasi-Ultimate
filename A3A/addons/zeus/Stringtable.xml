@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3-Antistasi">
+    <Package name="A3-Antistasi-Ultimate-Zeus">
+        <Container name="Factions">
+            <Key ID="STR_A3AU_Zeus_Faction_Rebels">
+                <Original>[A3U] Rebels</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Faction_Occupants">
+                <Original>[A3U] Occupants</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Faction_Invaders">
+                <Original>[A3U] Invaders</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Faction_Rivals">
+                <Original>[A3U] Rivals</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Faction_Civilians">
+                <Original>[A3U] Civilians</Original>
+            </Key>
+        </Container>
+        <Container name="Categories">
+            <Key ID="STR_A3AU_Zeus_Category_Militia">
+                <Original>Militia</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Category_Military">
+                <Original>Military</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Category_Elite">
+                <Original>Elite</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Category_SpecialForces">
+                <Original>Special Forces</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Category_Police">
+                <Original>Police</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_Category_Other">
+                <Original>Other</Original>
+            </Key>
+        </Container>
+        <Container name="UnitTypes">
+            <Key ID="STR_A3AU_Zeus_UnitType_Rifleman">
+                <Original>Rifleman</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_SquadLeader">
+                <Original>Squad Leader</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Radioman">
+                <Original>Radioman</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Medic">
+                <Original>Medic</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Engineer">
+                <Original>Engineer</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_EExpert">
+                <Original>Explosives Expert</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Grenadier">
+                <Original>Grenadier</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_LAT">
+                <Original>Light AT</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_ATSpecialist">
+                <Original>AT Specialist</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_AASpecialist">
+                <Original>AA Specialist</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_MachineGunner">
+                <Original>Machine Gunner</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Marksman">
+                <Original>Marksman</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Sniper">
+                <Original>Sniper</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_PSniper">
+                <Original>Patrol Sniper</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_PSpotter">
+                <Original>Patrol Spotter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Crew">
+                <Original>Crew</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_SCrew">
+                <Original>Static Crew</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Pilot">
+                <Original>Pilot</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Official">
+                <Original>Official</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Traitor">
+                <Original>Traitor</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Unarmed">
+                <Original>Unarmed</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Partisan">
+                <Original>Partisan</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Mercenary">
+                <Original>Mercenary</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Minuteman">
+                <Original>Minuteman</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Enforcer">
+                <Original>Enforcer</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_CellLeader">
+                <Original>Cell Leader</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Commander">
+                <Original>Commander</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Saboteur">
+                <Original>Saboteur</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_UnitType_Oppressor">
+                <Original>Oppressor</Original>
+            </Key>
+        </Container>
+        <Container name="GroupTypes">
+        </Container>
+    </Package>
+</Project>

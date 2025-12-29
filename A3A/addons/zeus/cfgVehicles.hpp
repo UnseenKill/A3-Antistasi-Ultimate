@@ -40,7 +40,7 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         editorSubcategory = "A3U_Militia";
-        displayName = "Rifleman";
+        displayName = $STR_A3AU_Zeus_UnitType_Rifleman;
         //icon = "";
         //picture = "";
         role = "Rifleman";
@@ -51,67 +51,67 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(loadouts_reb_militia_Rifleman);
     };
     class A3U_Rebels_SquadLeader : A3U_Rebels_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Rebels_staticCrew : A3U_Rebels_Rifleman {
-        displayName = "Static Crew";
+        displayName = $STR_A3AU_Zeus_UnitType_SCrew;
         role = "Crew";
         GVAR(unitType) = QUOTE(staticCrew);
     };
     class A3U_Rebels_Medic : A3U_Rebels_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Rebels_Engineer : A3U_Rebels_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Rebels_ExplosivesExpert : A3U_Rebels_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Rebels_Grenadier : A3U_Rebels_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Rebels_LAT : A3U_Rebels_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Rebels_AT : A3U_Rebels_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Rebels_AA : A3U_Rebels_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Rebels_MachineGunner : A3U_Rebels_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Rebels_Marksman : A3U_Rebels_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Rebels_Sniper : A3U_Rebels_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Rebels_Unarmed : A3U_Rebels_Rifleman {
-        displayName = "Unarmed";
+        displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };
@@ -162,72 +162,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Occupants_Militia_SquadLeader : A3U_Occupants_Militia_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Occupants_Militia_Radioman : A3U_Occupants_Militia_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Occupants_Militia_Medic : A3U_Occupants_Militia_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Occupants_Militia_Engineer : A3U_Occupants_Militia_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Occupants_Militia_ExplosivesExpert : A3U_Occupants_Militia_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Occupants_Militia_Grenadier : A3U_Occupants_Militia_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Occupants_Militia_LAT : A3U_Occupants_Militia_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Occupants_Militia_AT : A3U_Occupants_Militia_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Occupants_Militia_AA : A3U_Occupants_Militia_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Occupants_Militia_MachineGunner : A3U_Occupants_Militia_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Occupants_Militia_Marksman : A3U_Occupants_Militia_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Occupants_Militia_Sniper : A3U_Occupants_Militia_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Occupants_Militia_PatrolSniper : A3U_Occupants_Militia_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Occupants_Militia_PatrolSpotter : A3U_Occupants_Militia_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -237,72 +237,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Occupants_Military_SquadLeader : A3U_Occupants_Military_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Occupants_Military_Radioman : A3U_Occupants_Military_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Occupants_Military_Medic : A3U_Occupants_Military_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Occupants_Military_Engineer : A3U_Occupants_Military_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Occupants_Military_ExplosivesExpert : A3U_Occupants_Military_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Occupants_Military_Grenadier : A3U_Occupants_Military_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Occupants_Military_LAT : A3U_Occupants_Military_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Occupants_Military_AT : A3U_Occupants_Military_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Occupants_Military_AA : A3U_Occupants_Military_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Occupants_Military_MachineGunner : A3U_Occupants_Military_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Occupants_Military_Marksman : A3U_Occupants_Military_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Occupants_Military_Sniper : A3U_Occupants_Military_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Occupants_Military_PatrolSniper : A3U_Occupants_Military_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Occupants_Military_PatrolSpotter : A3U_Occupants_Military_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -312,72 +312,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Occupants_Elite_SquadLeader : A3U_Occupants_Elite_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Occupants_Elite_Radioman : A3U_Occupants_Elite_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Occupants_Elite_Medic : A3U_Occupants_Elite_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Occupants_Elite_Engineer : A3U_Occupants_Elite_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Occupants_Elite_ExplosivesExpert : A3U_Occupants_Elite_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Occupants_Elite_Grenadier : A3U_Occupants_Elite_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Occupants_Elite_LAT : A3U_Occupants_Elite_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Occupants_Elite_AT : A3U_Occupants_Elite_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Occupants_Elite_AA : A3U_Occupants_Elite_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Occupants_Elite_MachineGunner : A3U_Occupants_Elite_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Occupants_Elite_Marksman : A3U_Occupants_Elite_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Occupants_Elite_Sniper : A3U_Occupants_Elite_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Occupants_Elite_PatrolSniper : A3U_Occupants_Elite_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Occupants_Elite_PatrolSpotter : A3U_Occupants_Elite_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -387,62 +387,62 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Occupants_SpecialForces_SquadLeader : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Occupants_SpecialForces_Radioman : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Occupants_SpecialForces_Medic : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Occupants_SpecialForces_Engineer : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Occupants_SpecialForces_ExplosivesExpert : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Occupants_SpecialForces_Grenadier : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Occupants_SpecialForces_LAT : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Occupants_SpecialForces_AT : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Occupants_SpecialForces_AA : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Occupants_SpecialForces_MachineGunner : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Occupants_SpecialForces_Marksman : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Occupants_SpecialForces_Sniper : A3U_Occupants_SpecialForces_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
@@ -452,34 +452,34 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Standard);
     };
     class A3U_Occupants_Police_SquadLeader : A3U_Occupants_Police_Standard {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Occupants_Other_Crew : A3U_Occupants_Militia_Rifleman {
         editorSubcategory = "A3U_Other";
-        displayName = "Crew";
+        displayName = $STR_A3AU_Zeus_UnitType_Crew;
         role = "Crew";
         GVAR(unitPrefix) = QUOTE(other);
         GVAR(unitType) = QUOTE(Crew);
     };
     class A3U_Occupants_Other_Pilot : A3U_Occupants_Other_Crew {
-        displayName = "Pilot";
+        displayName = $STR_A3AU_Zeus_UnitType_Pilot;
         role = "Pilot";
         GVAR(unitType) = QUOTE(Pilot);
     };
     class A3U_Occupants_Other_Official : A3U_Occupants_Other_Crew {
-        displayName = "Official";
+        displayName = $STR_A3AU_Zeus_UnitType_Official;
         role = "Officer";
         GVAR(unitType) = QUOTE(Official);
     };
     class A3U_Occupants_Other_Traitor : A3U_Occupants_Other_Crew {
-        displayName = "Traitor";
+        displayName = $STR_A3AU_Zeus_UnitType_Traitor;
         role = "Rifleman";
         GVAR(unitType) = QUOTE(Traitor);
     };
     class A3U_Occupants_Other_Unarmed : A3U_Occupants_Other_Crew {
-        displayName = "Unarmed";
+        displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };
@@ -523,7 +523,7 @@ class CfgVehicles {
     class A3U_Invaders_Militia_Rifleman: A3U_Invaders_Base {
         scope = 2;
         scopeCurator = 2;
-        displayName = "Rifleman";
+        displayName = $STR_A3AU_Zeus_UnitType_Rifleman;
         editorSubcategory = "A3U_Militia";
         role = "Rifleman";
         nameSound = "veh_infantry_s";
@@ -533,72 +533,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Invaders_Militia_SquadLeader : A3U_Invaders_Militia_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Invaders_Militia_Radioman : A3U_Invaders_Militia_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Invaders_Militia_Medic : A3U_Invaders_Militia_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Militia_Engineer : A3U_Invaders_Militia_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Militia_ExplosivesExpert : A3U_Invaders_Militia_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Invaders_Militia_Grenadier : A3U_Invaders_Militia_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Invaders_Militia_LAT : A3U_Invaders_Militia_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Militia_AT : A3U_Invaders_Militia_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Militia_AA : A3U_Invaders_Militia_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Invaders_Militia_MachineGunner : A3U_Invaders_Militia_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Militia_Marksman : A3U_Invaders_Militia_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Invaders_Militia_Sniper : A3U_Invaders_Militia_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Militia_PatrolSniper : A3U_Invaders_Militia_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Militia_PatrolSpotter : A3U_Invaders_Militia_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -608,72 +608,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Invaders_Military_SquadLeader : A3U_Invaders_Military_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Invaders_Military_Radioman : A3U_Invaders_Military_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Invaders_Military_Medic : A3U_Invaders_Military_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Military_Engineer : A3U_Invaders_Military_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Military_ExplosivesExpert : A3U_Invaders_Military_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Invaders_Military_Grenadier : A3U_Invaders_Military_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Invaders_Military_LAT : A3U_Invaders_Military_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Military_AT : A3U_Invaders_Military_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Military_AA : A3U_Invaders_Military_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Invaders_Military_MachineGunner : A3U_Invaders_Military_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Military_Marksman : A3U_Invaders_Military_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Invaders_Military_Sniper : A3U_Invaders_Military_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Military_PatrolSniper : A3U_Invaders_Military_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Military_PatrolSpotter : A3U_Invaders_Military_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -683,72 +683,72 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Invaders_Elite_SquadLeader : A3U_Invaders_Elite_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Invaders_Elite_Radioman : A3U_Invaders_Elite_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Invaders_Elite_Medic : A3U_Invaders_Elite_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_Elite_Engineer : A3U_Invaders_Elite_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_Elite_ExplosivesExpert : A3U_Invaders_Elite_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Invaders_Elite_Grenadier : A3U_Invaders_Elite_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Invaders_Elite_LAT : A3U_Invaders_Elite_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_Elite_AT : A3U_Invaders_Elite_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_Elite_AA : A3U_Invaders_Elite_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Invaders_Elite_MachineGunner : A3U_Invaders_Elite_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_Elite_Marksman : A3U_Invaders_Elite_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Invaders_Elite_Sniper : A3U_Invaders_Elite_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Invaders_Elite_PatrolSniper : A3U_Invaders_Elite_Rifleman {
-        displayName = "Patrol Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_PSniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(PatrolSniper);
     };
     class A3U_Invaders_Elite_PatrolSpotter : A3U_Invaders_Elite_Rifleman {
-        displayName = "Patrol Spotter";
+        displayName = $STR_A3AU_Zeus_UnitType_PSpotter;
         role = "Spotter";
         GVAR(unitType) = QUOTE(PatrolSpotter);
     };
@@ -758,62 +758,62 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Rifleman);
     };
     class A3U_Invaders_SpecialForces_SquadLeader : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Invaders_SpecialForces_Radioman : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Radioman";
+        displayName = $STR_A3AU_Zeus_UnitType_Radioman;
         role = "RadioOperator";
         GVAR(unitType) = QUOTE(Radioman);
     };
     class A3U_Invaders_SpecialForces_Medic : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Medic";
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Invaders_SpecialForces_Engineer : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Engineer";
+        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
         role = "Sapper";
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Invaders_SpecialForces_ExplosivesExpert : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Explosives Expert";
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Invaders_SpecialForces_Grenadier : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Grenadier";
+        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Invaders_SpecialForces_LAT : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "LAT";
+        displayName = $STR_A3AU_Zeus_UnitType_LAT;
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Invaders_SpecialForces_AT : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "AT Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Invaders_SpecialForces_AA : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "AA Specialist";
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Invaders_SpecialForces_MachineGunner : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Machine Gunner";
+        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Invaders_SpecialForces_Marksman : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Marksman";
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Invaders_SpecialForces_Sniper : A3U_Invaders_SpecialForces_Rifleman {
-        displayName = "Sniper";
+        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
         role = "Sniper";
         GVAR(unitType) = QUOTE(Sniper);
     };
@@ -823,34 +823,34 @@ class CfgVehicles {
         GVAR(unitType) = QUOTE(Standard);
     };
     class A3U_Invaders_Police_SquadLeader : A3U_Invaders_Police_Standard {
-        displayName = "Squad Leader";
+        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Invaders_Other_Crew : A3U_Invaders_Militia_Rifleman {
         editorSubcategory = "A3U_Other";
-        displayName = "Crew";
+        displayName = $STR_A3AU_Zeus_UnitType_Crew;
         role = "Crew";
         GVAR(unitPrefix) = QUOTE(other);
         GVAR(unitType) = QUOTE(Crew);
     };
     class A3U_Invaders_Other_Pilot : A3U_Invaders_Other_Crew {
-        displayName = "Pilot";
+        displayName = $STR_A3AU_Zeus_UnitType_Pilot;
         role = "Pilot";
         GVAR(unitType) = QUOTE(Pilot);
     };
     class A3U_Invaders_Other_Official : A3U_Invaders_Other_Crew {
-        displayName = "Official";
+        displayName = $STR_A3AU_Zeus_UnitType_Official;
         role = "Officer";
         GVAR(unitType) = QUOTE(Official);
     };
     class A3U_Invaders_Other_Traitor : A3U_Invaders_Other_Crew {
-        displayName = "Traitor";
+        displayName = $STR_A3AU_Zeus_UnitType_Traitor;
         role = "Rifleman";
         GVAR(unitType) = QUOTE(Traitor);
     };
     class A3U_Invaders_Other_Unarmed : A3U_Invaders_Other_Crew {
-        displayName = "Unarmed";
+        displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };
@@ -869,7 +869,7 @@ class CfgVehicles {
     class A3U_Rivals_Partisan: A3U_Rivals_Base {
         scope = 2;
         scopeCurator = 2;
-        displayName = "Partisan";
+        displayName = $STR_A3AU_Zeus_UnitType_Partisan;
         editorSubcategory = "A3U_Militia";
         role = "Rifleman";
         nameSound = "veh_infantry_s";
@@ -878,75 +878,75 @@ class CfgVehicles {
         GVAR(unitPrefix) = QUOTE(militia);
         GVAR(unitType) = QUOTE(Partisan);
     };
-    class A3U_Rivals_Militia_Mercenary : A3U_Rivals_Partisan {
-        displayName = "Mercenary";
+    class A3U_Rivals_Mercenary : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Mercenary;
         GVAR(unitType) = QUOTE(Mercenary);
     };
-    class A3U_Rivals_Militia_Minuteman : A3U_Rivals_Partisan {
-        displayName = "Minuteman";
+    class A3U_Rivals_Minuteman : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Minuteman;
         GVAR(unitType) = QUOTE(Minuteman);
     };
-    class A3U_Rivals_Militia_Enforcer : A3U_Rivals_Partisan {
-        displayName = "Enforcer";
+    class A3U_Rivals_Enforcer : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Enforcer;
         GVAR(unitType) = QUOTE(Enforcer);
     };
-    class A3U_Rivals_Militia_CellLeader : A3U_Rivals_Partisan {
-        displayName = "Cell Leader";
+    class A3U_Rivals_CellLeader : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_CellLeader;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(CellLeader);
     };
-    class A3U_Rivals_Militia_Commander : A3U_Rivals_Partisan {
-        displayName = "Commander";
+    class A3U_Rivals_Commander : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Commander;
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(Commander);
     };
-    class A3U_Rivals_Militia_Medic : A3U_Rivals_Partisan {
-        displayName = "Medic";
+    class A3U_Rivals_Medic : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Medic;
         role = "CombatLifeSaver";
         GVAR(unitType) = QUOTE(Medic);
     };
-    class A3U_Rivals_Militia_ExplosivesExpert : A3U_Rivals_Partisan {
-        displayName = "Explosives Expert";
+    class A3U_Rivals_ExplosivesExpert : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
         role = "ExplosiveSpecialist";
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
-    class A3U_Rivals_Militia_Saboteur : A3U_Rivals_Partisan {
-        displayName = "Saboteur";
+    class A3U_Rivals_Saboteur : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Saboteur;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Saboteur);
     };
-    class A3U_Rivals_Militia_SpecialistAT : A3U_Rivals_Partisan {
-        displayName = "AT Specialist";
+    class A3U_Rivals_SpecialistAT : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
         role = "ATSpecialist";
         GVAR(unitType) = QUOTE(SpecialistAT);
     };
-    class A3U_Rivals_Militia_SpecialistAA : A3U_Rivals_Partisan {
-        displayName = "AA Specialist";
+    class A3U_Rivals_SpecialistAA : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(SpecialistAA);
     };
-    class A3U_Rivals_Militia_Oppressor : A3U_Rivals_Partisan {
-        displayName = "Oppressor";
+    class A3U_Rivals_Oppressor : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Oppressor;
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(Oppressor);
     };
-    class A3U_Rivals_Militia_Sharpshooter : A3U_Rivals_Partisan {
-        displayName = "Marksman";
+    class A3U_Rivals_Sharpshooter : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Sharpshooter);
     };
-    class A3U_Rivals_Militia_Crew : A3U_Rivals_Partisan {
-        displayName = "Crew";
+    class A3U_Rivals_Crew : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Crew;
         role = "Crew";
         GVAR(unitType) = QUOTE(Crew);
     };
-    class A3U_Rivals_Militia_Pilot : A3U_Rivals_Partisan {
-        displayName = "Pilot";
+    class A3U_Rivals_Pilot : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Pilot;
         role = "Pilot";
         GVAR(unitType) = QUOTE(Pilot);
     };
-    class A3U_Rivals_Militia_Unarmed : A3U_Rivals_Partisan {
-        displayName = "Unarmed";
+    class A3U_Rivals_Unarmed : A3U_Rivals_Partisan {
+        displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };

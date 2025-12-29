@@ -158,21 +158,21 @@ class CfgPatches
 
             "A3U_Rivals_Base",
             "A3U_Rivals_Partisan",
-            "A3U_Rivals_Militia_Mercenary",
-            "A3U_Rivals_Militia_Minuteman",
-            "A3U_Rivals_Militia_Enforcer",
-            "A3U_Rivals_Militia_CellLeader",
-            "A3U_Rivals_Militia_Commander",
-            "A3U_Rivals_Militia_Medic",
-            "A3U_Rivals_Militia_ExplosivesExpert",
-            "A3U_Rivals_Militia_Saboteur",
-            "A3U_Rivals_Militia_SpecialistAT",
-            "A3U_Rivals_Militia_SpecialistAA",
-            "A3U_Rivals_Militia_Oppressor",
-            "A3U_Rivals_Militia_Sharpshooter",
-            "A3U_Rivals_Militia_Crew",
-            "A3U_Rivals_Militia_Pilot",
-            "A3U_Rivals_Militia_Unarmed"
+            "A3U_Rivals_Mercenary",
+            "A3U_Rivals_Minuteman",
+            "A3U_Rivals_Enforcer",
+            "A3U_Rivals_CellLeader",
+            "A3U_Rivals_Commander",
+            "A3U_Rivals_Medic",
+            "A3U_Rivals_ExplosivesExpert",
+            "A3U_Rivals_Saboteur",
+            "A3U_Rivals_SpecialistAT",
+            "A3U_Rivals_SpecialistAA",
+            "A3U_Rivals_Oppressor",
+            "A3U_Rivals_Sharpshooter",
+            "A3U_Rivals_Crew",
+            "A3U_Rivals_Pilot",
+            "A3U_Rivals_Unarmed"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

@@ -1,7 +1,7 @@
 class CfgGroups {
 	class INDEP {
 		class A3U_Rebels {
-			name = "[A3U] Rebels";
+			name = $STR_A3AU_Zeus_Faction_Rebels;
 			class Infantry {
 				name = "Infantry";
 				class A3U_Rebels_Infantry_Team {
