@@ -20,7 +20,7 @@ class Params
                 class AnotherParameterName // the name of the parameter this one affects (must match the class name in this file){
                 {
                     value = -1; // the value of this parameter that triggers the dependency (required if using this block)
-                    dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value' (required if using this block)
+                    dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value' (optional, default nil)
                     lockedByDependency = 1; // set to 1 if the dependent parameter should be locked when this dependency is active (optional, default 0)
                     dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
                 };
@@ -175,6 +175,14 @@ class Params
         };
         default = 1;
         lockOnSave = 1;
+        class dependencies
+        {
+            class rivalsDifficulty
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
     };
     class rivalsDifficulty: ScenarioParams
     {
@@ -308,6 +316,14 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
+        class dependencies
+        {
+            class autoSaveInterval
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
     };
     class autoSaveInterval: TimerParams
     {
@@ -322,6 +338,15 @@ class Params
         values[] = {120,300,900,1800,9999999};
         texts[] = {"2","5","15","30", $STR_params_afk_disabled};
         default = 300;
+        class dependencies
+        {
+            class A3A_isUAVAFK
+            {
+                value = 9999999;
+                lockedByDependency = 1;
+            };
+            class A3A_isZeusAFK : A3A_isUAVAFK {};
+        };
     };
     class A3A_isUAVAFK: TimerParams
     {
@@ -385,6 +410,17 @@ class Params
         values[] = {0,2,5,10,15,20,25,30};
         texts[] = {"0","2","5","10","15","20","25","30"};
         default = 5;
+        class dependencies
+        {
+            class maxCiviliansPerTown
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+            };
+            class civTraffic : maxCiviliansPerTown {};
+            class allowCivDialog : maxCiviliansPerTown {};
+        };
     };
     class maxCiviliansPerTown: AIParams
     {
@@ -434,6 +470,15 @@ class Params
         values[] = {1,0};
         texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
         default = 1;
+        class dependencies
+        {
+            class recruitToPlayerSquad
+            {
+                value = 0;
+                dependentValue = 0;
+                lockedByDependency = 1;
+            };
+        };
     };
     class recruitToPlayerSquad: AIParams
     {
@@ -593,6 +638,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
+        lockCondition = "!A3A_hasACE;";
     };
     class enableSpectrumDevice: RebelBalanceParams
     {
@@ -600,6 +646,7 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
+        // lockCondition = "!('enoch' in A3A_enabledDLC);"; // ! Doesn't work because that var isn't instantiated yet. Need to see if we actually have a var for this...
     };
     class reviveKitsEnabled: RebelBalanceParams
     {
@@ -671,6 +718,14 @@ class Params
         texts[] = {$STR_params_allowFT_0, $STR_params_allowFT_1, $STR_params_allowFT_2, $STR_params_civ_traffic_none};
         default = 0;
         lockInGame = 1;
+        class dependencies
+        {
+            class fastTravelEnemyCheck
+            {
+                value = 3;
+                lockedByDependency = 1;
+            };
+        };
     };
     class fastTravelEnemyCheck: RebelBalanceParams
     {
@@ -891,6 +946,17 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
         lockOnSave = 1; // Causes errors if disabling trader after already having found him in a save
+        class dependencies
+        {
+            class vanillaArmsDealer
+            {
+                value = 1;
+                lockedByDependency = 1;
+            };
+            class blackMarketIgnoreRequirements : vanillaArmsDealer {};
+            class A3U_blackMarketDiscountVehicle : vanillaArmsDealer {};
+            class A3U_blackMarketDiscountWeapon : vanillaArmsDealer {};
+        };
     };
     class vanillaArmsDealer: BMParams
     {
@@ -1070,6 +1136,16 @@ class Params
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
+        class dependencies
+        {
+            class lootCrateDistance
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+            class lootCratePrice : lootCrateDistance {};
+            class lootCrateUnlockedItems : lootCrateDistance {};
+        };
     };
     class lootCrateDistance: CrateParams
     {
@@ -1237,6 +1313,14 @@ class Params
         texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
         default = 1;
         lockInGame = 1;
+        class dependencies
+        {
+            class vehicleLockpickTime
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
     };
     class vehicleLockpickTime: VehicleLootParams
     {
@@ -1263,6 +1347,14 @@ class Params
         values[] = {0,33,66,100};
         texts[] = {$STR_params_helmetLossChance_0,$STR_params_helmetLossChance_1,$STR_params_helmetLossChance_2,$STR_params_helmetLossChance_3};
         default = 33;
+        class dependencies
+        {
+            class helmetLossSound
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
     };
     class helmetLossSound: MiscLootParams
     {
