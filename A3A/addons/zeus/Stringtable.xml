@@ -127,7 +127,120 @@
                 <Original>Oppressor</Original>
             </Key>
         </Container>
+        <Container name="VehicleTypes">
+            <Key ID="STR_A3AU_Zeus_VehicleType_Basic">
+                <Original>Basic Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightUnarmed">
+                <Original>Light Unarmed Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_LightArmed">
+                <Original>Light Armed Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Truck">
+                <Original>Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_AA">
+                <Original>AA Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_AT">
+                <Original>AT Vehicle</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Boat">
+                <Original>Boat</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Plane">
+                <Original>Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivCar">
+                <Original>Civilian Car</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivTruck">
+                <Original>Civilian Truck</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivBoat">
+                <Original>Civilian Boat</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivPlane">
+                <Original>Civilian Plane</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_CivHeli">
+                <Original>Civilian Helicopter</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_StaticMG">
+                <Original>Static Machine Gun</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_StaticAA">
+                <Original>Static AA Weapon</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_StaticAT">
+                <Original>Static AT Weapon</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_VehicleType_Mortar">
+                <Original>Mortar</Original>
+            </Key>
+        </Container>
         <Container name="GroupTypes">
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry">
+                <Original>Infantry</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad">
+                <Original>Infantry Squad</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team">
+                <Original>Infantry Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam">
+                <Original>Machine Gun Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam">
+                <Original>AT Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam">
+                <Original>AA Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam">
+                <Original>Sniper Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Weapons">
+                <Original>Weapons</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_MGTeam">
+                <Original>Static Machine Gun Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_AATeam">
+                <Original>Static AA Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_ATTeam">
+                <Original>Static AT Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_MortarTeam">
+                <Original>Mortar Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles">
+                <Original>Vehicles</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_LightArmed">
+                <Original>Light Armed Vehicle Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_AA">
+                <Original>AA Vehicle Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_AT">
+                <Original>AT Vehicle Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticMG">
+                <Original>Static Machine Gun Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticAA">
+                <Original>Static AA Weapon Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticAT">
+                <Original>Static AT Weapon Team</Original>
+            </Key>
+            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_Mortar">
+                <Original>Mortar Team</Original>
+            </Key>
         </Container>
     </Package>
 </Project>

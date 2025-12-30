@@ -6,6 +6,7 @@ class CfgPatches
     {
         name = COMPONENT_NAME;
         units[] = {
+            // rebel units
             "A3U_Rebels_Base",
             "A3U_Rebels_Rifleman",
             "A3U_Rebels_SquadLeader",
@@ -22,6 +23,27 @@ class CfgPatches
             "A3U_Rebels_Sniper",
             "A3U_Rebels_Unarmed",
 
+            // rebel vehicles
+            "A3U_Rebels_Vehicle_Base",
+            "A3U_Rebels_Vehicle_Basic",
+            "A3U_Rebels_Vehicle_LightUnarmed",
+            "A3U_Rebels_Vehicle_LightArmed",
+            "A3U_Rebels_Vehicle_Truck",
+            "A3U_Rebels_Vehicle_AT",
+            "A3U_Rebels_Vehicle_AA",
+            "A3U_Rebels_Vehicle_CivCar",
+            "A3U_Rebels_Vehicle_CivTruck",
+            "A3U_Rebels_Vehicle_Boat",
+            "A3U_Rebels_Vehicle_CivBoat",
+            "A3U_Rebels_Vehicle_CivHeli",
+            "A3U_Rebels_Vehicle_Plane",
+            "A3U_Rebels_Vehicle_CivPlane",
+            "A3U_Rebels_Vehicle_StaticMG",
+            "A3U_Rebels_Vehicle_StaticAT",
+            "A3U_Rebels_Vehicle_StaticAA",
+            "A3U_Rebels_Vehicle_Mortar",
+
+            // occupant units
             "A3U_Occupants_Base",
             "A3U_Occupants_Militia_Rifleman",
             "A3U_Occupants_Militia_SquadLeader",
@@ -89,6 +111,7 @@ class CfgPatches
             "A3U_Occupants_Other_Traitor",
             "A3U_Occupants_Other_Unarmed",
 
+            // invader units
             "A3U_Invaders_Base",
             "A3U_Invaders_Militia_Rifleman",
             "A3U_Invaders_Militia_SquadLeader",
@@ -156,6 +179,7 @@ class CfgPatches
             "A3U_Invaders_Other_Traitor",
             "A3U_Invaders_Other_Unarmed",
 
+            // rival units
             "A3U_Rivals_Base",
             "A3U_Rivals_Partisan",
             "A3U_Rivals_Mercenary",

@@ -5,8 +5,11 @@
 	Description:
 		Initializes a unit spawned by Zeus with appropriate loadout and settings.
 	
-	Params: // ! Update
-		_holder1 <TYPE> <Default: VALUE>
+	Params:
+		_unit <OBJ> : The unit spawned by Zeus to initialize.
+		_unitFaction <STR> : The faction of the unit to initialize (e.g. "reb", "occ", "inv", "riv").
+		_unitPrefix <STR> : The prefix for the unit's loadout (e.g. "militia", "military", "elite", "SF", "Police", "other").
+		_unitType <STR> : The type of the unit's loadout (e.g. "Rifleman", "SquadLeader", "staticCrew").
 	
 	Dependencies: // ! Update
 		N/A
@@ -17,11 +20,12 @@
 	Environment: // ! Update
 		N/A
 	
-	Usage: // ! Update
-		[VALUE] call A3U_fnc_NAME;
+	Usage:
+		Only intended to be called from the PostInit event handler of Zeus-spawned A3U vehicles.
+		[_unit, "occ", "military", "Rifleman"] call A3U_fnc_zeus_unitInit;
 	
-	Return: // ! Update
-		_return <TYPE>
+	Return:
+		Nothing
 */
 
 #include "..\script_component.hpp"

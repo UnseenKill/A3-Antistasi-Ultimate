@@ -6,6 +6,7 @@ class CfgFunctions
         {
             file = QPATHTOFOLDER(functions);
             class zeus_unitInit {};
+            class zeus_vehicleInit {};
         };
     };
 };
