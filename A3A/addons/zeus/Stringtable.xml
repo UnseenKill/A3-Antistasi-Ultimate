@@ -2,396 +2,396 @@
 <Project name="A3-Antistasi">
     <Package name="A3-Antistasi-Ultimate-Zeus">
         <Container name="Factions">
-            <Key ID="STR_A3AU_Zeus_Faction_Rebels">
+            <Key ID="STR_A3U_Zeus_Faction_Rebels">
                 <Original>[A3U] Rebels</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Faction_Occupants">
+            <Key ID="STR_A3U_Zeus_Faction_Occupants">
                 <Original>[A3U] Occupants</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Faction_Invaders">
+            <Key ID="STR_A3U_Zeus_Faction_Invaders">
                 <Original>[A3U] Invaders</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Faction_Rivals">
+            <Key ID="STR_A3U_Zeus_Faction_Rivals">
                 <Original>[A3U] Rivals</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Faction_Civilians">
+            <Key ID="STR_A3U_Zeus_Faction_Civilians">
                 <Original>[A3U] Civilians</Original>
             </Key>
         </Container>
         <Container name="Categories">
-            <Key ID="STR_A3AU_Zeus_Category_Militia">
+            <Key ID="STR_A3U_Zeus_Category_Militia">
                 <Original>Militia</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Category_Military">
+            <Key ID="STR_A3U_Zeus_Category_Military">
                 <Original>Military</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Category_Elite">
+            <Key ID="STR_A3U_Zeus_Category_Elite">
                 <Original>Elite</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Category_SpecialForces">
+            <Key ID="STR_A3U_Zeus_Category_SpecialForces">
                 <Original>Special Forces</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Category_Police">
+            <Key ID="STR_A3U_Zeus_Category_Police">
                 <Original>Police</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_Category_Other">
+            <Key ID="STR_A3U_Zeus_Category_Other">
                 <Original>Other</Original>
             </Key>
         </Container>
         <Container name="UnitTypes">
-            <Key ID="STR_A3AU_Zeus_UnitType_Rifleman">
+            <Key ID="STR_A3U_Zeus_UnitType_Rifleman">
                 <Original>Rifleman</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_SquadLeader">
+            <Key ID="STR_A3U_Zeus_UnitType_SquadLeader">
                 <Original>Squad Leader</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Radioman">
+            <Key ID="STR_A3U_Zeus_UnitType_Radioman">
                 <Original>Radioman</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Medic">
+            <Key ID="STR_A3U_Zeus_UnitType_Medic">
                 <Original>Medic</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Engineer">
+            <Key ID="STR_A3U_Zeus_UnitType_Engineer">
                 <Original>Engineer</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_EExpert">
+            <Key ID="STR_A3U_Zeus_UnitType_EExpert">
                 <Original>Explosives Expert</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Grenadier">
+            <Key ID="STR_A3U_Zeus_UnitType_Grenadier">
                 <Original>Grenadier</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_LAT">
+            <Key ID="STR_A3U_Zeus_UnitType_LAT">
                 <Original>Light AT</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_ATSpecialist">
+            <Key ID="STR_A3U_Zeus_UnitType_ATSpecialist">
                 <Original>AT Specialist</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_AASpecialist">
+            <Key ID="STR_A3U_Zeus_UnitType_AASpecialist">
                 <Original>AA Specialist</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_MachineGunner">
+            <Key ID="STR_A3U_Zeus_UnitType_MachineGunner">
                 <Original>Machine Gunner</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Marksman">
+            <Key ID="STR_A3U_Zeus_UnitType_Marksman">
                 <Original>Marksman</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Sniper">
+            <Key ID="STR_A3U_Zeus_UnitType_Sniper">
                 <Original>Sniper</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_PSniper">
+            <Key ID="STR_A3U_Zeus_UnitType_PSniper">
                 <Original>Patrol Sniper</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_PSpotter">
+            <Key ID="STR_A3U_Zeus_UnitType_PSpotter">
                 <Original>Patrol Spotter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Crew">
+            <Key ID="STR_A3U_Zeus_UnitType_Crew">
                 <Original>Crew</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_SCrew">
+            <Key ID="STR_A3U_Zeus_UnitType_SCrew">
                 <Original>Static Crew</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Pilot">
+            <Key ID="STR_A3U_Zeus_UnitType_Pilot">
                 <Original>Pilot</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Official">
+            <Key ID="STR_A3U_Zeus_UnitType_Official">
                 <Original>Official</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Traitor">
+            <Key ID="STR_A3U_Zeus_UnitType_Traitor">
                 <Original>Traitor</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Unarmed">
+            <Key ID="STR_A3U_Zeus_UnitType_Unarmed">
                 <Original>Unarmed</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Partisan">
+            <Key ID="STR_A3U_Zeus_UnitType_Partisan">
                 <Original>Partisan</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Mercenary">
+            <Key ID="STR_A3U_Zeus_UnitType_Mercenary">
                 <Original>Mercenary</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Minuteman">
+            <Key ID="STR_A3U_Zeus_UnitType_Minuteman">
                 <Original>Minuteman</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Enforcer">
+            <Key ID="STR_A3U_Zeus_UnitType_Enforcer">
                 <Original>Enforcer</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_CellLeader">
+            <Key ID="STR_A3U_Zeus_UnitType_CellLeader">
                 <Original>Cell Leader</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Commander">
+            <Key ID="STR_A3U_Zeus_UnitType_Commander">
                 <Original>Commander</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Saboteur">
+            <Key ID="STR_A3U_Zeus_UnitType_Saboteur">
                 <Original>Saboteur</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_UnitType_Oppressor">
+            <Key ID="STR_A3U_Zeus_UnitType_Oppressor">
                 <Original>Oppressor</Original>
             </Key>
         </Container>
         <Container name="VehicleTypes">
-            <Key ID="STR_A3AU_Zeus_VehicleType_Basic">
+            <Key ID="STR_A3U_Zeus_VehicleType_Basic">
                 <Original>Basic Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaCar">
+            <Key ID="STR_A3U_Zeus_VehicleType_MilitiaCar">
                 <Original>Militia Car</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightUnarmed">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightUnarmed">
                 <Original>Light Unarmed Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightArmed">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightArmed">
                 <Original>Light Armed Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaLightArmed">
+            <Key ID="STR_A3U_Zeus_VehicleType_MilitiaLightArmed">
                 <Original>Militia Light Armed Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Truck">
+            <Key ID="STR_A3U_Zeus_VehicleType_Truck">
                 <Original>Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_MilitiaTruck">
                 <Original>Militia Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CargoTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_CargoTruck">
                 <Original>Cargo Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_AmmoTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_AmmoTruck">
                 <Original>Ammo Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_RepairTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_RepairTruck">
                 <Original>Repair Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_FuelTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_FuelTruck">
                 <Original>Fuel Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Medical">
+            <Key ID="STR_A3U_Zeus_VehicleType_Medical">
                 <Original>Medical Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Police">
+            <Key ID="STR_A3U_Zeus_VehicleType_Police">
                 <Original>Police Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_APC">
+            <Key ID="STR_A3U_Zeus_VehicleType_APC">
                 <Original>APC</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightAPC">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightAPC">
                 <Original>Light APC</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_MilitiaAPC">
+            <Key ID="STR_A3U_Zeus_VehicleType_MilitiaAPC">
                 <Original>Militia APC</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_IFV">
+            <Key ID="STR_A3U_Zeus_VehicleType_IFV">
                 <Original>IFV</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Tank">
+            <Key ID="STR_A3U_Zeus_VehicleType_Tank">
                 <Original>Tank</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightTank">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightTank">
                 <Original>Light Tank</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_AA">
+            <Key ID="STR_A3U_Zeus_VehicleType_AA">
                 <Original>AA Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_AT">
+            <Key ID="STR_A3U_Zeus_VehicleType_AT">
                 <Original>AT Vehicle</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Boat">
+            <Key ID="STR_A3U_Zeus_VehicleType_Boat">
                 <Original>Boat</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_TransportBoat">
+            <Key ID="STR_A3U_Zeus_VehicleType_TransportBoat">
                 <Original>Transport Boat</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_GunBoat">
+            <Key ID="STR_A3U_Zeus_VehicleType_GunBoat">
                 <Original>Gun Boat</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Heli">
+            <Key ID="STR_A3U_Zeus_VehicleType_Heli">
                 <Original>Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightHeli">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightHeli">
                 <Original>Light Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_LightAttackHeli">
+            <Key ID="STR_A3U_Zeus_VehicleType_LightAttackHeli">
                 <Original>Light Attack Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_AttackHeli">
+            <Key ID="STR_A3U_Zeus_VehicleType_AttackHeli">
                 <Original>Attack Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_TransportHeli">
+            <Key ID="STR_A3U_Zeus_VehicleType_TransportHeli">
                 <Original>Transport Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivHeli">
+            <Key ID="STR_A3U_Zeus_VehicleType_CivHeli">
                 <Original>Civilian Helicopter</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Plane">
+            <Key ID="STR_A3U_Zeus_VehicleType_Plane">
                 <Original>Plane</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CASPlane">
+            <Key ID="STR_A3U_Zeus_VehicleType_CASPlane">
                 <Original>CAS Plane</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_AAPlane">
+            <Key ID="STR_A3U_Zeus_VehicleType_AAPlane">
                 <Original>CAP AA Plane</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_TransportPlane">
+            <Key ID="STR_A3U_Zeus_VehicleType_TransportPlane">
                 <Original>Transport Plane</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivPlane">
+            <Key ID="STR_A3U_Zeus_VehicleType_CivPlane">
                 <Original>Civilian Plane</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivCar">
+            <Key ID="STR_A3U_Zeus_VehicleType_CivCar">
                 <Original>Civilian Car</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivTruck">
+            <Key ID="STR_A3U_Zeus_VehicleType_CivTruck">
                 <Original>Civilian Truck</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_CivBoat">
+            <Key ID="STR_A3U_Zeus_VehicleType_CivBoat">
                 <Original>Civilian Boat</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_StaticMG">
+            <Key ID="STR_A3U_Zeus_VehicleType_StaticMG">
                 <Original>Static Machine Gun</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_StaticAA">
+            <Key ID="STR_A3U_Zeus_VehicleType_StaticAA">
                 <Original>Static AA Weapon</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_StaticAT">
+            <Key ID="STR_A3U_Zeus_VehicleType_StaticAT">
                 <Original>Static AT Weapon</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_VehicleType_Mortar">
+            <Key ID="STR_A3U_Zeus_VehicleType_Mortar">
                 <Original>Mortar</Original>
             </Key>
         </Container>
         <Container name="GroupTypes">
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry">
                 <Original>Infantry</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad">
                 <Original>Infantry Squad</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad_Militia">
                 <Original>Infantry Squad (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad_Military">
                 <Original>Infantry Squad (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad_Elite">
                 <Original>Infantry Squad (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad_SpecialForces">
                 <Original>Infantry Squad (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Squad_Police">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Squad_Police">
                 <Original>Infantry Squad (Police)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team">
                 <Original>Infantry Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team_Militia">
                 <Original>Infantry Team (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team_Military">
                 <Original>Infantry Team (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team_Elite">
                 <Original>Infantry Team (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team_SpecialForces">
                 <Original>Infantry Team (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_Team_Police">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_Team_Police">
                 <Original>Infantry Team (Police)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_MGTeam">
                 <Original>Machine Gun Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_MGTeam_Militia">
                 <Original>Machine Gun Team (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_MGTeam_Military">
                 <Original>Machine Gun Team (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_MGTeam_Elite">
                 <Original>Machine Gun Team (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_MGTeam_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_MGTeam_SpecialForces">
                 <Original>Machine Gun Team (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_ATTeam">
                 <Original>AT Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_ATTeam_Militia">
                 <Original>AT Team (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_ATTeam_Military">
                 <Original>AT Team (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_ATTeam_Elite">
                 <Original>AT Team (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_ATTeam_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_ATTeam_SpecialForces">
                 <Original>AT Team (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_AATeam">
                 <Original>AA Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_AATeam_Militia">
                 <Original>AA Team (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_AATeam_Military">
                 <Original>AA Team (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_AATeam_Elite">
                 <Original>AA Team (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_AATeam_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_AATeam_SpecialForces">
                 <Original>AA Team (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_SniperTeam">
                 <Original>Sniper Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Militia">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Militia">
                 <Original>Sniper Team (Militia)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Military">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Military">
                 <Original>Sniper Team (Military)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Elite">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Elite">
                 <Original>Sniper Team (Elite)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_SpecialForces">
+            <Key ID="STR_A3U_Zeus_GroupType_Infantry_SniperTeam_SpecialForces">
                 <Original>Sniper Team (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Weapons">
+            <Key ID="STR_A3U_Zeus_GroupType_Weapons">
                 <Original>Weapons</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_MGTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Weapons_MGTeam">
                 <Original>Static Machine Gun Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_AATeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Weapons_AATeam">
                 <Original>Static AA Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_ATTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Weapons_ATTeam">
                 <Original>Static AT Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Weapons_MortarTeam">
+            <Key ID="STR_A3U_Zeus_GroupType_Weapons_MortarTeam">
                 <Original>Mortar Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles">
                 <Original>Vehicles</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_LightArmed">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_LightArmed">
                 <Original>Light Armed Vehicle Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_AA">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_AA">
                 <Original>AA Vehicle Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_AT">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_AT">
                 <Original>AT Vehicle Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticMG">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_StaticMG">
                 <Original>Static Machine Gun Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticAA">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_StaticAA">
                 <Original>Static AA Weapon Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_StaticAT">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_StaticAT">
                 <Original>Static AT Weapon Team</Original>
             </Key>
-            <Key ID="STR_A3AU_Zeus_GroupType_Vehicles_Mortar">
+            <Key ID="STR_A3U_Zeus_GroupType_Vehicles_Mortar">
                 <Original>Mortar Team</Original>
             </Key>
         </Container>

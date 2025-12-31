@@ -1,12 +1,12 @@
 class CfgGroups {
 	class INDEP {
 		class A3U_Rebels {
-			name = $STR_A3AU_Zeus_Faction_Rebels;
+			name = $STR_A3U_Zeus_Faction_Rebels;
 			class Infantry {
-				name = $STR_A3AU_Zeus_GroupType_Infantry;
+				name = $STR_A3U_Zeus_GroupType_Infantry;
 				
 				class A3U_Rebels_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -47,7 +47,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Rebels_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -73,7 +73,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Rebels_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -94,7 +94,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Rebels_Infantry_AT_Team : A3U_Rebels_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Rebels_AT";
@@ -102,7 +102,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Rebels_Infantry_AA_Team : A3U_Rebels_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Rebels_AA";
@@ -110,7 +110,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Rebels_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -129,10 +129,10 @@ class CfgGroups {
 			/* 
 			// ? Not needed now that crewed vehicles show in units section?
 			class Weapons {
-				name = $STR_A3AU_Zeus_GroupType_Weapons;
+				name = $STR_A3U_Zeus_GroupType_Weapons;
 
 				class A3U_Rebels_Weapons_MG_Team {
-					name = $STR_A3AU_Zeus_GroupType_Weapons_MGTeam;
+					name = $STR_A3U_Zeus_GroupType_Weapons_MGTeam;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -158,7 +158,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Rebels_Weapons_AT_Team : A3U_Rebels_Weapons_MG_Team {
-					name = $STR_A3AU_Zeus_GroupType_Weapons_ATTeam;
+					name = $STR_A3U_Zeus_GroupType_Weapons_ATTeam;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Rebels_Vehicle_StaticAT";
 					};
@@ -167,7 +167,7 @@ class CfgGroups {
 					class Unit3 : Unit3 {};
 				};
 				class A3U_Rebels_Weapons_AA_Team : A3U_Rebels_Weapons_MG_Team {
-					name = $STR_A3AU_Zeus_GroupType_Weapons_AATeam;
+					name = $STR_A3U_Zeus_GroupType_Weapons_AATeam;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Rebels_Vehicle_StaticAA";
 					};
@@ -176,7 +176,7 @@ class CfgGroups {
 					class Unit3 : Unit3 {};
 				};
 				class A3U_Rebels_Weapons_Mortar_Team : A3U_Rebels_Weapons_MG_Team {
-					name = $STR_A3AU_Zeus_GroupType_Weapons_MortarTeam;
+					name = $STR_A3U_Zeus_GroupType_Weapons_MortarTeam;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Rebels_Vehicle_Mortar";
 					};
@@ -186,10 +186,10 @@ class CfgGroups {
 				};				
 			};
 			class Vehicles {
-				name = $STR_A3AU_Zeus_GroupType_Vehicles;
+				name = $STR_A3U_Zeus_GroupType_Vehicles;
 
 				class A3U_Rebels_Vehicles_AT {
-					name = $STR_A3AU_Zeus_GroupType_Vehicles_AT;
+					name = $STR_A3U_Zeus_GroupType_Vehicles_AT;
 					faction = "A3U_Rebels";
 					side = 2;
 					class Unit0 {
@@ -210,7 +210,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Rebels_Vehicles_AA : A3U_Rebels_Vehicles_AT {
-					name = $STR_A3AU_Zeus_GroupType_Vehicles_AA;
+					name = $STR_A3U_Zeus_GroupType_Vehicles_AA;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Rebels_Vehicle_AA";
 					};
@@ -223,12 +223,12 @@ class CfgGroups {
 	};
 	class WEST {
 		class A3U_Invaders {
-			name = $STR_A3AU_Zeus_Faction_Occupants;
+			name = $STR_A3U_Zeus_Faction_Occupants;
 			class Infantry {
-				name = $STR_A3AU_Zeus_GroupType_Infantry;
+				name = $STR_A3U_Zeus_GroupType_Infantry;
 				
 				class A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Militia;
 					faction = "A3U_Invaders";
 					side = 1;
 					class Unit0 {
@@ -269,7 +269,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_SquadLeader";
 					};
@@ -289,7 +289,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Elite_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_SquadLeader";
 					};
@@ -309,7 +309,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_SquadLeader";
 					};
@@ -329,7 +329,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Police_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Police;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Police;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Police_SquadLeader";
 					};
@@ -349,7 +349,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Militia;
 					faction = "A3U_Invaders";
 					side = 1;
 					class Unit0 {
@@ -375,7 +375,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Rifleman";
 					};
@@ -390,7 +390,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -405,7 +405,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -420,7 +420,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Police_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Police;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Police;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Police_Standard";
 					};
@@ -435,7 +435,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Militia;
 					faction = "A3U_Invaders";
 					side = 1;
 					class Unit0 {
@@ -456,7 +456,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Rifleman";
 					};
@@ -468,7 +468,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -480,7 +480,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -492,7 +492,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Militia;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAT";
@@ -500,7 +500,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Military_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Military;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAT";
@@ -508,7 +508,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Elite_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -520,7 +520,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -532,7 +532,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Militia;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAA";
@@ -540,7 +540,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Military_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Military;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAA";
@@ -548,7 +548,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Elite_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -560,7 +560,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -572,7 +572,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Militia;
 					faction = "A3U_Invaders";
 					side = 1;
 					class Unit0 {
@@ -588,7 +588,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Marksman";
 					};
@@ -597,7 +597,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Marksman";
 					};
@@ -606,7 +606,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Marksman";
 					};
@@ -619,12 +619,12 @@ class CfgGroups {
 	};
 	class EAST {
 		class A3U_Invaders {
-			name = $STR_A3AU_Zeus_Faction_Invaders;
+			name = $STR_A3U_Zeus_Faction_Invaders;
 			class Infantry {
-				name = $STR_A3AU_Zeus_GroupType_Infantry;
+				name = $STR_A3U_Zeus_GroupType_Infantry;
 				
 				class A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Militia;
 					faction = "A3U_Invaders";
 					side = 0;
 					class Unit0 {
@@ -665,7 +665,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_SquadLeader";
 					};
@@ -685,7 +685,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Elite_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_SquadLeader";
 					};
@@ -705,7 +705,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_SquadLeader";
 					};
@@ -725,7 +725,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Police_Infantry_Squad : A3U_Invaders_Militia_Infantry_Squad {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Squad_Police;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Squad_Police;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Police_SquadLeader";
 					};
@@ -745,7 +745,7 @@ class CfgGroups {
 					class Unit8 : Unit8 {};
 				};
 				class A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Militia;
 					faction = "A3U_Invaders";
 					side = 0;
 					class Unit0 {
@@ -771,7 +771,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Rifleman";
 					};
@@ -786,7 +786,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -801,7 +801,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -816,7 +816,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Police_Infantry_Team : A3U_Invaders_Militia_Infantry_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_Team_Police;
+					name = $STR_A3U_Zeus_GroupType_Infantry_Team_Police;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Police_Standard";
 					};
@@ -831,7 +831,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Militia;
 					faction = "A3U_Invaders";
 					side = 0;
 					class Unit0 {
@@ -852,7 +852,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Rifleman";
 					};
@@ -864,7 +864,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -876,7 +876,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_MachineGun_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_MGTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -888,7 +888,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Militia;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAT";
@@ -896,7 +896,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Military_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Military;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAT";
@@ -904,7 +904,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Elite_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -916,7 +916,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_AT_Team : A3U_Invaders_Militia_Infantry_AT_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_ATTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -928,7 +928,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_MachineGun_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Militia;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAA";
@@ -936,7 +936,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Military_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Military;
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Vehicle_StaticAA";
@@ -944,7 +944,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class A3U_Invaders_Elite_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Rifleman";
 					};
@@ -956,7 +956,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_AA_Team : A3U_Invaders_Militia_Infantry_AA_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_AATeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Rifleman";
 					};
@@ -968,7 +968,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Militia;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Militia;
 					faction = "A3U_Invaders";
 					side = 0;
 					class Unit0 {
@@ -984,7 +984,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Military_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Military;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Military;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Military_Marksman";
 					};
@@ -993,7 +993,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_Elite_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_Elite;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_Elite;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_Elite_Marksman";
 					};
@@ -1002,7 +1002,7 @@ class CfgGroups {
 					};
 				};
 				class A3U_Invaders_SpecialForces_Infantry_Sniper_Team : A3U_Invaders_Militia_Infantry_Sniper_Team {
-					name = $STR_A3AU_Zeus_GroupType_Infantry_SniperTeam_SpecialForces;
+					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam_SpecialForces;
 					class Unit0 : Unit0 {
 						vehicle = "A3U_Invaders_SpecialForces_Marksman";
 					};
@@ -1015,7 +1015,7 @@ class CfgGroups {
 		/*
 		// ! Placeholder
 		class A3U_Rivals {
-			name = $STR_A3AU_Zeus_Faction_Rivals;
+			name = $STR_A3U_Zeus_Faction_Rivals;
 		};
 		*/
 	};
@@ -1023,7 +1023,7 @@ class CfgGroups {
 	// ! Placeholder
 	class CIV {
 		class A3U_Civilians {
-			name = $STR_A3AU_Zeus_Faction_Civilians;
+			name = $STR_A3U_Zeus_Faction_Civilians;
 		};
 	};
 	*/

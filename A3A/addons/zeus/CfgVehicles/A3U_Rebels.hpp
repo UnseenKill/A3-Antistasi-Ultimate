@@ -30,7 +30,7 @@
         scope = 2;
         scopeCurator = 2;
         editorSubcategory = "A3U_Militia";
-        displayName = $STR_A3AU_Zeus_UnitType_Rifleman;
+        displayName = $STR_A3U_Zeus_UnitType_Rifleman;
         role = "Rifleman";
         nameSound = "veh_infantry_s";
         textSingular = "infantry";
@@ -39,17 +39,17 @@
         GVAR(unitType) = QUOTE(loadouts_reb_militia_Rifleman);
     };
     class A3U_Rebels_SquadLeader : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_SquadLeader;
+        displayName = $STR_A3U_Zeus_UnitType_SquadLeader;
 		icon = "iconManLeader";
         GVAR(unitType) = QUOTE(SquadLeader);
     };
     class A3U_Rebels_staticCrew : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_SCrew;
+        displayName = $STR_A3U_Zeus_UnitType_SCrew;
         role = "Crewman";
         GVAR(unitType) = QUOTE(staticCrew);
     };
     class A3U_Rebels_Medic : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Medic;
+        displayName = $STR_A3U_Zeus_UnitType_Medic;
 		attendant = 1;
 		icon = "iconManMedic";
 		picture = "pictureHeal";
@@ -57,7 +57,7 @@
         GVAR(unitType) = QUOTE(Medic);
     };
     class A3U_Rebels_Engineer : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Engineer;
+        displayName = $STR_A3U_Zeus_UnitType_Engineer;
 		canDeactivateMines = 1;
 		engineer = 1;
 		icon = "iconManEngineer";
@@ -66,7 +66,7 @@
         GVAR(unitType) = QUOTE(Engineer);
     };
     class A3U_Rebels_ExplosivesExpert : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_EExpert;
+        displayName = $STR_A3U_Zeus_UnitType_EExpert;
 		canDeactivateMines = 1;
 		icon = "iconManExplosive";
 		picture = "pictureExplosive";
@@ -74,44 +74,44 @@
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class A3U_Rebels_Grenadier : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Grenadier;
+        displayName = $STR_A3U_Zeus_UnitType_Grenadier;
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Grenadier);
     };
     class A3U_Rebels_LAT : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_LAT;
+        displayName = $STR_A3U_Zeus_UnitType_LAT;
 		icon = "iconManAT";
         GVAR(unitType) = QUOTE(LAT);
     };
     class A3U_Rebels_AT : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_ATSpecialist;
+        displayName = $STR_A3U_Zeus_UnitType_ATSpecialist;
 		icon = "iconManAT";
         role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(AT);
     };
     class A3U_Rebels_AA : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_AASpecialist;
+        displayName = $STR_A3U_Zeus_UnitType_AASpecialist;
 		role = "MissileSpecialist";
         GVAR(unitType) = QUOTE(AA);
     };
     class A3U_Rebels_MachineGunner : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_MachineGunner;
+        displayName = $STR_A3U_Zeus_UnitType_MachineGunner;
 		icon = "iconManMG";
         role = "MachineGunner";
         GVAR(unitType) = QUOTE(MachineGunner);
     };
     class A3U_Rebels_Marksman : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Marksman;
+        displayName = $STR_A3U_Zeus_UnitType_Marksman;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Marksman);
     };
     class A3U_Rebels_Sniper : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Sniper;
+        displayName = $STR_A3U_Zeus_UnitType_Sniper;
         role = "Marksman";
         GVAR(unitType) = QUOTE(Sniper);
     };
     class A3U_Rebels_Unarmed : A3U_Rebels_Rifleman {
-        displayName = $STR_A3AU_Zeus_UnitType_Unarmed;
+        displayName = $STR_A3U_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };
@@ -135,43 +135,43 @@
     class A3U_Rebels_Vehicle_Basic : A3U_Rebels_Vehicle_Base {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3AU_Zeus_VehicleType_Basic;
+        displayName = $STR_A3U_Zeus_VehicleType_Basic;
         GVAR(vehType) = QUOTE(vehiclesBasic);
     };
     class A3U_Rebels_Vehicle_LightUnarmed : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_LightUnarmed;
+        displayName = $STR_A3U_Zeus_VehicleType_LightUnarmed;
         GVAR(vehType) = QUOTE(vehiclesLightUnarmed);
     };
     class A3U_Rebels_Vehicle_LightArmed : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_LightArmed;
+        displayName = $STR_A3U_Zeus_VehicleType_LightArmed;
         GVAR(vehType) = QUOTE(vehiclesLightArmed);
     };
     class A3U_Rebels_Vehicle_Truck : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_Truck;
+        displayName = $STR_A3U_Zeus_VehicleType_Truck;
         GVAR(vehType) = QUOTE(vehiclesTruck);
     };
     class A3U_Rebels_Vehicle_AA : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_AA;
+        displayName = $STR_A3U_Zeus_VehicleType_AA;
 		editorSubcategory = "EdSubcat_AAs";
         GVAR(vehType) = QUOTE(vehiclesAA);
     };
     class A3U_Rebels_Vehicle_AT : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_AT;
+        displayName = $STR_A3U_Zeus_VehicleType_AT;
         GVAR(vehType) = QUOTE(vehiclesAT);
     };
     class A3U_Rebels_Vehicle_CivCar : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_CivCar;
+        displayName = $STR_A3U_Zeus_VehicleType_CivCar;
         GVAR(vehType) = QUOTE(vehiclesCivCar);
     };
     class A3U_Rebels_Vehicle_CivTruck : A3U_Rebels_Vehicle_Basic {
-        displayName = $STR_A3AU_Zeus_VehicleType_CivTruck;
+        displayName = $STR_A3U_Zeus_VehicleType_CivTruck;
         GVAR(vehType) = QUOTE(vehiclesCivTruck);
     };
 	class A3U_Rebels_Vehicle_Boat : Ship_F {
         scope = 2;
         scopeCurator = 2;
 		crew = "A3U_Rebels_staticCrew";
-        displayName = $STR_A3AU_Zeus_VehicleType_Boat;
+        displayName = $STR_A3U_Zeus_VehicleType_Boat;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Boats";
 		side = 2;
@@ -184,14 +184,14 @@
         };
     };
     class A3U_Rebels_Vehicle_CivBoat : A3U_Rebels_Vehicle_Boat {
-        displayName = $STR_A3AU_Zeus_VehicleType_CivBoat;
+        displayName = $STR_A3U_Zeus_VehicleType_CivBoat;
         GVAR(vehType) = QUOTE(vehiclesCivBoat);
     };
 	class A3U_Rebels_Vehicle_CivHeli : Helicopter_F {
         scope = 2;
         scopeCurator = 2;
 		crew = "A3U_Rebels_staticCrew";
-        displayName = $STR_A3AU_Zeus_VehicleType_CivHeli;
+        displayName = $STR_A3U_Zeus_VehicleType_CivHeli;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Helicopters";
 		side = 2;
@@ -207,7 +207,7 @@
         scope = 2;
         scopeCurator = 2;
 		crew = "A3U_Rebels_staticCrew";
-        displayName = $STR_A3AU_Zeus_VehicleType_Plane;
+        displayName = $STR_A3U_Zeus_VehicleType_Plane;
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Planes";
 		side = 2;
@@ -220,7 +220,7 @@
         };
     };
     class A3U_Rebels_Vehicle_CivPlane : A3U_Rebels_Vehicle_Plane {
-        displayName = $STR_A3AU_Zeus_VehicleType_CivPlane;
+        displayName = $STR_A3U_Zeus_VehicleType_CivPlane;
         GVAR(vehType) = QUOTE(vehiclesCivPlane);
     };
 	class A3U_Rebels_Turret_Base : StaticWeapon_F {
@@ -241,21 +241,21 @@
     class A3U_Rebels_Vehicle_StaticMG : A3U_Rebels_Turret_Base {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3AU_Zeus_VehicleType_StaticMG;
+        displayName = $STR_A3U_Zeus_VehicleType_StaticMG;
         GVAR(vehType) = QUOTE(staticMGs);
     };
     class A3U_Rebels_Vehicle_StaticAT : A3U_Rebels_Vehicle_StaticMG {
-        displayName = $STR_A3AU_Zeus_VehicleType_StaticAT;
+        displayName = $STR_A3U_Zeus_VehicleType_StaticAT;
         GVAR(vehType) = QUOTE(staticAT);
     };
     class A3U_Rebels_Vehicle_StaticAA : A3U_Rebels_Vehicle_StaticMG {
-        displayName = $STR_A3AU_Zeus_VehicleType_StaticAA;
+        displayName = $STR_A3U_Zeus_VehicleType_StaticAA;
         GVAR(vehType) = QUOTE(staticAA);
     };
 	class A3U_Rebels_Vehicle_Mortar : StaticMortar_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3AU_Zeus_VehicleType_Mortar;
+        displayName = $STR_A3U_Zeus_VehicleType_Mortar;
 		crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         editorSubcategory = "EdSubcat_Turrets";
