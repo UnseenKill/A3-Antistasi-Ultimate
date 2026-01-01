@@ -144,11 +144,11 @@
         displayName = $STR_A3U_Zeus_VehicleType_LightUnarmed;
         GVAR(vehType) = QUOTE(vehiclesRivalsCars);
     };
-    class A3U_Rivals_Vehicle_LightArmed : A3U_Rivals_Vehicle_Base {
+    class A3U_Rivals_Vehicle_LightArmed : A3U_Rivals_Vehicle_LightUnarmed {
         displayName = $STR_A3U_Zeus_VehicleType_LightArmed;
         GVAR(vehType) = QUOTE(vehiclesRivalsLightArmed);
     };
-    class A3U_Rivals_Vehicle_Truck : A3U_Rivals_Vehicle_Base {
+    class A3U_Rivals_Vehicle_Truck : A3U_Rivals_Vehicle_LightUnarmed {
         displayName = $STR_A3U_Zeus_VehicleType_Truck;
         GVAR(vehType) = QUOTE(vehiclesRivalsTrucks);
     };
