@@ -489,25 +489,14 @@
     };
 
     // ------------ Invader Vehicles ------------ //
-    class A3U_Invaders_Vehicle_Base : Car_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-		crew = "A3U_Invaders_Other_Crew";
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Cars";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_Basic : A3U_Invaders_Vehicle_Base {
+    class A3U_Invaders_Vehicle_Basic : A3U_Vehicle_Car_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Basic;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesBasic);
     };
     class A3U_Invaders_Vehicle_LightUnarmed : A3U_Invaders_Vehicle_Basic {
@@ -567,25 +556,14 @@
         displayName = $STR_A3U_Zeus_VehicleType_AT;
         GVAR(vehType) = QUOTE(vehiclesAT);
     };
-    class A3U_Invaders_Vehicle_APC_Base : APC_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-		crew = "A3U_Invaders_Other_Crew";
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_APCs";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_APC : A3U_Invaders_Vehicle_APC_Base {
+    class A3U_Invaders_Vehicle_APC : A3U_Vehicle_APC_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_LightAPC;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesAPCs);
     }; 
     class A3U_Invaders_Vehicle_LightAPC : A3U_Invaders_Vehicle_APC {
@@ -600,77 +578,42 @@
         displayName = $STR_A3U_Zeus_VehicleType_IFV;
         GVAR(vehType) = QUOTE(vehiclesIFVs);
     };
-    class A3U_Invaders_Vehicle_Tank_Base : Tank_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-		crew = "A3U_Invaders_Other_Crew";
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Tanks";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_Tank : A3U_Invaders_Vehicle_Tank_Base {
+    class A3U_Invaders_Vehicle_Tank : A3U_Vehicle_Tank_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Tank;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesTanks);
     };
     class A3U_Invaders_Vehicle_LightTank : A3U_Invaders_Vehicle_Tank {
         displayName = $STR_A3U_Zeus_VehicleType_LightTank;
         GVAR(vehType) = QUOTE(vehiclesLightTanks);
     };
-    class A3U_Invaders_Vehicle_Boat_Base : Ship_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-		crew = "A3U_Invaders_Other_Crew";
-        displayName = $STR_A3U_Zeus_VehicleType_Boat;
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Boats";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_TransportBoat : A3U_Invaders_Vehicle_Boat_Base {
+    class A3U_Invaders_Vehicle_TransportBoat : A3U_Vehicle_Ship_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_TransportBoat;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesTransportBoats);
     }; 
     class A3U_Invaders_Vehicle_GunBoat : A3U_Invaders_Vehicle_TransportBoat {
         displayName = $STR_A3U_Zeus_VehicleType_GunBoat;
         GVAR(vehType) = QUOTE(vehiclesGunBoats);
     };
-    class A3U_Invaders_Vehicle_Heli_Base : Helicopter_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-		crew = "A3U_Invaders_Other_Pilot";
-        displayName = $STR_A3U_Zeus_VehicleType_Heli;
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Helicopters";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_LightHeli : A3U_Invaders_Vehicle_Heli_Base {
+    class A3U_Invaders_Vehicle_LightHeli : A3U_Vehicle_Heli_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Pilot";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_LightHeli;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesHelisLight);
     };
     class A3U_Invaders_Vehicle_LightAttackHeli : A3U_Invaders_Vehicle_LightHeli {
@@ -685,54 +628,32 @@
         displayName = $STR_A3U_Zeus_VehicleType_TransportHeli;
         GVAR(vehType) = QUOTE(vehiclesHelisTransport);
     };
-	class A3U_Invaders_Vehicle_Plane_Base : Plane_Base_F {
+	class A3U_Invaders_Vehicle_CASPlane : A3U_Vehicle_Plane_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Invaders_Other_Pilot";
-        displayName = $STR_A3U_Zeus_VehicleType_Plane;
+        crew = "A3U_Invaders_Other_Pilot";
         faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Planes";
         side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_CASPlane : A3U_Invaders_Vehicle_Plane_Base {
-        scope = 2;
-        scopeCurator = 2;
         displayName = $STR_A3U_Zeus_VehicleType_CASPlane;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(vehiclesPlanesCAS);
     };
-    class A3U_Invaders_Vehicle_AAPlane : A3U_Invaders_Vehicle_Plane_Base {
+    class A3U_Invaders_Vehicle_AAPlane : A3U_Invaders_Vehicle_CASPlane {
         displayName = $STR_A3U_Zeus_VehicleType_AAPlane;
         GVAR(vehType) = QUOTE(vehiclesPlanesAA);
     };
-    class A3U_Invaders_Vehicle_TransportPlane : A3U_Invaders_Vehicle_Plane_Base {
+    class A3U_Invaders_Vehicle_TransportPlane : A3U_Invaders_Vehicle_CASPlane {
         displayName = $STR_A3U_Zeus_VehicleType_TransportPlane;
         GVAR(vehType) = QUOTE(vehiclesPlanesTransport);
     };
-    class A3U_Invaders_Vehicle_Turret_Base : StaticWeapon_F {
-        scope = 1;
-        scopeCurator = 1;
-        scopeArsenal = 1;
-        crew = "A3U_Invaders_Other_Crew";
-        faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Turrets";
-        side = 0;
-        GVAR(vehFaction) = QUOTE(inv);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
-    };
-    class A3U_Invaders_Vehicle_StaticMG : A3U_Invaders_Vehicle_Turret_Base {
+    class A3U_Invaders_Vehicle_StaticMG : A3U_Vehicle_StaticWeapon_Base {
         scope = 2;
         scopeCurator = 2;
+        crew = "A3U_Invaders_Other_Crew";
+        faction = "A3U_Invaders";
+        side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_StaticMG;
+        GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(staticMGs);
     };
     class A3U_Invaders_Vehicle_StaticAT : A3U_Invaders_Vehicle_StaticMG {
@@ -743,19 +664,13 @@
         displayName = $STR_A3U_Zeus_VehicleType_StaticAA;
         GVAR(vehType) = QUOTE(staticAA);
     };
-	class A3U_Invaders_Vehicle_Mortar : StaticMortar_F {
+	class A3U_Invaders_Vehicle_Mortar : A3U_Vehicle_StaticMortar_Base {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3U_Zeus_VehicleType_Mortar;
         crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
-        editorSubcategory = "EdSubcat_Turrets";
         side = 0;
+        displayName = $STR_A3U_Zeus_VehicleType_Mortar;
         GVAR(vehFaction) = QUOTE(inv);
         GVAR(vehType) = QUOTE(staticMortars);
-        class EventHandlers {
-            class ADDON {
-                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
-            };
-        };
     };

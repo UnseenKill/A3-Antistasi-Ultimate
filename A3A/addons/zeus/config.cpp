@@ -6,6 +6,16 @@ class CfgPatches
     {
         name = COMPONENT_NAME;
         units[] = {
+            // base vehicles
+            "A3U_Vehicle_Car_Base",
+            "A3U_Vehicle_APC_Base",
+            "A3U_Vehicle_Tank_Base",
+            "A3U_Vehicle_Ship_Base",
+            "A3U_Vehicle_Heli_Base",
+            "A3U_Vehicle_Plane_Base",
+            "A3U_Vehicle_StaticWeapon_Base",
+            "A3U_Vehicle_StaticMortar_Base",
+
             // rebel units
             "A3U_Rebels_Base",
             "A3U_Rebels_Rifleman",
@@ -24,7 +34,6 @@ class CfgPatches
             "A3U_Rebels_Unarmed",
 
             // rebel vehicles
-            "A3U_Rebels_Vehicle_Base",
             "A3U_Rebels_Vehicle_Basic",
             "A3U_Rebels_Vehicle_LightUnarmed",
             "A3U_Rebels_Vehicle_LightArmed",
@@ -112,7 +121,6 @@ class CfgPatches
             "A3U_Occupants_Other_Unarmed",
 
             // occupant vehicles
-            "A3U_Occupants_Vehicle_Base",
             "A3U_Occupants_Vehicle_Basic",
             "A3U_Occupants_Vehicle_LightUnarmed",
             "A3U_Occupants_Vehicle_MilitiaCar",
@@ -128,27 +136,21 @@ class CfgPatches
             "A3U_Occupants_Vehicle_Medical",
             "A3U_Occupants_Vehicle_AA",
             "A3U_Occupants_Vehicle_AT",
-            "A3U_Occupants_Vehicle_APC_Base",
             "A3U_Occupants_Vehicle_APC",
             "A3U_Occupants_Vehicle_LightAPC",
             "A3U_Occupants_Vehicle_MilitiaAPC",
             "A3U_Occupants_Vehicle_IFV",
-            "A3U_Occupants_Vehicle_Tank_Base",
             "A3U_Occupants_Vehicle_Tank",
             "A3U_Occupants_Vehicle_LightTank",
-            "A3U_Occupants_Vehicle_Boat_Base",
             "A3U_Occupants_Vehicle_TransportBoat",
             "A3U_Occupants_Vehicle_GunBoat",
-            "A3U_Occupants_Vehicle_Heli_Base",
             "A3U_Occupants_Vehicle_LightHeli",
             "A3U_Occupants_Vehicle_LightAttackHeli",
             "A3U_Occupants_Vehicle_AttackHeli",
             "A3U_Occupants_Vehicle_TransportHeli",
-            "A3U_Occupants_Vehicle_Plane_Base",
             "A3U_Occupants_Vehicle_CASPlane",
             "A3U_Occupants_Vehicle_AAPlane",
             "A3U_Occupants_Vehicle_TransportPlane",
-            "A3U_Occupants_Vehicle_Turret_Base",
             "A3U_Occupants_Vehicle_StaticMG",
             "A3U_Occupants_Vehicle_StaticAT",
             "A3U_Occupants_Vehicle_StaticAA",
@@ -223,7 +225,6 @@ class CfgPatches
             "A3U_Invaders_Other_Unarmed",
 
             // invader vehicles
-            "A3U_Invaders_Vehicle_Base",
             "A3U_Invaders_Vehicle_Basic",
             "A3U_Invaders_Vehicle_LightUnarmed",
             "A3U_Invaders_Vehicle_MilitiaCar",
@@ -239,27 +240,21 @@ class CfgPatches
             "A3U_Invaders_Vehicle_Medical",
             "A3U_Invaders_Vehicle_AA",
             "A3U_Invaders_Vehicle_AT",
-            "A3U_Invaders_Vehicle_APC_Base",
             "A3U_Invaders_Vehicle_APC",
             "A3U_Invaders_Vehicle_LightAPC",
             "A3U_Invaders_Vehicle_MilitiaAPC",
             "A3U_Invaders_Vehicle_IFV",
-            "A3U_Invaders_Vehicle_Tank_Base",
             "A3U_Invaders_Vehicle_Tank",
             "A3U_Invaders_Vehicle_LightTank",
-            "A3U_Invaders_Vehicle_Boat_Base",
             "A3U_Invaders_Vehicle_TransportBoat",
             "A3U_Invaders_Vehicle_GunBoat",
-            "A3U_Invaders_Vehicle_Heli_Base",
             "A3U_Invaders_Vehicle_LightHeli",
             "A3U_Invaders_Vehicle_LightAttackHeli",
             "A3U_Invaders_Vehicle_AttackHeli",
             "A3U_Invaders_Vehicle_TransportHeli",
-            "A3U_Invaders_Vehicle_Plane_Base",
             "A3U_Invaders_Vehicle_CASPlane",
             "A3U_Invaders_Vehicle_AAPlane",
             "A3U_Invaders_Vehicle_TransportPlane",
-            "A3U_Invaders_Vehicle_Turret_Base",
             "A3U_Invaders_Vehicle_StaticMG",
             "A3U_Invaders_Vehicle_StaticAT",
             "A3U_Invaders_Vehicle_StaticAA",
@@ -285,7 +280,6 @@ class CfgPatches
             "A3U_Rivals_Unarmed",
 
             // rival vehicles
-            "A3U_Rivals_Vehicle_Base",
             "A3U_Rivals_Vehicle_LightUnarmed",
             "A3U_Rivals_Vehicle_LightArmed",
             "A3U_Rivals_Vehicle_Truck",
@@ -293,7 +287,13 @@ class CfgPatches
             "A3U_Rivals_Vehicle_Tank",
             "A3U_Rivals_Vehicle_Heli",
             "A3U_Rivals_Vehicle_StaticWpn",
-            "A3U_Rivals_Vehicle_Mortar"
+            "A3U_Rivals_Vehicle_Mortar",
+
+            // civilian units
+            "A3U_Civilians_Base",
+            "A3U_Civilians_Man",
+            "A3U_Civilians_Press",
+            "A3U_Civilians_Worker"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
