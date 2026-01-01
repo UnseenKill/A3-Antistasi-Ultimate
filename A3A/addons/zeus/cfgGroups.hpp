@@ -623,7 +623,9 @@ class CfgGroups {
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Occupants_Police_Standard";
 					};
-					class Unit2 : Unit2 {};
+					class Unit2 : Unit2 {
+						vehicle = "A3U_Occupants_Police_Standard";
+					};
 					class Unit3 : Unit3 {
 						vehicle = "A3U_Occupants_Police_Standard";
 					};
@@ -673,9 +675,9 @@ class CfgGroups {
 				class A3U_Invaders_Militia_Infantry_Squad {
 					name = $STR_A3U_Zeus_GroupType_Infantry_Squad;
 					faction = "A3U_Invaders";
-					side = 1;
+					side = 0;
 					class Unit0 {
-						side = 1;
+						side = 0;
 						vehicle = "A3U_Invaders_Militia_SquadLeader";
 						rank = "SERGEANT";
 						position[] = {0,0,0};
@@ -714,9 +716,9 @@ class CfgGroups {
 				class A3U_Invaders_Militia_Infantry_Team {
 					name = $STR_A3U_Zeus_GroupType_Infantry_Team;
 					faction = "A3U_Invaders";
-					side = 1;
+					side = 0;
 					class Unit0 {
-						side = 1;
+						side = 0;
 						vehicle = "A3U_Invaders_Militia_Rifleman";
 						rank = "CORPORAL";
 						position[] = {0,0,0};
@@ -740,9 +742,9 @@ class CfgGroups {
 				class A3U_Invaders_Militia_Infantry_MachineGun_Team {
 					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
 					faction = "A3U_Invaders";
-					side = 1;
+					side = 0;
 					class Unit0 {
-						side = 1;
+						side = 0;
 						vehicle = "A3U_Invaders_Militia_Rifleman";
 						rank = "CORPORAL";
 						position[] = {0,0,0};
@@ -777,9 +779,9 @@ class CfgGroups {
 				class A3U_Invaders_Militia_Infantry_Sniper_Team {
 					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam;
 					faction = "A3U_Invaders";
-					side = 1;
+					side = 0;
 					class Unit0 {
-						side = 1;
+						side = 0;
 						vehicle = "A3U_Invaders_Militia_Marksman";
 						rank = "SERGEANT";
 						position[] = {0,0,0};
@@ -1066,7 +1068,9 @@ class CfgGroups {
 					class Unit1 : Unit1 {
 						vehicle = "A3U_Invaders_Police_Standard";
 					};
-					class Unit2 : Unit2 {};
+					class Unit2 : Unit2 {
+						vehicle = "A3U_Invaders_Police_Standard";
+					};
 					class Unit3 : Unit3 {
 						vehicle = "A3U_Invaders_Police_Standard";
 					};
