@@ -282,7 +282,18 @@ class CfgPatches
             "A3U_Rivals_Sharpshooter",
             "A3U_Rivals_Crew",
             "A3U_Rivals_Pilot",
-            "A3U_Rivals_Unarmed"
+            "A3U_Rivals_Unarmed",
+
+            // rival vehicles
+            "A3U_Rivals_Vehicle_Base",
+            "A3U_Rivals_Vehicle_LightUnarmed",
+            "A3U_Rivals_Vehicle_LightArmed",
+            "A3U_Rivals_Vehicle_Truck",
+            "A3U_Rivals_Vehicle_APC",
+            "A3U_Rivals_Vehicle_Tank",
+            "A3U_Rivals_Vehicle_Heli",
+            "A3U_Rivals_Vehicle_StaticWpn",
+            "A3U_Rivals_Vehicle_Mortar"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

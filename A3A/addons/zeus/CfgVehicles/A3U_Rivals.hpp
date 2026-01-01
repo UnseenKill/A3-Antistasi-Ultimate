@@ -1,4 +1,4 @@
-	// ------------ Rivals ------------ //
+	// ------------ Rival Units ------------ //
     class A3U_Rivals_Base : A3U_Invaders_Base {
         displayName = "Rivals Base";
         faction = "A3U_Rivals";
@@ -120,4 +120,115 @@
         displayName = $STR_A3U_Zeus_UnitType_Unarmed;
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
+    };
+
+    // ------------ Rival Vehicles ------------ //
+    class A3U_Rivals_Vehicle_Base : Car_F {
+        scope = 1;
+        scopeCurator = 1;
+        scopeArsenal = 1;
+		crew = "A3U_Rivals_Crew";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_Cars";
+        side = 0;
+        GVAR(vehFaction) = QUOTE(riv);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Rivals_Vehicle_LightUnarmed : A3U_Rivals_Vehicle_Base {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3U_Zeus_VehicleType_LightUnarmed;
+        GVAR(vehType) = QUOTE(vehiclesRivalsCars);
+    };
+    class A3U_Rivals_Vehicle_LightArmed : A3U_Rivals_Vehicle_Base {
+        displayName = $STR_A3U_Zeus_VehicleType_LightArmed;
+        GVAR(vehType) = QUOTE(vehiclesRivalsLightArmed);
+    };
+    class A3U_Rivals_Vehicle_Truck : A3U_Rivals_Vehicle_Base {
+        displayName = $STR_A3U_Zeus_VehicleType_Truck;
+        GVAR(vehType) = QUOTE(vehiclesRivalsTrucks);
+    };
+    class A3U_Rivals_Vehicle_APC : APC_F {
+        scope = 2;
+        scopeCurator = 2;
+        crew = "A3U_Rivals_Crew";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_APCs";
+        side = 0;
+        displayName = $STR_A3U_Zeus_VehicleType_APC;
+        GVAR(vehFaction) = QUOTE(riv);
+        GVAR(vehType) = QUOTE(vehiclesRivalsAPCs);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Rivals_Vehicle_Tank : Tank_F {
+        scope = 2;
+        scopeCurator = 2;
+        crew = "A3U_Rivals_Crew";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_Tanks";
+        side = 0;
+        displayName = $STR_A3U_Zeus_VehicleType_Tank;
+        GVAR(vehFaction) = QUOTE(riv);
+        GVAR(vehType) = QUOTE(vehiclesRivalsTanks);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Rivals_Vehicle_Heli : Helicopter_F {
+        scope = 2;
+        scopeCurator = 2;
+        crew = "A3U_Rivals_Pilot";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_Helicopters";
+        side = 0;
+        displayName = $STR_A3U_Zeus_VehicleType_Heli;
+        GVAR(vehFaction) = QUOTE(riv);
+        GVAR(vehType) = QUOTE(vehiclesRivalsHelis);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Rivals_Vehicle_StaticWpn : StaticWeapon_F {
+        scope = 2;
+        scopeCurator = 2;
+        crew = "A3U_Rivals_Crew";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_Turrets";
+        side = 0;
+        displayName = $STR_A3U_Zeus_VehicleType_StaticWpn;
+        GVAR(vehFaction) = QUOTE(riv);
+        GVAR(vehType) = QUOTE(staticLowWeapons);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
+    };
+    class A3U_Rivals_Vehicle_Mortar : StaticMortar_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = $STR_A3U_Zeus_VehicleType_Mortar;
+        crew = "A3U_Rivals_Crew";
+        faction = "A3U_Rivals";
+        editorSubcategory = "EdSubcat_Turrets";
+        side = 0;
+        GVAR(vehFaction) = QUOTE(riv);
+        GVAR(vehType) = QUOTE(staticMortars);
+        class EventHandlers {
+            class ADDON {
+                PostInit = QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit);
+            };
+        };
     };

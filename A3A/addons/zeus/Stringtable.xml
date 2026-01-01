@@ -242,6 +242,9 @@
             <Key ID="STR_A3U_Zeus_VehicleType_CivBoat">
                 <Original>Civilian Boat</Original>
             </Key>
+            <Key ID="STR_A3U_Zeus_VehicleType_StaticWpn">
+                <Original>Static Weapon</Original>
+            </Key>
             <Key ID="STR_A3U_Zeus_VehicleType_StaticMG">
                 <Original>Static Machine Gun</Original>
             </Key>
