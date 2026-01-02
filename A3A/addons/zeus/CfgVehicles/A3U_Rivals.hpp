@@ -5,7 +5,7 @@
         GVAR(unitFaction) = QUOTE(riv);
         class EventHandlers {
             class ADDON {
-                PostInit = QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(unitFaction)),getText(configOf(_this#0) >> QQGVAR(unitPrefix)),getText(configOf(_this#0) >> QQGVAR(unitType)))] call A3U_fnc_zeus_unitInit);
+                PostInit = UNIT_INIT_HANDLER;
             };
         };
     };
