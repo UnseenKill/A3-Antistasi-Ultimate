@@ -103,28 +103,25 @@ if (isServer) then {
 
 	if (count watchpostsFIA > 0) then {
 		markersX = markersX + watchpostsFIA;
-		publicVariable "markersX";
 	};
 
 	if (count roadblocksFIA > 0) then {
 		markersX = markersX + roadblocksFIA;
-		publicVariable "markersX";
 	};
 
 	if (count aapostsFIA > 0) then {
 		markersX = markersX + aapostsFIA;
-		publicVariable "markersX";
 	};
 
 	if (count atpostsFIA > 0) then {
 		markersX = markersX + atpostsFIA;
-		publicVariable "markersX";
 	};
 
 	if (count hmgpostsFIA > 0) then {
 		markersX = markersX + hmgpostsFIA;
-		publicVariable "markersX";
 	};
+
+	publicVariable "markersX";
 
 	{
 		if (_x in destroyedSites) then {
