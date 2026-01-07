@@ -1,5 +1,5 @@
 #include "script_component.hpp"
 
-EFUNC(core,openGarage) = A3OVG_fnc_openGarage;
+EFUNC(core,addGarageUserAction) = A3OVG_fnc_userActionOpenGarageAdd;
 
 nil;
