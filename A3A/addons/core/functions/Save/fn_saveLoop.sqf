@@ -208,7 +208,7 @@ private _nearFriendlyMarker = {
 
 {
 	if ((!alive _x) || {(surfaceIsWater position _x) || {(!isNull attachedTo _x) || {(!(_x call _nearFriendlyMarker))}}}) then { continue };
-	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x, nil, [_x] call BIS_fnc_getVehicleCustomization, _x in staticsToMan];
+	_arrayEst pushBack [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x, nil, [_x] call BIS_fnc_getVehicleCustomization, _x in staticsToFlip];
 } forEach staticsToSave;
 
 
