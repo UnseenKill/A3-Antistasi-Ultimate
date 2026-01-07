@@ -309,6 +309,7 @@ SET_PUBLIC_VAR(serverInitDone,true);
 Info("Setting serverInitDone as true");
 SET_PUBLIC_VAR(A3A_startupState,"completed");
 
+[A3A_EVENT_SERVER_INIT_COMPLETE, A3A_saveTarget] call CBA_fnc_localEvent;
 
 // ********************* Initialize loops *******************************************
 
