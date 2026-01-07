@@ -15,3 +15,8 @@
     var = value; \
     publicVariable QUOTE(var); \
 
+/* Args: String|Boolean _serverID, String _campaignID, String _mapName
+ * Target: server
+ * Sent-by: server
+ */
+#define A3A_EVENT_SERVER_INIT_COMPLETE QUOTE(DOUBLES(PREFIX,serverLoadComplete))
