@@ -216,7 +216,7 @@ switch _typeX do
     };
     case "garage":
     {
-        [_flag] call HR_GRG_fnc_initGarage;
+        [_flag] call FUNC(openGarage);
     };
     case "SDKFlag":
     {
@@ -246,7 +246,7 @@ switch _typeX do
                 }
             },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4
         ];
-        [_flag] call HR_GRG_fnc_initGarage;
+        [_flag] call FUNC(openGarage);
     };
     case "Intel_Small":
     {
