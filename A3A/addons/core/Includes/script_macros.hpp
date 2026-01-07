@@ -10,3 +10,8 @@
 
 #define ADDONLOADED(addon) EADDONLOADED(A3A,addon)
 #define EADDONLOADED(prefix,addon)(isClass (configFile/QUOTE(CfgPatches)/QDOUBLES(prefix,addon)))
+
+#define SET_PUBLIC_VAR(var,value) \
+    var = value; \
+    publicVariable QUOTE(var); \
+
