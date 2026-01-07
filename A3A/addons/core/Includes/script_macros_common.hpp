@@ -117,6 +117,7 @@ Group: General
 #define QDOUBLES(var1,var2) QUOTE(DOUBLES(var1,var2))
 #define QTRIPLES(var1,var2,var3) QUOTE(TRIPLES(var1,var2,var3))
 #define QUOTE(var1) #var1
+#define QQUOTE(var1) QUOTE(QUOTE(var1))
 
 #ifdef MODULAR
     #define COMPONENT_T DOUBLES(t,COMPONENT)
@@ -206,7 +207,7 @@ Author:
 #define COMPILE_FILE_SYS(var1,var2,var3) COMPILE_FILE2_SYS('PATHTO_SYS(var1,var2,var3)')
 #define COMPILE_FILE_CFG_SYS(var1,var2,var3) COMPILE_FILE2_CFG_SYS('PATHTO_SYS(var1,var2,var3)')
 
-#define COMPILE_SCRIPT(var1) compileScript [QUOTE(PATHTO_F(var1))]
+#define COMPILE_SCRIPT(var1) compileScript ['PATHTO_F(var1)']
 
 #define SETVARS(var1,var2) ##var1##_##var2 setVariable
 #define SETVARMAINS(var1) SETVARS(var1,MAINLOGIC)
