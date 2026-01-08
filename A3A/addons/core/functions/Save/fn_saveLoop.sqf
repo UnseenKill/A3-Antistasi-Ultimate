@@ -473,6 +473,8 @@ _fuelAmountleftArray = [];
 //Saving the state of the testing timer
 ["testingTimerIsActive", testingTimerIsActive] call A3A_fnc_setStatVariable;
 
+[A3A_EVENT_SERVER_GAME_SAVED, []] call CBA_fnc_globalEvent;
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
 savingServer = false;

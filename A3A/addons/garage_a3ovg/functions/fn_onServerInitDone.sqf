@@ -23,16 +23,20 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-Debug_2("%1: %2", QFUNC(onServerInitDone), _this);
+Debug_2("%1: %2",QFUNC(onServerInitDone),_this);
 
 if !assert(params[
     ["_serverID", nil, ["", false]],
     ["_campaignID", nil, [""]], 
     ["_mapName", nil, [""]]
 ]) exitWith {};
+if !assert(_serverID isEqualType false) exitWith { Error_1("%1: old-style save system unsupported by A3OVG.",QFUNC(onServerInitDone)) };
 
 Info_3("Server init done. serverID: %1, campaignID: %2, mapName: %3", _serverID, _campaignID, _mapName);
 
 [_campaignID] call A3OVG_fnc_setStoragePrefix;
+
+[A3A_EVENT_SERVER_GAME_DELETED, { call FUNC(onGameDeleted) }] call CBA_fnc_addEventHandler;
+[A3A_EVENT_SERVER_GAME_SAVED, { call FUNC(onGameSaved) }] call CBA_fnc_addEventHandler;
 
 nil;
