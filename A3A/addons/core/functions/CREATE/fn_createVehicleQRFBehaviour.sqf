@@ -35,7 +35,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
     if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol) exitWith
     {
         //Transport helicopter or VTOL
-        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), (sizeOf _vehType) / 1.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), (sizeOf _vehType) / 2.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
 
@@ -81,7 +81,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
     };
     if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith 
     {   //Attack helicopter
-        _landPosAttackheli = [_posDestination, 400, 800, (sizeOf _vehType) / 1.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPosAttackheli = [_posDestination, 400, 800, (sizeOf _vehType) / 2.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
 
