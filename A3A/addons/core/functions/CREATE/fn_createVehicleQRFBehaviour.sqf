@@ -35,7 +35,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
     if (_vehType in FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all, "vehiclesDropPod") || _vtol) exitWith
     {
         //Transport helicopter or VTOL
-        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), (sizeOf _vehType) / 2, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPos = [_posDestination, [200, 300] select (_vtol), [400, 600] select (_vtol), (sizeOf _vehType) / 1.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
 
@@ -48,7 +48,21 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
         };
 
         if !(_landPos isEqualTo [0,0,0]) then {
-            [_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding
+            _landPos set [2, 0];
+            _landPosBlacklist pushBack _landPos;
+
+            if (_vtol) then {
+                call selectRandomWeighted [
+                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 50,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin] spawn A3A_fnc_paradrop}, 30,
+                    {[_vehicle, _cargoGroup, _posDestination, _markerOrigin, _resPool] spawn SCRT_fnc_common_paradropVehicle}, 20
+                ];
+            } else {
+                call selectRandomWeighted [
+                    {[_vehicle, _crewGroup, _cargoGroup, _posDestination, _posOrigin, _landPos] spawn A3A_fnc_combatLanding}, 80,
+                    {[_vehicle, _cargoGroup, _posDestination, _posOrigin, _crewGroup] spawn A3A_fnc_fastrope}, 20
+                ];
+            };
         } else {
             if (_vtol) then {
                 call selectRandomWeighted [
@@ -66,7 +80,7 @@ if (_vehicle isKindOf "Air" || _vehType in FactionGet(all, "vehiclesDropPod")) t
     };
     if (_vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack")) exitWith 
     {   //Attack helicopter
-        _landPosAttackheli = [_posDestination, 400, 800, (sizeOf _vehType) / 2, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
+        _landPosAttackheli = [_posDestination, 400, 800, (sizeOf _vehType) / 1.35, 0, 0.12, 0, [], [[0,0,0],[0,0,0]]] call BIS_fnc_findSafePos;
         private _posOrigin = getMarkerPos _markerOrigin;
         _posOrigin set [2, 50];
 
