@@ -492,7 +492,7 @@
     class A3U_Invaders_Vehicle_Basic : A3U_Vehicle_Car_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Basic;
@@ -559,7 +559,7 @@
     class A3U_Invaders_Vehicle_APC : A3U_Vehicle_APC_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_LightAPC;
@@ -581,7 +581,7 @@
     class A3U_Invaders_Vehicle_Tank : A3U_Vehicle_Tank_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Tank;
@@ -595,7 +595,7 @@
     class A3U_Invaders_Vehicle_TransportBoat : A3U_Vehicle_Ship_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_TransportBoat;
@@ -609,7 +609,7 @@
     class A3U_Invaders_Vehicle_LightHeli : A3U_Vehicle_Heli_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Pilot";
+        //crew = "A3U_Invaders_Other_Pilot";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_LightHeli;
@@ -631,7 +631,7 @@
 	class A3U_Invaders_Vehicle_CASPlane : A3U_Vehicle_Plane_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Pilot";
+        //crew = "A3U_Invaders_Other_Pilot";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_CASPlane;
@@ -649,7 +649,7 @@
     class A3U_Invaders_Vehicle_StaticMG : A3U_Vehicle_StaticWeapon_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_StaticMG;
@@ -667,7 +667,7 @@
 	class A3U_Invaders_Vehicle_Mortar : A3U_Vehicle_StaticMortar_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Invaders_Other_Crew";
+        //crew = "A3U_Invaders_Other_Crew";
         faction = "A3U_Invaders";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Mortar;

@@ -120,7 +120,7 @@
     class A3U_Rebels_Vehicle_Basic : A3U_Vehicle_Car_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
         side = 2;
         displayName = $STR_A3U_Zeus_VehicleType_Basic;
@@ -159,7 +159,7 @@
 	class A3U_Rebels_Vehicle_Boat : A3U_Vehicle_Ship_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         displayName = $STR_A3U_Zeus_VehicleType_Boat;
         faction = "A3U_Rebels";
         side = 2;
@@ -173,7 +173,7 @@
 	class A3U_Rebels_Vehicle_CivHeli : A3U_Vehicle_Heli_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         displayName = $STR_A3U_Zeus_VehicleType_CivHeli;
         faction = "A3U_Rebels";
 		side = 2;
@@ -183,7 +183,7 @@
 	class A3U_Rebels_Vehicle_Plane : A3U_Vehicle_Plane_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         displayName = $STR_A3U_Zeus_VehicleType_Plane;
         faction = "A3U_Rebels";
 		side = 2;
@@ -198,7 +198,7 @@
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3U_Zeus_VehicleType_StaticMG;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
 		side = 2;
         GVAR(vehFaction) = QUOTE(reb);
@@ -216,7 +216,7 @@
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3U_Zeus_VehicleType_Mortar;
-		crew = "A3U_Rebels_staticCrew";
+		//crew = "A3U_Rebels_staticCrew";
         faction = "A3U_Rebels";
 		side = 2;
         GVAR(vehFaction) = QUOTE(reb);

@@ -356,5 +356,13 @@
                 <Original>Mortar Team</Original>
             </Key>
         </Container>
+        <Container name="Misc">
+            <Key ID="STR_A3U_Zeus_Misc_Dialog_Header">
+                <Original>Zeus Additions for Antistasi Ultimate</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType">
+                <Original>Faction %1 has no vehicles of type %2</Original>
+            </Key>
+        </Container>
     </Package>
 </Project>

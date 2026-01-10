@@ -51,7 +51,7 @@
     class A3U_Civilians_Vehicle_Car : A3U_Vehicle_Car_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Civilians_Man";
+		//crew = "A3U_Civilians_Man";
         faction = "A3U_Civilians";
         side = 3;
         GVAR(vehFaction) = QUOTE(civ);
@@ -73,7 +73,7 @@
 	class A3U_Civilians_Vehicle_Boat : A3U_Vehicle_Ship_Base {
         scope = 2;
         scopeCurator = 2;
-		crew = "A3U_Civilians_Man";
+		//crew = "A3U_Civilians_Man";
         displayName = $STR_A3U_Zeus_VehicleType_CivBoat;
         faction = "A3U_Civilians";
         side = 3;

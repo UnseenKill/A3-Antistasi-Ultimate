@@ -126,7 +126,7 @@
     class A3U_Rivals_Vehicle_LightUnarmed : A3U_Vehicle_Car_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Rivals_Crew";
+        //crew = "A3U_Rivals_Crew";
         faction = "A3U_Rivals";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_LightUnarmed;
@@ -144,7 +144,7 @@
     class A3U_Rivals_Vehicle_APC : A3U_Vehicle_APC_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Rivals_Crew";
+        //crew = "A3U_Rivals_Crew";
         faction = "A3U_Rivals";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_APC;
@@ -154,7 +154,7 @@
     class A3U_Rivals_Vehicle_Tank : A3U_Vehicle_Tank_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Rivals_Crew";
+        //crew = "A3U_Rivals_Crew";
         faction = "A3U_Rivals";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Tank;
@@ -164,7 +164,7 @@
     class A3U_Rivals_Vehicle_Heli : A3U_Vehicle_Heli_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Rivals_Pilot";
+        //crew = "A3U_Rivals_Pilot";
         faction = "A3U_Rivals";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_Heli;
@@ -174,7 +174,7 @@
     class A3U_Rivals_Vehicle_StaticWpn : A3U_Vehicle_StaticWeapon_Base {
         scope = 2;
         scopeCurator = 2;
-        crew = "A3U_Rivals_Crew";
+        //crew = "A3U_Rivals_Crew";
         faction = "A3U_Rivals";
         side = 0;
         displayName = $STR_A3U_Zeus_VehicleType_StaticWpn;
@@ -185,7 +185,7 @@
         scope = 2;
         scopeCurator = 2;
         displayName = $STR_A3U_Zeus_VehicleType_Mortar;
-        crew = "A3U_Rivals_Crew";
+        //crew = "A3U_Rivals_Crew";
         faction = "A3U_Rivals";
         side = 0;
         GVAR(vehFaction) = QUOTE(riv);
