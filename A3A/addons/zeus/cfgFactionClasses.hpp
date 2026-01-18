@@ -1,6 +1,6 @@
 class CfgFactionClasses
 {
-	class A3U_Rebels
+	class GVAR(Rebels)
 	{
 		displayName = $STR_A3U_Zeus_Faction_Rebels;
 		side = 2;
@@ -8,7 +8,7 @@ class CfgFactionClasses
 		//icon = "\A3A\addons\ultimate\data\rebellion_icon.paa";
 		priority = 1;
 	};
-	class A3U_Occupants
+	class GVAR(Occupants)
 	{
 		displayName = $STR_A3U_Zeus_Faction_Occupants;
 		side = 1;
@@ -16,7 +16,7 @@ class CfgFactionClasses
 		//icon = "\A3A\addons\ultimate\data\civ_icon.paa";
 		priority = 1;
 	};
-	class A3U_Invaders
+	class GVAR(Invaders)
 	{
 		displayName = $STR_A3U_Zeus_Faction_Invaders;
 		side = 0;
@@ -24,7 +24,7 @@ class CfgFactionClasses
 		//icon = "\A3A\addons\ultimate\data\invaders_icon.paa";
 		priority = 1;
 	};
-	class A3U_Rivals
+	class GVAR(Rivals)
 	{
 		displayName = $STR_A3U_Zeus_Faction_Rivals;
 		side = 0;
@@ -32,7 +32,7 @@ class CfgFactionClasses
 		//icon = "\A3A\addons\ultimate\data\rivals_icon.paa";
 		priority = 1;
 	};
-	class A3U_Civilians
+	class GVAR(Civilians)
 	{
 		displayName = $STR_A3U_Zeus_Faction_Civilians;
 		side = 3;

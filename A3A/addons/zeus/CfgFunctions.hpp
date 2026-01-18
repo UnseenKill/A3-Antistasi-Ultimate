@@ -1,12 +1,12 @@
 class CfgFunctions
 {
-    class A3U
+    class ADDON
     {
         class functions
         {
             file = QPATHTOFOLDER(functions);
-            class zeus_unitInit {};
-            class zeus_vehicleInit {};
+            class unitInit {};
+            class vehicleInit {};
         };
     };
 };

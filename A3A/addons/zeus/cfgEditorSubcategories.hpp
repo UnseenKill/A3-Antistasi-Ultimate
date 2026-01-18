@@ -1,27 +1,27 @@
 class CfgEditorSubcategories
 {
-	class A3U_Militia
+	class GVAR(Militia)
 	{
-		displayName = $STR_A3U_Zeus_Category_Militia;
+		displayName = $STR_A3U_Zeus_Category_Men_Militia;
 	};
-	class A3U_Military
+	class GVAR(Military)
 	{
-		displayName = $STR_A3U_Zeus_Category_Military;
+		displayName = $STR_A3U_Zeus_Category_Men_Military;
 	};
-	class A3U_Elite
+	class GVAR(Elite)
 	{
-		displayName = $STR_A3U_Zeus_Category_Elite;
+		displayName = $STR_A3U_Zeus_Category_Men_Elite;
 	};
-	class A3U_SpecialForces
+	class GVAR(SpecialForces)
 	{
-		displayName = $STR_A3U_Zeus_Category_SpecialForces;
+		displayName = $STR_A3U_Zeus_Category_Men_SpecialForces;
 	};
-	class A3U_Police
+	class GVAR(Police)
 	{
-		displayName = $STR_A3U_Zeus_Category_Police;
+		displayName = $STR_A3U_Zeus_Category_Men_Police;
 	};
-	class A3U_Other
+	class GVAR(Other)
 	{
-		displayName = $STR_A3U_Zeus_Category_Other;
+		displayName = $STR_A3U_Zeus_Category_Men_Other;
 	};
 };

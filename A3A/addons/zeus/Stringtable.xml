@@ -19,22 +19,22 @@
             </Key>
         </Container>
         <Container name="Categories">
-            <Key ID="STR_A3U_Zeus_Category_Militia">
+            <Key ID="STR_A3U_Zeus_Category_Men_Militia">
                 <Original>Men (Militia)</Original>
             </Key>
-            <Key ID="STR_A3U_Zeus_Category_Military">
+            <Key ID="STR_A3U_Zeus_Category_Men_Military">
                 <Original>Men (Military)</Original>
             </Key>
-            <Key ID="STR_A3U_Zeus_Category_Elite">
+            <Key ID="STR_A3U_Zeus_Category_Men_Elite">
                 <Original>Men (Elite)</Original>
             </Key>
-            <Key ID="STR_A3U_Zeus_Category_SpecialForces">
+            <Key ID="STR_A3U_Zeus_Category_Men_SpecialForces">
                 <Original>Men (Special Forces)</Original>
             </Key>
-            <Key ID="STR_A3U_Zeus_Category_Police">
+            <Key ID="STR_A3U_Zeus_Category_Men_Police">
                 <Original>Men (Police)</Original>
             </Key>
-            <Key ID="STR_A3U_Zeus_Category_Other">
+            <Key ID="STR_A3U_Zeus_Category_Men_Other">
                 <Original>Men (Other)</Original>
             </Key>
         </Container>

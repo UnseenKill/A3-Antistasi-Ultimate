@@ -1,6 +1,6 @@
 #define BOOL_CREW_VEHICLE ([ARR_2(true,cbChecked ((findDisplay 312) displayCtrl 25460))] select (isClass (configFile >> QUOTE(QUOTE(CfgPatches)) >> QUOTE(QUOTE(zen_common)))))
-#define UNIT_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(unitFaction)),getText(configOf(_this#0) >> QQGVAR(unitPrefix)),getText(configOf(_this#0) >> QQGVAR(unitType)))] call A3U_fnc_zeus_unitInit)
-#define VEH_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)),BOOL_CREW_VEHICLE)] call A3U_fnc_zeus_vehicleInit)
+#define UNIT_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(unitFaction)),getText(configOf(_this#0) >> QQGVAR(unitPrefix)),getText(configOf(_this#0) >> QQGVAR(unitType)))] call FUNC(unitInit))
+#define VEH_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)),BOOL_CREW_VEHICLE)] call FUNC(vehicleInit))
 
 class CfgVehicles {
     // Base classes
@@ -11,7 +11,7 @@ class CfgVehicles {
     class Car_F : Car {
         class EventHandlers;
     };
-    class A3U_Vehicle_Car_Base : Car_F {
+    class GVAR(Vehicle_Car_Base) : Car_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Cars";
@@ -25,7 +25,7 @@ class CfgVehicles {
     class APC_F : APC {
         class EventHandlers;
     };
-    class A3U_Vehicle_APC_Base : APC_F {
+    class GVAR(Vehicle_APC_Base) : APC_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_APCs";
@@ -39,7 +39,7 @@ class CfgVehicles {
     class Tank_F : Tank {
         class EventHandlers;
     };
-    class A3U_Vehicle_Tank_Base : Tank_F {
+    class GVAR(Vehicle_Tank_Base) : Tank_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Tanks";
@@ -53,7 +53,7 @@ class CfgVehicles {
     class Ship_F : Ship {
         class EventHandlers;
     };
-    class A3U_Vehicle_Ship_Base : Ship_F {
+    class GVAR(Vehicle_Ship_Base) : Ship_F {
         scope = 1;
         scopeCurator = 1;
 		editorSubcategory = "EdSubcat_Boats";
@@ -67,7 +67,7 @@ class CfgVehicles {
     class Helicopter_F : Helicopter {
         class EventHandlers;
     };
-    class A3U_Vehicle_Heli_Base : Helicopter_F {
+    class GVAR(Vehicle_Heli_Base) : Helicopter_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Helicopters";
@@ -81,7 +81,7 @@ class CfgVehicles {
     class Plane_Base_F : Plane {
         class EventHandlers;
     };
-    class A3U_Vehicle_Plane_Base : Plane_Base_F {
+    class GVAR(Vehicle_Plane_Base) : Plane_Base_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Planes";
@@ -95,7 +95,7 @@ class CfgVehicles {
     class StaticWeapon_F : StaticWeapon {
         class EventHandlers;
     };
-    class A3U_Vehicle_StaticWeapon_Base : StaticWeapon_F {
+    class GVAR(Vehicle_StaticWeapon_Base) : StaticWeapon_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";
@@ -109,7 +109,7 @@ class CfgVehicles {
     class StaticMortar_F : StaticMortar {
         class EventHandlers;
     };
-    class A3U_Vehicle_StaticMortar_Base : StaticMortar_F {
+    class GVAR(Vehicle_StaticMortar_Base) : StaticMortar_F {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";

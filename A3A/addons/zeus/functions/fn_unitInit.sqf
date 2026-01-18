@@ -22,7 +22,7 @@
 	
 	Usage:
 		Only intended to be called from the PostInit event handler of Zeus-spawned A3U vehicles.
-		[_unit, "occ", "military", "Rifleman"] call A3U_fnc_zeus_unitInit;
+		[_unit, "occ", "military", "Rifleman"] call A3U_zeus_fnc_unitInit;
 	
 	Return:
 		Nothing
