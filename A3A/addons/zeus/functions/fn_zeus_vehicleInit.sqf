@@ -9,6 +9,7 @@
 		_emptyVeh <OBJ> : The empty vehicle placeholder spawned by Zeus, replace with an appropriate vehicle from the faction template.
 		_vehFaction <STR> : The faction of the vehicle to spawn.
 		_vehType <STR> : The type of vehicle to spawn.
+		_withCrew <BOOL> : Whether to spawn AI crew in the vehicle.
 	
 	Dependencies:
 		A3A\addons\core\functions\CREATE\fn_AIVEHinit
@@ -33,7 +34,7 @@ FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {}; // ! on dedicated, code is run on the server and all clients, (re)creating the actual vehicle for every client and blowing them all up
 
-params ["_emptyVeh", "_vehFaction", "_vehType"];
+params ["_emptyVeh", "_vehFaction", "_vehType", ["_withCrew", true]];
 
 private _faction = missionNamespace getVariable ("A3A_Faction_" + _vehFaction);
 if (isNil "_faction") exitWith {};
@@ -62,6 +63,6 @@ private _side = switch (_vehFaction) do {
 };
 if (isNil "_side") exitWith {};
 [_veh, _side] call A3A_fnc_AIVEHinit;
-private _group = [_side, _veh] call A3A_fnc_createVehicleCrew;
+if (_withCrew) then { [_side, _veh] call A3A_fnc_createVehicleCrew };
 
 { _x addCuratorEditableObjects [[_veh] + crew _veh, true] } forEach (allCurators); // QoL; required since the vehicle wasn't technically spawned by Zeus (_emptyVeh was)

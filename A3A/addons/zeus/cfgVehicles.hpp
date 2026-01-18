@@ -1,5 +1,6 @@
+#define BOOL_CREW_VEHICLE ([ARR_2(true,cbChecked ((findDisplay 312) displayCtrl 25460))] select (isClass (configFile >> QUOTE(QUOTE(CfgPatches)) >> QUOTE(QUOTE(zen_common)))))
 #define UNIT_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(unitFaction)),getText(configOf(_this#0) >> QQGVAR(unitPrefix)),getText(configOf(_this#0) >> QQGVAR(unitType)))] call A3U_fnc_zeus_unitInit)
-#define VEH_INIT_HANDLER QUOTE([ARR_3(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)))] call A3U_fnc_zeus_vehicleInit)
+#define VEH_INIT_HANDLER QUOTE([ARR_4(_this#0,getText(configOf(_this#0) >> QQGVAR(vehFaction)),getText(configOf(_this#0) >> QQGVAR(vehType)),BOOL_CREW_VEHICLE)] call A3U_fnc_zeus_vehicleInit)
 
 class CfgVehicles {
     // Base classes
