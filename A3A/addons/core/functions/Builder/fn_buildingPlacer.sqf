@@ -15,6 +15,12 @@ Example:
 [player, 100] call A3A_fnc_buildingPlacer.sqf
 */
 
+#if __A3_DEBUG__
+    #define __SHOW_OBJECT_ALIGN_HELPERS__ true
+#else
+    #define __SHOW_OBJECT_ALIGN_HELPERS__ false
+#endif
+
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
@@ -244,6 +250,74 @@ A3A_building_EHDB set[USER_ACTION_EHS, _userActions apply {
     [_actionName, _eventType, addUserActionEventHandler[_actionName, _eventType, _callback]];
 }];
 
+private _showObjectAlignHelpers = __SHOW_OBJECT_ALIGN_HELPERS__ || 
+    // Set this in console to force showing building place helpers
+    { missionNamespace getVariable[QGVAR(debugBuildingPlacerHelpers), false] };
+
+GVAR(fncObjectAlignHelpers) = if !(_showObjectAlignHelpers) then {
+    {};
+} else {
+    {
+        params["_vehiclePos","_vehicleVectorUp"];
+        private _lineLength = 4;
+        private _perpendicularPlaneOffset = [0,0,3];
+
+        // *** Surface normal vector (yellow) ***
+        drawLine3D[_vehiclePos vectorAdd _perpendicularPlaneOffset, _vehiclePos vectorAdd (_vehicleVectorUp vectorMultiply 5) vectorAdd _perpendicularPlaneOffset, [1,1,0,1], 8];
+
+        // *** Surface intersection debug lines (green) ***
+        drawLine3D[_vehiclePos vectorAdd ([1,1,0] vectorMultiply _lineLength), _vehiclePos vectorAdd ([-1,-1,0] vectorMultiply _lineLength), [0,1,0,1], 8];
+        drawLine3D[_vehiclePos vectorAdd ([-1,1,0] vectorMultiply _lineLength), _vehiclePos vectorAdd ([1,-1,0] vectorMultiply _lineLength), [0,1,0,1], 8];
+
+        // *** Surface intersection without normal translation, 1m above intersection point (cyan) ***
+        drawLine3D[_vehiclePos vectorAdd ([1,1,1] vectorMultiply _lineLength), _vehiclePos vectorAdd ([-1,-1,1] vectorMultiply _lineLength), [0,1,1,1], 8];
+        drawLine3D[_vehiclePos vectorAdd ([-1,1,1] vectorMultiply _lineLength), _vehiclePos vectorAdd ([1,-1,1] vectorMultiply _lineLength), [0,1,1,1], 8];
+
+        // *** Lines perpendicular to surface (blue) ***
+        // Convert Lines to Direction Vectors
+        private _L1 = [[-1,0,0] vectorMultiply _lineLength, [1,0,0] vectorMultiply _lineLength];
+        private _L2 = [[0,-1,0] vectorMultiply _lineLength, [0,1,0] vectorMultiply _lineLength];
+        private _D1 = vectorNormalized((_L1 select 1) vectorAdd ((_L1 select 0) vectorMultiply -1));
+        private _D2 = vectorNormalized((_L2 select 1) vectorAdd ((_L2 select 0) vectorMultiply -1));
+        private _Zt = vectorNormalized _vehicleVectorUp;
+        // Build Target Orthonormal Basis
+        private _temp = [[0,1,0], [1,0,0]] select(abs(_Zt select 0) < 0.9);
+        private _Xt = vectorNormalized(_Zt vectorCrossProduct _temp);
+        private _Yt = _Zt vectorCrossProduct _Xt;
+        // ^ Target frame: (Xt, Yt, Zt)
+
+        // Build Source Orthonormal Basis from the X Shape
+        private _Xs = _D1;
+        private _Zs = vectorNormalized(_D1 vectorCrossProduct _D2);
+        private _Ys = _Zs vectorCrossProduct _Xs;
+        // ^ Source frame: (Xs, Ys, Zs)
+
+        // Compute Rotation Matrix from Source to Target
+        private _Ms = [_Xs, _Ys, _Zs];
+        private _Mt = [_Xt, _Yt, _Zt];
+        private _R = _Mt matrixMultiply matrixTranspose _Ms;
+
+        private _L1r = [_R matrixMultiply [_L1 select 0], _R matrixMultiply [_L1 select 1]];
+        private _L2r = [_R matrixMultiply [_L2 select 0], _R matrixMultiply [_L2 select 1]];
+
+        private _L1A_r = _vehiclePos vectorAdd _perpendicularPlaneOffset vectorAdd flatten(_R matrixMultiply [[_L1 select 0 select 0], [_L1 select 0 select 1], [_L1 select 0 select 2]]);
+        private _L1B_r = _vehiclePos vectorAdd _perpendicularPlaneOffset vectorAdd flatten(_R matrixMultiply [[_L1 select 1 select 0], [_L1 select 1 select 1], [_L1 select 1 select 2]]);
+        private _L2A_r = _vehiclePos vectorAdd _perpendicularPlaneOffset vectorAdd flatten(_R matrixMultiply [[_L2 select 0 select 0], [_L2 select 0 select 1], [_L2 select 0 select 2]]);
+        private _L2B_r = _vehiclePos vectorAdd _perpendicularPlaneOffset vectorAdd flatten(_R matrixMultiply [[_L2 select 1 select 0], [_L2 select 1 select 1], [_L2 select 1 select 2]]);
+
+        drawLine3D[_L1A_r, _L1B_r, [0,0,1,1], 8];
+        drawLine3D[_L2A_r, _L2B_r, [0,0,1,1], 8];
+
+        // Vertical line (red)
+        drawLine3D[
+            [_vehiclePos select 0, _vehiclePos select 1, 100],
+            [_vehiclePos select 0, _vehiclePos select 1, 0],
+            [1,0,0,1],
+            8
+        ];
+    };
+};
+
 private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private _stateChange = false;
     private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
@@ -308,6 +382,8 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
         if (count _intersects > 0) then {
             _vehiclePos = ASLtoAGL (_intersects select 0 select 0);
             _vehicleVectorUp = _intersects select 0 select 1;
+
+            [_vehiclePos, _vehicleVectorUp] call GVAR(fncObjectAlignHelpers);
 
             _stateChange = true;
         };
