@@ -45,7 +45,8 @@ private _light = [
 	getNumber(_config >> "intensity"),
 	[false, true] select(getNumber(_config >> "useFlare")),
 	getNumber(_config >> "flareSize"),
-	getNumber(_config >> "flareMaxDistance")
+	getNumber(_config >> "flareMaxDistance"),
+	[false, true] select(getNumber(_config >> "dayLight"))
 ] call FUNCMAIN(attachLight);
 
 _object setVariable[QGVAR(ChemLite_LiteSource), _light];

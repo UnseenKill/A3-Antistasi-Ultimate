@@ -15,6 +15,7 @@ Optional:
     4: _useFlare - Whether to use flare effect <BOOL> (default: false)
     5: _flareSize - Size of the flare <NUMBER> (default: 0)
     6: _flareDistance - Maximum distance of the flare <NUMBER> (default: 0)
+    7: _showInDaylight - Whether the light is visible in daylight <BOOL> (default: false)
 
 Example:
     (begin example)
@@ -43,9 +44,11 @@ if !assert(!isNull _object) exitWith {};
 private _useFlare = param[4, false, [false]];
 private _flareSize = param[5, 0, [0]];
 private _flareDistance = param[6, 0, [0]];
+private _showInDaylight = param[7, false, [false]];
 
 private _light = '#lightpoint' createVehicleLocal[0,0,0];
 
+_light setLightDayLight _showInDaylight;
 _light setLightColor _lightColor;
 _light setLightAmbient _lightAmbient;
 _light setLightUseFlare _useFlare;
