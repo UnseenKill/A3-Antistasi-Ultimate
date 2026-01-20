@@ -241,6 +241,48 @@ private _userActions = [
 
             _shiftText ctrlSetTextColor ([[1, 1, 1, 1], [1, 0, 0, 1]] select (A3A_building_EHDB get UNSAFE_MODE));
         }
+    ],
+    [
+        QGVAR(buildingPlacerZOffsetDecrease),
+        EVENT_TYPE_ACTIVATE,
+        {
+            A3A_building_EHDB set [Z_OFFSET_MODE_DECREASE, true];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerZOffsetDecrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [Z_OFFSET_MODE_DECREASE, false];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerZOffsetIncrease),
+        EVENT_TYPE_ACTIVATE,
+        {
+            A3A_building_EHDB set [Z_OFFSET_MODE_INCREASE, true];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerZOffsetIncrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            A3A_building_EHDB set [Z_OFFSET_MODE_INCREASE, false];
+        }
+    ],
+    [
+        QGVAR(buildingPlacerZStepDecrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            [-1] call (A3A_building_EHDB get Z_OFFSET_STEP_FUNC);
+        }
+    ],
+    [
+        QGVAR(buildingPlacerZStepIncrease),
+        EVENT_TYPE_DEACTIVATE,
+        {
+            [1] call (A3A_building_EHDB get Z_OFFSET_STEP_FUNC);
+        }
     ]
 ];
 
@@ -371,7 +413,17 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 
         private _direction = (A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR) + _multiplier * _delta;
         A3A_building_EHDB set [BUILD_OBJECT_TEMP_DIR, _direction];
-        _object setDir _direction;
+
+        _stateChange = true;
+    };
+
+    if ((A3A_building_EHDB get Z_OFFSET_MODE_DECREASE) || { A3A_building_EHDB get Z_OFFSET_MODE_INCREASE }) then {
+        private _multiplier = [-1, 1] select (A3A_building_EHDB get Z_OFFSET_MODE_INCREASE);
+        private _delta = diag_deltaTime * (A3A_building_EHDB get Z_OFFSET_STEP);
+        private _offset = A3A_building_EHDB get Z_OFFSET_VALUE;
+        _offset = _offset + _multiplier * _delta;
+        A3A_building_EHDB set [Z_OFFSET_VALUE, _offset];
+
         _stateChange = true;
     };
 
@@ -407,8 +459,8 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     // Object render state update
     if (!_stateChange) exitWith {};
 
-    _object setPosATL _vehiclePos;
-    _object setDir (A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR);
+    _object setPosATL(_vehiclePos vectorAdd [0, 0, A3A_building_EHDB get Z_OFFSET_VALUE]);
+    _object setDir(A3A_building_EHDB get BUILD_OBJECT_TEMP_DIR);
 
     private _normal = switch true do {
         case !(isNil "_vehicleVectorUp"): {

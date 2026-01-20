@@ -30,6 +30,30 @@ A3A_building_EHDB = createHashMapFromArray[
     [ROTATION_MODE_CW, false],
     // ROTATION_MODE_CCW -
     [ROTATION_MODE_CCW, false],
+	// Z_OFFSET_VALUE -
+	[Z_OFFSET_VALUE, 0],
+	// Z_OFFSET_MODE_DECREASE -
+	[Z_OFFSET_MODE_DECREASE, false],
+	// Z_OFFSET_MODE_INCREASE -
+	[Z_OFFSET_MODE_INCREASE, false],
+	// Z_OFFSET_STEP -
+	[Z_OFFSET_STEP, 0.1],
+	// Z_OFFSET_STEP_FUNC
+	[Z_OFFSET_STEP_FUNC, {
+		params[["_direction", 1, [0]]];
+
+		private _steps = [0.1, 0.2, 0.5, 1, 2, 4, 8, 16];
+		private _stepping = A3A_building_EHDB get Z_OFFSET_STEP;
+		private _index = (_steps find _stepping) + _direction;
+		private _newIndex = switch true do {
+			case (_index < 0): { count(_steps) - 1 };
+			case (_index >= count _steps): { 0 };
+			default { _index };
+		};
+
+		A3A_building_EHDB set [Z_OFFSET_STEP, _steps#_newIndex];
+		systemChat format["Z-Offset move speed changed to %1x", _steps#_newIndex];
+	}],
     // GUI_BUTTON_PRESSED -
     [GUI_BUTTON_PRESSED, false],
     // UNSAFE_MODE -
