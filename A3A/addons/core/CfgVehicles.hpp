@@ -200,9 +200,14 @@ class CfgVehicles
     };
 
     class GVAR(Box_BuildingPlacer_Decorations): Box_NATO_Uniforms_F {
-        displayName = "Decorations Box";
+        displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations";
 
         class TransportItems {};
+        /* Generator property:
+        
+        GVAR(buildableObjectsCode) = QUOTE((_this select 0) pushBack[ARR_2(QQUOTE(Land_Portable_generator_F),200)]);
+
+         */
         GVAR(buildableObjects)[] = {
             {"Land_CampingChair_V2_white_F", 25},
             {"Land_CampingTable_F", 50},
@@ -216,7 +221,15 @@ class CfgVehicles
             {"Land_Portable_generator_F", 200},
             {"Land_SatellitePhone_F", 120},
             {"Land_TentLamp_01_suspended_red_F", 80},
-            {"Land_TentLamp_01_suspended_F", 80},
+            {"Land_TentLamp_01_suspended_F", 80}
+        };
+    };
+
+    class GVAR(Box_BuildingPlacer_Chemlights): Box_NATO_Uniforms_F {
+        displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights";
+
+        class TransportItems {};
+        GVAR(buildableObjects)[] = {
             {QGVAR(Chemlight_Red), 15},
             {QGVAR(Chemlight_Green), 15},
             {QGVAR(Chemlight_Blue), 15},
@@ -225,14 +238,18 @@ class CfgVehicles
             {QGVAR(Chemlight_Orange), 15},
             {QGVAR(Chemlight_Yellow), 15},
             {QGVAR(Chemlight_White), 15},
-            {QGVAR(Chemlight_WarmWhite), 15}
+            {QGVAR(Chemlight_WarmWhite), 15},
+
+            {QGVAR(Chemlight_Red_Flare), 15},
+            {QGVAR(Chemlight_Green_Flare), 15},
+            {QGVAR(Chemlight_Blue_Flare), 15},
+            {QGVAR(Chemlight_Cyan_Flare), 15},
+            {QGVAR(Chemlight_Purple_Flare), 15},
+            {QGVAR(Chemlight_Orange_Flare), 15},
+            {QGVAR(Chemlight_Yellow_Flare), 15},
+            {QGVAR(Chemlight_White_Flare), 15},
+            {QGVAR(Chemlight_WarmWhite_Flare), 15}
         };
-
-        /* Generator property:
-        
-        GVAR(buildableObjectsCode) = QUOTE((_this select 0) pushBack[ARR_2(QQUOTE(Land_Portable_generator_F),200)]);
-
-         */
     };
 
     class GVAR(Chemlight_Base): ThingX {
@@ -255,6 +272,14 @@ class CfgVehicles
 
         class EventHandlers {
             init = QUOTE(call FUNCMAIN(attachLightFromConfig));
+        };
+    };
+
+    class GVAR(Chemlight_Base_Flare): GVAR(Chemlight_Base) {
+        displayName = "Chemlight (Base, With lens flare)";
+
+        class LightParams : LightParams {
+            useFlare = 1;
         };
     };
 
@@ -333,6 +358,88 @@ class CfgVehicles
     class GVAR(Chemlight_WarmWhite): GVAR(Chemlight_Base) {
         scope = 1; // Deliberately not Zeus-visible
         displayName = "Chemlight (Warm White)";
+
+        class LightParams : LightParams {
+            color[] = {1, 0.65, 0.5};
+        };
+    };
+
+    // With-flare variants
+    class GVAR(Chemlight_Red_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Red, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {1, 0.08, 0.16};
+        };
+    };
+
+    class GVAR(Chemlight_Green_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Green, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {0.35, 1, 0.5};
+        };
+    };
+
+    class GVAR(Chemlight_Blue_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Blue, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {0.15, 0.25, 1};
+        };
+    };
+
+    class GVAR(Chemlight_Cyan_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Cyan, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {0.25, 0.8, 1};
+        };
+    };
+
+    class GVAR(Chemlight_Purple_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Purple, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {0.6, 0.25, 1};
+        };
+    };
+
+    class GVAR(Chemlight_Orange_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Orange, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {1, 0.64, 0};
+        };
+    };
+
+    class GVAR(Chemlight_Yellow_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Yellow, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {1, 0.8, 0.25};
+        };
+    };
+
+    class GVAR(Chemlight_White_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (White, lens flare)";
+
+        class LightParams : LightParams {
+            color[] = {1, 1, 1};
+        };
+    };
+
+    class GVAR(Chemlight_WarmWhite_Flare): GVAR(Chemlight_Base_Flare) {
+        scope = 1; // Deliberately not Zeus-visible
+        displayName = "Chemlight (Warm White, lens flare)";
 
         class LightParams : LightParams {
             color[] = {1, 0.65, 0.5};

@@ -42,7 +42,8 @@ _items append [
     ["Land_PlasticCase_01_medium_black_F", 500, "Build Box (Small)", "", ["place", "move", "build"]],
     ["A3AU_Build_Box_Large_1", 2500, "Build Box (Medium)", "", ["place", "move", "build"]],
     ["Land_PlasticCase_01_large_black_F", 5000, "Build Box (Large)", "", ["place", "move", "build"]],
-    [QGVAR(Box_BuildingPlacer_Decorations), 500, "Decoration Box", "", ["place", "move", "build"]]
+    [QGVAR(Box_BuildingPlacer_Decorations), 500, localize "STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations", "", ["place", "move", "build"]],
+    [QGVAR(Box_BuildingPlacer_Chemlights), 500, localize "STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights", "", ["place", "move", "build"]]
     // TODO: get larger box from somewhere
 ];
 
