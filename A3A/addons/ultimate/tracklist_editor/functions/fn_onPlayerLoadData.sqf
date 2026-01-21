@@ -33,17 +33,15 @@ if (isNil QGVAR(tracks)) then {
 } else {
     Info("Loading saved playlist");
 
-    if !(GVAR(tracks) isEqualType []) then {
+    if !(GVAR(tracks) isEqualType createHashMap) then {
         Warning("Invalid playlist data type, initializing with config instead");
-        Trace_1("invalid value",GVAR(tracks));
+        Trace_2("invalid value",typeName GVAR(tracks),GVAR(tracks));
 
         GVAR(tracks) = false;
     };
 };
 
-if (GVAR(tracks) isNotEqualTo false) then {
-    GVAR(tracks) = createHashMapFromArray GVAR(tracks);
-} else {
+if (GVAR(tracks) isEqualTo false) then {
     GVAR(tracks) = createHashMap;
 
     ["Combat","Stealth","Night","Default"] apply {
