@@ -1,15 +1,15 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ADDON {
-        name = CSTRING(component);
+    class SUBADDON {
+        name = QUOTE(PREFIX - SUBADDON);
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"a3uspcm_main","a3uspcm_util"};
-        author = "$STR_A3USPCM_Author";
-        authors[] = {"goreSplatter"};
-        url = "$STR_A3USPCM_URL";
+        requiredAddons[] = {"A3A_ultimate"};
+        author = AUTHOR;
+        authors[] = { AUTHORS };
+        authorUrl = "";
         VERSION_CONFIG;
     };
 };
