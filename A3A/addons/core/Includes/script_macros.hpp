@@ -24,6 +24,9 @@
     #undef COMPILE_SCRIPT
     #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)']
 
+    #undef FUNC
+    #define FUNC(var1) TRIPLES(SUBADDON,fnc,var1)
+
     #undef PATHTOF
     #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT\SUBCOMPONENT,var1)
 #endif // SUBCOMPONENT
