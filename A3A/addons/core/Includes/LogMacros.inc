@@ -404,3 +404,8 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
     #define VerboseArrayFormat(Message, Frmat, Array)
     #define ServerVerboseArrayFormat(Message, Frmat, Array)
 #endif
+
+// This could be a rant about the POS code that's the garage and its heinous license model. But it's not.
+#if COMPONENT == "garage"
+    #define Info_1(Message, A) if (1 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_Message("Info", _msg) };
+#endif
