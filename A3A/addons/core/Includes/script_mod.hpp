@@ -41,5 +41,8 @@
 #define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
 
 #define EPATHTOFOLDER(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
+#define QEPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
+
 // Should akshually be called QEPATHTOFOLDER ...
-#define EQPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
+// Keep the typo so ~1000 files don't show up in PR
+#define EQPATHTOFOLDER QEPATHTOFOLDER
