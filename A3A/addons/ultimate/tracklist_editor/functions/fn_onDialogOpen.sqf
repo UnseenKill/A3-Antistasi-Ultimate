@@ -18,7 +18,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onDialogOpen),_this);
+Trace_1(QFUNC(onDialogOpen),_this);
 
 if !assert(params[
     ["_display", displayNull, [displayNull]]
@@ -139,7 +139,7 @@ _control ctrlAddEventHandler["LBSelChanged", {
         });
     };
 
-    TRACE_3(QFUNC(onDialogOpen),_this,_path,_valid);
+    Trace_3(QFUNC(onDialogOpen),_this,_path,_valid);
     _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNADDSELECTION ctrlEnable _valid;
 }];
 

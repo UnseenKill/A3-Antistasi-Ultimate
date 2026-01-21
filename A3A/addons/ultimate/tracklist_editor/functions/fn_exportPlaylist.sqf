@@ -18,7 +18,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(exportPlaylist),_this);
+Trace_1(QFUNC(exportPlaylist),_this);
 
 [true, "export"] call FUNC(toggleCopyPasteControl);
 

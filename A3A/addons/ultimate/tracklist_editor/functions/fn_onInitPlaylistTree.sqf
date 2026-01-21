@@ -20,7 +20,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(onInitPlaylistTree),_this);
+Trace_1(QFUNC(onInitPlaylistTree),_this);
 
 if !assert(params[
     ["_control", controlNull, [controlNull]],
@@ -72,13 +72,13 @@ _tree ctrlAddEventHandler["TreeSelChanged", {
     private _count = _tree tvCount[_path select 0];
     private _display = uiNamespace getVariable [QGVAR(menuDisplay), displayNull];
 
-    TRACE_3(QFUNC(onInitPlaylistTree),_path,_count,_data);
+    Trace_3(QFUNC(onInitPlaylistTree),_path,_count,_data);
 
     if (count _path isEqualTo 1) exitWith {
         _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNREMOVE ctrlEnable false;
     };
 
-    TRACE_2(QFUNC(onInitPlaylistTree),_count,REMEMBER_TRACKS);
+    Trace_2(QFUNC(onInitPlaylistTree),_count,REMEMBER_TRACKS);
     _display displayCtrl IDC_RSCA3USPCMTRACKLISTEDITORDIALOG_BTNREMOVE ctrlEnable(_count > REMEMBER_TRACKS);
 }];
 

@@ -23,7 +23,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(playTrack),_this);
+Trace_1(QFUNC(playTrack),_this);
 
 params[
     ["_track",nil,[""]],

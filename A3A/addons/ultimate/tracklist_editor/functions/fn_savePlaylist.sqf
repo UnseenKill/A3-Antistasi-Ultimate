@@ -18,7 +18,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(savePlaylist),_this);
+Trace_1(QFUNC(savePlaylist),_this);
 
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};
@@ -38,7 +38,7 @@ private _count = _tree tvCount[];
     }];
 };
 
-TRACE_1("save playlist",GVAR(tracks));
+Trace_1("save playlist",GVAR(tracks));
 
 closeDialog 0;
 nil;

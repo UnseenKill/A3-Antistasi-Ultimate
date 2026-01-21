@@ -20,7 +20,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(toggleCopyPasteControl),_this);
+Trace_1(QFUNC(toggleCopyPasteControl),_this);
 
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};

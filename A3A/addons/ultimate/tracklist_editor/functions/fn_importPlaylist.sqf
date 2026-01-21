@@ -19,7 +19,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(importPlaylist),_this);
+Trace_1(QFUNC(importPlaylist),_this);
 
 params[
     ["_doImport", false, [true]]
@@ -45,7 +45,7 @@ try {
     private _result = createHashMap;
     private _lineNo = 0;
 
-    TRACE_1("import version",_version);
+    Trace_1("import version",_version);
 
     if (_version isNotEqualTo '"1.0"') then { throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorVersion), _lineNo + 1] };
 
@@ -58,7 +58,7 @@ try {
 
         if (":" isEqualTo(_line select[0, 1])) then {
             _section = _line select[1];
-            TRACE_2("found section",_lineNo,_section);
+            Trace_2("found section",_lineNo,_section);
             continue;
         };
 
@@ -66,7 +66,7 @@ try {
 
         private _tracks = _result getOrDefault[_section, []];
         if !isClass(configFile >> "CfgMusic" >> _line) then {
-            WARNING_1("during import: '%1' is not a valid track",_line);
+            Warning_1("during import: '%1' is not a valid track",_line);
         } else {
             _tracks pushBackUnique _line;
             _result set[_section, _tracks];
@@ -77,18 +77,18 @@ try {
     private _resultKeys = keys _result;
 
     if ((_resultKeys - _needKeys) isNotEqualTo []) then {
-        WARNING_1("imported playlist has unknown sections: %1",_resultKeys-_needKeys);
+        Warning_1("imported playlist has unknown sections: %1",_resultKeys-_needKeys);
         throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionUnknown), (_resultKeys-_needKeys) joinString ", "];
     };
 
     _needKeys apply {
         if !(_x in _result) then {
-            WARNING_1("missing section '%1' in imported playlist",_x);
+            Warning_1("missing section '%1' in imported playlist",_x);
             throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionMissing), _x];
         };
 
         if (count(_result get _x) < REMEMBER_TRACKS) then {
-            WARNING_2("section '%1' has less than %2 tracks",_x,REMEMBER_TRACKS);
+            Warning_2("section '%1' has less than %2 tracks",_x,REMEMBER_TRACKS);
             throw format[localize LSTRING(RscA3USPCMTracklistEditorDialog_ImportErrorSectionTracks), _x, REMEMBER_TRACKS];
         };
     };

@@ -20,7 +20,7 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(music),_this);
+Trace_1(QFUNC(music),_this);
 
 if musicON then {
     [] call FUNC(playNextTrack);
