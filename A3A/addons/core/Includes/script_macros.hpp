@@ -14,6 +14,20 @@
 
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
 
+#ifndef SUBCOMPONENT
+    #undef COMPILE_FILE
+    #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+
+    #undef COMPILE_FILE_CFG
+    #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+
+    #undef COMPILE_SCRIPT
+    #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)']
+
+    #undef PATHTOF
+    #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT\SUBCOMPONENT,var1)
+#endif // SUBCOMPONENT
+
 #undef PREP
 #undef PREPSUB
 #define PREP(fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fn,fncName).sqf)
