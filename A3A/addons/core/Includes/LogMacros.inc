@@ -307,28 +307,26 @@ _LOG_breakUpLogLine(_LOG_logLine) remoteExec ["A3A_fnc_localLog", 2]; \
 #endif
 
 #ifdef Log_Trace
-    #define Trace(Message) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", Message) }
-    #define Trace_1(Message, A) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_Message("Trace", _msg) }
-    #define Trace_2(Message, A,B) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B]; _LOG_Message("Trace", _msg) }
-    #define Trace_3(Message, A,B,C) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C]; _LOG_Message("Trace", _msg) }
-    #define Trace_4(Message, A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D]; _LOG_Message("Trace", _msg) }
-    #define Trace_5(Message, A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E]; _LOG_Message("Trace", _msg) }
-    #define Trace_6(Message, A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F]; _LOG_Message("Trace", _msg) }
-    #define Trace_7(Message, A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F,G]; _LOG_Message("Trace", _msg) }
-    #define Trace_8(Message, A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F,G,H]; _LOG_Message("Trace", _msg) }
-    #define ServerTrace(Message) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", format [Message]) }
-    #define ServerTrace_1(Message, A) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_2(Message, A,B) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_3(Message, A,B,C) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_4(Message, A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_5(Message, A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_6(Message, A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_7(Message, A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F,G]; _LOG_ServerMessage("Trace", _msg) }
-    #define ServerTrace_8(Message, A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { private _msg = format [Message,A,B,C,D,E,F,G,H]; _LOG_ServerMessage("Trace", _msg) }
-    #define TraceArray(Message, Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
-    #define ServerTraceArray(Message, Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
-    #define TraceArrayFormat(Message, Frmat, Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
-    #define ServerTraceArrayFormat(Message, Frmat, Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
+    #define Trace_1(MESSAGE,A) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2',MESSAGE,RETNIL(A)]) }
+    #define Trace_2(MESSAGE,A,B) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3',MESSAGE,RETNIL(A),RETNIL(B)]) }
+    #define Trace_3(MESSAGE,A,B,C) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C)]) }
+    #define Trace_4(MESSAGE,A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4, D=%5',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D)]) }
+    #define Trace_5(MESSAGE,A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E)]) }
+    #define Trace_6(MESSAGE,A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F)]) }
+    #define Trace_7(MESSAGE,A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7, G=%8',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F),RETNIL(G)]) }
+    #define Trace_8(MESSAGE,A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7, G=%8, H=%9',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F),RETNIL(G),RETNIL(H)]) }
+    #define ServerTrace_1(MESSAGE,A) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2',MESSAGE,RETNIL(A)]) }
+    #define ServerTrace_2(MESSAGE,A,B) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3',MESSAGE,RETNIL(A),RETNIL(B)]) }
+    #define ServerTrace_3(MESSAGE,A,B,C) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C)]) }
+    #define ServerTrace_4(MESSAGE,A,B,C,D) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4, D=%5',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D)]) }
+    #define ServerTrace_5(MESSAGE,A,B,C,D,E) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E)]) }
+    #define ServerTrace_6(MESSAGE,A,B,C,D,E,F) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F)]) }
+    #define ServerTrace_7(MESSAGE,A,B,C,D,E,F,G) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7, G=%8',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F),RETNIL(G)]) }
+    #define ServerTrace_8(MESSAGE,A,B,C,D,E,F,G,H) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace",format['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7, G=%8, H=%9',MESSAGE,RETNIL(A),RETNIL(B),RETNIL(C),RETNIL(D),RETNIL(E),RETNIL(F),RETNIL(G),RETNIL(H)]) }
+    #define TraceArray(Message,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
+    #define ServerTraceArray(Message,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array joinString _LOG_newLine) + _LOG_newLine + "]")) }
+    #define TraceArrayFormat(Message,Frmat,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_Message("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
+    #define ServerTraceArrayFormat(Message,Frmat,Array) if (2 < VARDEF(LogLevel,4)) then { _LOG_ServerMessage("Trace", (Message + " [" + _LOG_newLine + (Array apply {format ([Frmat] + _x)} joinString _LOG_newLine) + _LOG_newLine + "]")) }
 #else
     #define Trace(Message)
     #define Trace_1(Message, A)
