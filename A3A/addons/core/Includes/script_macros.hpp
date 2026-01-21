@@ -1,5 +1,5 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
-#include "script_macros_undef.hpp"
+//#include "script_macros_undef.hpp"
 
 // Client-only event; after client initialization; params=[]
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX,event,clientInitDone))
@@ -27,8 +27,22 @@
     #undef FUNC
     #define FUNC(var1) TRIPLES(SUBADDON,fnc,var1)
 
+    #undef GVAR
+    #define GVAR(var1) DOUBLES(SUBADDON,var1)
+
+    #undef LOG_SYS_FORMAT
+    #define LOG_SYS_FORMAT(LEVEL,MESSAGE) format ['[%1] (%2) %3: %4', toUpper 'PREFIX', 'SUBADDON', LEVEL, MESSAGE]
+
     #undef PATHTOF
     #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT\SUBCOMPONENT,var1)
+
+    // Localization strings macros
+    #undef CSTRING
+    #define CSTRING(var1) QUOTE(TRIPLES($STR,SUBADDON,var1))
+    #undef LSTRING
+    #define LSTRING(var1) QUOTE(TRIPLES(STR,SUBADDON,var1))
+    #undef LLSTRING
+    #define LLSTRING(var1) (localize LSTRING(var1))
 #endif // SUBCOMPONENT
 
 #undef PREP
