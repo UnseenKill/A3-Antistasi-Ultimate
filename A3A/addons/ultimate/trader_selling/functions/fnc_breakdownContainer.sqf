@@ -7,9 +7,9 @@ Description:
 
 Parameters:
     0: _container - Inventory container <OBJECT>
+    1: _callback - Callback to execute after breakdown <CODE>
 
 Optional:
-    1: _callback - Callback to execute after breakdown <CODE>
 
 Example:
 
@@ -19,10 +19,10 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_container",objNull,[objNull]],
-    ["_callback",{},[{}]]
-];
+if !assert(params[
+    ["_container", objNull, [objNull]],
+    ["_callback", nil, [{}]]
+]) exitWith {};
 
 if !assert(!isNull _container) exitWith {};
 

@@ -18,7 +18,10 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[["_container",objNull,[objNull]], ["_player",objNull,[objNull]]];
+if !assert(params[
+    ["_container", objNull, [objNull]],
+    ["_player", objNull, [objNull]]
+]) exitWith { false };
 
 if !assert(!isNull _container) exitWith {false};
 if (!isNull _player && { !isNull objectParent _player }) exitWith {false};

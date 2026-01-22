@@ -19,9 +19,10 @@ Author:
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNC(onProtectItemClick),_this);
 
-params[
-    ["_control", controlNull, [controlNull]]
-];
+if !assert(params[
+    ["_control", nil, [controlNull]]
+]) exitWith {};
+if !assert(!isNull _control) exitWith {};
 
 private _display = uiNamespace getVariable[QGVAR(menuDisplay), displayNull];
 if !assert(!isNull _display) exitWith {};

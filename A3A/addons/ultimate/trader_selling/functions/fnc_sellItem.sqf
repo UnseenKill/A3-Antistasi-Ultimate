@@ -19,14 +19,15 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_class","",[""]],
-    ["_amount",0,[0]],
-    ["_price",0,[0,false]],
-    ["_itemIndex",0,[0]],
-    ["_items",[],[]],
-    ["_container",objNull,[objNull]]
-];
+if !assert(params[
+    ["_class", nil, [""]],
+    ["_amount", nil, [0]],
+    ["_price", nil, [0,false]],
+    ["_itemIndex", nil, [0]],
+    ["_items", nil, []],
+    ["_container", nil, [objNull]]
+]) exitWith {};
+if !assert(!isNull _container) exitWith {};
 
 private _item = _items select _itemIndex;
 private _class = _item get "class";

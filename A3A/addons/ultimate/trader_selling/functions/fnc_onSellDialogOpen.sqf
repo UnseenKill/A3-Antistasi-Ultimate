@@ -23,8 +23,9 @@ disableSerialization;
 
 Trace_1(QFUNC(onSellDialogOpen),_this);
 
-params[["_display",displayNull,[displayNull]]];
-
+if !assert(params[
+    ["_display", nil, [displayNull]]
+]) exitWith {};
 if !assert(!isNull _display) exitWith {};
 
 uiNamespace setVariable[QGVAR(menuDisplay), _display];
@@ -52,33 +53,25 @@ _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNCLOSE ctrlAddEventHandler[
 
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_EDITAMOUNT;
 _control ctrlEnable false;
-_control ctrlAddEventHandler["KeyUp", {
-    [] call FUNC(updateUiFromSelection);
-}];
+_control ctrlAddEventHandler["KeyUp", { [] call FUNC(updateUiFromSelection) }];
 
 // Sell button
 
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELL;
 _control ctrlEnable false;
-_control ctrlAddEventHandler["ButtonClick", {
-    call FUNC(onSellItemClick);
-}];
+_control ctrlAddEventHandler["ButtonClick", { call FUNC(onSellItemClick) }];
 
 // Sell all button
 
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNSELLALL;
 _control ctrlEnable false;
-_control ctrlAddEventHandler["ButtonClick", {
-    call FUNC(onSellAllClick);
-}];
+_control ctrlAddEventHandler["ButtonClick", { call FUNC(onSellAllClick) }];
 
 // Protect button
 
 _control = _display displayCtrl IDC_RSCA3USPCMSTORESELLDIALOG_BTNPROTECT;
 _control ctrlEnable false;
-_control ctrlAddEventHandler["ButtonClick", {
-    call FUNC(onProtectItemClick);
-}];
+_control ctrlAddEventHandler["ButtonClick", { call FUNC(onProtectItemClick) }];
 
 // Filter list
 

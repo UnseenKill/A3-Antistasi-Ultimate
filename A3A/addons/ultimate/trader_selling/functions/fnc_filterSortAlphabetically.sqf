@@ -16,9 +16,9 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[["_items",nil,[createHashMap]]];
-
-if !assert(!isNil "_items") exitWith {[]};
+if !assert(params[
+    ["_items", nil, [createHashMap]]
+]) exitWith {[]};
 
 private _sorted = [];
 

@@ -21,9 +21,9 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[
-    ["_class", "", [""]]
-];
+if !assert(params[
+    ["_class", nil, [""]]
+]) exitWith { [false, LSTRING(AdvSell_Reason_InvalidParameters)] };
 
 try {
     if (!GVAR(sellForbidden) && { _class in A3U_forbiddenItems }) then {

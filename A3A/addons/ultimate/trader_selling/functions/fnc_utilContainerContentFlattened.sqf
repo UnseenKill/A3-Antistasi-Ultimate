@@ -21,9 +21,10 @@ Returns:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-params[
+if !assert(params[
     ["_container", objNull, [objNull]]
-];
+]) exitWith { createHashMap };
+if !assert(!isNull _container) exitWith { createHashMap };
 
 private _toCollection = {
     params["_container"];
@@ -44,6 +45,7 @@ private _toCollection = {
         ADD_LOOKUP_MAG(5); // Secondary magazine
         ADD_LOOKUP(item,6); // Bipod
     };
+    #undef ADD_LOOKUP_MAG
     #undef ADD_LOOKUP
 
     _mc apply { _typeLookup set[_x, "magazine"]; };
@@ -67,10 +69,9 @@ flatten _collection select {
     private _item = _items getOrDefault[_x, createHashMapFromArray[
         ["count", 0],
         ["type", _typeLookup getOrDefault[_x, "unknown"]]
-    ]];
+    ], true];
 
     _item set["count", (_item get "count") + 1];
-    _items set[_x, _item];
 };
 
 _items;

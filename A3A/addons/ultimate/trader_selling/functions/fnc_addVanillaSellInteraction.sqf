@@ -26,7 +26,7 @@ Trace_1(QFUNC(addVanillaSellInteraction),_this);
 if (A3A_hasACE) exitWith {};
 
 if !assert(params[
-    ["_object",objNull,[objNull]]
+    ["_object", objNull, [objNull]]
 ]) exitWith {};
 
 if !assert(!isNull _object) exitWith {};

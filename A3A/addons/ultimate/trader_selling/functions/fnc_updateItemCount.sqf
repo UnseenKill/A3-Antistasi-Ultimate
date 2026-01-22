@@ -17,7 +17,12 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 Trace_1(QFUNC(updateItemCount),_this);
-params[["_control",controlNull,[controlNull]], ["_index",0,[0]]];
+
+if !assert(params[
+    ["_control", nil, [controlNull]],
+    ["_index", nil, [0]]
+]) exitWith {};
+if !assert(!isNull _control) exitWith {};
 
 if (_index < 0) exitWith {};
 
