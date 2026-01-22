@@ -14,15 +14,21 @@
 
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
 
-#ifdef SUBCOMPONENT
+#ifndef SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT COMPONENT
+    #define COMPONENT_PATH_FRAGMENT_F COMPONENT_F
+#else // SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT COMPONENT\SUBCOMPONENT
+    #define COMPONENT_PATH_FRAGMENT_F COMPONENT_F\SUBCOMPONENT
+
     #undef COMPILE_FILE
-    #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+    #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)
 
     #undef COMPILE_FILE_CFG
-    #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)
+    #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)
 
     #undef COMPILE_SCRIPT
-    #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_F\SUBCOMPONENT,var1)']
+    #define COMPILE_SCRIPT(var1) compileScript ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,var1)']
 
     #undef FUNC
     #define FUNC(var1) TRIPLES(SUBADDON,fnc,var1)
@@ -34,7 +40,7 @@
     #define LOG_SYS_FORMAT(LEVEL,MESSAGE) format ['[%1] (%2) %3: %4', toUpper 'PREFIX', 'SUBADDON', LEVEL, MESSAGE]
 
     #undef PATHTOF
-    #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT\SUBCOMPONENT,var1)
+    #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT_PATH_FRAGMENT,var1)
 
     // Localization strings macros
     #undef CSTRING
@@ -46,12 +52,27 @@
 #endif // SUBCOMPONENT
 
 #undef PREP
-#undef PREPSUB
-#define PREP(fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fn,fncName).sqf)
-#define PREPSUB(folder,fncName) FUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(folder\DOUBLES(fn,fncName).sqf)
+#undef PREPMAIN
+#ifdef DISABLE_COMPILE_CACHE
+    #define PREP(var1) FUNC(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))'
+    #define PREPMAIN(var1) FUNCMAIN(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))'
+#else
+    #define PREP(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))', 'FUNC(var1)'] call SLX_XEH_COMPILE_NEW
+    #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
+#endif
 
 #undef VARDEF
 #define VARDEF(a,b) RETDEF(a,b)
+
+#define PATHTOFOLDER(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
+#define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
+
+#define EPATHTOFOLDER(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
+#define QEPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
+
+// Should akshually be called QEPATHTOFOLDER ...
+// Keep the typo as an alias so ~1000 files don't show up in PR
+#define EQPATHTOFOLDER(var1,var2) QEPATHTOFOLDER(var1,var2)
 
 /* -------------------------------------------
 Macro: XOR
