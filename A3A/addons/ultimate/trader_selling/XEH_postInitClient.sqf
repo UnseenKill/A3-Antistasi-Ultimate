@@ -2,5 +2,6 @@
 
 GVAR(playKaching) = false;
 GVAR(sellDelay) = 0.125;
+GVAR(sellForbidden) = false;
 
 nil;
