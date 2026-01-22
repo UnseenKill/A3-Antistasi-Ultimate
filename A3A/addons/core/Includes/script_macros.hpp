@@ -13,6 +13,8 @@
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
 
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
+// CBA uses "fnc", we use "fn" to look for function source files ...
+#define FUNCTION_NAME_INSERT fn
 
 #ifndef SUBCOMPONENT
     #define COMPONENT_PATH_FRAGMENT COMPONENT
@@ -51,14 +53,26 @@
     #define LLSTRING(var1) (localize LSTRING(var1))
 #endif // SUBCOMPONENT
 
+#undef PATHTO_FNC
+#define PATHTO_FNC(func) class func {\
+    file = QPATHTOF(functions\DOUBLES(FUNCTION_NAME_INSERT,func).sqf);\
+    CFGFUNCTION_HEADER;\
+    RECOMPILE;\
+}
+#define SPATHTO_FNC(folder,func) class func { \
+    file = 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\folder\DOUBLES(FUNCTION_NAME_INSERT,func))'; \
+    CFGFUNCTION_HEADER; \
+    RECOMPILE; \
+}
+
 #undef PREP
 #undef PREPMAIN
 #ifdef DISABLE_COMPILE_CACHE
-    #define PREP(var1) FUNC(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))'
-    #define PREPMAIN(var1) FUNCMAIN(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))'
+    #define PREP(var1) FUNC(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))'
+    #define PREPMAIN(var1) FUNCMAIN(var1) = compile preprocessFileLineNumbers 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))'
 #else
-    #define PREP(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))', 'FUNC(var1)'] call SLX_XEH_COMPILE_NEW
-    #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(fn,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
+    #define PREP(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNC(var1)'] call SLX_XEH_COMPILE_NEW
+    #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
 #endif
 
 #undef VARDEF
