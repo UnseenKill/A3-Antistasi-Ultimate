@@ -1,4 +1,4 @@
-#define COMPONENT store
+#define COMPONENT ultimate
 #define SUBCOMPONENT trader_selling
 #define FUNCTION_NAME_INSERT fnc
 #include "\x\A3A\addons\core\Includes\script_mod.hpp"

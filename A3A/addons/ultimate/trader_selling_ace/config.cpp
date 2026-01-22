@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {QEGVAR(ultimage,trader_selling), "ace_interaction"};
+        requiredAddons[] = {QEGVAR(ultimate,trader_selling), "ace_interaction"};
         skipWhenMissingDependencies = 1;
         author = AUTHOR;
         authors[] = { AUTHORS };
