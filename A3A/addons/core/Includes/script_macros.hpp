@@ -2,10 +2,27 @@
 //#include "script_macros_undef.hpp"
 #include "cba_events.hpp"
 
+// Define CfgPatches class name for, well, patches.
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
 // CBA uses "fnc", we use "fn" to look for function source files ...
 #define FUNCTION_NAME_INSERT fn
 
+/* -------------------------------------------
+Sub-component support
+
+    If SUBCOMPONENT is defined in "script_component.hpp", adjust various macros
+    to account for the subcomponent structure.
+
+    Subcomponents live inside a component folder, e.g.
+        addons\<component>\<subcomponent>\
+    but otherwise replicate main component structure.
+
+    Still, file locator macros (e.g. PATHTOF) will need to be adjusted for the
+    additional folder layer.
+
+Author:
+    UnseenKill/gor3Splatter
+------------------------------------------- */
 #ifndef SUBCOMPONENT
     #define COMPONENT_PATH_FRAGMENT COMPONENT
     #define COMPONENT_PATH_FRAGMENT_F COMPONENT_F
@@ -44,17 +61,22 @@
 #endif // SUBCOMPONENT
 
 #undef PATHTO_FNC
-#define PATHTO_FNC(func) class func {\
-    file = QPATHTOF(functions\DOUBLES(FUNCTION_NAME_INSERT,func).sqf);\
-    CFGFUNCTION_HEADER;\
-    RECOMPILE;\
+#define PATHTO_FNC(func) class func { \
+    file = 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\DOUBLES(FUNCTION_NAME_INSERT,func))'; \
+    CFGFUNCTION_HEADER; \
+    RECOMPILE; \
 }
+// No #undef here, as SPATHTO_FNC is new. Adapt to folder layouts where
+// functions live in categorized subfolders.
 #define SPATHTO_FNC(folder,func) class func { \
     file = 'PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,functions\folder\DOUBLES(FUNCTION_NAME_INSERT,func))'; \
     CFGFUNCTION_HEADER; \
     RECOMPILE; \
 }
 
+// Function definition macros with compile cache support.
+// Need to be overwritten from CBA because of our different function source file
+// naming convention (CBA functions\fnc_foo.sqf vs our functions\fn_foo.sqf). 
 #undef PREP
 #undef PREPMAIN
 #ifdef DISABLE_COMPILE_CACHE
@@ -65,9 +87,13 @@
     #define PREPMAIN(var1) ['PATHTO_SYS(PREFIX,COMPONENT_PATH_FRAGMENT_F,DOUBLES(FUNCTION_NAME_INSERT,var1))', 'FUNCMAIN(var1)'] call SLX_XEH_COMPILE_NEW
 #endif
 
+// VARDEF used everywhere is CBA's RETDEF.
 #undef VARDEF
 #define VARDEF(a,b) RETDEF(a,b)
 
+// More or less alias macros for PATHTOF, but used everywhere in Antistasi to
+// especially locate UI resources etc. Keep it as an alias to avoid changing
+// hundreds of files.
 #define PATHTOFOLDER(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
 #define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
 
