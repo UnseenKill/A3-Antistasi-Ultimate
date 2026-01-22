@@ -1,12 +1,12 @@
 class Extended_PreInit_EventHandlers {
-    class ADDON {
+    class SUBADDON {
         init = QUOTE(call COMPILE_SCRIPT(XEH_preInit));
     };
 };
 
 class Extended_InitPost_EventHandlers {
     class ReammoBox_F {
-        class ADDON {
+        class SUBADDON {
             serverInit = QUOTE(call FUNC(addVanillaSellInteraction));
         };
     };
