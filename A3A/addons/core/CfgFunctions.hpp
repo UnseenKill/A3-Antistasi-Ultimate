@@ -811,6 +811,7 @@ class CfgFunctions
             class isEngineer {};
             class localLog {};
             class log {};
+            class makeObjectLocal {};
             class onClientInitDone {};
             class onServerInitDone {};
             class setIdentity {};

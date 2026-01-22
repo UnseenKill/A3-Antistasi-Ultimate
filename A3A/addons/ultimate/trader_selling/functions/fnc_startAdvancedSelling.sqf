@@ -36,6 +36,8 @@ if !([_guiText, _guiCaption, true, true] call BIS_fnc_guiMessage) exitWith {};
 GVAR(sellContainer) = _container;
 GVAR(sellContainerReady) = false;
 
+if !([_container] call FUNCMAIN(makeObjectLocal)) exitWith {};
+
 [_container, {
     if !assert(params[["_container",objNull,[objNull]], ["_items",nil,[createHashMap]]]) exitWith {};
     if !assert(!isNull _container) exitWith {};
