@@ -45,8 +45,6 @@ if !([GVAR(sellContainer)] call FUNCMAIN(makeObjectLocal)) exitWith {};
     if !assert(!isNil "_items") exitWith {};
 
     {
-        [_x] call FUNC(getItemPrice) params["_isSellable", "_priceOrReason"];
-
         _y set["class", _x];
         _y set["config", switch (_y get "type") do {
             case "item": { [configFile >> "CfgWeapons", configFile >> "CfgGlasses"] select isClass(configFile >> "CfgGlasses" >> _x) };
@@ -58,6 +56,8 @@ if !([GVAR(sellContainer)] call FUNCMAIN(makeObjectLocal)) exitWith {};
                 configNull;
             };
         }];
+
+        [_x, _y get "config", _y get "type"] call FUNC(getItemPrice) params["_isSellable", "_priceOrReason"];
 
         _y set["sellable", _isSellable];
 

@@ -6,6 +6,7 @@ PREP(filterSortAlphabetically);
 PREP(filterSortByAmount);
 PREP(filterSortByPrice);
 PREP(getItemPrice);
+PREP(onGetItemPrice);
 PREP(onProtectItemClick);
 PREP(onSellAllClick);
 PREP(onSellDialogClose);
