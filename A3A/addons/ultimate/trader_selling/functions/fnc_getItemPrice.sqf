@@ -58,7 +58,7 @@ try {
         throw LSTRING(AdvSell_Reason_ItemUnconfigured);
     };
 
-    [true, GVAR(sellPriceMultiplier) * _price];
+    [true, round(GVAR(sellPriceMultiplier) * _price)];
 } catch {
     [false, _exception];
 };
