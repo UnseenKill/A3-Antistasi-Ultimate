@@ -33,13 +33,15 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _config) exitWith {};
 
+private _display = uiNamespace getVariable QGVAR(menuDisplay);
+private _items = _display getVariable QGVAR(storeItems);
+
 private["_price"];
 
-("true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories")) findIf {
-    isClass(_x >> _class) && {
-        _price = getNumber(_x >> _class >> "price");
-        true;
-    };
+while { !(isNull _config) } do {
+    _price = _items get configName _config;
+    if (!isNil "_price") then { break };
+    _config = inheritsFrom _config;
 };
 
 RETNIL(_price);

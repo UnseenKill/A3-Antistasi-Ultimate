@@ -57,7 +57,7 @@ if !([GVAR(sellContainer)] call FUNCMAIN(makeObjectLocal)) exitWith {};
             };
         }];
 
-        [_x, _y get "config", _y get "type"] call FUNC(getItemPrice) params["_isSellable", "_priceOrReason"];
+        [_x, (_y get "config") >> _x, _y get "type"] call FUNC(getItemPrice) params["_isSellable", "_priceOrReason"];
 
         _y set["sellable", _isSellable];
 

@@ -116,6 +116,19 @@ _control ctrlAddEventHandler["CheckedChanged", {
     [] call FUNC(updateSellableItemsList);
 }];
 
+// Init sellable items list
+private _storeItems = createHashMap;
+
+"true" configClasses(configFile >> "CfgHALsAddons" >> "cfgHALsStore" >> "categories") apply {
+    "true" configClasses _x apply {
+        if isNumber(_x >> "price") then {
+            _storeItems set[configName _x, getNumber(_x >> "price")];
+        };
+    };
+};
+
+_display setVariable[QGVAR(storeItems), _storeItems];
+
 // Wait for breakdown
 
 [_display] spawn {
