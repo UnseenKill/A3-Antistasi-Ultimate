@@ -74,7 +74,7 @@ if (_items isEqualTo []) exitWith {
     _list lnbSetData[[_index, 0], str _foreachIndex];
 
     if ((_x get "class") in (_display getVariable QGVAR(protected))) then {
-        _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOEF(assets,ui\lock-icon.paa)];
+        _list lnbSetPicture[[_index, COLUMN_PROTECT_ICON], QPATHTOF(ui\lock-icon.paa)];
     };
 
     if ((_x get "price") isNotEqualTo false) then {
