@@ -33,7 +33,7 @@ class A3AU_RebHelipad_CircleNC_F: A3AU_RebHelipad_base_F
 
 class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_CircleNC_F
 {
-    displayName = __EVAL(formatText["%1 (no cleaning)", localize "$STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0"]);
+    displayName = __EVAL(formatText["%1 [no cleaning]", localize "$STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0"]);
 
     class EGVAR(core,Properties): EGVAR(core,Properties)
     {
