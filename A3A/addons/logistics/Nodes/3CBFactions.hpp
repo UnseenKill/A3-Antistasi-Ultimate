@@ -777,7 +777,7 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehic
         };
         class Node2
         {
-            offset[] = {0,-1.4,0.34};
+            offset[] = {0,-2.4,-0.24};
             seats[] = {};
         };
     };
