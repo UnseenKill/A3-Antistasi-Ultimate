@@ -764,13 +764,20 @@ class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehic
     };
 };
 
-class UK3CB_AAF_I_SUV_Armed : TRIPLES(ADDON,Nodes,Base)
+class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_suv_uk3cb_suv_armoured_p3d : UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_suv_uk3cb_suv_p3d {};
+
+class UK3CB_Factions_addons_UK3CB_Factions_Vehicles_wheeled_UK3CB_Factions_Vehicles_suv_uk3cb_suv_armed_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
         class Node1
         {
             offset[] = {0,-2.5,-1.1};
+            seats[] = {};
+        };
+        class Node2
+        {
+            offset[] = {0,-1.4,0.34};
             seats[] = {};
         };
     };
