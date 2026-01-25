@@ -28,6 +28,16 @@ class C_Pickup_repair_rf : TRIPLES(ADDON,Nodes,Base)
         };
     };
 };
+class lxRF_vehicles_rf_pickup_01_pickup_01_service_ig_rf_p3d : TRIPLES(ADDON,Nodes,Base)
+{
+    class Nodes
+    {
+        class Node1
+        {
+            offset[] = {0,-0.4,0};
+        };
+    };
+};
 
 class lxRF_vehicles_rf_pickup_01_pickup_01_hmg_rf_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -58,6 +68,7 @@ class lxRF_vehicles_rf_pickup_01_pickup_01_mrl_rf_p3d : TRIPLES(ADDON,Nodes,Base
         class Node1
         {
             offset[] = {-0.04,-0.3,-1};
+            seats[] = {5,6};
         };
     };
 };
@@ -206,11 +217,11 @@ class lxRF_air_rf_heli_medium_ec_Heli_EC_01A_civ_RF_p3d : TRIPLES(ADDON,Nodes,Ba
     {
         class Node1
         {
-            offset[] = {-0.35,2.3,-1.61};
+            offset[] = {-0.4,2.3,-1.61};
         };
         class Node2
         {
-            offset[] = {-0.35,1.5,-1.61};
+            offset[] = {-0.4,1.5,-1.61};
         };
     };
 };
@@ -221,11 +232,11 @@ class lxRF_air_rf_heli_medium_ec_Heli_EC_01_civ_RF_p3d : TRIPLES(ADDON,Nodes,Bas
     {
         class Node1
         {
-            offset[] = {-0.35,2.3,-1.61};
+            offset[] = {-0.4,2.3,-1.61};
         };
         class Node2
         {
-            offset[] = {-0.35,1.5,-1.61};
+            offset[] = {-0.4,1.5,-1.61};
         };
     };
 };
@@ -236,11 +247,11 @@ class lxRF_air_rf_heli_medium_ec_Heli_EC_04_rescue_RF_p3d : TRIPLES(ADDON,Nodes,
     {
         class Node1
         {
-            offset[] = {0.35,2.3,-1.61};
+            offset[] = {0.38,2.3,-1.61};
         };
         class Node2
         {
-            offset[] = {0.35,1.5,-1.61};
+            offset[] = {0.38,1.5,-1.61};
         };
     };
 };
