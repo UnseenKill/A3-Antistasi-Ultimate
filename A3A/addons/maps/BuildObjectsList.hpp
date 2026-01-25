@@ -135,7 +135,9 @@
     {"Land_SandbagBarricade_01_hole_F", 40}, \
     {"Land_SandbagBarricade_01_F", 40}, \
     {"A3AU_RebHelipad_Square_F", 5000}, \
+    {"A3AU_RebHelipad_SquareNC_F", 5000}, \
     {"A3AU_RebHelipad_Circle_F", 5000}, \
+    {"A3AU_RebHelipad_CircleNC_F", 5000}, \
     {"A3AU_VegetationCleaner_VerySmall_F", 250}, \
     {"A3AU_VegetationCleaner_Small_F", 1000}, \
     {"A3AU_VegetationCleaner_Medium_F", 2500}, \
