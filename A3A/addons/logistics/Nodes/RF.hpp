@@ -245,21 +245,6 @@ class lxRF_air_rf_heli_medium_ec_Heli_EC_04_rescue_RF_p3d : TRIPLES(ADDON,Nodes,
     };
 };
 
-class lxRF_air_rf_heli_medium_ec_Heli_EC_01A_civ_RF_p3d : TRIPLES(ADDON,Nodes,Base)
-{   canLoadWeapon = 0;
-    class Nodes
-    {
-        class Node1
-        {
-            offset[] = {-0.35,2.3,-1.61};
-        };
-        class Node2
-        {
-            offset[] = {-0.35,1.5,-1.61};
-        };
-    };
-};
-
 class lxRF_air_rf_heli_medium_ec_Heli_EC_01_RF_p3d : TRIPLES(ADDON,Nodes,Base)
 {   canLoadWeapon = 0;
     class Nodes
