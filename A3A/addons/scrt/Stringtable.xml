@@ -15263,7 +15263,7 @@
                 <French>Constructeur: Diminuer le décalage en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetDecrease_desc">
-                <Original>Decrease the Z-offset (move down) of the object when using snap-to-surface mode.</Original>
+                <Original>Decrease the Z-offset (move it down) of the object when using snap-to-surface mode.</Original>
                 <German>Den Z-Versatz des Objekts verringern (nach unten bewegen), wenn der An-Oberfläche-Anpassen-Modus verwendet wird.</German>
                 <Russian>Уменьшить смещение по оси Z (опустить вниз) объекта при использовании режима привязки к поверхности.</Russian>
                 <Chinesesimp>在使用吸附到地面模式时，减少对象的Z轴偏移（向下移动）。</Chinesesimp>
@@ -15279,7 +15279,7 @@
                 <French>Constructeur: Augmenter le décalage en Z</French>
             </Key>
             <Key ID="STR_A3A_keyActions_buildingPlacerZOffsetIncrease_desc">
-                <Original>Increase the Z-offset (move up) of the object when using snap-to-surface mode.</Original>
+                <Original>Increase the Z-offset (move it up) of the object when using snap-to-surface mode.</Original>
                 <German>Den Z-Versatz erhöhen (nach oben bewegen), wenn der An-Oberfläche-Anpassen-Modus verwendet wird.</German>
                 <Russian>Увеличить смещение по оси Z (поднять вверх) объекта при использовании режима привязки к поверхности.</Russian>
                 <Chinesesimp>在使用吸附到地面模式时，增加对象的Z轴偏移（向上移动）。</Chinesesimp>
