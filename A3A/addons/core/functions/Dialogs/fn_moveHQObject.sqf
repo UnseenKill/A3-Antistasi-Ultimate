@@ -21,7 +21,12 @@ if (([_playerX] call A3A_fnc_countAttachedObjects) > 0) exitWith {
 
 private _sites = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 private _markerX = [_sites,_playerX] call BIS_fnc_nearestPosition;
-private _size = [_markerX] call A3A_fnc_sizeMarker;
+private _size = if ([_markerX] call A3A_fnc_isEmplacementMarker) then {
+	GVAR(zeroSizeMarkerBlowup);
+} else {
+	[_markerX] call A3A_fnc_sizeMarker;
+};
+
 private _positionX = getMarkerPos _markerX;
 
 if (_playerX distance2D _positionX > (_size + 5)) exitWith {
