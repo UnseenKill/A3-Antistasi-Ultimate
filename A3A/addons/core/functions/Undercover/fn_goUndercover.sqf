@@ -250,6 +250,8 @@ private _recordReason = {
 
     _entry params["_count","_cooldown"];
 
+    Verbose_3("Undercover reason %1 has been recorded %2 times, cooldown until %3",str _reason,_count,_cooldown);
+
     if (_cooldown > diag_tickTime) exitWith { false };
     _count = _count + 1;
 
@@ -262,7 +264,8 @@ private _recordReason = {
         };
     };
 
-    _entry set[_reason, [_count, _cooldown]];
+    _entry set[0, _count];
+    _entry set[1, _cooldown];
     true;
 };
 
