@@ -236,100 +236,137 @@ private _layer = ["A3A_infoCenter"] call BIS_fnc_rscLayer;
 [localize "STR_A3A_fn_undercover_goUn_off", 0, 0, 4, 0, 0, _layer] spawn bis_fnc_dynamicText;
 [] spawn A3A_fnc_statistics;
 
-switch (_reason) do
+// Make a record of reasons and when last shown. Return `true` if notification
+// should be shown.
+private _recordReason = {
+    params["_reason"];
+
+    if (isNil { player getVariable QGVAR(undercoverRecord) }) then {
+        player setVariable[QGVAR(undercoverRecord), createHashMap];
+    };
+
+    private _record = player getVariable QGVAR(undercoverRecord);
+    private _entry = _record getOrDefault[_reason, [0, -1], true];
+
+    _entry params["_count","_cooldown"];
+
+    if (_cooldown > diag_tickTime) exitWith { false };
+    _count = _count + 1;
+
+    if (_reason isEqualTo "clothes") then {
+        // Cooldown the generic message you get e.g. when exiting a car after
+        // the third time.
+        if (_count >= 3) then {
+            _cooldown = diag_tickTime + 900; // 15 minutes
+            _count = 0;
+        };
+    };
+
+    _entry set[_reason, [_count, _cooldown]];
+    true;
+};
+
+private _notificationText = switch (_reason) do
 {
     case "Reported":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_reported"] call A3A_fnc_customHint;
-        if (vehicle player != player) then
-        {
-            (objectParent player) setVariable ["A3A_reported", true, true];
-        }
-        else
-        {
+        if !(isNull objectParent player) then {
+            objectParent player setVariable ["A3A_reported", true, true];
+        } else {
             player setVariable["compromised", (dateToNumber[date select 0, date select 1, date select 2, date select 3, (date select 4) + 30])];
         };
+
+        localize "STR_A3A_fn_undercover_goUn_reported";
     };
     case "VNoCivil":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_entered_veh1"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_entered_veh1";
     };
     case "VCompromised":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_entered_veh2"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_entered_veh2";
     };
     case "VTowRopes":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_towrope1"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_no_towrope1";
     };
     case "TowRopes":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_towrope2"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_no_towrope2";
     };
     case "SpotBombTruck":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_explo"] call A3A_fnc_customHint;
-        (objectParent player) setVariable ["A3A_reported", true, true];
+        if !(isNull objectParent player) then {
+            objectParent player setVariable ["A3A_reported", true, true];
+        };
+        localize "STR_A3A_fn_undercover_goUn_no_explo";
     };
     case "Highway":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_distance"] call A3A_fnc_customHint;
-        (objectParent player) setVariable ["A3A_reported", true, true];
+        if !(isNull objectParent player) then {
+            objectParent player setVariable ["A3A_reported", true, true];
+        };
+        localize "STR_A3A_fn_undercover_goUn_no_distance";
     };
     case "clothes":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_reason_1"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_no_reason_1";
     };
     case "clothes2":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_reason_2"] call A3A_fnc_customHint;
         player setVariable["compromised", dateToNumber[date select 0, date select 1, date select 2, date select 3, (date select 4) + 30]];
+        localize "STR_A3A_fn_undercover_goUn_no_reason_2";
     };
     case "BadMedic":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_reason_3"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_no_reason_3";
     };
     case "BadMedic2":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_no_reason_4"] call A3A_fnc_customHint;
         player setVariable["compromised", dateToNumber[date select 0, date select 1, date select 2, date select 3, (date select 4) + 30]];
+        localize "STR_A3A_fn_undercover_goUn_no_reason_4";
     };
     case "Compromised":
     {
-        ["Undercover", localize "STR_A3A_fn_undercover_goUn_leftveh"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_leftveh";
     };
     case "Airport"; case "Roadblock"; case "Outpost"; case "Seaport"; case "Milbase":
     {
-        private _text = switch (_reason) do {
-            case "Airport": {localize "STR_A3A_fn_undercover_goUn_trespass"};
-            case "Outpost": {localize "STR_A3A_fn_undercover_goUn_detect_outp"};
-            case "Milbase": {localize"STR_A3A_fn_undercover_goUn_detect_milb"};
-            case "Seaport": {localize "STR_A3A_fn_undercover_goUn_detect_outp"};
-            case "Roadblock": {localize "STR_A3A_fn_undercover_goUn_detect_roadb"};
-        };
-        ["Undercover", _text] call A3A_fnc_customHint;
-
-        if !(isNull objectParent player) then
-        {
+        if !(isNull objectParent player) then {
             (objectParent player) setVariable ["A3A_reported", true, true];
-        }
-        else
-        {
+        } else {
             player setVariable["compromised", (dateToNumber[date select 0, date select 1, date select 2, date select 3, (date select 4) + 30])];
         };
+
+        localize(switch (_reason) do {
+            case "Airport": {"STR_A3A_fn_undercover_goUn_trespass"};
+            case "Outpost": {"STR_A3A_fn_undercover_goUn_detect_outp"};
+            case "Milbase": {"STR_A3A_fn_undercover_goUn_detect_milb"};
+            case "Seaport": {"STR_A3A_fn_undercover_goUn_detect_outp"};
+            case "Roadblock": {"STR_A3A_fn_undercover_goUn_detect_roadb"};
+        });
     };
     case "NoFly":
     {
         private _veh = objectParent player;
         private _detectedBy = _veh getVariable "NoFlyZoneDetected";
-        ["Undercover", format [localize "STR_A3A_fn_undercover_goUn_detect_airspace", [_detectedBy] call A3A_fnc_localizar]] call A3A_fnc_customHint;
+        
         _veh setVariable ["A3A_reported", true, true];
         _veh setVariable ["NoFlyZoneDetected", nil, true];
+
+        format[localize "STR_A3A_fn_undercover_goUn_detect_airspace", [_detectedBy] call A3A_fnc_localizar];
     };
     default
     {
         Error_1("Unknown reason given, was %1", _reason);
-        ["Undercover", "STR_A3A_fn_undercover_goUn_Error"] call A3A_fnc_customHint;
+        localize "STR_A3A_fn_undercover_goUn_Error";
     };
 };
+
+if ([_reason, _notificationText] call _recordReason) then {
+    ["Undercover", _notificationText] call A3A_fnc_customHint;
+};
+
 ["Undercover", [_reason]] call EFUNC(Events,triggerEvent);
+
+nil;
