@@ -34,6 +34,11 @@ FIX_LINE_NUMBERS()
 
 if (!isServer) exitWith {}; // ! on dedicated, code is run on the server and all clients, (re)creating the actual vehicle for every client and blowing them all up
 
+if (isNil {areRivalsDiscovered}) exitWith {
+	private _message = localize "STR_A3U_Zeus_Misc_Dialog_NotAntistasiUltimate";
+	[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
+};
+
 params ["_emptyVeh", "_vehFaction", "_vehType", ["_withCrew", true]];
 
 private _faction = missionNamespace getVariable ("A3A_Faction_" + _vehFaction);
@@ -44,13 +49,8 @@ deleteVehicle _emptyVeh;
 
 private _typeX = selectRandom (_faction get _vehType);
 if (isNil "_typeX") exitWith {
-	[
-		format [localize "STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType", _faction get "name", _vehType],
-		localize "STR_A3U_Zeus_Misc_Dialog_Header",
-		true,
-		false,
-		findDisplay 312 // Zeus IDD
-	] spawn BIS_fnc_guiMessage;
+	private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoVehicleOfType", _faction get "name", _vehType];
+	[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
 private _veh = _typeX createVehicle _pos;

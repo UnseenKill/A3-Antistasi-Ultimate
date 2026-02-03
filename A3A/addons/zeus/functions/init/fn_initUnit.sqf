@@ -31,6 +31,11 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
+if (isNil {areRivalsDiscovered}) exitWith {
+	private _message = localize "STR_A3U_Zeus_Misc_Dialog_NotAntistasiUltimate";
+	[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
+};
+
 params ["_unit", "_unitFaction", "_unitPrefix", "_unitType"];
 
 _unit setVariable ["unitPrefix", _unitPrefix];
