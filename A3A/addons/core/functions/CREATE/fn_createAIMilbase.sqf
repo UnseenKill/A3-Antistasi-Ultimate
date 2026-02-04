@@ -218,56 +218,14 @@ if(random 100 < (50 + tierWar * 3)) then {
 	[_markerX, _large] spawn A3A_fnc_placeIntel;
 };
 
-private _typeVehX = _faction get "flag";
-private _flagX = nil;
-_spawnParameter = [_markerX, "flag"] call A3A_fnc_findSpawnPosition;
-if (_spawnParameter isEqualType []) then {
-	_spawnsUsed pushBack _spawnParameter#2;
-
-	_flagX = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "NONE"];
-	_flagX setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
-} else {
-	Warning_1("Could not find flag placement marker for milbase %1; falling back to marker center.", _markerX);
-	_flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
-};
-_flagX allowDamage false;
-[_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
+([_markerX] call A3A_fnc_createZoneFlag) params ["_flagX", "_flagSpawn"];
 _vehiclesX pushBack _flagX;
-if (flagTexture _flagX != (_faction get "flagTexture")) then {[_flagX,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_flagX]};
+if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
-
-private _fnc_createAmmobox = {
-	private _ammoBoxType = _faction get "ammobox";
-	private _ammoBox = nil;
-	
-	_spawnParameter = [_markerX, "ammo"] call A3A_fnc_findSpawnPosition;
-	if (_spawnParameter isEqualType []) then {
-		_spawnsUsed pushBack _spawnParameter#2;
-
-		_ammoBox = createVehicle [_ammoBoxType, (_spawnParameter select 0), [], 0, "NONE"];
-		_ammoBox setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
-	} else {
-		Warning_1("Could not find ammo box placement marker for milbase %1; falling back to marker center.", _markerX);
-		_ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
-	};
-	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
-	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
-	[_ammoBox] spawn A3A_fnc_fillLootCrate;
-	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
-
-	_ammoBox;
-};
-
-private _ammobox1 = nil;
-private _ammobox2 = nil;
-
-// Only create ammoBox if it's been recharged (see reinforcementsAI)
-if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then {
-	_ammobox1 = call _fnc_createAmmobox;
-	_ammobox2 = call _fnc_createAmmobox;
-} else {
-	Info_1("Skipping ammo box spawn at outpost %1 as it is on cooldown", _markerX);
-};
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammobox1", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammobox2", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
 
 if (!_busy) then
 {
