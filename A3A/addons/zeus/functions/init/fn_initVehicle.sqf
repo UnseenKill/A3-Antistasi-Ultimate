@@ -56,13 +56,15 @@ if (isNil "_typeX") exitWith {
 private _veh = _typeX createVehicle _pos;
 private _side = switch (_vehFaction) do {
 	case "occ": { west };
-	case "inv": { east };
+	case "inv";
+	case "riv": { east };
 	case "reb": { resistance };
 	case "civ": { civilian };
-	case "riv": { opfor };
 };
 if (isNil "_side") exitWith {};
 [_veh, _side] call A3A_fnc_AIVEHinit;
-if (_withCrew) then { [_side, _veh] call A3A_fnc_createVehicleCrew };
+
+private _crewFunc = [A3A_fnc_createVehicleCrew, A3A_fnc_RivalsCreateVehicleCrew] select (_vehFaction isEqualTo "riv");
+if (_withCrew) then { [_side, _veh] call _crewFunc };
 
 { _x addCuratorEditableObjects [[_veh] + crew _veh, true] } forEach (allCurators); // QoL; required since the vehicle wasn't technically spawned by Zeus (_emptyVeh was)
