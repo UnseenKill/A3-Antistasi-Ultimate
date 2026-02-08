@@ -74,7 +74,7 @@ if (player == leader _unit) then {
 				["", format [localize "STR_A3A_reinf_fiainit_lost_comms", name _unit]] call A3A_fnc_customHint;
 
 				_unit setVariable[QGVAR(groupId), groupId _unit];
-				_unit setVariable[QGVAR(assignedTeam), assignTeam _unit];
+				_unit setVariable[QGVAR(assignedTeam), assignedTeam _unit];
 				[_unit] join stragglers;
 				if ((vehicle _unit isKindOf "StaticWeapon") or (isNull (driver (vehicle _unit)))) then {unassignVehicle _unit; [_unit] orderGetIn false};
 				_unit doMove position player;
