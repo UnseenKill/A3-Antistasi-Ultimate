@@ -225,7 +225,7 @@ _loadoutData set ["goggles", ["rhs_ess_black"]];
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _sfLoadoutData set ["uniforms", ["UK3CB_CSAT_S_O_U_SF_CombatUniform_Ghillie"]];
 _sfLoadoutData set ["vests", ["UK3CB_CSAT_S_O_V_Carrier_Rig_Light_Whi", "UK3CB_CSAT_S_O_V_Carrier_Rig_Crew"]];
-_sfLoadoutData set ["GLvests", ["UK3CB_CSAT_S_O_V_Carrier_Rig_CQB_TAN", "UK3CB_CSAT_S_O_V_Carrier_Rig_Tactical_TAN", "UK3CB_CSAT_S_O_V_Carrier_Rig_Heavy_Whi"]];
+_sfLoadoutData set ["GLvests", ["UK3CB_CSAT_S_O_V_Carrier_Rig_Heavy_Whi"]];
 _sfLoadoutData set ["backpacks", ["UK3CB_CSAT_O_B_TACPACK_BRN", "UK3CB_CSAT_S_O_B_ASS", "UK3CB_CSAT_S_O_B_RIF"]];
 _sfLoadoutData set ["helmets", ["rhsusf_opscore_ut", "rhsusf_opscore_ut_pelt", "UK3CB_H_Ballistic_Mask_CSAT_S", "UK3CB_CSAT_W_O_H_6b47_ATACS", "UK3CB_CSAT_W_O_H_6b47_bala_ATACS"]];
 _sfLoadoutData set ["sniHats", ["UK3CB_CSAT_S_O_H_Bandanna_HS", "UK3CB_CSAT_S_O_H_BoonieHat"]];
