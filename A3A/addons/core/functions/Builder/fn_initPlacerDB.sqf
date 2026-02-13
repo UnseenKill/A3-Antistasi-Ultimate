@@ -15,7 +15,7 @@ Environment: Unscheduled
 Public:
 no
 Example:
-[player, 100] call A3A_fnc_initBuildingDB
+[player, 100] call A3A_fnc_initPlacerDB
 */
 params [
 	["_buildCenter", player, [objNull]],

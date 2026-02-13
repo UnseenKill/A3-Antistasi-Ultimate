@@ -181,7 +181,7 @@ switch (_mode) do
 
                 if(isNil "A3A_building_EHDB") then {
                     // how the fuck did you do this? No databases?
-                    call A3A_initBuildingDB;
+                    call A3A_fnc_initPlacerDB;
                 };
 
                 if !(isNil { _control getVariable "subMenu" }) exitWith {
