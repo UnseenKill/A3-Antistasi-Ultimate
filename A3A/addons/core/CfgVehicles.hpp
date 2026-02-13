@@ -2,6 +2,7 @@ class CfgVehicles
 {
     class Box_NATO_Uniforms_F;
     class Box_Syndicate_Ammo_F;
+    class House_F;
     class House_Small_F;
     class Strategic;
     class ThingX;
@@ -12,6 +13,18 @@ class CfgVehicles
     };
 
     class Lamps_base_F: House_Small_F {
+        GVAR(buildingPlacerVectorUp)[] = {0,0,1};
+    };
+
+    class Land_dp_bigTank_F: House_F {
+        GVAR(buildingPlacerVectorUp)[] = {0,0,1};
+    };
+
+    class Land_dp_smallTank_F: House_Small_F {
+        GVAR(buildingPlacerVectorUp)[] = {0,0,1};
+    };
+
+    class Land_ReservoirTower_F: House_F {
         GVAR(buildingPlacerVectorUp)[] = {0,0,1};
     };
     // </Force building placer to ignore surface normals and use their up vectors>
