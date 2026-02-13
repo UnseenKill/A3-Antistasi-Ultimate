@@ -216,22 +216,23 @@ switch (_mode) do
         };
     
         // EH to block camera zoom while mouse is over the selection dialog
-        _display displayAddEventHandler ["MouseMoving", {
+        if (isNil { _display getVariable QGVAR(ehMouseMoving) }) then {
+            _display setVariable[QGVAR(ehMouseMoving), _display displayAddEventHandler ["MouseMoving", {
+                params[ "_display" ];
 
-            params[ "_display" ];
+                private _scrollArea = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMAIN;
+                ctrlPosition _scrollArea params ["_xpos", "_ypos", "_width", "_height"];
 
-            private _scrollArea = _display displayCtrl A3A_IDC_TEAMLEADERBUILDERMAIN;
-            ctrlPosition _scrollArea params ["_xpos", "_ypos", "_width", "_height"];
+                private _isMouseInArea = getMousePosition inArea [[_xpos + _width/2, _ypos + _height/2], _width/2, _height/2, 0, true];
 
-            private _isMouseInArea = getMousePosition inArea [[_xpos + _width/2, _ypos + _height/2], _width/2, _height/2, 0, true];
-
-            if (_isMouseInArea) then {
-                A3A_cam camCommand "manual off";
-            } else {
-                A3A_cam camCommand "manual on";
-            };
-            
-        }];
+                if (_isMouseInArea) then {
+                    A3A_cam camCommand "manual off";
+                } else {
+                    A3A_cam camCommand "manual on";
+                };
+                
+            }]];
+        };
 
         // _txt = _display ctrlCreate[ "A3A_StructuredText", -1];
         // _txt ctrlSetPosition[ (1.4 * safeZoneX) + safeZoneW, -0.65 * safeZoneY, 0.5, 0.3];			// funkiness because I don't want to deal with dialogs anymore tonight
