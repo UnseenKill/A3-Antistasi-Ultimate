@@ -209,32 +209,30 @@ class CfgVehicles
 
          */
         GVAR(buildableObjects)[] = {
-            {"Clutter", "\a3\editorpreviews_f\Data\CfgVehicles\Land_CampingChair_V1_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_clutter", "\a3\editorpreviews_f\Data\CfgVehicles\Land_CampingChair_V1_F.jpg", {
                 {"Land_CampingChair_V2_white_F", 25},
                 {"Land_CampingTable_F", 50},
                 {"Land_CampingTable_small_F", 30},
                 {"Land_CampingTable_small_white_F", 35},
                 {"Land_CampingTable_white_F", 55},
                 {"Land_CampingChair_V1_F", 20},
-                {"Land_Camping_Light_F", 40},
-                {"Land_DragonsTeeth_01_1x1_old_F", 15},
-                {"Land_DragonsTeeth_01_4x2_old_F", 50}
+                {"Land_Camping_Light_F", 40}
             }},
-            {"Tents", "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_MedicalTent_01_NATO_generic_open_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_tents", "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_MedicalTent_01_NATO_generic_open_F.jpg", {
                 {"Land_MedicalTent_01_NATO_generic_open_F", 500},
                 {"Land_MedicalTent_01_aaf_generic_inner_F", 500},
                 {"Land_MedicalTent_01_aaf_generic_outer_F", 500},
                 {"Land_MedicalTent_01_NATO_generic_outer_F", 500},
                 {"Land_MedicalTent_01_floor_dark_F", 150}
             }},
-            {"Big objects", "\a3\editorpreviews_f\Data\CfgVehicles\Land_ReservoirTower_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_large_objects", "\a3\editorpreviews_f\Data\CfgVehicles\Land_ReservoirTower_F.jpg", {
                 {"Land_Shed_Big_F", 1250},
                 {"Land_Shed_Small_F", 750},
                 {"Land_dp_smallTank_F", 1000},
                 {"Land_dp_bigTank_F", 1750},
                 {"Land_ReservoirTower_F", 2000}
             }},
-            {"Lights", "\a3\editorpreviews_f\Data\CfgVehicles\Land_LampAirport_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_lights", "\a3\editorpreviews_f\Data\CfgVehicles\Land_LampAirport_F.jpg", {
                 {"Land_LampAirport_F", 400},
                 {"Land_LampDecor_F", 100},
                 {"Land_LampHalogen_F", 200},
@@ -243,9 +241,21 @@ class CfgVehicles
                 {"Land_LampStreet_small_F", 100},
                 {"Land_LampStreet_F", 100},
                 {"Land_TentLamp_01_suspended_red_F", 80},
-                {"Land_TentLamp_01_suspended_F", 80}
+                {"Land_TentLamp_01_suspended_F", 80},
+                {"Land_Camping_Light_F", 40}
             }},
-            {"Camo Nets", "\A3\EditorPreviews_F\Data\CfgVehicles\CamoNet_INDP_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_obstacles", "\a3\editorpreviews_f_tank\data\cfgvehicles\Land_DragonsTeeth_01_1x1_old_F.jpg", {
+                {"Land_DragonsTeeth_01_1x1_old_F", 15},
+                {"Land_DragonsTeeth_01_4x2_old_F", 50},
+                {"BlockConcrete_F", 65},
+                {"Land_CncBarrier_F", 30},
+                {"Land_CncBarrierMedium_F", 40},
+                {"Land_CncBarrierMedium4_F", 45},
+                {"Land_CncBarrier_stripes_F", 35},
+                {"Land_CncWall1_F", 50},
+                {"Land_CncWall4_F", 60}
+            }},
+            {"$STR_antistasi_dialogs_construction_menu_category_camo_nets", "\A3\EditorPreviews_F\Data\CfgVehicles\CamoNet_INDP_F.jpg", {
                 {"CamoNet_INDP_F", 800},
                 {"CamoNet_BLUFOR_F", 800},
                 {"CamoNet_OPFOR_F", 800},
@@ -260,8 +270,8 @@ class CfgVehicles
                 {"Land_CanvasCover_01_F", 750},
                 {"Land_CanvasCover_02_F", 150}
             }},
-            {"Cargo Crates", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo40_IDAP_F.jpg", {
-                {"Large", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo40_IDAP_F.jpg", {
+            {"$STR_antistasi_dialogs_construction_menu_category_cargo_crates", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo40_IDAP_F.jpg", {
+                {"$STR_antistasi_dialogs_construction_menu_category_cargo_crates_large", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo40_IDAP_F.jpg", {
                     {"Land_Cargo40_IDAP_F", 150},
                     {"Land_Cargo40_blue_F", 150},
                     {"Land_Cargo40_brick_red_F", 150},
@@ -276,7 +286,7 @@ class CfgVehicles
                     {"Land_Cargo40_white_F", 150},
                     {"Land_Cargo40_yellow_F", 150}
                 }},
-                {"Medium", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo20_IDAP_F.jpg", {
+                {"$STR_antistasi_dialogs_construction_menu_category_cargo_crates_medium", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo20_IDAP_F.jpg", {
                     {"Land_Cargo20_IDAP_F", 50},
                     {"Land_Cargo20_blue_F", 50},
                     {"Land_Cargo20_brick_red_F", 50},
@@ -291,7 +301,7 @@ class CfgVehicles
                     {"Land_Cargo20_white_F", 50},
                     {"Land_Cargo20_yellow_F", 50}
                 }},
-                {"Small", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo10_IDAP_F.jpg", {
+                {"$STR_antistasi_dialogs_construction_menu_category_cargo_crates_small", "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Land_Cargo10_IDAP_F.jpg", {
                     {"Land_Cargo10_IDAP_F", 25},
                     {"Land_Cargo10_blue_F", 25},
                     {"Land_Cargo10_brick_red_F", 25},
