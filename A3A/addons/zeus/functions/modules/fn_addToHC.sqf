@@ -19,7 +19,7 @@
 	
 	Usage:
 		Only intended to be called from the init event handler of Zeus-spawned A3U add to high command module.
-		[_target] call A3U_zeus_fnc_addToHC;
+		[_target] call A3A_zeus_fnc_addToHC;
 	
 	Return:
 		Nothing

@@ -275,6 +275,6 @@
 		scopeCurator = 2;
 		category = QGVAR(Misc);
 		displayName = "$STR_A3U_Zeus_ModuleType_Misc_AddToHC";
-		function = QUOTE(A3U_zeus_fnc_addToHC);
+		function = QUOTE(FUNC(addToHC));
 	};
 		

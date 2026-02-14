@@ -19,7 +19,7 @@
 	
 	Usage:
 		Only intended to be called from the init event handler of Zeus-spawned A3U modules.
-		[_module] call A3U_zeus_fnc_initModule;
+		[_module] call A3A_zeus_fnc_initModule;
 	
 	Return:
 		Nothing
@@ -51,7 +51,8 @@ private _fnc_validateArgsAndRun = {
 	
 	private ["_argsValidated"];
 	switch (_category) do {
-		case (QGVAR(Supports)): {
+		case (QGVAR(Supports_Occupants));
+		case (QGVAR(Supports_Invaders)) : {
 			private _args = createHashMapFromArray [["type", ""], ["side", ""], ["caller", "attack"], ["maxSpend", 500], ["target", false], ["position", getPosATL _module], ["reveal", 1], ["delay", 0]];
 			{
 				_x params ["_k", "_v"];

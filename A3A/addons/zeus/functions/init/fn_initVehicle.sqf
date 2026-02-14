@@ -23,7 +23,7 @@
 	
 	Usage:
 		Only intended to be called from the PostInit event handler of Zeus-spawned A3U vehicles.
-		[_vehObj, "reb", "vehiclesLightArmed"] call A3U_zeus_fnc_initVehicle;
+		[_vehObj, "reb", "vehiclesLightArmed"] call A3A_zeus_fnc_initVehicle;
 	
 	Return:
 		Nothing
