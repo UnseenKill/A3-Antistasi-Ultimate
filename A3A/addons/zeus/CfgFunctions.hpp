@@ -9,5 +9,10 @@ class CfgFunctions
             class initVehicle {};
             class initModule {};
         };
+        class modules
+        {
+            file = QPATHTOFOLDER(functions\modules);
+            class addToHC {};
+        };
     };
 };

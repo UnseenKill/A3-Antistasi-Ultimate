@@ -339,7 +339,11 @@ class CfgPatches
             QGVAR(Module_Support_Invaders_OrbitalStrike),
             QGVAR(Module_Support_Invaders_UAV),
             QGVAR(Module_Support_Invaders_UAVAttack),
-            QGVAR(Module_Support_Invaders_Tank)
+            QGVAR(Module_Support_Invaders_Tank),
+
+            // misc modules
+            QGVAR(Module_Misc_Base),
+            QGVAR(Module_Misc_AddToHC),
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

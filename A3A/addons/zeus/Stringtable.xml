@@ -420,6 +420,12 @@
             <Key ID="STR_A3U_Zeus_ModuleType_Support_UAVAttack">
                 <Original>UAV Attack</Original>
             </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Misc">
+                <Original>[A3U] Misc</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_ModuleType_Misc_AddToHC">
+                <Original>Add to High Command</Original>
+            </Key>
         </Container>
         <Container name="Misc">
             <Key ID="STR_A3U_Zeus_Misc_Dialog_Header">
@@ -433,6 +439,12 @@
             </Key>
             <Key ID="STR_A3U_Zeus_Misc_Dialog_NoSupportOfType">
                 <Original>Faction has no support of type %1</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_Misc_Dialog_InvalidTarget">
+                <Original>Target for module is invalid. Module must be placed on a unit or group.</Original>
+            </Key>
+            <Key ID="STR_A3U_Zeus_Misc_Dialog_InvalidGroup">
+                <Original>Group for module is invalid. Group must be rebel side, have at least one unit and a non-player leader.</Original>
             </Key>
         </Container>
     </Package>

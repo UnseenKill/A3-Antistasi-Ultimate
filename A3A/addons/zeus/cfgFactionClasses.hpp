@@ -46,4 +46,8 @@ class CfgFactionClasses
 		displayName = "$STR_A3U_Zeus_ModuleType_Supports_Invaders";
 		side = 7;
 	};
+	class GVAR(Misc) {
+		displayName = "$STR_A3U_Zeus_ModuleType_Misc";
+		side = 7;
+	};
 };

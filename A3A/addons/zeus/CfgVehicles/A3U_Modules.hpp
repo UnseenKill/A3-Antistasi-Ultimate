@@ -13,7 +13,7 @@
 			delay = 0;
 		};
 		function = QUOTE(A3A_fnc_createSupport);
-	}
+	};
 	class GVAR(Module_Support_Occupants_Airstrike) : GVAR(Module_Support_Base) {
 		scopeCurator = 2;
 		category = QGVAR(Supports_Occupants);
@@ -264,3 +264,17 @@
 			side = QUOTE(Invaders);
 		};
 	};
+
+	// Misc
+	class GVAR(Module_Misc_Base) : GVAR(Module_Base) {
+		curatorCanAttach = 1;
+		category = "";
+		class arguments {};
+	};
+	class GVAR(Module_Misc_addToHC) : GVAR(Module_Misc_Base) {
+		scopeCurator = 2;
+		category = QGVAR(Misc);
+		displayName = "$STR_A3U_Zeus_ModuleType_Misc_AddToHC";
+		function = QUOTE(A3U_zeus_fnc_addToHC);
+	};
+		

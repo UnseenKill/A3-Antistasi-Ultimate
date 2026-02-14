@@ -43,39 +43,49 @@ private _fnc_addToGroup = {
 private _fnc_validateArgsAndRun = {
 	params ["_module", ["_cfg", configNull]];
 
-	Debug_2("Module: %1 | Validating args: %2", _module, _args);
-
-	private _args = createHashMapFromArray [["type", ""], ["side", ""], ["caller", "attack"], ["maxSpend", 500], ["target", false], ["position", getPosATL _module], ["reveal", 1], ["delay", 0]];
-	{
-		_x params ["_k", "_v"];
-		if !(_k in keys _args) then { continue };
-		if (_v isEqualType "") then {
-			private _result = call compile _v;
-			if !(isNil "_result") then { _v = _result };
-		};
-		_args set [_k, _v];
-	} forEach (configProperties [_cfg >> "arguments"] apply {[configName _x, _x call BIS_fnc_getCfgData]});
-
-	private _supportTypes = keys ([A3A_supportTypesOcc, A3A_supportTypesInv] select ((_args get "side") isEqualTo Invaders));
-	if (!((_args get "type") in _supportTypes)) exitWith {
-		private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoSupportOfType", (_args get "type")];
-		[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
-		deleteVehicle _module;
-	};
-	
-	private _argsValidated = ["type", "side", "caller", "maxSpend", "target", "position", "reveal", "delay"] apply {_args get _x};
+	Debug_1("Module: %1 | Validating args.", _module);
 
 	private _category = (_cfg >> "category") call BIS_fnc_getCfgData;
-	if (_category isEqualTo QGVAR(Supports)) then {
-		/*
-		* This is only relevant for the support modules right now (those that call A3A_fnc_createSupport)
-		* Will explore refactoring and / or generalizing later based on other modules implemented
-		*/
-		private _target = attachedTo _module;
-		Debug_2("Module: %1 | Attached To: %2", _module, _target);
-		if (!isNull _target) then {
-			_argsValidated set [4, _target];
-			_argsValidated set [5, getPosATL _target];
+	private _target = attachedTo _module;
+	Debug_2("Module: %1 | Attached To: %2", _module, _target);
+	
+	private ["_argsValidated"];
+	switch (_category) do {
+		case (QGVAR(Supports)): {
+			private _args = createHashMapFromArray [["type", ""], ["side", ""], ["caller", "attack"], ["maxSpend", 500], ["target", false], ["position", getPosATL _module], ["reveal", 1], ["delay", 0]];
+			{
+				_x params ["_k", "_v"];
+				if !(_k in keys _args) then { continue };
+				if (_v isEqualType "") then {
+					private _result = call compile _v;
+					if !(isNil "_result") then { _v = _result };
+				};
+				_args set [_k, _v];
+			} forEach (configProperties [_cfg >> "arguments"] apply {[configName _x, _x call BIS_fnc_getCfgData]});
+
+			private _supportTypes = keys ([A3A_supportTypesOcc, A3A_supportTypesInv] select ((_args get "side") isEqualTo Invaders));
+			if (!((_args get "type") in _supportTypes)) exitWith {
+				private _message = format [localize "STR_A3U_Zeus_Misc_Dialog_NoSupportOfType", (_args get "type")];
+				[objNull, _message] call BIS_fnc_showCuratorFeedbackMessage;
+				deleteVehicle _module;
+			};
+			
+			_argsValidated = ["type", "side", "caller", "maxSpend", "target", "position", "reveal", "delay"] apply {_args get _x};
+			
+			/*
+			* This is only relevant for the support modules right now (those that call A3A_fnc_createSupport)
+			* Will explore refactoring and / or generalizing later based on other modules implemented
+			*/
+			if (!isNull _target) then {
+				_argsValidated set [4, _target];
+				_argsValidated set [5, getPosATL _target];
+			};
+		};
+		case (QGVAR(Misc)): {
+			_argsValidated = [_target];
+		};
+		default {
+			_argsValidated = [];
 		};
 	};
 
