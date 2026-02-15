@@ -119,7 +119,7 @@ _buildings = nearestTerrainObjects [_positionX, ["BUILDING", "BUNKER", "FUELSTAT
 Debug_1("Buildings found: %1", _buildings);
 
 if (!isNil "_buildings" && {_buildings isNotEqualTo []}) then {
-    _capableBuildings = _buildings select {count ([_x] call BIS_fnc_buildingPositions) > 1 && {!(isObjectHidden _x)}};
+    _capableBuildings = _buildings select { !(isObjectHidden _x) && { _x buildingPos -1 isNotEqualTo []}};
     Debug_1("Capable buildings found: %1", _capableBuildings);
 
     if (!isNil "_capableBuildings" && {_capableBuildings isNotEqualTo []}) then {
@@ -164,9 +164,8 @@ private ["_target"];
 if (isNil "_targetBuilding") then {
     _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetPos, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 } else {
-    private _buildingPositions = [_targetBuilding] call BIS_fnc_buildingPositions;
-    private _targetBuildingPositionIndex = random (round ((count _buildingPositions) - 1));
-    private _targetBuildingPosition = _buildingPositions select _targetBuildingPositionIndex;
+    private _buildingPositions = _targetBuilding buildingPos -1;
+    private _targetBuildingPosition = selectRandom _buildingPositions;
 
     private _occupiedIndexes = [_targetBuildingPosition];
     _target = [_targetGroup, A3A_faction_riv get "unitCommander", _targetBuildingPosition, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
@@ -174,16 +173,13 @@ if (isNil "_targetBuilding") then {
     if (_isDifficult) then {
         for "_i" from 1 to (round (random [1,2,4])) do {
             private _nonOccupiedIndex = -1;
-
-            {
-                if (!(_forEachIndex in _occupiedIndexes)) exitWith {
-                    _occupiedIndexes pushBack _forEachIndex;
-                    _nonOccupiedIndex = _forEachIndex;
-                };
-            } forEach _buildingPositions;
+            private _nonOccupiedIndex = _buildingPositions findIf {
+                !(_x in _occupiedIndexes);
+            };
 
             if (_nonOccupiedIndex != -1) then {
-                private _guardClassName = selectRandom [
+                _occupiedIndexes pushBack _nonOccupiedIndex;
+                private _guardClassName = selectRandom [                    
                     "loadouts_riv_militia_Mercenary",
                     "loadouts_riv_militia_Partisan",
                     "loadouts_riv_militia_Oppressor",
