@@ -35,7 +35,7 @@ if (vehicle _player != _player) then {
 };
 
 private _isHQ = _item in [petros, mapX, vehicleBox, flagX, boxX];
-if (_isHQ && !{ _item inArea "Synd_HQ" }) then {
+if (_isHQ && { !(_item inArea "Synd_HQ") }) then {
     // Drag object back into HQ area if moved out
     private _posHQ = markerPos "Synd_HQ"; 
     private _objdir = _posHQ vectorFromTo getPosATL _item;
