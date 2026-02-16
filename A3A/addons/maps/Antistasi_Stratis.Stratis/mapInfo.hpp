@@ -12,9 +12,9 @@ class stratis {
 	milAdministrations[] = {};
 	climate = "arid";
 	buildObjects[] = {
+		BUILDABLES_HISTORIC,
 		BUILDABLES_ARCTIC,
 		BUILDABLES_ARID,
-		BUILDABLES_HISTORIC,
 		BUILDABLES_SCIFI,
 		BUILDABLES_TEMPERATE,
 		BUILDABLES_TROPIC,
