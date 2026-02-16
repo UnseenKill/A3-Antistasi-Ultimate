@@ -191,6 +191,7 @@ class CfgFunctions
             class unlockVehicle {};
             class updateRebelStatics {};
             class zoneCheck {};
+            class zoneCountUnits {};
             class checkWinCondition {};
             class checkLossCondition {};
         };
@@ -341,6 +342,7 @@ class CfgFunctions
             class countGarrison {};
             class createGarrison {};
             class createGarrisonLine {};
+            class crewLocationStatics {};
             class getGarrison {};
             class getGarrisonRatio {};
             class getGarrisonStatus {};
@@ -467,8 +469,9 @@ class CfgFunctions
 
         class OrgPlayers {
             file = QPATHTOFOLDER(functions\OrgPlayers);
-            class addScorePlayer {};
             class addMoneyPlayer {};
+            class addScorePlayer {};
+            class addTearDownActions {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};
@@ -799,9 +802,13 @@ class CfgFunctions
             class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
+            class isEmplacementMarker {};
             class isEngineer {};
+            class isWithinMarkerArea {};
+            class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class nearestFriendlyMarker {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
