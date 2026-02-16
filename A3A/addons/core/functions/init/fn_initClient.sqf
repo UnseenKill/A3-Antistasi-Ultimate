@@ -483,7 +483,7 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
 
     if (!_enableInitMessages || {count _modsAndLoadText isEqualTo 0}) exitWith {};
     private _textXML = "<t align='left'>" + ((_modsAndLoadText apply { "<t color='#f0d498'>" + _x#1 + ":</t>" + _x#2 }) joinString "<br/>") + "</t>";
-    if (_enableInitMessages) then { [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint };
+    [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint;
 };
 
 // uh, what's this for exactly? What are we doing that needs the main display?
