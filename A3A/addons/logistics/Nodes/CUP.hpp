@@ -690,16 +690,15 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Dingo_CUP_Dingo2a2_MG_p3d : TRIPLE
 {
     canLoadWeapon = 0;
     class Nodes
-   {
-       class Node1
-       {
-           offset[] = {0,-2.1,-1};
-       };
+    {
+        class Node1
+        {
+            offset[] = {0,-2.1,-1};
+        };
     };
 };
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Dingo_CUP_Dingo2a2_p3d : CUP_WheeledVehicles_CUP_WheeledVehicles_Dingo_CUP_Dingo2a2_MG_p3d {};
 
-/* pending turn out seat fix
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Boxer_CUP_Boxer_gmg_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -708,29 +707,27 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Boxer_CUP_Boxer_gmg_p3d : TRIPLES(
         class Node1
         {
             offset[] = {0,-2.8,-1.3};
-			seats[] = {0,1,3,4,5,6};
+			seats[] = {0,1};
+            turrets[] = {{2},{3},{4},{5}};
         };
     };
 };
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Boxer_CUP_Boxer_hmg_p3d : CUP_WheeledVehicles_CUP_WheeledVehicles_Boxer_CUP_Boxer_gmg_p3d {};
-*/
 
-/* pending turn out seat fix
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP_bvp1 : TRIPLES(ADDON,Nodes,Base)
 {
-		canLoadWeapon = 0; 
-        class Nodes
+    canLoadWeapon = 0; 
+    class Nodes
     {
         class Node1
         {
             offset[] = {-0.6,-2.4,-1.3};
-			seats[] = {5,7};
+            seats[] = {5,7};
+			turrets[] = {{8},{9}};
         };
     };
 };
-*/
 
-/* pending turn out seat fix
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2 : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -740,12 +737,11 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2 : TRIPLES(ADDON,Node
         {
             offset[] = {-0.6,-2.3,-1.2};
 			seats[] = {8};
+            turrets[] = {{6}};
         };
     };
 };
-*/
 
-/* pending turret seat fix
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_ambulance : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 1;
@@ -754,16 +750,14 @@ class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_ambulance : TRIPLES(
         class Node1
         {
             offset[] = {0,-1.95,0.35};
-			seats[] = {};
         };
         class Node2
         {
             offset[] = {0,-2.75,0.35};
-			seats[] = {};
+			turrets[] = {{2}};
         };
     };
 };
-*/
 
 class cup_trackedvehicles_cup_trackedvehicles_bmp_BMP2_BMP2_HQ : TRIPLES(ADDON,Nodes,Base)
 {
@@ -827,7 +821,6 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR40_CUP_btr40_dskm : TRIPLES(ADD
     };
 };
 
-/* pending turn out seat fix
 class cup_wheeledvehicles_cup_wheeledvehicles_btr60_CUP_BTR60 : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 1;
@@ -837,6 +830,7 @@ class cup_wheeledvehicles_cup_wheeledvehicles_btr60_CUP_BTR60 : TRIPLES(ADDON,No
         {
             offset[] = {0,-1.4,-0.05};
 			seats[] = {1,4};
+            turrets[] = {{9}};
         };
 		class Node2
         {
@@ -845,7 +839,6 @@ class cup_wheeledvehicles_cup_wheeledvehicles_btr60_CUP_BTR60 : TRIPLES(ADDON,No
         };
     };
 };
-*/
 
 class CUP_WheeledVehicles_CUP_WheeledVehicles_BTR80_CUP_BTR_80_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -1014,7 +1007,6 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_bulldog_RWS : TR
 };
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_bulldog : CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_bulldog_RWS {};
 
-/* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -1023,13 +1015,11 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_p3d : TRIPLES(AD
         class Node1
         {
             offset[] = {0,-2.05,-0.45};
-			seats[] = {5,6,7};
+			seats[] = {1};
         };
     };
 };
-*/
 
-/* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_ambulance_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -1038,11 +1028,10 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_Bulldog_CUP_fv432_ambulance_p3d : 
         class Node1
         {
             offset[] = {0,-1.7,-0.02};
-			seats[] = {1,5};
+			seats[] = {0};
         };
     };
 };
-*/
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_FV510_CUP_FV510_BAF : TRIPLES(ADDON,Nodes,Base)
 {
@@ -1100,7 +1089,6 @@ class cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_p3d : TRIPL
 class cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_LMG_p3d : cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_p3d {};
 class cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_GMG_p3d : cup_wheeledvehicles_cup_wheeledvehicles_ridgeback_CUP_ridgback_p3d {};
 
-/* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_AAV_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -1110,17 +1098,17 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_AAV_p3d : TRIPLES(ADDON,No
         {
             offset[] = {0,-2.3,-1.47};
 			seats[] = {4,9,12};
+            turrets[] = {{3},{6}};
         };
         class Node2
         {
             offset[] = {0,-3.1,-1.47};
 			seats[] = {5,6,7,10};
+            turrets[] = {{4},{7}};
         };
     };
 };
-*/
 
-/* pending turn out seat fix
 class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_aav_unarmed_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -1130,15 +1118,16 @@ class CUP_TrackedVehicles_CUP_TrackedVehicles_AAV_CUP_aav_unarmed_p3d : TRIPLES(
         {
             offset[] = {0,-2.3,-1.31};
 			seats[] = {4,9,12};
+            turrets[] = {{3},{6}};
         };
         class Node2
         {
             offset[] = {0,-3.1,-1.31};
 			seats[] = {5,6,7,10};
+            turrets[] = {{4},{7}};
         };
     };
 };
-*/
 
 class CUP_TrackedVehicles_CUP_TrackedVehicles_NewM113_CUP_m113a1_p3d : TRIPLES(ADDON,Nodes,Base)
 {
@@ -1204,7 +1193,6 @@ class CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1126_ICV_mk19 : CUP_W
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1133_MEV : CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1126_ICV_m2 {};
 class CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1130_CV : CUP_WheeledVehicles_CUP_WheeledVehicles_Stryker_CUP_M1126_ICV_m2 {};
 
-/* pending turn out seat fix
 class cup_wheeledvehicles_cup_wheeledvehicles_lav25_CUP_LAV25_p3d : TRIPLES(ADDON,Nodes,Base)
 {
     canLoadWeapon = 0;
@@ -1213,12 +1201,12 @@ class cup_wheeledvehicles_cup_wheeledvehicles_lav25_CUP_LAV25_p3d : TRIPLES(ADDO
         class Node1
         {
             offset[] = {0,-2.2,-1.5};
-			seats[] = {2,3,4,5};
+			seats[] = {2,3};
+            turrets[] = {{1},{2}};
         };
     };
 };
 class cup_wheeledvehicles_cup_wheeledvehicles_lav25_cup_lav25m240_p3d : cup_wheeledvehicles_cup_wheeledvehicles_lav25_CUP_LAV25_p3d {};
-*/
 
 class cup_wheeledvehicles_cup_wheeledvehicles_lav25_cup_lav_hq_p3d : TRIPLES(ADDON,Nodes,Base)
 {
