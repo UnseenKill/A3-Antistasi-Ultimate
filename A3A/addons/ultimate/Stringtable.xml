@@ -356,4 +356,22 @@
             <French>Ce kit contient un outil de crochetage à usage unique pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
         </Key>
     </Package>
+    <Package name="CBA-settings">
+        <Key ID="STR_A3U_setting_enableInitMessages">
+            <Original>Enable Init Messages</Original>
+            <German>Initialnachrichten aktivieren</German>
+            <Russian>Включить начальные сообщения</Russian>
+            <Korean>초기 메시지 활성화</Korean>
+            <Chinesesimp>启用初始化消息</Chinesesimp>
+            <French>Activer les messages d'initialisation</French>
+        </Key>
+        <Key ID="STR_A3U_setting_enableIntroAnimation">
+            <Original>Enable Intro Animation</Original>
+            <German>Intro-Animation aktivieren</German>
+            <Russian>Включить вступительную анимацию</Russian>
+            <Korean>인트로 애니메이션 활성화</Korean>
+            <Chinesesimp>启用开场动画</Chinesesimp>
+            <French>Activer l'animation d'introduction</French>
+        </Key>
+    </Package>
 </Project>
