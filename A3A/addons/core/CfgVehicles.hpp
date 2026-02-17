@@ -229,6 +229,7 @@ class CfgVehicles
         displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations";
         scope = 1;
 
+        editorPreview = QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Decorations).jpg);
         hiddenSelectionsTextures[] += {QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Decorations).paa)};
 
         /* Generator property:
@@ -352,6 +353,7 @@ class CfgVehicles
         displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights";
         scope = 1;
 
+        editorPreview = QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Chemlights).jpg);
         hiddenSelectionsTextures[] += {QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Chemlights).paa)};
 
         GVAR(buildableObjects)[] = {
