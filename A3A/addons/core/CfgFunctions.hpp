@@ -325,6 +325,18 @@ class CfgFunctions
             class unit_recruit {};
         };
 
+        class Events {
+            SPATHTO_FNC(Events,addEventHandler);
+            SPATHTO_FNC(Events,removeEventHandler);
+            SPATHTO_FNC(Events,triggerGlobalEvent);
+            SPATHTO_FNC(Events,triggerLocalEvent);
+            SPATHTO_FNC(Events,triggerOwnerEvent);
+            SPATHTO_FNC(Events,triggerRemoteEvent);
+            SPATHTO_FNC(Events,triggerResultEvent);
+            SPATHTO_FNC(Events,triggerServerEvent);
+            SPATHTO_FNC(Events,triggerTargetEvent);
+        };
+
         class EventHandler {
             file = QPATHTOFOLDER(functions\EventHandler);
             class addArtilleryTrailEH {};
@@ -809,6 +821,8 @@ class CfgFunctions
             class localLog {};
             class log {};
             class nearestFriendlyMarker {};
+            class onClientInitDone {};
+            class onServerInitDone {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
