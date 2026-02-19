@@ -77,15 +77,21 @@ _wp1 setWaypointType "MOVE";
 _wp1 setWaypointSpeed "NORMAL";
 
 if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
-    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 3000};
-    _vehicle limitSpeed ((0.8 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 500);         // to slow down vtols
-    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 2000};
-    _vehicle limitSpeed ((0.7 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 400);         // to slooow down vtols
-    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 1500};
-    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250);         // to slow down vtols even more
+    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 3000}; 
+    if (!alive _vehicle) exitWith {};
+    _vehicle limitSpeed ((0.8 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 500); // to slow down vtols
+
+    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 2000}; 
+    if (!alive _vehicle) exitWith {};
+    _vehicle limitSpeed ((0.7 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 400); // to slooow down vtols
+
+    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 1500};
+    if (!alive _vehicle) exitWith {};
+    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // to slow down vtols even more
 } else {
-    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 1000};
-    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250);         // to slow down heli
+    waitUntil {sleep 1; !alive _vehicle || (_vehicle distance2D _dropPos) < 1000};
+    if (!alive _vehicle) exitWith {};
+    _vehicle limitSpeed ((0.6 * (getNumber(configOf _vehicle >> "maxSpeed"))) min 250); // to slow down heli
 };
 
 [_vehicle, _dropPos] spawn {
