@@ -96,8 +96,8 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
 
 [_vehicle, _dropPos] spawn {
     params ["_vehicle", "_dropPos"];
-    waitUntil {sleep 1; (_vehicle distance2D _dropPos) < 800};
-    while {_vehicle distance2D _dropPos > 675} do {
+    waitUntil {!(alive _vehicle) || {sleep 1; (_vehicle distance2D _dropPos) < 800}};
+    while {(alive _vehicle) && {_vehicle distance2D _dropPos > 675}} do {
         [_vehicle, "CMFlareLauncher"] call BIS_fnc_fire;
         [_vehicle, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
         [_vehicle, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
@@ -106,6 +106,7 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
 };
 
 waitUntil {sleep 1; (currentWaypoint _groupPilot > 0) || (!alive _vehicle) || (!canMove _vehicle)};
+if !(alive _vehicle) exitWith {};
 
 if(currentWaypoint _groupPilot > 0) then
 {
@@ -116,9 +117,10 @@ if(currentWaypoint _groupPilot > 0) then
     private _troopVelocity = [(_vehicleVelocity select 0) * 0.2, (_vehicleVelocity select 1) * 0.2, -1];
 
     {
-        unAssignVehicle _x;
+        unassignVehicle _x;
         //Move them into alternating left/right positions, so their parachutes are less likely to kill each other
-        private _pos = if (_forEachIndex % 2 == 0) then {_vehicle modeltoWorld [7, -20, -5]} else {_vehicle modeltoWorld [-7, -20, -5]};
+        private _sideOffset = [1, -1] select(forEachIndex % 2 == 0);
+        private _pos = _vehicle modeltoWorld [7 * _sideOffset, -20, -5];
         _x setPosASL AGLtoASL _pos;
         _x setVelocity _troopVelocity;
         _x spawn
