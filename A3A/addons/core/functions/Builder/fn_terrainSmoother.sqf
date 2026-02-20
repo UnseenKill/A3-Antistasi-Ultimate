@@ -44,7 +44,7 @@ private _fnc_processTerrain = {
     };
 };
 
-// Main zone (22m radius)
+// Main zone (flatten zone)
 private _radiusSqr = _radius * _radius;
 for "_i" from 0 to 1 do {
     private _mainZonePoints = [];
@@ -62,7 +62,7 @@ for "_i" from 0 to 1 do {
     [_mainZonePoints] call _fnc_processTerrain;
 };
 
-// Smoothing zone (34m radius)
+// Smoothing zone (smoothing the edges)
 private _smoothingRadiusSqr = _smoothingRadius * _smoothingRadius;
 private _smoothingPoints = [];
 private _smoothingFactorBase = _smoothingRadius - _radius;
