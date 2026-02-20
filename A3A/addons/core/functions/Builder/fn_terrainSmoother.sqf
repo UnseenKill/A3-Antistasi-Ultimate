@@ -46,8 +46,9 @@ private _fnc_processTerrain = {
 
 // Main zone (flatten zone)
 private _radiusSqr = _radius * _radius;
+private _mainZonePoints = [];
 for "_i" from 0 to 1 do {
-    private _mainZonePoints = [];
+    _mainZonePoints = [];
     for "_dx" from -_radius to _radius step _gridSize do {
         for "_dy" from -_radius to _radius step _gridSize do {
             if ((_dx*_dx + _dy*_dy) <= _radiusSqr) then {
@@ -67,6 +68,7 @@ private _smoothingRadiusSqr = _smoothingRadius * _smoothingRadius;
 private _smoothingPoints = [];
 private _smoothingFactorBase = _smoothingRadius - _radius;
 for "_i" from 0 to 1 do {
+    _smoothingPoints = [];
     for "_dx" from -_smoothingRadius to _smoothingRadius step _gridSize do {
         for "_dy" from -_smoothingRadius to _smoothingRadius step _gridSize do {
             private _distSqr = _dx*_dx + _dy*_dy;
@@ -106,3 +108,38 @@ diag_log "=== TERRAIN AFTER ===";
     diag_log format ["AFTER %1", _x];
 } forEach _debugAfter;
 diag_log "=== END TERRAIN AFTER ===";
+
+// === VISUALIZATION OF MODIFIED POINTS AND RADIUS ===
+private _visGroup = createGroup sideLogic; // group for created objects (to be able to delete them later)
+
+// 1. Spheres at all main zone points (green) 1m above
+{
+    private _sphere = "Sign_Sphere10cm_F" createVehicle [0,0,0];
+    _sphere setPosASL [_x#0, _x#1, (_x#2) + 1];
+    _sphere setObjectTextureGlobal [0, "#(rgb,1,1,1)color(0,1,0,1)"]; // green
+    (group _sphere) deleteGroupWhenEmpty true;
+} forEach _mainZonePoints;
+
+// 2. Spheres at all smoothing zone points (yellow) 1m above
+{
+    private _sphere = "Sign_Sphere10cm_F" createVehicle [0,0,0];
+    _sphere setPosASL [_x#0, _x#1, (_x#2) + 1];
+    _sphere setObjectTextureGlobal [0, "#(rgb,1,1,1)color(1,1,0,1)"]; // yellow
+    (group _sphere) deleteGroupWhenEmpty true;
+} forEach _smoothingPoints;
+
+/* // 3. Circumference of radius _smoothingRadius (red spheres)
+private _numPoints = 36; // number of points on circumference
+for "_i" from 0 to _numPoints do {
+    private _angle = 360 / _numPoints * _i;
+    private _dx = _smoothingRadius * cos _angle;
+    private _dy = _smoothingRadius * sin _angle;
+    private _x = _centerX + _dx;
+    private _y = _centerY + _dy;
+    private _z = getTerrainHeightASL [_x, _y]; // terrain height (new height can be used)
+    private _sphere = "Sign_Sphere10cm_F" createVehicle [0,0,0];
+    _sphere setPosASL [_x, _y, _z + 0.5]; // slightly above ground
+    _sphere setObjectTextureGlobal [0, "#(rgb,1,1,1)color(1,0,0,1)"]; // red
+    (group _sphere) deleteGroupWhenEmpty true;
+}; */
+// ====================================================
