@@ -39,6 +39,8 @@ private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits) selec
 } apply {
 	private _uuid = [] call CBA_fnc_createUUID;
 
+	[CBA_EVENT_SERVER_PLAYER_SAVE, [_uuid], _x] call FUNCMAIN(triggerTargetEvent);
+
 	[
 		_uuid, createHashMapFromArray[
 			["uid", getPlayerUID _x],
