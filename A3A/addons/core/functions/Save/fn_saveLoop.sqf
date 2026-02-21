@@ -25,7 +25,7 @@ private _namespace = [profileNamespace, missionProfileNamespace] select _saveToN
 
 // Build server-to-client wait map
 private _syncStartTick = diag_tickTime;
-private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits)) select {
+private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits) select {
 	// The `skipSaveOnce` variable is usually set on theBoss when a global save
 	// is triggered via the commander menu; here, the initiating player is
 	// always saved first, so we skip them here but reset the flag.
@@ -46,7 +46,7 @@ private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits)) sele
 			["player", _x]
 		]
 	]
-};
+});
 
 // Start checking for clients' responses. Wait a maximum of 10 seconds, which
 // should be enough for plugins data to be synched to from clients to server.
