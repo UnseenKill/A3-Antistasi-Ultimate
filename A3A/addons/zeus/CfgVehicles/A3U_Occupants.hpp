@@ -545,10 +545,6 @@
 		editorSubcategory = "EdSubcat_AAs";
         GVAR(vehType) = QUOTE(vehiclesAA);
     };
-    class GVAR(Occupants_Vehicle_AT) : GVAR(Occupants_Vehicle_Basic) {
-        displayName = $STR_A3U_Zeus_VehicleType_AT;
-        GVAR(vehType) = QUOTE(vehiclesAT);
-    };
     class GVAR(Occupants_Vehicle_APC) : GVAR(Vehicle_APC_Base) {
         scope = 2;
         scopeCurator = 2;
