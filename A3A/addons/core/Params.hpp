@@ -199,6 +199,7 @@ class Params
     class victoryCondition: ScenarioParams
     {
         title = $STR_A3AU_victory_condition;
+        tooltip = $STR_A3AU_victory_condition_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_A3AU_normal_victory,$STR_A3AU_total_victory,$STR_A3AU_economic_victory,$STR_A3AU_logistical_victory,$STR_A3AU_political_victory};
         default = 0;
@@ -206,6 +207,7 @@ class Params
     class lossCondition: ScenarioParams
     {
         title = $STR_A3AU_loss_condition;
+        tooltip = $STR_A3AU_loss_condition_desc;
         values[] = {0,1,2,3};
         texts[] = {$STR_A3AU_loss_condition_pop_death,$STR_A3AU_loss_condition_hr,$STR_A3AU_loss_condition_money,$STR_A3AU_loss_condition_all};
         default = 0;
@@ -223,6 +225,7 @@ class Params
     class createAmbientSounds: ScenarioParams
     {
         title = $STR_A3AU_ambient_sounds;
+        tooltip = $STR_A3AU_ambient_sounds;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
@@ -480,6 +483,7 @@ class Params
     class zombiesUncapped: AIParams
     {
         title = $STR_A3AU_uncap_zombie_spawn;
+        tooltip = $STR_A3AU_uncap_zombie_spawn_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -487,6 +491,7 @@ class Params
     class plusGarrison: AIParams
     {
         title = $STR_A3AU_old_garrison_spawn;
+        tooltip = $STR_A3AU_old_garrison_spawn_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -494,6 +499,7 @@ class Params
     class radiomanSupport: AIParams
     {
         title = $STR_A3AU_radioman_support;
+        tooltip = $STR_A3AU_radioman_support_desc;
         values[] = {0,1};
         texts[] = {$STR_A3AU_dialogs_radioman_support,$STR_A3AU_dialogs_squadleader_support};
         default = 0;
@@ -648,6 +654,7 @@ class Params
     class loseHROnDeath: RebelBalanceParams
     {
         title = $STR_A3AU_hr_loss;
+        tooltip = $STR_A3AU_hr_loss_desc;
         values[] = {0,1,2};
         texts[] = {$STR_A3AU_no_hr_loss,$STR_A3AU_yes_hr_loss,$STR_A3AU_yes_hr_loss_w_msg};
         default = 0;
@@ -717,6 +724,7 @@ class Params
     class A3A_selfReviveMethods: RebelBalanceParams
     {
         title = $STR_A3A_Params_selfReviveMethods_title;
+        tooltip = $STR_A3A_Params_selfReviveMethods_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
         default = 0;
@@ -724,6 +732,7 @@ class Params
     class useDownedNotification: RebelBalanceParams
     {
         title = $STR_A3AU_use_downed_notification;
+        tooltip = $STR_A3AU_use_downed_notification_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -739,6 +748,7 @@ class Params
     class staminaEnabled: RebelBalanceParams
     {
         title = $STR_A3AU_stamina_enabled;
+        tooltip = $STR_A3AU_stamina_enabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
@@ -746,6 +756,7 @@ class Params
     class fatigueEnabled: RebelBalanceParams
     {
         title = $STR_A3AU_fatigue_enabled;
+        tooltip = $STR_A3AU_fatigue_enabled_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
@@ -753,6 +764,7 @@ class Params
     class swayEnabled: RebelBalanceParams
     {
         title = $STR_A3AU_sway_enabled;
+        tooltip = $STR_A3AU_sway_enabled_desc;
         values[] = {0,25,50,75,100};
         texts[] = {"0%","25%","50%","75%","100%"};
         default = 100;
@@ -760,6 +772,7 @@ class Params
     class A3A_removeRestore: RebelBalanceParams
     {
         title = $STR_A3A_Params_removeRestore_title;
+        tooltip = $STR_A3A_Params_removeRestore_title;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -867,6 +880,7 @@ class Params
     {
         attr[] = {"server"};
         title = $STR_A3A_Params_enemyResponseTime_title;
+        tooltip = $STR_A3A_Params_enemyResponseTime_desc;
         values[] = {20,15,10,7,5};
         texts[] =  {$STR_A3A_Params_generic_veryslow, $STR_A3A_Params_generic_slow, $STR_A3A_Params_generic_normal, $STR_A3A_Params_generic_fast, $STR_A3A_Params_generic_veryfast};
         default = 10;
@@ -883,6 +897,7 @@ class Params
     class A3A_enemySkillMul: AIBalanceParams
     {
         title = $STR_params_A3A_enemySkillMul;
+        tooltip = $STR_params_A3A_enemySkillMul_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
         default = 2;
@@ -890,6 +905,7 @@ class Params
     class A3A_rebelSkillMul: AIBalanceParams
     {
         title = $STR_params_A3A_rebelSkillMul;
+        tooltip = $STR_params_A3A_rebelSkillMul_desc;
         values[] = {0,1,2,3,4};
         texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
         default = 2;
@@ -977,6 +993,7 @@ class Params
     class hideEnemyMarkers: MiscBalanceParams
     {
         title = $STR_A3AU_hide_enemy_markers;
+        tooltip = $STR_A3AU_hide_enemy_markers_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -985,6 +1002,7 @@ class Params
     class hideEnemyMarkersReconPlaneDistance: MiscBalanceParams
     {
         title = $STR_A3AU_hide_enemy_markers_recon_plane_distance;
+        tooltip = $STR_A3AU_hide_enemy_markers_recon_plane_distance_desc;
         values[] = {100, 300, 500, 1000, 1500, 2000};
         texts[] = {"100", "300", "500", "1000", "1500", "2000"};
         default = 500;
@@ -1018,6 +1036,7 @@ class Params
     class disableTrader: BMParams
     {
         title = $STR_A3AU_disable_trader;
+        tooltip = $STR_A3AU_disable_trader;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -1037,6 +1056,7 @@ class Params
     class vanillaArmsDealer: BMParams
     {
         title = $STR_A3AU_vanilla_weapons_in_arms_dealer;
+        tooltip = $STR_A3AU_vanilla_weapons_in_arms_dealer_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 0;
@@ -1067,10 +1087,10 @@ class Params
         default = 0;
     };
 
-    /*class BuilderParamsSpacer : AllParams
+    class BuilderParamsSpacer : AllParams
     {
         type = "Builder";
-    };*/
+    };
     class BuilderParams : AllParams
     {
         type = "Builder";
@@ -1163,6 +1183,7 @@ class Params
     class A3A_guestItemLimit: UnlockParams
     {
         title = $STR_params_A3A_guestItemLimit;
+        tooltip = $STR_params_A3A_guestItemLimit_desc;
         values[] = {0,10,15,25,40};
         texts[] = {$STR_params_A3A_no_limit,"10","15","25","40"};
         default = 25;
@@ -1206,6 +1227,7 @@ class Params
     class cosmeticsEnabled: UnlockParams
     {
         title = $STR_A3AU_cosmetics;
+        tooltip = $STR_A3AU_cosmetics_desc;
         values[] = {0,1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
         default = 1;
@@ -1615,6 +1637,7 @@ class Params
     class A3A_logDebugConsole: DevelopmentParams
     {
         title = $STR_params_A3A_logDebugConsole;
+        tooltip = $STR_params_A3A_logDebugConsole_desc;
         values[] = {-1,1,2};
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
@@ -1625,6 +1648,7 @@ class Params
     class A3A_flagGarageBlock
     {
         title = $STR_A3A_Params_garageAccessTimer_title;
+        tooltip = $STR_A3A_Params_garageAccessTimer_desc;
         values[] = {0,3,5,10,20};
         texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
         default = 0;

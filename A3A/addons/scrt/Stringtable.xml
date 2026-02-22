@@ -5820,6 +5820,13 @@
                 <Korean>디버그 콘솔 사용 기록</Korean>
                 <French>Utilisation de la console de débogage</French>
             </Key>
+            <Key ID="STR_params_A3A_logDebugConsole_desc">
+                <Original>Create a server log entry when certain types of players use the debug console. No players, all non-developer players, or all players.</Original>
+                <Russian>Создаёт запись в журнале сервера, когда определённые типы игроков используют отладочную консоль. Нет игроков, все неразработчики или все игроки.</Russian>
+                <Chinesesimp>当某些类型的玩家使用调试控制台时创建服务器日志条目。没有玩家，所有非开发者玩家，或所有玩家。</Chinesesimp>
+                <Korean>특정 유형의 플레이어가 디버그 콘솔을 사용할 때 서버 로그 항목을 생성합니다. 플레이어 없음, 모든 비개발자 플레이어 또는 모든 플레이어.</Korean>
+                <French>Créer une entrée de journal serveur lorsque certains types de joueurs utilisent la console de débogage. Aucun joueur, tous les joueurs non-développeurs ou tous les joueurs.</French>
+            </Key>
             <Key ID="STR_params_A3A_logDebugConsole_none">
                 <Original>None</Original>
                 <Russian>Не логгировать никого</Russian>
@@ -6899,11 +6906,18 @@
                 <French>Pas de changement</French>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul">
-                <Original>Enemy AI skill (also affected by server skill)</Original>
-                <Russian>Навык вражеских ИИ-юнитов (также под влиянием общих настроек игры или сервера)</Russian>
-                <Chinesesimp>敌方 AI 单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
-                <Korean>적 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
-                <French>Compétence de l'IA ennemie (également affectée par la compétence du serveur)</French>
+                <Original>Enemy AI skill</Original>
+                <Russian>Навык вражеских ИИ-юнитов</Russian>
+                <Chinesesimp>敌方 AI 单位的技能</Chinesesimp>
+                <Korean>적 인공지능 숙련도</Korean>
+                <French>Compétence de l'IA ennemie</French>
+            </Key>
+            <Key ID="STR_params_A3A_enemySkillMul_desc">
+                <Original>General enemy AI skill modifier. Total skill is also affected by active player count and war level and cannot exceed configured AI skill in Arma 3 server.cfg.</Original>
+                <Russian>Общий модификатор навыка вражеского ИИ. Общий навык также зависит от количества активных игроков и уровня войны и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
+                <Chinesesimp>一般敌方 AI 技能修改器。总技能还受活跃玩家数量和战争等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>
+                <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 활성 플레이어 수와 전쟁 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
+                <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le nombre de joueurs actifs et le niveau de guerre et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
             </Key>
             <Key ID="STR_params_A3A_enemySkillMul_veasy">
                 <Original>Very Low</Original>
@@ -6941,11 +6955,18 @@
                 <French>Très élevé</French>
             </Key>
             <Key ID="STR_params_A3A_rebelSkillMul">
-                <Original>Friendly AI skill (also affected by server skill)</Original>
-                <Russian>Навык дружественных ИИ-юнитов (также под влиянием общих настроек игры или сервера)</Russian>
-                <Chinesesimp>友好AI单位的技能（也受一般游戏或服务器设置的影响）</Chinesesimp>
-                <Korean>아군 인공지능 숙련도 (서버 숙련도의 영향도 있음)</Korean>
-                <French>Compétence de l'IA amie (également affectée par la compétence du serveur)</French>
+                <Original>Friendly AI skill</Original>
+                <Russian>Навык дружественных ИИ-юнитов</Russian>
+                <Chinesesimp>友好AI单位的技能</Chinesesimp>
+                <Korean>아군 인공지능 숙련도</Korean>
+                <French>Compétence de l'IA amie</French>
+            </Key>
+            <Key ID="STR_params_A3A_enemySkillMul_desc">
+                <Original>General rebel AI skill modifier. Total skill is also affected by rebel training level and cannot exceed configured AI skill in Arma 3 server.cfg.</Original>
+                <Russian>Общий модификатор навыка вражеского ИИ. Общий навык также зависит от уровня подготовки повстанцев и не может превышать настроенный навык ИИ в Arma 3 server.cfg.</Russian>
+                <Chinesesimp>一般敌方 AI 技能修改器。总技能还受叛军训练等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>
+                <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 반군 훈련 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
+                <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le niveau d'entraînement des rebelles et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
             </Key>
             <Key ID="STR_params_equipment_header">
                 <Original>EQUIPMENT OPTIONS</Original>
@@ -6955,11 +6976,18 @@
                 <French>OPTIONS D'ÉQUIPEMENT</French>
             </Key>
             <Key ID="STR_params_A3A_guestItemLimit">
-                <Original>Default number of items needed for guests to be able to use them</Original>
-                <Russian>Минимальное количество предмета для гостей</Russian>
-                <Chinesesimp>游客可以使用的默认物品数量</Chinesesimp>
-                <Korean>게스트가 사용할 수 있도록 필요한 기본 아이템 갯수</Korean>
-                <French>Nombre par défaut d'articles nécessaires pour que les invités puissent les utiliser</French>
+                <Original>Guest / Rebel AI item limit</Original>
+                <Russian>Лимит предметов для гостей</Russian>
+                <Chinesesimp>访客物品限制</Chinesesimp>
+                <Korean>게스트 아이템 제한</Korean>
+                <French>Limite d'articles pour les invités</French>
+            </Key>
+            <Key ID="STR_params_A3A_guestItemLimit_desc">
+                <Original>Quantity of an item that must be in the arsenal before a non-member on the server can use it. When unlocks are globally disabled, rebel AI also cannot use the equipment until this amount is reached.</Original>
+                <Russian>Количество предмета, которое должно быть в арсенале перед тем, как невладелец на сервере может его использовать. Когда разблокировки глобально отключены, боевой ИИ повстанцев также не может использовать оборудование, пока не будет достигнуто это количество.</Russian>
+                <Chinesesimp>武器库中某个物品的数量，非成员在服务器上可以使用它之前必须拥有。当全局禁用解锁时，叛军AI也无法使用该装备，直到达到该数量为止。</Chinesesimp>
+                <Korean>서버에서 비회원이 사용할 수 있기 전에 아센널에 있어야 하는 항목의 수량입니다. 잠금 해제가 전역적으로 비활성화되면 반군 AI도 이 수량에 도달할 때까지 장비를 사용할 수 없습니다.</Korean>
+                <French>Quantité d'un article qui doit être dans l'arsenal avant qu'un non-membre sur le serveur puisse l'utiliser. Lorsque les déblocages sont désactivés globalement, l'IA rebelle ne peut pas non plus utiliser l'équipement jusqu'à ce que cette quantité soit atteinte.</French>
             </Key>
             <Key ID="STR_params_A3A_no_limit">
                 <Original>No limit</Original>
