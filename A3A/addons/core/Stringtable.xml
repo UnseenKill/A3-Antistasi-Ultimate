@@ -695,14 +695,12 @@
             </Key>
             <Key ID="STR_A3AU_dialogs_radioman_support">
                 <Original>Radioman</Original>
-                <English>Radioman</English>
                 <Russian>Радист</Russian>
                 <Korean>무전병</Korean>
                 <Chinesesimp>无线电兵</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_ambient_sounds">
                 <Original>Enable Ambient Sounds</Original>
-                <English>Enable Ambient Sounds</English>
                 <Russian>Включить фоновые звуки</Russian>
                 <German>Ambientegeräusche aktivieren</German>
                 <Italian>Abilita suoni ambientali</Italian>
@@ -719,14 +717,12 @@
             </Key>
             <Key ID="STR_A3AU_dialogs_squadleader_support">
                 <Original>Squadleader</Original>
-                <English>Squadleader</English>
                 <Russian>Лидер команды</Russian>
                 <Korean>분대장</Korean>
                 <Chinesesimp>小队长</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_downed_help">
                 <Original>I am injured comrades! Help!</Original>
-                <English>I am injured comrades! Help!</English>
                 <Russian>Я ранен, товарищи! Справка!</Russian>
                 <Korean>나는 부상당했다, 동지들! 도움말!</Korean>
                 <Chinesesimp>我受伤了! 救命!</Chinesesimp>
@@ -2791,7 +2787,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Credits_name">
                 <Original>Credits</Original>
-                <English>Credits</English>
                 <Russian>Заслуги</Russian>
                 <Korean>크레딧</Korean>
                 <French>Crédits</French>
@@ -2870,7 +2865,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_tutorial_name">
                 <Original>Antistasi Basics</Original>
-                <English>Antistasi Basics</English>
                 <Russian>Основы Antistasi</Russian>
                 <Korean>일반 안티스타시</Korean>
                 <French>Notions d'antistasi</French>
@@ -2878,7 +2872,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_commander_options_name">
                 <Original>Commander Options</Original>
-                <English>Commander Options</English>
                 <Russian>Функции командира</Russian>
                 <Korean>지휘관 옵션</Korean>
                 <French>Options du commandant</French>
@@ -2886,7 +2879,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_special_keys_name">
                 <Original>Special Keys</Original>
-                <English>Special Keys</English>
                 <Russian>Спец. клавиши</Russian>
                 <Korean>특수 키</Korean>
                 <French>Touches spéciales</French>
@@ -2894,7 +2886,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_features_detail_name">
                 <Original>Features Detail</Original>
-                <English>Features Detail</English>
                 <Russian>Возможности</Russian>
                 <Korean>기능 세부 정보</Korean>
                 <French>Détails des fonctionnalités</French>
@@ -2902,7 +2893,6 @@
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_ai_management_name">
                 <Original>AI Management</Original>
-                <English>AI Management</English>
                 <Russian>Управление ИИ</Russian>
                 <Korean>AI 관리</Korean>
                 <French>Gestion de l'IA</French>
@@ -5858,7 +5848,6 @@
         <Container name="A3AU_SetupParams">
             <Key ID="STR_A3AU_params_name">
                 <Original>ANTISTASI ULTIMATE PARAMETERS</Original>
-                <English>ANTISTASI ULTIMATE PARAMETERS</English>
                 <Russian>ПАРАМЕТРЫ ANTISTASI ULTIMATE</Russian>
                 <Korean>안티스타시 얼티밋 매개변수</Korean>
                 <French>PARAMÈTRES D'ANTISTASI ULTIMATE</French>
@@ -5866,7 +5855,6 @@
             </Key>
             <Key ID="STR_A3AU_cosmetics">
                 <Original>Enable Cosmetics</Original>
-                <English>Enable Cosmetics</English>
                 <Russian>Добавить косметические предметы</Russian>
                 <Korean>설계도 활성화</Korean>
                 <French>Activer les cosmétiques</French>
@@ -5874,7 +5862,6 @@
             </Key>
             <Key ID="STR_A3AU_uncap_zombie_spawn">
                 <Original>Enable Uncapped Zombie Spawning</Original>
-                <English>Enable Uncapped Zombie Spawning</English>
                 <Russian>Включить неограниченный спавн зомби</Russian>
                 <Korean>무제한 좀비 스폰 활성화</Korean>
                 <French>Activer la création de zombies non plafonnés</French>
@@ -5882,7 +5869,6 @@
             </Key>
             <Key ID="STR_A3AU_old_garrison_spawn">
                 <Original>Use Old Plus Garrison Spawning</Original>
-                <English>Use Old Plus Garrison Spawning</English>
                 <Russian>Использовать старую логику спавна гарнизонов из Plus</Russian>
                 <Korean>기존 안티스타시 플러스 주둔지 스폰 사용</Korean>
                 <French>Utiliser la garnison Old Plus</French>
@@ -5890,7 +5876,6 @@
             </Key>
             <Key ID="STR_A3AU_vanilla_weapons_in_arms_dealer">
                 <Original>Include Vanilla Weapons In Arms Dealer</Original>
-                <English>Include Vanilla Weapons In Arms Dealer</English>
                 <Russian>Добавить ванильное оружие/снаряжение/технику в ассортимент торговца оружием</Russian>
                 <Korean>암거래상에 바닐라 무기 포함</Korean>
                 <French>Inclure les armes Vanilla dans les contrats de vente d'armes</French>
@@ -5898,7 +5883,6 @@
             </Key>
             <Key ID="STR_A3AU_radioman_support">
                 <Original>Support Caller</Original>
-                <English>Support Caller</English>
                 <Russian>Вызывающий поддержку</Russian>
                 <Korean>지원 요청자</Korean>
                 <French>Appel de soutien</French>
@@ -5906,7 +5890,6 @@
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers">
                 <Original>Hide Enemy Zone Markers</Original>
-                <English>Hide Enemy Zone Markers</English>
                 <Russian>Спрятать маркеры вражеских баз</Russian>
                 <French>Cacher les marqueurs ennemis</French>
                 <Korean>적 구역 마커 숨기기</Korean>
@@ -5914,7 +5897,6 @@
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_recon_plane_distance">
                 <Original>Recon Plane Zone Reveal Distance</Original>
-                <English>Recon Plane Zone Reveal Distance</English>
                 <Russian>Дистанция открытыя маркеров самолётом разведки</Russian>
                 <French>Zone révélée par les avions de reconnaissance.</French>
                 <Korean>정찰기의 정찰 거리</Korean>
@@ -5922,49 +5904,42 @@
             </Key>
             <Key ID="STR_A3AU_victory_condition">
                 <Original>Victory Condition</Original>
-                <English>Victory Condition</English>
                 <Russian>Условие победы</Russian>
                 <Chinesesimp>胜利条件</Chinesesimp>
                 <Korean>승리 조건</Korean>
             </Key>
             <Key ID="STR_A3AU_total_victory_deprecated">
                 <Original>Total Victory (deprecated)</Original>
-                <English>Total Victory (deprecated)</English>
                 <Russian>абсолютная победа (устарел)</Russian>
                 <Chinesesimp>全面胜利(已弃用)</Chinesesimp>
                 <Korean>전체적 승리 (비사용)</Korean>
             </Key>
             <Key ID="STR_A3AU_total_victory">
                 <Original>Total Victory</Original>
-                <English>Total Victory</English>
                 <Russian>абсолютная победа</Russian>
                 <Chinesesimp>全面胜利</Chinesesimp>
                 <Korean>전체적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_economic_victory">
                 <Original>Economic Victory</Original>
-                <English>Economic Victory</English>
                 <Russian>Экономическая победа</Russian>
                 <Chinesesimp>经济胜利</Chinesesimp>
                 <Korean>경제적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_political_victory">
                 <Original>Political Victory</Original>
-                <English>Political Victory</English>
                 <Russian>политическая победа</Russian>
                 <Chinesesimp>政治胜利</Chinesesimp>
                 <Korean>정치적 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_normal_victory">
                 <Original>Normal Victory</Original>
-                <English>Normal Victory</English>
                 <Russian>Нормальная победа</Russian>
                 <Chinesesimp>普通胜利</Chinesesimp>
                 <Korean>보통 승리</Korean>
             </Key>
             <Key ID="STR_A3AU_logistical_victory">
                 <Original>Logistical Victory</Original>
-                <English>Logistical Victory</English>
                 <Russian>Логистическая победа</Russian>
                 <Chinesesimp>后勤胜利</Chinesesimp>
                 <Korean>군수적 승리</Korean>
@@ -6025,28 +6000,24 @@
             </Key>
             <Key ID="STR_A3AU_blackmarket_ignore_requirements">
                 <Original>Ignore Black Market Vehicle Requirements</Original>
-                <English>Ignore Black Market Vehicle Requirements</English>
                 <Russian>Игнорировать условия разблокировки транспорта у черного торговца </Russian>
                 <Chinesesimp>取消黑市车辆解锁条件</Chinesesimp>
                 <Korean>암시장 차량 요구사항 무시</Korean>
             </Key>
             <Key ID="STR_A3AU_use_downed_notification">
                 <Original>Notify Players When Downed</Original>
-                <English>Notify Players When Downed</English>
                 <Russian>Уведомлять игроков при падении</Russian>
                 <Chinesesimp>玩家倒地时提示</Chinesesimp>
                 <Korean>쓰러질 시 플레이어에게 알림</Korean>
             </Key>
             <Key ID="STR_A3AU_disable_trader">
                 <Original>Disable Arms Dealer</Original>
-                <English>Disable Arms Dealer</English>
                 <Russian>Обезвредить торговца оружием</Russian>
                 <Chinesesimp>取消军火商</Chinesesimp>
                 <Korean>암거래상 비활성화</Korean>
             </Key>
             <Key ID="STR_A3AU_stamina_enabled">
                 <Original>Enable Stamina (Vanilla)</Original>
-                <English>Enable Stamina (Vanilla)</English>
                 <Russian>Включить выносливость (Vanilla)</Russian>
                 <Korean>스태미나 활성화 (바닐라)</Korean>
                 <French>Activer l'endurance (Vanilla)</French>
@@ -6054,7 +6025,6 @@
             </Key>
             <Key ID="STR_A3AU_fatigue_enabled">
                 <Original>Enable Fatigue (Vanilla)</Original>
-                <English>Enable Fatigue (Vanilla)</English>
                 <Russian>Включить усталость (Vanilla)</Russian>
                 <Korean>피로도 활성화 (바닐라)</Korean>
                 <French>Activer la fatigue (Vanilla)</French>
@@ -6062,7 +6032,6 @@
             </Key>
             <Key ID="STR_A3AU_sway_enabled">
                 <Original>Weapon Sway % (Vanilla)</Original>
-                <English>Weapon Sway % (Vanilla)</English>
                 <Russian>раскачивание оружия % (Vanilla)</Russian>
                 <Korean>무기 흔들림 % (바닐라)</Korean>
                 <French>% de balancement de l'arme (Vanilla)</French>
@@ -6070,7 +6039,6 @@
             </Key>
             <Key ID="STR_notifiers_reload_turret">
                 <Original>Total: %1. Magazines: </Original>
-                <English>Total: %1. Magazines: </English>
                 <Russian>Всего: %1. Магазины: </Russian>
                 <Chinesesimp>总计: %1. 弹匣:</Chinesesimp>
                 <Korean>합계: %1. 탄창:</Korean>

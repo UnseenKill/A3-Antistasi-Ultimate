@@ -1713,28 +1713,24 @@
             </Key>
             <Key ID="STR_end_mission_total_victory_desc">
                 <Original>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</Original>
-                <English>You have completely decimated your enemies!&lt;br/&gt;The brave soldiers have proven their valour, and Petros has been made the sole leader of the country!. You have shown your power and overwhelming strength in this region and deserve some well earned rest.</English>
                 <Russian>Вы полностью уничтожили своих врагов!&lt;br/&gt;Храбрые солдаты доказали свою доблесть, и Петрос стал единоличным лидером страны! Вы продемонстрировали свою мощь в этом регионе и заслуживаете отдых.</Russian>
                 <Chinesesimp>你们彻底消灭了敌人！&lt;br/&gt;勇敢的士兵们已经证明了他们的英勇，而佩特罗斯已经成为这个国家的唯一领导人！你们已经在这个地区展示了你们的力量和压倒性的力量，你们应该好好休息一下。</Chinesesimp>
                 <Korean>당신은 적을 완전히 섬멸했습니다!&lt;br/&gt;용감한 군인들은 그들의 용맹함을 증명했고, 페트로스가 이 나라의 유일한 지도자가 되었습니다! 당신은 이 지역에서 당신의 힘과 압도적인 힘을 보여주었고, 마땅히 받아야 할 휴식을 받을 자격이 있습니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_economic_victory_desc">
                 <Original>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Have a rest, the plane is leaving in an hour.</Original>
-                <English>Your goals have been reached!&lt;br/&gt;After a long fight and struggle you have finally earned enough money to leave this region and live a comfortable life. Have a rest, the plane is leaving in an hour.</English>
                 <Russian>Ваши цели достигнуты!&lt;br/&gt;После долгой борьбы, вы наконец заработали достаточно денег, чтобы покинуть этот регион и жить комфортной жизнью. Хорошенько отдохните, самолет вылетает через час.</Russian>
                 <Chinesesimp>你的目标已经实现了！&lt;br/&gt;经过长期的奋斗和奋斗，你终于赚到了足够的钱，可以离开这个地区，过上舒适的生活。好好休息吧，飞机一小时后就起飞。</Chinesesimp>
                 <Korean>당신의 목표가 달성되었습니다!&lt;br/&gt;긴 싸움과 투쟁 끝에 마침내 이 지역을 떠나 편안한 삶을 살 수 있을 만큼 돈을 벌었습니다. 충분히 쉬십시오. 비행기가 한 시간 후에 출발합니다.</Korean>
             </Key>
             <Key ID="STR_end_mission_political_victory_desc">
                 <Original>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</Original>
-                <English>Most of the population of this country loves you!&lt;br/&gt;Petros, the newly elected Prime Minister, has made some reforms and has gotten your enemies to back away from the conflict. &lt;br/&gt;Now you have some peace and quiet, but for how long?</English>
                 <Russian>Большая часть населения страны любит вас!&lt;br/&gt;Петрос, избранный новым премьер-министром, провел несколько реформ и заставил ваших врагов отступить. &lt;br/&gt;На данный момент всё спокойно, но надолго ли?</Russian>
                 <Chinesesimp>这个国家的大多数人都爱你！&lt;br/&gt;新当选的总理佩特罗斯做出了一些改革，让你的敌人退出了冲突。&lt;br/&gt;现在你有一些平静，但是这种平静能持续多久呢？</Chinesesimp>
                 <Korean>이 나라 국민의 대부분이 당신을 사랑합니다!&lt;br/&gt;새로 선출된 총리 페트로스는 몇 가지 개혁을 단행했고 당신의 적들이 분쟁을 멈추게 했습니다.&lt;br/&gt;이제 당신은 평화와 고요함을 누리게 되었지만, 얼마나 지속될까요?</Korean>
             </Key>
             <Key ID="STR_end_mission_logistical_victory_desc">
                 <Original>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</Original>
-                <English>You have successfully crippled your enemies!&lt;br/&gt;Their military bases and airports are now under your control, your enemies have backed away from the conflict and have closed their support corridors. Go have a rest soldier, you have earned it!</English>
                 <Russian>Вы успешно нанесли поражение своим врагам!&lt;br/&gt;Их военные базы и аэропорты теперь под вашим контролем, ваши враги отступили от конфликта и закрыли свои коридоры поддержки. &lt;br/&gt;Иди отдохни, солдат, ты это заслужил!</Russian>
                 <Chinesesimp>您已成功击溃敌人！&lt;br/&gt;他们的军事基地和机场现已被您控制，您的敌人已退出冲突并关闭了支援走廊。士兵们，去休息吧，这是您应得的！</Chinesesimp>
                 <Korean>당신은 성공적으로 적을 재기불능으로 만들었습니다!&lt;br/&gt;그들의 군사 기지와 공항은 이제 당신의 통제 하에 있고 당신의 적들은 분쟁을 멈추었으며 지원 통로를 닫았습니다. 이제 가서 휴식을 취하세요, 군인 여러분. 당신들은 그럴 자격이 있습니다!</Korean>
@@ -7419,7 +7415,6 @@
             </Key>
             <Key ID="STR_headquarters">
                 <Original>Your Headquarters</Original>
-                <English>Your Headquarters</English>
                 <Russian>Штаб</Russian>
                 <Korean>당신의 본부</Korean>
                 <French>Votre QG</French>
@@ -12297,7 +12292,6 @@
             </Key>
             <Key ID="STR_antistasi_actions_destroy_radio">
                 <Original>Destroy Radio</Original>
-                <English>Destroy Radio</English>
                 <Russian>Уничтожить радио</Russian>
                 <German>Radio zerstören</German>
                 <Italian>Distruggi radio</Italian>
@@ -12314,7 +12308,6 @@
             </Key>
             <Key ID="STR_antistasi_actions_talk_with_civ">
                 <Original>Talk with Civilian</Original>
-                <English>Talk with Civilian</English>
                 <Russian>Поговорить с гражданским</Russian>
                 <German>Mit Zivilist sprechen</German>
                 <Italian>Parla con il civile</Italian>
