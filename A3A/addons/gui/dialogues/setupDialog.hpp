@@ -501,6 +501,14 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
                         };
+                        class ParamsSearchBackground: A3A_Background {
+                            idc = -1;
+                            x = 0;
+                            y = 4 * GRID_H;
+                            w = 30 * GRID_W;
+                            h = 4 * GRID_H;
+                            colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
+                        };
                         class ParamsSearchEditBox: A3A_Edit {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
                             x = 0;
