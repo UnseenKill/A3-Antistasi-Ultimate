@@ -1702,6 +1702,48 @@ class Params
         };
         default = 45;
     };
+    class unconChanceEny : AIBalanceParams
+    {
+        title = $STR_params_unconChanceEny;
+        tooltip = $STR_params_unconChanceEny_desc;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 10;
+                medium = 8;
+                hard = 6;
+            };
+            class small
+            {
+                easy = 8;
+                medium = 6;
+                hard = 4;
+            };
+            class medium
+            {
+                easy = 6;
+                medium = 4;
+                hard = 2;
+            };
+            class large
+            {
+                easy = 4;
+                medium = 2;
+                hard = 0;
+            };
+        };
+        default = 10;
+        lockCondition = "A3A_hasACEMedical;";
+        lockConditionTooltip = $STR_params_unconChance_lockCondition;
+    };
+    class unconChanceReb : unconChanceEny
+    {
+        title = $STR_params_unconChanceReb;
+        tooltip = $STR_params_unconChanceReb_desc;
+    };
     class napalmEnabled: AIBalanceParams
     {
         title = $STR_params_napalmEnabled;
@@ -1853,6 +1895,27 @@ class Params
         };
         default = 3000;
     };
+    class A3U_enableVehiclesForAI : AIBalanceParams
+    {
+        title = $STR_params_enableVehiclesForAI;
+        tooltip = $STR_params_enableVehiclesForAI_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 1;
+        lockInGame = 1;
+    };
     class MiscBalanceParamsSpacer : AIParamsSpacer
     {
         type = "MiscBalance";
@@ -1971,6 +2034,34 @@ class Params
             class large : medium {};
         };
         default = 1;
+    };
+    class loadoutArsenalDefaultOverride : MiscBalanceParams
+    {
+        title = $STR_params_loadoutArsenalDefaultOverride;
+        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+    };
+    class limitWeaponsByUnitType : MiscBalanceParams
+    {
+        title = $STR_params_limitWeaponsByUnitType;
+        tooltip = $STR_params_limitWeaponsByUnitType_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 1;
+                hard = 1;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
     };
     class AIParamsSpacer2 : AllParams
     {
@@ -2150,6 +2241,26 @@ class Params
         title = $STR_params_builderAllowRoads;
         tooltip = $STR_params_builderAllowRoads_desc;
         values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+    };
+    class A3U_HelipadTerrainSmoothing: BuilderParams
+    {
+        title = $STR_params_helipadTerrainSmoothing;
+        tooltip = $STR_params_helipadTerrainSmoothing_desc;
+        values[] = {0, 1};
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
         class difficulty
         {
@@ -2884,54 +2995,6 @@ class Params
         default = 0;
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
-    class loadoutArsenalDefaultOverride : ExperimentalParams
-    {
-        title = $STR_params_loadoutArsenalDefaultOverride;
-        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
-        values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        default = 1;
-    };
-    class limitWeaponsByUnitType : ExperimentalParams
-    {
-        title = $STR_params_limitWeaponsByUnitType;
-        tooltip = $STR_params_limitWeaponsByUnitType_desc;
-        values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 0;
-                medium = 1;
-                hard = 1;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-    };
-    class A3U_HelipadTerrainSmoothing: ExperimentalParams
-    {
-        title = $STR_params_helipadTerrainSmoothing;
-        tooltip = $STR_params_helipadTerrainSmoothing_desc;
-        values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-    };
     class A3A_diameterExtendedCaptureArea: ExperimentalParams
     {
         title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
@@ -2951,69 +3014,6 @@ class Params
             class large : solo {};
         };
         default = 0;
-    };
-    class unconChanceEny : ExperimentalParams
-    {
-        title = $STR_params_unconChanceEny;
-        tooltip = $STR_params_unconChanceEny_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 10;
-                medium = 8;
-                hard = 6;
-            };
-            class small
-            {
-                easy = 8;
-                medium = 6;
-                hard = 4;
-            };
-            class medium
-            {
-                easy = 6;
-                medium = 4;
-                hard = 2;
-            };
-            class large
-            {
-                easy = 4;
-                medium = 2;
-                hard = 0;
-            };
-        };
-        default = 10;
-        lockCondition = "A3A_hasACEMedical;";
-        lockConditionTooltip = $STR_params_unconChance_lockCondition;
-    };
-    class unconChanceReb : unconChanceEny
-    {
-        title = $STR_params_unconChanceReb;
-        tooltip = $STR_params_unconChanceReb_desc;
-    };
-    class A3U_enableVehiclesForAI : ExperimentalParams
-    {
-        title = $STR_params_enableVehiclesForAI;
-        tooltip = $STR_params_enableVehiclesForAI_desc;
-        values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 1;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 1;
-        lockInGame = 1;
     };
     class A3U_disablePATCOMMortars : ExperimentalParams
     {
