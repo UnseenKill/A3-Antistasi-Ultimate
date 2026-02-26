@@ -422,15 +422,15 @@ class Params
     {
         title = $STR_params_afk;
         tooltip = $STR_params_afk_desc;
-        values[] = {120,300,900,1800,9999999};
+        values[] = {120,300,900,1800,-1};
         texts[] = {"2","5","15","30", $STR_params_afk_disabled};
         class difficulty
         {
             class solo
             {
-                easy = 9999999;
-                medium = 9999999;
-                hard = 9999999;
+                easy = -1;
+                medium = -1;
+                hard = -1;
             };
             class small : solo {};
             class medium
@@ -451,7 +451,7 @@ class Params
         {
             class A3A_isUAVAFK
             {
-                value = 9999999;
+                value = -1;
                 lockedByDependency = 1;
             };
             class A3A_isZeusAFK : A3A_isUAVAFK {};
@@ -511,15 +511,15 @@ class Params
     {
         title = $STR_params_gc_threshold;
         tooltip = $STR_params_gc_threshold_desc;
-        values[] = {3600, 7200, 10800, 14400, 9999999};
+        values[] = {3600, 7200, 10800, 14400, -1};
         texts[] = {"1", "2", "3", "4", $STR_params_afk_disabled};
         class difficulty
         {
             class solo
             {
-                easy = 9999999;
-                medium = 9999999;
-                hard = 9999999;
+                easy = -1;
+                medium = -1;
+                hard = -1;
             };
             class small
             {
@@ -540,7 +540,7 @@ class Params
                 hard = 3600;
             };
         };
-        default = 9999999;
+        default = -1;
     };
     class settingsTimeMultiplier: TimerParams
     {
@@ -2197,7 +2197,7 @@ class Params
     {
         title = $STR_params_builderLimit;
         tooltip = $STR_params_builderLimit_desc;
-        values[] = {100, 200, 300, 400, 500, 600, 800, 900, 1000, 999999};
+        values[] = {100, 200, 300, 400, 500, 600, 800, 900, 1000, -1};
         texts[] = {"100", "200", "300", "400", "500", "600", "800", "900", "1000", "Basically Infinite"};
         default = 300;
     };
