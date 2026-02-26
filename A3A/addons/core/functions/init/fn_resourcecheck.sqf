@@ -7,8 +7,6 @@ if (!isServer) exitWith {
 //declaring variables outside of the loop increases performance
 private _resAdd = nil;
 private _hrAdd = nil;
-private _popReb = nil;
-private _popTotal = nil;
 private _suppBoost = nil;
 private _resBoost = nil;
 
