@@ -106,20 +106,20 @@ class green_sea_2023 {
 	};
 	disabledTowns[] = {"Settlement_Krasnoe", "Settlement_Arsenovo"};
 	antennas[] = {
-		{9822.91,10314.4,0},{3707.2,14751.2,0},{7175.2,3018.23,0},{1275.49,6215.75,0},{3688.6,5958.29,0},{13326.2,3256.85,0},{514.324,11082.6,0},{11445.2,7565.58,0},{13326.4,3257.08,0},{6874.77,11458.9,0},{11560.7,11313.6,0},{12936.5,12763.4,0}
+		{20061.205,4749.922,0},{6876.758,20672.719,0},{11562.708,20527.479,0},{12938.478,21977.195,0},{3709.188,23965.076,0},{7177.180,12232.062,0},{1277.472,15429.578,0},{3690.588,15172.119,0},{516.309,20296.45,0},{6445.720,15760.904,0},{11447.185,16779.408,0},{9824.896,19528.229,0},{22077.338,23986.586,0},{13003.79,7894.376,0},{15598.27,5467.979,0},{18611.568,13082.432,0},{19390.561,22190.996,0},{23524.482,16160.794,0}
 	};
 	antennasBlacklistIndex[] = {};
 	banks[] = {
 		{6831.07,2433.6,0},{12127.5,9093.7,0},{10396.5,2266.98,0}
 	};
 	garrison[] = {
-		{},{"airport_3","outpost_24","outpost_20", "outpost_23", "outpost_20","seaport_5","control_143", "control_144", "control_145", "control_149", "control_147","control_169", "control_165", "control_138", "control_137", "control_158"},{},{"control_143", "control_144", "control_145", "control_149", "control_147","control_169", "control_165", "control_138", "control_137", "control_158"}
+		{},{"milbase_5","milbase_8","airport_3","airport_5","airport_7","airport_8","outpost_24","outpost_20", "outpost_23", "outpost_49","outpost_43","outpost_37","seaport_5","seaport_9","control_143", "control_144", "control_145", "control_149", "control_147","control_169", "control_165", "control_138", "control_137", "control_158", "control_115", "control_117", "control_146", "control_191","control_192","control_193","control_194","control_195","control_196","control_197","control_198","control_199","control_201","control_203","control_204","control_217","control_218","control_219","control_252","control_253","control_254","control_98"},{},{"control_143", "control_144", "control_145", "control_149", "control_147","control_169", "control_165", "control_138", "control_137", "control_158", "control_115", "control_117", "control_146", "control_191","control_192","control_193","control_194","control_195","control_196","control_197","control_198","control_199","control_201","control_203","control_204","control_217","control_218","control_219","control_252","control_253","control_254","control_98"}
 	};
 	fuelStationTypes[] = {
 		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F","Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","Land_Fuelstation","Land_Fuelstation_army","Land_Benzina_schnell"
 	};
 	milAdministrations[] = {
-		{2729.96,5375.75,0},{13851.8,13218.4,0},{11489,14480.1,0},{7735.05,12636.6,0},{3430.91,13015.8,0},{11988.3,9190.38,3.8147e-006},{6617.86,2389.05,0},{6075.08,7777.44,0},{10699,7986.4,0}
+		{11990.245,18404.207,0},{6619.843,11602.883,0},{6077.067,16991.271,0},{10700.968,17200.232,0},{20624.113,15224.726,0},{15416.173,18477.916,-0.6},{21070.873,22811.39,0}
 	};
 	climate = "temperate";
 	buildObjects[] = {
