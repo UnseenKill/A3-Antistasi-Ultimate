@@ -383,7 +383,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_fia_rhs">
                 <Original>Freedom and Independence Army (FIA).\nGarands and grease guns.</Original>
-                <Russian>Армия свободы и независимости (FIA).\n Гаранды и гриз-ганы.</Russian>
+                <Russian>Армия свободы и независимости (FIA).\n Гаранды и М3.</Russian>
                 <Chinesesimp>自由独立军（FIA）。\n加兰德和黄油枪。</Chinesesimp>
                 <Korean>자유독립군(FIA).\n개런드와 그리스 건.</Korean>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nGarands et grease guns.</French>
@@ -2540,14 +2540,14 @@
             </Key>
             <Key ID="STR_hints_hc_header">
                 <Original>Headless Client</Original>
-                <Russian>Headless-клиент</Russian>
+                <Russian>Headless Client</Russian>
                 <Chinesesimp>无头客户端</Chinesesimp>
                 <Korean>헤드리스 클라이언트</Korean>
                 <French>Headless Client</French>
             </Key>
             <Key ID="STR_hints_hc_restart">
                 <Original>A Headless Client has been disconnected. This will cause malfunctions. Head back to HQ for saving ASAP and ask an Admin for a restart.</Original>
-                <Russian>Headless-клиент отсоединился. Это приведёт к проблемам и неработоспособности миссии. Вернитесь в штаб, сохранитесь и перезапустите сервер (или попросите администратора сервера сделать это).</Russian>
+                <Russian>Headless Client отсоединился. Это приведёт к проблемам и неработоспособности миссии. Вернитесь в штаб, сохранитесь и перезапустите сервер (или попросите администратора сервера сделать это).</Russian>
                 <Chinesesimp>无头客户端已断开连接。 这会导致故障。 尽快返回总部进行保存，并要求管理员重新启动。</Chinesesimp>
                 <Korean>헤드리스 클라이언트의 연결이 끊어졌습니다. 이로 인해 오작동이 발생할 것입니다. 본부로 돌아가서 최대한 빨리 저장하고 관리자에게 재시작을 요청하십시오.</Korean>
                 <French>Un client sans tête a été déconnecté. Cela entraînera des dysfonctionnements. Retournez au QG pour le sauvegarder au plus vite et demandez à l'administrateur de le redémarrer.</French>
@@ -6750,7 +6750,7 @@
             </Key>
             <Key ID="STR_info_bar_undercover_break_reason_far_away_roads">
                 <Original>You have went too far away from any roads!</Original>
-                <Russian>Вы слишком съехали с дороги!</Russian>
+                <Russian>Вы слишком далеко от дороги!</Russian>
                 <Chinesesimp>你离得太远或偏离任何道路！</Chinesesimp>
                 <Korean>당신은 도로로부터 너무 멀리 떨어져 있습니다!</Korean>
                 <French>Vous vous êtes trop éloigné de toute route !</French>
@@ -14657,7 +14657,7 @@
             </Key>
             <Key ID="STR_A3A_Base_AI_Load_Information_no_hc">
                 <Original>No Headless Client Detected</Original>
-                <Russian>Headless клиенты не обнаружены</Russian>
+                <Russian>Headless Client не обнаружены</Russian>
                 <Chinesesimp>未找到无头客户端</Chinesesimp>
                 <Korean>헤드리스 클라이언트 검색되지 않음</Korean>
                 <French>Aucun client sans tête n'est détecté</French>
