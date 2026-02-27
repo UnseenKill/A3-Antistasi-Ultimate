@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3AU-ultimate-maps-patches">
+    <Package name="Straya">
+        <Key ID="STR_A3AU_Maps_Straya_Location_outpost1_Override">
+            <Original>Yirrkala</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_0">
+            <Original>Shantytown</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_1">
+            <Original>Novac</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_2">
+            <Original>Bannister</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_SpudsRoadhouse_Override">
+            <Original>Beermullah</Original>
+        </Key>
+    </Package>
+</Project>
