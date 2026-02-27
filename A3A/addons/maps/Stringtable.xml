@@ -65,6 +65,31 @@
                 <French>Que nous le voulions ou non, nous sommes entrés dans une guerre avec les occupants et les envahisseurs d'Altis.</French>
                 <Turkish>İstesek de istemesek de, Altis'teki işgalciler ve istilacılarla bir savaşın içine girdik.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_mission_info_Australia_mapname_short_text">
+                <Original>Antistasi Ultimate - Australia</Original>
+                <Russian>Antistasi Ultimate - Австралия</Russian>
+                <Chinesesimp>Antistasi Ultimate - 澳大利亚</Chinesesimp>
+                <French>Antistasi Ultimate - Australie</French>
+                <Korean>안티스타시 얼티밋 - 호주</Korean>
+                <Turkish>Antistasi Ultimate - Avustralya</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Australia_mapname_text">
+                <Original>Antistasi Ultimate - Australia</Original>
+                <Russian>Antistasi Ultimate - Австралия</Russian>
+                <Chinesesimp>Antistasi Ultimate - 澳大利亚</Chinesesimp>
+                <French>Antistasi Ultimate - Australie</French>
+                <Korean>안티스타시 얼티밋 - 호주</Korean>
+                <Turkish>Antistasi Ultimate - Avustralya</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_mission_info_Australia_blurb_text">
+                <Original>Are we there, yet?</Original>
+                <Russian>Мы уже там?</Russian>
+                <German>Sind wir schon da?</German>
+                <Chinesesimp>我们到了吗？</Chinesesimp>
+                <Korean>우리는 아직 도착하지 않았나요?</Korean>
+                <French>Sommes-nous déjà là ?</French>
+                <Turkish>Oraya varabildik mi?</Turkish>
+            </Key>
             <Key ID="STR_antistasi_mission_info_Lythium_mapname_short_text">
                 <Original>Antistasi Ultimate - Lythium</Original>
                 <Russian>Antistasi Ultimate - Lythium</Russian>

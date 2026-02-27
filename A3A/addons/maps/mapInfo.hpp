@@ -1,6 +1,7 @@
 class mapInfo {
     #include "Antistasi_abramia.abramia\mapInfo.hpp"
     #include "Antistasi_Altis.Altis\mapInfo.hpp"
+    #include "Antistasi_australia.australia\mapInfo.hpp"
     #include "Antistasi_blud_vidda.blud_vidda\mapInfo.hpp"
     #include "Antistasi_brf_sumava.brf_sumava\mapInfo.hpp"
     #include "Antistasi_cam_lao_nam.cam_lao_nam\mapInfo.hpp"
