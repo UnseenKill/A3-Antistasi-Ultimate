@@ -32,10 +32,13 @@ class australia {
     };
     disabledTowns[] = {
         // Australia uses locations as map region markers, so the list of
-        // disabled towns isn't really towns...
-        "NEW SOUTH WALES","NORTHERN TERRITORY","QUEENSLAND","SOUTH AUSTRALIA","TASMANIA","VICTORIA","WEST AUSTRALIA",
-        "Army Base","Cape Melville","Cape Peron","Flinders Island","Garden Island","Groote Eylandt","Kangaroo Island",
-        "King Island","Moreton Island","Phillip Island","Pine Gap","Rottnest Island","Stuart Hwy","Tiwi Island","Toowoomba"
+        // disabled towns isn't really towns... Also note the EXORBITANT
+        // multitude of fucking ways to name a location name class. We have:
+        // Location_Name, location_Name, location_name, and, of course
+        // Location_name. This HAS to be deliberate.
+        "nsw","NT","qld","sa","Tasmania","vic","West_australia", // let that the fuck sink in
+        "army_base1","Cape_Melville","cape_peron","flinders_island","garden_island","groote_Eylandt","Kangaroo_island",
+        "King_island","moreton_island","phillip_island","pinegap","rottnest_island","stuart_hwy","tiwi_island","Toowoomba"
     };
     antennas[] = {
         {17639,34250,0},        // Milbase NE of Darwin
