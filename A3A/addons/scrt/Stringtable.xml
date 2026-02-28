@@ -6881,6 +6881,38 @@
                 <Chinesesimp>战利品箱忽略已解锁的物品</Chinesesimp>
                 <Turkish>Yağma kutusu açılmış öğeleri görmezden gelir</Turkish>
             </Key>
+            <Key ID="STR_params_distanceForAirAttack">
+                <Original>Distance for air attack missions</Original>
+                <Russian>Дистанция для миссий воздушной атаки</Russian>
+                <Chinesesimp>空袭任务的距离</Chinesesimp>
+                <Korean>공격 임무의 거리</Korean>
+                <French>Distance pour les missions d'attaque aérienne</French>
+                <Turkish>Hava saldırısı görevleri için mesafe</Turkish>
+            </Key>
+            <Key ID="STR_params_distanceForAirAttack_tooltip">
+                <Original>The furthest distance the AI can attack from using helicopters or planes</Original>
+                <Russian>Максимальная дистанция, с которой ИИ может атаковать с помощью вертолётов или самолётов</Russian>
+                <Chinesesimp>AI使用直升机或飞机攻击的最远距离</Chinesesimp>
+                <Korean>AI가 헬리콥터나 비행기를 사용하여 공격할 수 있는 가장 먼 거리</Korean>
+                <French>La distance la plus éloignée à laquelle l'IA peut attaquer en utilisant des hélicoptères ou des avions</French>
+                <Turkish>Yapay zekanın helikopter veya uçak kullanarak saldırabileceği en uzak mesafe</Turkish>
+            </Key>
+            <Key ID="STR_params_distanceForLandAttack">
+                <Original>Distance for land attack missions</Original>
+                <Russian>Дистанция для миссий наземной атаки</Russian>
+                <Chinesesimp>地面攻击任务的距离</Chinesesimp>
+                <Korean>지상 공격 임무의 거리</Korean>
+                <French>Distance pour les missions d'attaque terrestre</French>
+                <Turkish>Karasal saldırı görevleri için mesafe</Turkish>
+            </Key>
+            <Key ID="STR_params_distanceForLandAttack_tooltip">
+                <Original>The furthest distance the AI can attack from using trucks and armor</Original>
+                <Russian>Максимальная дистанция, с которой ИИ может атаковать с помощью грузовиков и бронетехники</Russian>
+                <Chinesesimp>AI使用卡车和装甲攻击的最远距离</Chinesesimp>
+                <Korean>AI가 트럭과 장갑차를 사용하여 공격할 수 있는 가장 먼 거리</Korean>
+                <French>La distance la plus éloignée à laquelle l'IA peut attaquer en utilisant des camions et des blindés</French>
+                <Turkish>Yapay zekanın kamyon ve zırhlı araç kullanarak saldırabileceği en uzak mesafe</Turkish>
+            </Key>
             <Key ID="STR_params_spawnDistance">
                 <Original>Enemy spawn distance</Original>
                 <Russian>Радиус спавна противников, событий и.т.д.</Russian>

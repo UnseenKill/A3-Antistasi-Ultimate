@@ -43,9 +43,9 @@ DECLARE_SERVER_VAR(cleantime, 3600);
 DECLARE_SERVER_VAR(distanceSPWN1, distanceSPWN*1.3);
 DECLARE_SERVER_VAR(distanceSPWN2, distanceSPWN*0.5);
 //The furthest distance the AI can attack from using helicopters or planes
-DECLARE_SERVER_VAR(distanceForAirAttack, 10000);
+DECLARE_SERVER_VAR(distanceForAirAttack, A3A_distanceForAirAttack);
 //The furthest distance the AI can attack from using trucks and armour
-DECLARE_SERVER_VAR(distanceForLandAttack, 3000);
+DECLARE_SERVER_VAR(distanceForLandAttack, A3A_distanceForLandAttack);
 
 // Used by headless clients for crate scaling
 DECLARE_SERVER_VAR(A3A_activePlayerCount, 1);

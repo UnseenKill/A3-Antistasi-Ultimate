@@ -297,6 +297,24 @@ class Params
         texts[] = {""};
         default = "";
     };
+    class A3A_distanceForAirAttack: AIParams
+    {
+        title = $STR_params_distanceForAirAttack;
+        tooltip = $STR_params_distanceForAirAttack_tooltip;
+        values[] = {1000,2500,5000,7500,10000,12500,15000,17500,20000,25000,50000};
+        texts[] = {"1000","2500","5000","7500","10000","12500","15000","17500","20000","25000","50000"};
+        default = 10000;
+        lockInGame = 1;
+    };
+    class A3A_distanceForLandAttack: AIParams
+    {
+        title = $STR_params_distanceForLandAttack;
+        tooltip = $STR_params_distanceForLandAttack_tooltip;
+        values[] = {1000,2000,3000,4000,5000,7500,10000,12500,15000};
+        texts[] = {"1000","2000","3000","4000","5000","7500","10000","12500","15000"};
+        default = 3000;
+        lockInGame = 1;
+    };
     class distanceSPWN: AIParams
     {
         title = $STR_params_spawnDistance;
