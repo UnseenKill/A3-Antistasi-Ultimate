@@ -13,6 +13,15 @@
         <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_2">
             <Original>Bannister</Original>
         </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_3">
+            <Original>Shantyville</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_4">
+            <Original>Campfyre</Original>
+        </Key>
+        <Key ID="STR_A3AU_Maps_Straya_Location_Shanty_5">
+            <Original>Tannum Sands</Original>
+        </Key>
         <Key ID="STR_A3AU_Maps_Straya_Location_SpudsRoadhouse_Override">
             <Original>Beermullah</Original>
         </Key>

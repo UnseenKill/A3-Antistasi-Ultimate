@@ -41,17 +41,21 @@ class australia {
         "King_island","moreton_island","phillip_island","pinegap","rottnest_island","stuart_hwy","tiwi_island","Toowoomba"
     };
     antennas[] = {
+        {17287.2,21902.2,0},    // Outpost 9
+        {25354.3,12176,0},      // Outpost 12
+        {33818.2,15752.7,0},    // Outpost 17
         {17639,34250,0},        // Milbase NE of Darwin
+        {31913.5,24880.6,0},    // Milbase 5
         {19878.4,24456.6,0}     // Pine Gap
     };
     antennasBlacklistIndex[] = {};
     banks[] = {
-        {5427,19265,0}, // Beermullah
+        {5427,19265,0} // Beermullah
     };
     garrison[] = {
         {},
         {
-            "airport_1","factory_4","milbase_1","outpost_2",
+            "airport_1","factory_3","milbase_1","outpost_2","outpost_14","outpost_15","resource_9","seaport_5",
             "control_31","control_32","control_33","control_35","control_37","control_38","control_39","control_40","control_41","control_89","control_91","control_111"
         },
         {},
@@ -63,11 +67,15 @@ class australia {
         "Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F"
     };
     milAdministrations[] = {
-        {25408.1,12648,0}, // Adelaide
-        {21994.5,25648.9,0}, // Alice
+        {25408.1,12648,0},          // Adelaide
+        {21994.5,25648.9,0},        // Alice
+        {27641.1,16947.1,0},        // Broken Hill
         {16337.4,33631.3,0.367885}, // Darwin
-        {5624,18613,0}, // Perth NE
-        {4640.42,17897,0}  // Perth SW
+        {33177.7,3988.62,0},        // Launceston
+        {30974.2,10370.9,0},        // Melbourne
+        {5624,18613,0},             // Perth NE
+        {4640.42,17897,0},          // Perth SW
+        {36432.4,13065.8,0}         // Sydney
     };
     climate = "arid";
     buildObjects[] = {

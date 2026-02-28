@@ -57,6 +57,27 @@ class CfgWorlds {
                 radiusB = 155;
                 type = "NameVillage";
             };
+            class A3U_shanty_3 {
+                name = "$STR_A3AU_Maps_Straya_Location_Shanty_3";
+                position[] = {29327,26943};
+                radiusA = 64;
+                radiusB = 50;
+                type = "NameVillage";
+            };
+            class A3U_shanty_4 {
+                name = "$STR_A3AU_Maps_Straya_Location_Shanty_4";
+                position[] = {29023,27726};
+                radiusA = 64;
+                radiusB = 50;
+                type = "NameVillage";
+            };
+            class A3U_shanty_5 {
+                name = "$STR_A3AU_Maps_Straya_Location_Shanty_5";
+                position[] = {35900,24711};
+                radiusA = 64;
+                radiusB = 50;
+                type = "NameVillage";
+            };
             class abandoned_camp: abandoned_camp {
                 name = "Davenport";
                 radiusA = 200;
