@@ -44,6 +44,7 @@ class australia {
         {17287.2,21902.2,0},    // Outpost 9
         {25354.3,12176,0},      // Outpost 12
         {33818.2,15752.7,0},    // Outpost 17
+        {35093.9,19218.2,0},    // Outpost 20
         {17639,34250,0},        // Milbase NE of Darwin
         {31913.5,24880.6,0},    // Milbase 5
         {19878.4,24456.6,0}     // Pine Gap
@@ -69,6 +70,7 @@ class australia {
     milAdministrations[] = {
         {25408.1,12648,0},          // Adelaide
         {21994.5,25648.9,0},        // Alice
+        {37802.9,19708.2,0},        // Brisbane
         {27641.1,16947.1,0},        // Broken Hill
         {16337.4,33631.3,0.367885}, // Darwin
         {33177.7,3988.62,0},        // Launceston
