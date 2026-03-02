@@ -274,7 +274,7 @@ if(_plane getVariable ["dropPosReached", false] && {!(_plane getVariable ["plane
             [_plane, 0.3] call A3A_fnc_fireCM;
         };
         if(canMove _plane || alive _groupPilot) then {
-            [_helicopter, "close"] spawn A3A_fnc_HeliDoors;
+            [_plane, "close"] spawn A3A_fnc_HeliDoors;
         };
     };
 };
