@@ -119,19 +119,28 @@ switch (_mode) do
         _params params ["_filter"]; // * <SCALAR> (lbCurSel A3A_IDC_SETUP_PARAMSTYPE) if switching tabs, <STRING> (_searchString) if using parameter search; default to last tab (or first tab)
 
         private _filterExpression = if (_filter isEqualType 0) then {{
-            private _shownTypes = switch (_filter) do {
-                case (-1): { [] }; // lbCurSel is -1 until params tab is loaded
-                case (0): { ["Basic", "Scenario", "Member", "Script", "Timer"] };
-                case (1): { ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"] };
-                case (2): { ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"] };
-                case (3): { ["Builder"] };
-                case (4): { ["Experimental", "Development"] };
-                case (5): { ["Extender"] };
-            };
+            private _shownTypes = (createHashMapFromArray[
+                [0, ["Basic", "Scenario", "Member", "Script", "Timer"]],
+                [1, ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"]],
+                [2, ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"]],
+                [3, ["Builder"]],
+                [4, ["Experimental", "Development"]],
+                [5, ["Extender"]]
+            ]) getOrDefault[_filter, []];
             ((_this select 1) getVariable "type") in _shownTypes
         }} else {{
-            private _searchResults = (_paramsTable getVariable "allTextCtrls") select { private _title = toLower ctrlText (_x select 1); (_title find _searchString) isNotEqualTo -1 } apply { _x select 0 };
-            ((_this select 0) in _searchResults) 
+            params ["_cfgName", "_textCtrl"];
+            private _allTextCtrls = _paramsTable getVariable "allTextCtrls";
+            private _searchString = toLower _filter;
+            private _searchResults = _allTextCtrls select {
+                // find search string in (already localized) param title
+                private _title = toLower ctrlText (_x select 1);
+                (_title find _searchString) isNotEqualTo -1
+            } apply {
+                // result is the config name of the param
+                _x select 0 
+            };
+            (_cfgName in _searchResults) 
         }};
 
         private _rowCount = -1;
