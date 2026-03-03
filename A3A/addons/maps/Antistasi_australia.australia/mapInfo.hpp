@@ -77,7 +77,8 @@ class australia {
         {30974.2,10370.9,0},        // Melbourne
         {5624,18613,0},             // Perth NE
         {4640.42,17897,0},          // Perth SW
-        {36432.4,13065.8,0}         // Sydney
+        {36432.4,13065.8,0},        // Sydney
+        {31115.7,19793.4,0}         // Toowoomba
     };
     climate = "arid";
     buildObjects[] = {
