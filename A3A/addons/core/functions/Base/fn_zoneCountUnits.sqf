@@ -52,7 +52,7 @@ private _useExtendedCount = (_diameterExtendedCaptureArea > 0);
 private _positionAndRadius = if (_inPos isEqualType []) then {
     _inPos;
 } else {
-    if (markerPos _inPos isEqualTo [0,0,0]) then {
+    if (markerShape _inPos isEqualTo "") then {
         Error_1("No such marker: '%1'",_inPos);
         [];
     } else {
