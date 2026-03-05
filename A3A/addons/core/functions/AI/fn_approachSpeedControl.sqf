@@ -10,8 +10,6 @@
 
    	Returns:
        Nothing
-
-	Lisence: VPN-DPC
 */
 params ["_vehicle", "_dropPos", ["_isPlane", false]];
 if (_isPlane) then {
