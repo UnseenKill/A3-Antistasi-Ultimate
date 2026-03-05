@@ -21,7 +21,7 @@ private _fnc_distCheck = {
 // Cull A3A_buildingsToSave if over limit (e.g. if limit was lowered after builds placed)
 // For example, this would allow *intentionally* removing builds by setting the limit to 0 and running the garbage cleaner
 // i.e. a way to clear no longer needed builds, or to fix performance issues from too many builds
-if (count (A3A_buildingsToSave) >= A3A_builderLimit) then { A3A_buildingsToSave = A3A_buildingsToSave select [0, A3A_builderLimit - 1] };
+if (A3A_builderLimit isNotEqualTo -1 && {count (A3A_buildingsToSave) >= A3A_builderLimit}) then { A3A_buildingsToSave = A3A_buildingsToSave select [0, A3A_builderLimit - 1] };
 publicVariable "A3A_buildingsToSave";
 
 Debug("Moving dead solders out of vehicles...");
