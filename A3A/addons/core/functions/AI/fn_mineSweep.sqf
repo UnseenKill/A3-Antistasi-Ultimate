@@ -17,12 +17,7 @@ _groupX setGroupIdGlobal [format ["MineSw%1",{side (leader _x) == teamPlayer} co
 _minesX = [];
 sleep 1;
 
-private _helperData = ["mineSweep", {
-	private _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-	private _pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
-	if (_pos isNotEqualTo []) exitWith { _pos };
-	position _road;
-}] call FUNCMAIN(findSpawnHelperPosition);
+private _helperData = ["mineSweep"] call FUNCMAIN(findSpawnHelperPosition);
 
 _helperData params["_spawnPos", "_spawnDir"];
 

@@ -8,9 +8,12 @@ Description:
 
 Parameters:
     0: _spawnType - ENUM("hc","mineSweep","outpost") <STRING>
-    1: _fallback - fallback position/callback <ARRAY,CODE>
 
 Optional:
+    1: _fallback - fallback position/callback <ARRAY,CODE>
+        If array, expected to be either [x,y,z] or [[x,y,z], direction].
+        If code, expected to return either of the above. If left out, fallback
+        will be nearest road at respawn marker with some randomness applied.
 
 Example:
     (begin example)
@@ -33,8 +36,7 @@ Author:
 Trace_1(QFUNCMAIN(findSpawnHelperPosition),_this);
 
 if !assert(params[
-    ["_spawnType", nil, [""]],
-    ["_fallback", nil, [[], {}]]
+    ["_spawnType", nil, [""]]
 ]) exitWith {};
 
 // Look for spawn helpers of the given type that have no vehicles within 10m
@@ -52,6 +54,25 @@ if (_helpers isNotEqualTo []) exitWith {
 };
 
 // Fallback!
+private _fallback = param[1, nil, [[], {}]];
+
+// No fallback provided, return nearest road or fallback fallback to respawn marker.
+if (isNil "_fallback") exitWith {
+    private _searchCenter = markerPos respawnTeamPlayer;
+    private _road = [_searchCenter] call A3A_fnc_findNearestGoodRoad;
+    private _posAndDir = if !(isNull _road) then {
+        [position _road, getDir _road];
+    } else {
+        [_searchCenter, random 360];
+    };
+
+    _posAndDir params["_searchPosition", "_direction"];
+
+    private _pos = _searchPosition findEmptyPosition[1, 30, "B_G_Van_01_transport_F"];
+    if (_pos isEqualTo []) then { _pos = _searchPosition };
+    [_pos, _direction];
+};
+
 private _value = if (_fallback isEqualType {}) then {
     [] call _fallback;
 } else {
