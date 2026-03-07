@@ -500,6 +500,7 @@ class CfgFunctions
             class theBossToggleEligibility {};
             class theBossTransfer {};
             class theBossSteal {};
+            class toggleTeardownMode {};
             class assignBossIfNone {};
             class tierCheck {};
             class unitTraits {};
