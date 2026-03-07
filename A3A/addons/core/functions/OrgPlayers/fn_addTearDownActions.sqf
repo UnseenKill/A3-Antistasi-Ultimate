@@ -25,7 +25,7 @@ if !assert(!isNull player) exitWith {};
 // Build mode user actions
 player addAction[
     localize "STR_A3A_base_teardownMode_ON",
-    { (_this select 1) setVariable[QGVAR(isTeardownActive), true] },
+    { (_this select 1) setVariable[QGVAR(isTeardownActive), true]; [CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED, [_this select 1, true]] call FUNCMAIN(triggerLocalEvent) },
     [],
     1.6,
     false,
@@ -36,7 +36,7 @@ player addAction[
 
 player addAction[
     localize "STR_A3A_base_teardownMode_OFF",
-    { (_this select 1) setVariable[QGVAR(isTeardownActive), false] },
+    { (_this select 1) setVariable[QGVAR(isTeardownActive), false]; [CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED, [_this select 1, false]] call FUNCMAIN(triggerLocalEvent) },
     [],
     1.6,
     false,
