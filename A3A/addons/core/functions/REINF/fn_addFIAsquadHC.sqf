@@ -11,6 +11,11 @@ if (count hcAllGroups player >= ([6,10] select (player call A3A_fnc_isMember))) 
     [localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_too_many_hc"] call A3A_fnc_customHint;
 };
 
+if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
+    playSound "A3AP_UiFailure";
+    [localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text"] call A3A_fnc_customHint;
+};
+
 private _exit = false;
 if (_typeGroup isEqualType "" && {_typeGroup isEqualTo ""}) then {
 	_exit = true; 

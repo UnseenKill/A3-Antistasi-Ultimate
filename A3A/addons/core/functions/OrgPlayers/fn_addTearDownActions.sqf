@@ -31,7 +31,7 @@ player addAction[
     false,
     false,
     "",
-    QUOTE(!(_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE(!([_this] call FUNCMAIN(isTeardownEnabled)) && {isNull objectParent _this} && {[player] call FUNCMAIN(isEngineer)} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 player addAction[
@@ -42,7 +42,7 @@ player addAction[
     false,
     false,
     "",
-    QUOTE((_this getVariable[ARR_2(QQGVAR(isTeardownActive),false)]) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
+    QUOTE(([_this] call FUNCMAIN(isTeardownEnabled)) && {isNull objectParent _this} && {_this inArea QQUOTE(Synd_HQ)})
 ];
 
 nil;
