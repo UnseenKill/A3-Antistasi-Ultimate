@@ -56,6 +56,8 @@ for "_i" from 1 to 36 do {
     A3A_boundingCircle pushBack _piece;
 };
 
+[CBA_EVENT_CLIENT_BUILDER_START, [getPosATL _centerObject, _buildingRadius]] call FUNCMAIN(triggerLocalEvent);
+
 private _emptyDisplay = findDisplay 46 createDisplay "A3A_teamLeaderBuilder";
 A3A_building_EHDB set [BUILD_DISPLAY, _emptyDisplay];
 call (A3A_building_EHDB get UPDATE_BB);
@@ -504,5 +506,3 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 }];
 
 A3A_building_EHDB set [EACH_FRAME_EH, _eventHanderEachFrame];
-
-[CBA_EVENT_CLIENT_BUILDER_START, [getPosATL _centerObject, _buildingRadius]] call FUNCMAIN(triggerLocalEvent);

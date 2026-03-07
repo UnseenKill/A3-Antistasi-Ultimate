@@ -297,6 +297,8 @@ class GVAR(BaseVehicleSpawnHelperArrow) : Land_VR_Shape_01_cube_1m_F
     author = AUTHOR;
     authors[] = {"UnseenKill"};
 
+    EGVAR(core,buildingPlacerCanPlace) = QUOTE(EGVAR(core,builderBubbleCenter) inArea QQUOTE(Synd_HQ));
+
     class EventHandlers 
     {
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
