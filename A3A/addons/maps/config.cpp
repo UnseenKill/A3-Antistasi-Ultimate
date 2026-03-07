@@ -38,12 +38,14 @@ class CfgMissions {
         A3A_Mission(Chernarus_Winter,"Antistasi Ultimate - Chernarus Winter");
         A3A_Mission(chernarusredux,"Antistasi Ultimate - Redux");
         A3A_Mission(cup_chernarus_A3,"Antistasi Ultimate - Chernarus 2020");
+	    A3A_Mission(drakovac, "Antistasi Ultimate - Drakovac");
         A3A_Mission(Enoch,"Antistasi Ultimate - Livonia");
         A3A_Mission(Esseker,"Antistasi Ultimate - Esseker");
         A3A_Mission(fapovo,"Antistasi Ultimate - Fapovo Island");
         A3A_Mission(gm_weferlingen_summer,"Antistasi Ultimate - Weferlingen Summer");
         A3A_Mission(gm_weferlingen_winter,"Antistasi Ultimate - Weferlingen Winter");
         A3A_Mission(green_sea,"Antistasi Ultimate - Green Sea");
+        A3A_Mission(green_sea_2023, "Antistasi Ultimate - Green Sea 2023");
         A3A_Mission(Gulfcoast,"Antistasi Ultimate - Gulfcoast Islands");
         A3A_Mission(iron_excelsior_Tobruk,"Antistasi Ultimate - Tobruk");
         A3A_Mission(isladuala3,"Antistasi Ultimate - Isla Duala");

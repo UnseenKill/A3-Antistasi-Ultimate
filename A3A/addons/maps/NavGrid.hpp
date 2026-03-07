@@ -13,12 +13,14 @@ class NavGrid {
     NAVGRID(Chernarus_Winter);
     NAVGRID(chernarusredux);
     NAVGRID(cup_chernarus_A3);
+    NAVGRID(drakovac);
     NAVGRID(Enoch);
     NAVGRID(Esseker);
     NAVGRID(fapovo);
     NAVGRID(gm_weferlingen_summer);
     NAVGRID(gm_weferlingen_winter);
     NAVGRID(green_sea);
+    NAVGRID(green_sea_2023);
     NAVGRID(Gulfcoast);
     NAVGRID(iron_excelsior_Tobruk);
     NAVGRID(isladuala3);
