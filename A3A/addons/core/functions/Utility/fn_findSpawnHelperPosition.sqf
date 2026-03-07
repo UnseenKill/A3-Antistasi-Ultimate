@@ -41,9 +41,10 @@ if !assert(params[
 
 // Look for spawn helpers of the given type that have no vehicles within 10m
 // or their size * 2, whichever is greater.
-private _helpers = entities QEGVAR(ultimate,BaseSpawnHelper) select {
+private _size = ["Synd_HQ"] call A3A_fnc_sizeMarker;
+private _helpers = nearestObjects[markerPos "Synd_HQ", [QEGVAR(ultimate,BaseSpawnHelper)], 2 * _size] select {
     _spawnType in getArray(configOf _x >> QEGVAR(ultimate,spawnTypes)) && 
-    { nearestObjects[_x, ["LandVehicle","Air"], 10 max(2 * sizeOf typeOf _x)] isEqualTo [] };
+    { (nearestObjects[_x, ["LandVehicle","Air"], 10 max(2 * sizeOf typeOf _x)] - [_x] - (attachedObjects _x)) isEqualTo [] };
 };
 
 // Found matching, unoccupied spawn helper(s); pick one and return its position and direction.
