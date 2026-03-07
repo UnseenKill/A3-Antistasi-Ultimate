@@ -288,3 +288,17 @@ class GVAR(BaseAssemblyAreaSign) : Land_Noticeboard_F
         class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
 };
+
+class Land_VR_Shape_01_cube_1m_F;
+class GVAR(BaseVehicleSpawnHelperArrow) : Land_VR_Shape_01_cube_1m_F 
+{
+    scope = 2;
+    displayName = "Vehicle Spawn Helper";
+    author = AUTHOR;
+    authors[] = {"UnseenKill"};
+
+    class EventHandlers 
+    {
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+    };
+};

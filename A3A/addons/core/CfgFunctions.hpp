@@ -205,6 +205,7 @@ class CfgFunctions
             class buildingComplete {};
             class buildingPlacer {};
             class buildingPlacerStart {};
+            class handlerBaseVehicleSpawnPostInitClient {};
             class handlerTerrainManipulator {};
             class handlerTerrainObjectHiderPostInitClient {};
             class initBuildableObjects {};
