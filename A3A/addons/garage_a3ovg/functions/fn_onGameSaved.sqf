@@ -5,7 +5,7 @@ Function: A3A_garage_a3ovg_fnc_onGameSaved
 Description:
     CBA event handler function called when a game is saved.
 
-    Called when the event A3A_EVENT_SERVER_GAME_SAVED is fired.
+    Called when the event CBA_EVENT_SERVER_GAME_SAVED is fired.
 
 Parameters:
 

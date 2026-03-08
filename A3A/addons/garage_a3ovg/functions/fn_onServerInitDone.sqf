@@ -5,7 +5,7 @@ Function: A3A_garage_a3ovg_fnc_onServerInitDone
 Description:
     CBA event handler function called when server initialization is complete.
 
-    Called when the event A3A_EVENT_SERVER_INIT_COMPLETE is fired.
+    Called when the event CBA_EVENT_SERVER_INIT_DONE is fired.
 
 Parameters:
     0: _serverID - Savegame server ID <STRING>
@@ -36,7 +36,7 @@ Info_3("Server init done. serverID: %1, campaignID: %2, mapName: %3", _serverID,
 
 [_campaignID] call A3OVG_fnc_setStoragePrefix;
 
-[A3A_EVENT_SERVER_GAME_DELETED, { call FUNC(onGameDeleted) }] call CBA_fnc_addEventHandler;
-[A3A_EVENT_SERVER_GAME_SAVED, { call FUNC(onGameSaved) }] call CBA_fnc_addEventHandler;
+[CBA_EVENT_SERVER_GAME_DELETED, FUNC(onGameDeleted)] call FUNCMAIN(addEventHandler);
+[CBA_EVENT_SERVER_GAME_SAVED, FUNC(onGameSaved)] call FUNCMAIN(addEventHandler);
 
 nil;

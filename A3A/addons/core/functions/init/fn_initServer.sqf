@@ -311,8 +311,7 @@ SET_PUBLIC_VAR(A3A_startupState,"completed");
 
 // Because CBA events are blocking, we can't have third party stuff block us 
 // from executing the stuff below. So we spawn it.
-[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
-[A3A_EVENT_SERVER_INIT_COMPLETE, A3A_saveTarget] call CBA_fnc_localEvent;
+[CBA_EVENT_SERVER_INIT_DONE, A3A_saveTarget] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 

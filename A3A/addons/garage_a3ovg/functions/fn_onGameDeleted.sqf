@@ -5,7 +5,7 @@ Function: A3A_garage_a3ovg_fnc_onGameDeleted
 Description:
     CBA event handler function called when a saved game is deleted.
 
-    Called when the event A3A_EVENT_SERVER_GAME_DELETED is fired.
+    Called when the event CBA_EVENT_SERVER_GAME_DELETED is fired.
 
 Parameters:
     0: _serverID - Old server ID <STRING|BOOL>
