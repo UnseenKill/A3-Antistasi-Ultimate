@@ -7,6 +7,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"A3A_Ultimate","australia"};
+        skipWhenMissingDependencies = 1;
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
