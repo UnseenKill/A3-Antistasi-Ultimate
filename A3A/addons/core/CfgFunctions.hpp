@@ -488,7 +488,6 @@ class CfgFunctions
             file = QPATHTOFOLDER(functions\OrgPlayers);
             class addMoneyPlayer {};
             class addScorePlayer {};
-            class addTearDownActions {};
             class donateMoney {};
             class donateMoneyPercentage {};
             class isMember {};
@@ -503,6 +502,7 @@ class CfgFunctions
             class theBossToggleEligibility {};
             class theBossTransfer {};
             class theBossSteal {};
+            class toggleTeardownMode {};
             class assignBossIfNone {};
             class tierCheck {};
             class unitTraits {};
