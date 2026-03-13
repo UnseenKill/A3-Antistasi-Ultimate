@@ -6819,13 +6819,6 @@
                 <French>Permettre aux joueurs de prendre le contrôle des unités de l'IA lorsqu'ils sont inconscients</French>
                 <Turkish>Bilinçsiz haldeyken oyuncuların YZ birimlerinin kontrolünü almasına izin ver</Turkish>
             </Key>
-            <Key ID="STR_params_AIrevivesOutsideSquad">
-                <Original>Allow AI to revive unconscious units outside their squad (also applies to enemy AI).</Original>
-                <Russian>Разрешить ИИ возрождать бойцов вне своего отряда (применяется и для вражеского ИИ).</Russian>
-                <Chinesesimp>允许AI复活其小队之外昏迷的单位（也适用于敌方AI）。</Chinesesimp>
-                <Korean>아군 AI가 자신의 분대 밖에서 의식 불명인 유닛을 소생시키도록 허용 (적 AI에도 적용됨)</Korean>
-                <French>Permettre à l'IA de ranimer les unités inconscientes en dehors de leur escouade (s'applique également à l'IA ennemie).</French>
-            </Key>
             <Key ID="STR_params_maxConstructions">
                 <Original>Maximum quantity of Persistent Constructions</Original>
                 <Russian>Максимальное количество сохраняемых сооружений</Russian>
