@@ -157,7 +157,7 @@ if (alive _veh && canMove _veh) then
             
             private _driver = driver _veh;
             
-            while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (canMove _veh) and (speed _veh < 10) and (speed _veh > -10)} do
+            while {((getposATL _unit select 2) > 1) and (canMove _veh) and (abs speed _veh < 10)} do
             {
                 _unit attachTo [_veh, [2,1,_d]];
                 _d = _d - 0.35;
