@@ -7372,11 +7372,12 @@
                 <French>Permettre aux joueurs de posséder ou contrôler l'IA lorsqu'ils sont inconscients ; l'activation peut permettre aux joueurs blessés d'influencer brièvement la bataille.</French>
             </Key>
             <Key ID="STR_params_AIrevivesOutsideSquad">
-                <Original>Allow AI to friendly revive unconscious units outside their squad (also applies to enemy AI).</Original>
-                <Russian>Разрешить ИИ возрождать бойцов вне своего отряда (применяется и для вражеского ИИ).</Russian>
-                <Chinesesimp>允许AI复活其小队之外昏迷的单位（也适用于敌方AI）。</Chinesesimp>
-                <Korean>아군 AI가 자신의 분대 밖에서 의식 불명인 유닛을 소생시키도록 허용 (적 AI에도 적용됨)</Korean>
-                <French>Permettre à l'IA de ranimer les unités inconscientes en dehors de leur escouade (s'applique également à l'IA ennemie).</French>
+                <Original>Allow AI to friendly revive unconscious units outside their squad at a set distance.</Original>
+                <Russian>Разрешить ИИ возрождать бойцов без сознания за пределами своего отряда на заданном расстоянии.</Russian>
+                <Chinesesimp>允许AI在设定距离内复活其小队外的友方昏迷单位。</Chinesesimp>
+                <Korean>AI가 자신의 분대 밖에 있는 의식을 잃은 아군 유닛을 설정된 거리 내에서 구호할 수 있도록 허용합니다.</Korean>
+                <French>Permettre à l'IA de relever les unités alliées inconscientes en dehors de leur groupe à une distance définie.</French>
+                <Turkish>AI'nın, belirli bir mesafede kendi takımı dışındaki bilinçsiz dost birlikleri canlandırmasına izin ver.</Turkish>
             </Key>
             <Key ID="STR_params_AIrevivesOutsideSquad_desc">
                 <Original>When enabled, if downed AI cannot be revived by any unit within their own squad, other friendly units within this many meters will attempt to revive them. AI will not revive units of another side.</Original>
