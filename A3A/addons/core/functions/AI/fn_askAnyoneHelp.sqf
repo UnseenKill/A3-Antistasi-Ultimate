@@ -22,7 +22,7 @@ _units = _units - _medics;
 
 private _fnc_canHelp = {
     params ["_unit"];
-    if ((isPlayer _unit) or (vehicle _unit != _unit) or (_unit distance _target > 100)) exitWith { false };
+    if ((isPlayer _unit) or (vehicle _unit != _unit) or (_unit distance _target > AIrevivesOutsideSquad)) exitWith { false };
     if !([_unit] call A3A_fnc_canFight) exitWith { false };
     if (currentCommand _unit == "STOP") exitWith { false };
     if ((_unit getVariable ["maneuvering", false]) or (_unit getVariable ["helping", false]) or (_unit getVariable ["rearming", false])) exitWith { false };
