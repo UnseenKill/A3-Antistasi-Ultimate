@@ -72,10 +72,7 @@ if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 0.3;
+    [_helicopter, 0.3] call A3A_fnc_fireCMFlare;
 };
 
 _helicopter limitSpeed ((0.4 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 150);         // to slow down vehicle even more x2
@@ -212,20 +209,9 @@ _helicopter flyInHeight _midHeight;
 
 _helicopter limitSpeed (2 * getNumber(configOf _helicopter >> "maxSpeed"));	// remove the limit
 
-private _weapons = count weapons _helicopter;
-private _driverturret = _helicopter weaponsTurret [0];
-private _gunnerturret = _helicopter weaponsTurret [-1];
-private _weaponsturret = count _driverturret + count _gunnerturret;
+_helicopter action ["LandGearUp", _helicopter];
 
-if (
-    alive _helicopter && (
-        _vehType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack") ||
-        {_vehType in FactionGet(all,"vehiclesTransportAir") && {_weapons > 2 || _weaponsturret > 2}} //assuming first 2 are laserdesignator and flares
-    )
-) exitWith {
-    _helicopter action ["LandGearUp", _helicopter];
-    [_helicopter, _crewGroup, _posDestination] spawn A3A_fnc_attackHeli;
-};
+if ([_helicopter, _crewGroup, _posDestination] call A3A_fnc_checkAndSpawnAttack) exitWith {};
 
 // Heli RTB
 private _vehWP1 = _crewGroup addWaypoint [_originPos, 0];
@@ -238,9 +224,6 @@ _crewGroup setCurrentWaypoint _vehWP1;
 waitUntil {sleep 1; (_helicopter distance2D _landPos) > 165};
 for '_i' from 1 to (5 + (round random 2)) do
 {
-    [_helicopter, "CMFlareLauncher"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Triples"] call BIS_fnc_fire;
-    [_helicopter, "CMFlareLauncher_Singles"] call BIS_fnc_fire;
-    sleep 1;
+    [_helicopter, 1] call A3A_fnc_fireCMFlare;
 };
 _helicopter action ["LandGearUp", _helicopter];
