@@ -98,11 +98,12 @@ boxX call jn_fnc_arsenal_init;
 [A3A_saveData] call A3A_fnc_initVarServer;
 
 // Parameter-dependent vars. Could be moved to initVarServer...
-if (gameMode != 1) then {
-    Occupants setFriend [Invaders,1];
-    Invaders setFriend [Occupants,1];
-    if (gameMode == 3) then {"CSAT_carrier" setMarkerAlpha 0};
-    if (gameMode == 4) then {"NATO_carrier" setMarkerAlpha 0};
+switch (gameMode) do {
+    case (2): {
+        Occupants setFriend [Invaders,1];
+        Invaders setFriend [Occupants,1];
+    };
+    case (3): { "CSAT_carrier" setMarkerAlpha 0 };
 };
 
 setTimeMultiplier settingsTimeMultiplier;
@@ -228,10 +229,19 @@ if (isPlayer A3A_setupPlayer) then {
 //add admin as member if not on loggin
 addMissionEventHandler ["OnUserAdminStateChanged", {
     params ["_networkId", "_loggedIn", "_votedIn"];
-    private _uid = (getUserInfo _networkId)#2;
-    if !(_uid in membersX) then {
-        membersX pushBackUnique (getUserInfo _networkId)#2;
-        publicVariable "membersX";
+
+    // userInfo is empty when somebody logs out
+    if (!_loggedIn) exitWith {};
+
+    private _userInfo = getUserInfo _networkId;
+
+    if (_userInfo isNotEqualTo []) then {
+        private _uid = _userInfo#2;
+
+        if !(_uid in membersX) then {
+            membersX pushBack _uid;
+            publicVariable "membersX";
+        };
     };
 }];
 
@@ -300,6 +310,9 @@ serverInitDone = true; publicVariable "serverInitDone";
 Info("Setting serverInitDone as true");
 A3A_startupState = "completed"; publicVariable "A3A_startupState";
 
+// Because CBA events are blocking, we can't have third party stuff block us 
+// from executing the stuff below. So we spawn it.
+[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 
