@@ -212,10 +212,43 @@ class CfgVehicles
         class TransportBackpacks{};
     };
 
-    class GVAR(Box_BuildingPlacer_Decorations): Box_NATO_Uniforms_F {
-        displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations";
+    class Box_NATO_AmmoVeh_F;
+    class A3AU_Build_Box_Humongous : Box_NATO_AmmoVeh_F {
+        displayName = "Build Box (Humongous)";
+        hiddenSelectionsTextures[] = {QPATHTOFOLDER(Pictures\items\A3AU_Build_Box_Humongous.paa),"A3\Weapons_F\Ammoboxes\data\AmmoVeh_CO.paa"};
 
-        class TransportItems {};
+        ace_cargo_blockUnloadCarry = 1;
+        ace_cargo_canLoad = 1;
+        ace_cargo_size = 6;
+        ace_dragging_canDrag = 0;
+        ace_dragging_canCarry = 0;
+
+        class TransportMagazines{};
+        class TransportWeapons{};
+        class TransportItems{};
+        class TransportBackpacks{};
+    };
+
+    class GVAR(Box_BuildingPlacer_Additions_Base): Box_NATO_Uniforms_F {
+        scope = 0;
+        scopeCurator = 0;
+        hiddenSelectionsTextures[] = {"\A3\Supplies_F_Exp\Ammoboxes\Data\uniforms_box_blufor_co.paa"};
+
+        GVAR(buildableObjects)[] = {};
+
+        class TransportMagazines{};
+        class TransportWeapons{};
+        class TransportItems{};
+        class TransportBackpacks{};
+    };
+
+    class GVAR(Box_BuildingPlacer_Decorations): GVAR(Box_BuildingPlacer_Additions_Base) {
+        displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Decorations";
+        scope = 1;
+
+        editorPreview = QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Decorations).jpg);
+        hiddenSelectionsTextures[] += {QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Decorations).paa)};
+
         /* Generator property:
         
         GVAR(buildableObjectsCode) = QUOTE((_this select 0) pushBack[ARR_2(QQUOTE(Land_Portable_generator_F),200)]);
@@ -333,10 +366,13 @@ class CfgVehicles
         };
     };
 
-    class GVAR(Box_BuildingPlacer_Chemlights): Box_NATO_Uniforms_F {
+    class GVAR(Box_BuildingPlacer_Chemlights): GVAR(Box_BuildingPlacer_Additions_Base) {
         displayName = "$STR_A3A_Utility_Items_Box_BuildingPlacer_Chemlights";
+        scope = 1;
 
-        class TransportItems {};
+        editorPreview = QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Chemlights).jpg);
+        hiddenSelectionsTextures[] += {QPATHTOFOLDER(Pictures\items\GVAR(Box_BuildingPlacer_Chemlights).paa)};
+
         GVAR(buildableObjects)[] = {
             {QGVAR(Chemlight_Red), 15},
             {QGVAR(Chemlight_Green), 15},
