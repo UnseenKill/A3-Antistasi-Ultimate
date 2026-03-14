@@ -14,9 +14,9 @@ private _enemy = _target findNearestEnemy _target;
 if (!isPlayer _target and (_target distance _enemy < 100 or {[objNull, "VIEW"] checkVisibility [eyePos _enemy, eyePos _target] > 0})) exitWith { objNull };
 
 private _firstAidKits = ["FirstAidKit","Medikit"] + (A3A_faction_reb get "firstAidKits") + (A3A_faction_reb get "mediKits");
-private _unitNeedsFAK = count (_firstAidKits arrayIntersect items _target) == 0;
+private _unitNeedsFAK = (_firstAidKits arrayIntersect items _target) isEqualTo [];
 
-private _units = [getPos _target, side _target, 100] call A3A_fnc_getNearFriendly;
+private _units = [getPos _target, side _target, AIrevivesOutsideSquad] call A3A_fnc_getNearFriendly;
 private _medics = _units select { [_x] call A3A_fnc_isMedic };
 _units = _units - _medics;
 
