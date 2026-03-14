@@ -2,8 +2,6 @@
 
 params ["_unit","_part","_damage","_injurer","_projectile","_hitIndex","_instigator","_hitPoint"];
 
-private _side = side _unit;
-
 // Functionality unrelated to Antistasi revive
 if (side group _injurer == teamPlayer) then
 {
