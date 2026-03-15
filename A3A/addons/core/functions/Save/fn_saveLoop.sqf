@@ -67,7 +67,6 @@ private ["_garrison"];
 ["version", QUOTE(VERSION_FULL)] call A3A_fnc_setStatVariable;
 ["saveTime", systemTimeUTC] call A3A_fnc_setStatVariable;
 ["gameMode", gameMode] call A3A_fnc_setStatVariable;					// backwards compatibility
-["difficultyX", skillMult] call A3A_fnc_setStatVariable;				// backwards compatibiiity
 ["bombRuns", bombRuns] call A3A_fnc_setStatVariable;
 ["smallCAmrk", smallCAmrk] call A3A_fnc_setStatVariable;
 ["membersX", membersX] call A3A_fnc_setStatVariable;
