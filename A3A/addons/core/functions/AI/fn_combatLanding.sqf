@@ -52,23 +52,7 @@ _vehWP0 setWaypointBehaviour "CARELESS";// maybe split driver and gunners, so gu
 private _midHeight = [50, 70] select (A3A_climate isEqualTo "tropical");
 _helicopter flyInHeight _midHeight;
 
-if (_vehType in FactionGet(all,"vehiclesTransportAir")) then {
-    waitUntil {sleep 1; !alive _helicopter || (_helicopter distance2D _landPos) < 3000};
-    if (!alive _helicopter) exitWith {};
-    _helicopter limitSpeed ((0.8 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 500);   // to slow down vtols
-
-    waitUntil {sleep 1; !alive _helicopter || (_helicopter distance2D _landPos) < 2000};
-    if (!alive _helicopter) exitWith {};
-    _helicopter limitSpeed ((0.7 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 400);   // to slooow down vtols
-
-    waitUntil {sleep 1; !alive _helicopter || (_helicopter distance2D _landPos) < 1500};
-    if (!alive _helicopter) exitWith {};
-    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 250);   // to slow down vtols even more
-} else {
-    waitUntil {sleep 1; !alive _helicopter || (_helicopter distance2D _landPos) < 1000};
-    if (!alive _helicopter) exitWith {};
-    _helicopter limitSpeed ((0.6 * (getNumber(configOf _helicopter >> "maxSpeed"))) min 350);   // to slow down heli
-};
+[_helicopter, _landPos, _vehType in FactionGet(all,"vehiclesTransportAir")] call A3A_fnc_approachSpeedControl;
 
 waitUntil {sleep 1; (_helicopter distance2D _landPos) < 800};
 while {_helicopter distance2D _landPos > 675} do {
