@@ -78,6 +78,25 @@ for "_i" from 0 to 1 do {
             private _distSqr = _dx*_dx + _dy*_dy;
             if (_distSqr > _radiusSqr && _distSqr <= _smoothingRadiusSqr) then {
                 private _xPos = _centerX + _dx;
+                private _yPos = _centerY + _dy;
+                private _currentHeight = getTerrainHeightASL [_xPos, _yPos];
+                private _distance = sqrt(_distSqr);
+
+                // Optimization: pre-calculate coefficients
+                private _smoothingFactor = (_distance - _radius) / _smoothingFactorBase;
+                private _heightDiff = _targetHeight - _currentHeight;
+
+                _smoothingPoints pushBack [
+                    _xPos,
+                    _yPos,
+                    _currentHeight + _heightDiff * (1 - _smoothingFactor)
+                ];
+            };
+        };
+    };
+    [_smoothingPoints] call _fnc_processTerrain;
+};
+
 #if __A3_DEBUG__
     // --- DEBUG: collect after heights ---
     private _debugAfter = [];
