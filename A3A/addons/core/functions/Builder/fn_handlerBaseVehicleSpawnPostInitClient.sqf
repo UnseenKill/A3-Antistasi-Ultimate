@@ -27,16 +27,33 @@ if !assert(params[
 ]) exitWith {};
 if !assert(!isNull _object) exitWith {};
 
+private["_helper"];
+
+getArray(configOf _object >> "hiddenSelections") apply {
+    _object setObjectTexture[_x, '#(rgb,512,512,3)text(1,1,"PuristaMedium",0.1,"#0000ff7f","#ff0000","Spawn\nHelper")'];
+};
+
 // Preview object; do nothing
 if (_object getVariable[QGVAR(isTempObject), false]) exitWith {};
 
+_object setVariable[QGVAR(associatedObjects), []];
+
+// Show VR area circle outside of teardown mode if enabled in settings.
+if (GVAR(spawnHelperShowLocation)) then {
+    _helper = createVehicleLocal["VR_Area_01_circle_4_yellow_F", getPosATL _object, [], 0, "CAN_COLLIDE"];
+    _helper setVectorUp surfaceNormal getPosATL _object;
+    _helper setDir getDir _object;
+    _object getVariable QGVAR(associatedObjects) pushBack _helper;
+};
+
 // Can't attach to temp object because of collision detection thing
-private _helper = "Sign_Arrow_Direction_Blue_F" createVehicleLocal position _object;
+_helper = "Sign_Arrow_Direction_Blue_F" createVehicleLocal[0, 0, 0];
 _helper attachTo[_object, [0, 0, 1.5]];
+_object getVariable QGVAR(associatedObjects) pushBack _helper;
 
 _object addEventHandler["Deleted", {
     params["_object"];
-    attachedObjects _object apply {
+    _object getVariable QGVAR(associatedObjects) apply {
         deleteVehicle _x;
     };
 }];
