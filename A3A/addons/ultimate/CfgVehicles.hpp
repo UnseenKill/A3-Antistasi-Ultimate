@@ -119,7 +119,7 @@ class A3AU_TerrainSmoother_Medium_F: A3AU_TerrainSmoother_Base_F
     {
         previewWidth = 15;
         previewHeight = 15;
-        smoothRadius[] = {15, 27};
+        smoothRadius[] = {15, 30};
     };
 };
 class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F 
@@ -131,7 +131,7 @@ class A3AU_TerrainSmoother_Large_F: A3AU_TerrainSmoother_Base_F
     {
         previewWidth = 30;
         previewHeight = 30;
-        smoothRadius[] = {30, 42};
+        smoothRadius[] = {30, 60};
     };
 };
 
