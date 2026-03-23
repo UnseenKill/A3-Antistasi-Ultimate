@@ -197,4 +197,10 @@ if !(_isReinforcement) then
     _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
     _wpClear setWaypointType "SAD";
     _groupJumper spawn A3A_fnc_attackDrillAI;
+if !(_isReinforcement) then
+{
+    _wpClear = _groupJumper addWaypoint [_targetPosition, 0];
+    _wpClear setWaypointType "SAD";
+    _groupJumper spawn A3A_fnc_attackDrillAI;
+    [_vehicle, group driver _vehicle, _targetPosition] call A3A_fnc_checkAndSpawnAttack;
 };
