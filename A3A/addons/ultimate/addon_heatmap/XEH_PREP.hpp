@@ -1,5 +1,6 @@
 PREP(classDefinition);
 PREP(createHeatMapObject);
+PREP(onServerStartup);
 
 PREP_OO(CTOR);
 PREP_OO(addHeatSpot);
