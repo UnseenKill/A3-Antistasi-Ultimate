@@ -130,6 +130,8 @@ class CfgFunctions
             class createBreachChargeText {};
             class createPetros {};
             class deleteControls {};
+            class despawnQueueEntity {};
+            class despawnQueueProcessor {};
             class destroyCity {};
             class distance {};
             class distanceUnits {};
@@ -144,6 +146,7 @@ class CfgFunctions
             class garrisonInfo {};
             class getAggroLevelString {};
             class getRecentDamage {};
+            class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -170,7 +173,6 @@ class CfgFunctions
             class petrosDeathMonitor {};
             class placementSelection {};
             class playableUnits {};
-            class getSideRadioTowerInfluence {};
             class rebuildAssets {};
             class rebuildEconomicAssets {};
             class rebuildRadioTower {};
