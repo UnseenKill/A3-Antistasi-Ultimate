@@ -15,5 +15,9 @@
 #define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX,event,serverEntityPostMortem))
 // Server-only event; after server initialization; params=[]
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX,event,serverInitDone))
+// Server-only event; on game load; params=[]
+#define CBA_EVENT_SERVER_GAME_LOAD QUOTE(TRIPLES(PREFIX,event,serverGameLoad))
 // Server-only event; on game save; params=[]
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
+// Server-only event; before loading saved data; params=[]
+#define CBA_EVENT_SERVER_STARTUP QUOTE(TRIPLES(PREFIX,event,serverStartup))
