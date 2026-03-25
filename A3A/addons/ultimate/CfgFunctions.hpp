@@ -95,6 +95,8 @@ class CfgFunctions
             class exportPylons {};
             class exportTowns {};
             class hasAddon {};
+            class interpolateColor {};
+            class interpolateColors {};
             class log {};
             class logisticsGrabSeats {};
             class useMagazineItem {};
