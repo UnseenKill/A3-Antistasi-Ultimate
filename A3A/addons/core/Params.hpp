@@ -3164,6 +3164,45 @@ class Params
         texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
         default = -1;
     };
+
+    class EGVAR(ultimate,heatMaps): AllParams
+    {
+        type = QEGVAR(ultimate,heatMaps);
+    };
+    class EGVAR(ultimate,heatMapsCaption): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_heatMaps;
+        values[] = {};
+        texts[] = {};
+        default = 0;
+    };
+    class EGVAR(ultimate,useHeatMaps): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_useHeatMaps;
+        tooltip = $STR_params_ultimate_useHeatMaps_Tooltip;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 1;
+
+        class dependencies
+        {
+            class EGVAR(ultimate_addon_heatmap,mapScale)
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
+    };
+    class EGVAR(ultimate_addon_heatmap,mapScale): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_addon_heatmap_heatmapScale;
+        tooltip = $STR_params_ultimate_addon_heatmap_heatmapScale_Tooltip;
+        values[] = {50, 125, 250, 500};
+        texts[] = {"50m", "125m", "250m", "500m"};
+        default = 125;
+        lockInGame = 1;
+    };
     // #endregion
 
     // #region Development parameters
