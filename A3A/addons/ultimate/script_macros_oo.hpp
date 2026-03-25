@@ -47,6 +47,7 @@
     #define PREAMBLE_TRACE(methodName) /* disabled */
 #endif // DEBUG_MODE_FULL
 
+#define PREP_OO(methodName) PREP(DOUBLES(method,methodName))
 #define REGISTER_CLASSDEF(generator) ([[] call(generator)] call A3U_fnc_registerObjectDefinition)
 
 #define VALIDATE_OBJECT(variable,class) (!isNil QUOTE(variable) && {(variable) isEqualType createHashMap} && {!isNil{(variable) get "#type"}} && {class in((variable) get "#type")})
