@@ -12,14 +12,13 @@ Description:
         - The object registry is sealed (postInit has run)
 
 Parameters:
-    0: _definitionName - "Class" name <STRING>
-    1: _definitionBody - "Class" definition as described in `createHashMapObject` documentation <ARRAY,HASHMAP>
+    0: _definitionBody - "Class" definition as described in `createHashMapObject` documentation <ARRAY,HASHMAP>
 
 Optional:
 
 Example:
     (begin example)
-    ["MyClass", [ definition ]] call A3U_fnc_registerObjectDefinition;
+    [[ definition ]] call A3U_fnc_registerObjectDefinition;
     (end example)
 
 Returns:
@@ -31,12 +30,24 @@ Environment:
 Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
-TRACE_1(QFUNC(registerObjectDefinition),_this#0);
+TRACE_1(QFUNC(registerObjectDefinition),[]);
 
 if !assert(params[
-    ["_definitionName", nil, [""]],
     ["_definitionBody", nil, [[], createHashMap]]
 ]) exitWith {};
+
+if !assert([_definitionBody get "#type"] params[
+    ["_definitionName", nil, ["", []]]
+]) exitWith {};
+
+if (_definitionName isEqualType []) then {
+    _definitionName = _definitionName select 0;
+} else {
+    // Fix "Bad conversion array" RPT spam
+    _definitionBody set["#type", [_definitionName]];
+};
+
+if !assert(_definitionName isEqualType "") exitWith {};
 
 if (_definitionName in GVAR(objectRegistry))
     throw format ["Object definition with name %1 is already registered", _definitionName];
@@ -49,5 +60,6 @@ if (_definitionBody isEqualType []) then {
 };
 
 GVAR(objectRegistry) set[_definitionName, _definitionBody];
+LOG_1("Registered object definition: %1", str _definitionName);
 
 nil;
