@@ -101,6 +101,13 @@ createHashMapFromArray[
     METHOD_DEFINE(getHeat),
 
     /**
+    * getHeatmapData() -> Array
+    *
+    * Get raw heatmap for persistence.
+    */
+    METHOD_DEFINE_BODY(getHeatmapData,_self get "_heatmap"),
+
+    /**
      * getValue(Array cellPosition) -> Number
      *
      * Internal: get heat value at cell position.
@@ -135,6 +142,13 @@ createHashMapFromArray[
     *
     * Convert world position to local cell position.
     */
-    METHOD_DEFINE(positionToCell)
+    METHOD_DEFINE(positionToCell),
+    
+    /**
+    * setHeatmapData(Array heatmapData) -> Nothing
+    *
+    * Set raw heatmap data from persistence.
+    */
+    METHOD_DEFINE(setHeatmapData)
     // #endregion
 ];

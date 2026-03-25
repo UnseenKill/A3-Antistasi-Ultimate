@@ -1,5 +1,7 @@
 PREP(classDefinition);
 PREP(createHeatMapObject);
+PREP(onServerGameLoad);
+PREP(onServerGameSave);
 PREP(onServerStartup);
 
 PREP_OO(CTOR);
