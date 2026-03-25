@@ -11,8 +11,4 @@ if (_serverID isEqualType false) exitWith {
 
 private _saveExt = format["%1%2Antistasi%3",_serverID,_campaignID,_map];
 
-private _varValue = profileNamespace getVariable (_varname + _saveExt);
-if (isNil "_varValue") exitWith {};
-
-
-_varValue;
+profileNamespace getVariable (_varname + _saveExt);
