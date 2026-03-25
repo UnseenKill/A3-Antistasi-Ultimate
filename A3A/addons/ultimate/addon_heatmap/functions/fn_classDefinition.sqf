@@ -21,7 +21,7 @@ Author:
 TRACE_1(QFUNC(classDefinition),_this);
 
 createHashMapFromArray[
-    ["#type", HEATMAP_CLASS],
+    ["#type", QUOTE(HEATMAP_CLASS)],
     ["#flags", ["sealed"]],
 
     // #region Properties

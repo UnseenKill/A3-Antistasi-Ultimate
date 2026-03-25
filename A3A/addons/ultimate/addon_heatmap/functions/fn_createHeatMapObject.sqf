@@ -31,4 +31,4 @@ if !assert(params[
     ["_mapScale", nil, [0]]
 ]) exitWith {};
 
-[HEATMAP_CLASS, [_mapScale]] call A3U_fnc_createObject;
+[QUOTE(HEATMAP_CLASS), [_mapScale]] call A3U_fnc_createObject;
