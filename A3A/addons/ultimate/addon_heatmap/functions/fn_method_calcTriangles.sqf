@@ -51,6 +51,18 @@ for "_py" from _yTop to _yBottom do {
 
         private _index = _px + _py * _width;
         private _value = _heatmap select _index;
+
+        // Prevent filling the _vertices array with a bunch of useless alpha=0
+        // triangles when loading persisted heatmap data that contains a lot 
+        // of zero values.
+        if (_value <= 0) then {
+            if (_index < count _vertices) then {
+                _vertices set[_index, nil];
+            };
+
+            continue;
+        };
+
         private _color = [_value, _colors] call A3U_fnc_interpolateColors;
         private _colorStr = format["#(rgb,1,1,1)color(%1,%2,%3,%4)", _color select 0, _color select 1, _color select 2, _color select 3];
 
