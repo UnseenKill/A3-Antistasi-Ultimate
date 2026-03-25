@@ -18,6 +18,6 @@
 // Server-only event; on game load; params=[]
 #define CBA_EVENT_SERVER_GAME_LOAD QUOTE(TRIPLES(PREFIX,event,serverGameLoad))
 // Server-only event; on game save; params=[]
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX,event,serverGameSaved))
+#define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX,event,serverGameSave))
 // Server-only event; before loading saved data; params=[]
 #define CBA_EVENT_SERVER_STARTUP QUOTE(TRIPLES(PREFIX,event,serverStartup))
