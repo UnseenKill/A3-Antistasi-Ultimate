@@ -25,8 +25,9 @@ if !assert(params[
     ["_mapScale", nil, [0]]
 ]) exitWith {};
 
-// Init propertiesd
+// Init properties
 _self set["_scale", _mapScale];
+_self set["_vertices", []];
 _self set["_dimensions", [ceil(2 * worldSize / _mapScale), ceil(worldSize / _mapScale)]];
 
 _self call["initializeHeatmap", []];

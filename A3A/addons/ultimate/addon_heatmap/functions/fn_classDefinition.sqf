@@ -34,7 +34,7 @@ createHashMapFromArray[
     // <BOOL> - Whether to show empty cells (cells with heat value of 0)
     ["_showEmpty", false],
     // <ARRAY> - of <ARRAY> color, <STRING> colorStr, <ARRAY> triangleVertices
-    ["_vertices", []],
+    ["_vertices", nil],
     // #endregion
 
     // #region(collapsed) Methods
