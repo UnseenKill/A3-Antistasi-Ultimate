@@ -108,6 +108,11 @@ createHashMapFromArray[
     METHOD_DEFINE_BODY(getHeatmapData,_self get "_heatmap"),
 
     /**
+     * getScale() -> Number
+     */
+    METHOD_DEFINE_BODY(getScale,_self get "_scale"),
+
+    /**
      * getValue(Array cellPosition) -> Number
      *
      * Internal: get heat value at cell position.

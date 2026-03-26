@@ -1,9 +1,16 @@
-PREP(classDefinition);
+// Addon functions
+PREP(calculateHeatIntensity);
+PREP(calculateHeatRange);
 PREP(createHeatMapObject);
+PREP(onServerEntityPostMortem);
 PREP(onServerGameLoad);
 PREP(onServerGameSave);
 PREP(onServerStartup);
+PREP(onUpdateHeatmap);
+PREP(scheduleHeatmapUpdate);
 
+// Functions for heatmap class
+PREP(classDefinition);
 PREP_OO(CTOR);
 PREP_OO(addHeatSpot);
 PREP_OO(blobToEllipse);
