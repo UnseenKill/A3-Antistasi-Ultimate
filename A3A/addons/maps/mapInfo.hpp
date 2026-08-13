@@ -65,4 +65,7 @@ class mapInfo {
     #include "Antistasi_Winthera3.Winthera3\mapInfo.hpp"
     #include "Antistasi_WW2_Omaha_Beach.WW2_Omaha_Beach\mapInfo.hpp"
     #include "Antistasi_yulakia.yulakia\mapInfo.hpp"
+	#include "Antistasi_bornholm.bornholm\mapInfo.hpp"
+	#include "Antistasi_egl_laghisola.egl_laghisola\mapInfo.hpp"
+	#include "Antistasi_UMB_Armavir.UMB_Armavir\mapInfo.hpp"
 };

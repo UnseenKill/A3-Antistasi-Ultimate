@@ -92,6 +92,9 @@ class CfgMissions {
         A3A_Mission(Winthera3,"Antistasi Ultimate - Panthera Winter");
         A3A_Mission(WW2_Omaha_Beach,"Antistasi Ultimate - Omaha Beach");
         A3A_Mission(yulakia,"Antistasi Ultimate - Yulakia");
+	A3A_Mission(bornholm, "Antistasi Ultimate - Bornholm")
+	A3A_Mission(egl_laghisola, "Antistasi Ultimate - Laghisola")
+	A3A_Mission(UMB_Armavir, "Antistasi Ultimate - Armavir")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
