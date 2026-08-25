@@ -1,14 +1,17 @@
-params ["_markerX"];
+if !assert(params[
+	["_marker", nil, [""]]
+]) exitWith { false };
 
-private ["_positionX","_mrkENY"];
-
-private _isFrontier = false;
-private _sideX = sidesX getVariable [_markerX,sideUnknown];
-private _mrkENY = (airportsX + outposts + seaports + milbases) select {sidesX getVariable [_x,sideUnknown] != _sideX};
-
-if (count _mrkENY > 0) then {
-	private _positionX = getMarkerPos _markerX;
-	_isFrontier = _mrkENY findIf {_positionX distance (getMarkerPos _x) < distanceSPWN} != -1;
+if (markerShape _marker isEqualTo "") exitWith {
+    Warning_1("No such marker: %1",str _marker);
+    false;
 };
 
-_isFrontier
+private _markerSide = sidesX getVariable[_marker, sideUnknown];
+private _markerPos = markerPos _marker;
+
+(airportsX + outposts + seaports + milbases + ["Synd_HQ"]) select {
+	sidesX getVariable[_x, sideUnknown] isNotEqualTo _markerSide;
+} findIf {
+	_markerPos distance markerPos _x < A3A_frontLineDistance
+} != -1;

@@ -7401,6 +7401,20 @@
                 <Korean>활성화되면, 쓰러진 AI가 자신의 분대 내에서 아무도 구호할 수 없을 경우, 이 미터 반경 내의 다른 아군 유닛이 그들을 구호하려 시도합니다. AI는 적대 진영의 유닛은 구호하지 않습니다.</Korean>
                 <French>Lorsque activé, si un IA au sol ne peut être relevé par aucune unité de son propre groupe, d'autres unités alliées dans un rayon de ce nombre de mètres tenteront de le relever. L'IA ne relèvera pas les unités d'un camp adverse.</French>
             </Key>
+            <Key ID="STR_params_A3A_frontLineDistance">
+                <Original>Frontline distance</Original>
+                <Russian>Расстояние до линии фронта</Russian>
+                <Chinesesimp>前线距离</Chinesesimp>
+                <Korean>전선 거리</Korean>
+                <French>Distance de la ligne de front</French>
+            </Key>
+            <Key ID="STR_params_A3A_frontLineDistance_desc">
+                <Original>Distance to non-friendly locations for a location to be considered near the "frontline".</Original>
+                <Russian>Расстояние до недружественных точек, при котором точка считается находящейся близко к линии фронта.</Russian>
+                <Chinesesimp>一个位置被认为接近“前线”的非友方位置的距离。</Chinesesimp>
+                <Korean>위치가 "전선" 근처에 있다고 간주되기 위한 비우호적 위치까지의 거리.</Korean>
+                <French>Distance aux emplacements non alliés pour qu'un emplacement soit considéré comme proche de la "ligne de front".</French>
+            </Key>
             <Key ID="STR_params_maxConstructions">
                 <Original>Maximum quantity of Persistent Constructions</Original>
                 <Russian>Максимальное количество сохраняемых сооружений</Russian>

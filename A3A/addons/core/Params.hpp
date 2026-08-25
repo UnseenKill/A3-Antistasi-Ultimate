@@ -3152,6 +3152,14 @@ class Params
         texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
         default = -1;
     };
+    class A3A_frontLineDistance : ExperimentalParams
+    {
+        title = $STR_params_A3A_frontLineDistance;
+        tooltip = $STR_params_A3A_frontLineDistance_desc;
+        values[] = {700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 2000, 2500, 3000};
+        texts[] = {"700m", "800m", "900m", "1km", "1.1km", "1.2km", "1.3km", "1.4km", "1.5km", "2km", "2.5km", "3km"};
+        default = 1100;
+    };
 
     class DevelopmentParamsSpacer : AllParams
     {
