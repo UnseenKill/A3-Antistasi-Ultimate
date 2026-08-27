@@ -1,3 +1,6 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 if !assert(params[
 	["_marker", nil, [""]]
 ]) exitWith { false };
