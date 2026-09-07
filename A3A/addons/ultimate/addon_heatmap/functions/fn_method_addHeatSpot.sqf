@@ -11,6 +11,7 @@ Parameters:
     2: _intensity - Heat intensity <NUMBER>
 
 Optional:
+    3: _updateTriangles - Whether to update the triangles after adding the heat spot <BOOL> (default: true)
 
 Example:
     (begin example)
@@ -20,7 +21,7 @@ Example:
     (end example)
 
 Returns:
-    Nothing
+    <ARRAY> of affected cells boundaries [minX, maxX, minY, maxY]
 
 Environment:
     Client/Server, Unscheduled
@@ -35,6 +36,8 @@ if !assert(params[
     ["_radii", nil, [[]], 2],
     ["_intensity", nil, [0]]
 ]) exitWith {};
+
+private _updateTriangles = param[3, true, [true]];
 
 _self get "_dimensions" params["_width", "_height"];
 _center params["_cx", "_cy"];
@@ -77,6 +80,8 @@ for "_py" from _minY to _maxY do {
     };
 };
 
-_self call["calcTriangles", [_minX, _maxX, _minY, _maxY]];
+if (_updateTriangles) then {
+    _self call["calcTriangles", [_minX, _maxX, _minY, _maxY]];
+};
 
-nil;
+[_minX, _maxX, _minY, _maxY];

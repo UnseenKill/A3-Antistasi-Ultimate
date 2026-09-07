@@ -36,21 +36,38 @@ waitUntil { isNil QGVAR(heatmapUpdateQueueWorking) };
 GVAR(heatmapUpdateTime) = diag_tickTime + HEATMAP_UPDATE_DELAY;
 
 if !(isNil QGVAR(heatmapUpdateQueue)) exitWith {
-    GVAR(heatmapUpdateQueue) pushBack _this;
+    GVAR(heatmapUpdateQueue) pushBack(+_this);
 };
 
 GVAR(heatmapUpdateQueue) = [+_this];
 
 waitUntil { diag_tickTime > GVAR(heatmapUpdateTime) };
 
+private _updateRegion = createHashMap;
+
 GVAR(heatmapUpdateQueueWorking) = true;
 GVAR(heatmapUpdateQueue) apply {
     _x params["_side","_position","_intensity","_size"];
 
-    (GVAR(heatMaps) get _side) call["addHeatSpot", [_position, _size, _intensity]];
+    private _region = (GVAR(heatMaps) get _side) call["addHeatSpot", [_position, _size, _intensity, false]];
+    private _currentRegion = _updateRegion getOrDefault[_side, _region, true];
+    
+    _updateRegion set[_side, [
+        (_currentRegion select 0) min (_region select 0),
+        (_currentRegion select 1) max (_region select 1),
+        (_currentRegion select 2) min (_region select 2),
+        (_currentRegion select 3) max (_region select 3)
+    ]];
 };
 
-missionNamespace setVariable[QVAR(heatmapUpdateQueue), nil];
-missionNamespace setVariable[QVAR(heatmapUpdateQueueWorking), nil];
+_updateRegion apply {
+    private _side = _x;
+    private _region = _y;
+
+    (GVAR(heatMaps) get _side) call["updateTriangles", _region];
+};
+
+GVAR(heatmapUpdateQueue) = nil;
+GVAR(heatmapUpdateQueueWorking) = nil;
 
 nil;
