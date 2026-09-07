@@ -35,7 +35,7 @@ if (side _killer isNotEqualTo teamPlayer) exitWith {
     Verbose_2("Killer %1 is not on a side we track (side=%2); skipping",_killer,side _killer);
 };
 
-if !(side _entityKilled in keys GVAR(heatmap)) exitWith {
+if !(side _entityKilled in GVAR(heatmap)) exitWith {
     Verbose_2("Entity %1 is not on a side we track (side=%2); skipping",_entityKilled,side _entityKilled);
 };
 
