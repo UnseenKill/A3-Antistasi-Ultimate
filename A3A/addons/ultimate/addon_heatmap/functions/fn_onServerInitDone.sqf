@@ -20,7 +20,7 @@ Author:
 ---------------------------------------------------------------------------- */
 TRACE_1(QFUNC(onServerInitDone),_this);
 
-[ADDON_EVENT_SERVER_UPDATE_HEATMAP, { call FUNC(onUpdateHeatmap) }] call FUNCMAIN(addEventHandler);
-[CBA_EVENT_SERVER_ENTITY_POSTMORTEM, { call FUNC(onServerEntityPostMortem) }] call FUNCMAIN(addEventHandler);
+[ADDON_EVENT_SERVER_UPDATE_HEATMAP, LINKFUNC(onUpdateHeatmap)] call FUNCMAIN(addEventHandler);
+[CBA_EVENT_SERVER_ENTITY_POSTMORTEM, LINKFUNC(onServerEntityPostMortem)] call FUNCMAIN(addEventHandler);
 
 nil;

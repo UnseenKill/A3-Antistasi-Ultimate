@@ -26,9 +26,9 @@ if !GVAR(useHeatMaps) exitWith {
 
 Debug_1("Heat maps feature enabled via %1 parameter.",str QGVAR(useHeatMaps));
 
-[CBA_EVENT_SERVER_GAME_LOAD, { call FUNC(onServerGameLoad) }] call FUNCMAIN(addEventHandler);
-[CBA_EVENT_SERVER_GAME_SAVE, { call FUNC(onServerGameSave) }] call FUNCMAIN(addEventHandler);
-[CBA_EVENT_SERVER_INIT_DONE, { call FUNC(onServerInitDone) }] call FUNCMAIN(addEventHandler);
+[CBA_EVENT_SERVER_GAME_LOAD, LINKFUNC(onServerGameLoad)] call FUNCMAIN(addEventHandler);
+[CBA_EVENT_SERVER_GAME_SAVE, LINKFUNC(onServerGameSave)] call FUNCMAIN(addEventHandler);
+[CBA_EVENT_SERVER_INIT_DONE, LINKFUNC(onServerInitDone)] call FUNCMAIN(addEventHandler);
 
 // One heat map for occupiers side
 Info("Creating heat map object for occupiers side");
