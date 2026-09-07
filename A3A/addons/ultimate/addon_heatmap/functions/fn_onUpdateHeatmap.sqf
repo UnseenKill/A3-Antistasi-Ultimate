@@ -28,7 +28,7 @@ if !assert(params[
 ]) exitWith {};
 
 if !assert(!isNull _entityKilled) exitWith {};
-if !assert(_entitySide in keys GVAR(heatmap)) exitWith {};
+if !assert(_entitySide in GVAR(heatmap)) exitWith {};
 
 private _heatmap = GVAR(heatmap) get _entitySide;
 private _intensity = [_entityKilled] call FUNC(calculateHeatIntensity);
