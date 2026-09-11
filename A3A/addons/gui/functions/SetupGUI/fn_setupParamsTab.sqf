@@ -124,7 +124,7 @@ switch (_mode) do
                 [1, ["AI", "Balance", "RebelBalance", "AIBalance", "MiscBalance"]],
                 [2, ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"]],
                 [3, ["Builder"]],
-                [4, ["Experimental", "Development"]],
+                [4, ["Experimental", QEGVAR(ultimate,heatMaps), "Development"]],
                 [5, ["Extender"]]
             ]) getOrDefault[_filter, []];
             ((_this select 1) getVariable "type") in _shownTypes

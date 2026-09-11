@@ -127,6 +127,7 @@ class Params
         class dependencies {};
     };
 
+    // #region Basic parameters
     class BasicParams : AllParams
     {
         type = "Basic";
@@ -546,7 +547,9 @@ class Params
     {
         type = "Basic";
     };
+    // #endregion
 
+    // #region AI parameters
     class AIParamsSpacer : AllParams
     {
         type = "AI";
@@ -2123,7 +2126,9 @@ class Params
     {
         type = "AI";
     };
+    // #endregion
 
+    // #region Black Market parameters
     class BMParamsSpacer : AllParams
     {
         type = "BlackMarket";
@@ -2214,7 +2219,9 @@ class Params
         texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
         default = 0;
     };
+    // #endregion
 
+    // #region Builder parameters
     class BuilderParamsSpacer : AllParams
     {
         type = "Builder";
@@ -2348,8 +2355,9 @@ class Params
         texts[] = {"0","50","100","250","300"};
         default = 100;
     };
-    
+    // #endregion
 
+    // #region Loot and Unlock parameters
     class LootParams : AllParams
     {
         type = "Loot";
@@ -2998,7 +3006,9 @@ class Params
     {
         type = "BlackMarket";
     };
+    // #endregion
 
+    // #region Extender parameters
     class ExtenderParamsSpacer : AllParams
     {
         type = "Extender";
@@ -3012,7 +3022,9 @@ class Params
         texts[] = {};
         default = 0;
     };
+    // #endregion
 
+    // #region Experimental parameters
     class ExperimentalParamsSpacer : AllParams
     {
         type = "Experimental";
@@ -3153,6 +3165,47 @@ class Params
         default = -1;
     };
 
+    class EGVAR(ultimate,heatMaps): AllParams
+    {
+        type = QEGVAR(ultimate,heatMaps);
+    };
+    class EGVAR(ultimate,heatMapsCaption): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_heatMaps;
+        values[] = {};
+        texts[] = {};
+        default = 0;
+    };
+    class EGVAR(ultimate,useHeatMaps): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_useHeatMaps;
+        tooltip = $STR_params_ultimate_useHeatMaps_Tooltip;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        default = 0;
+        lockInGame = 1;
+
+        class dependencies
+        {
+            class EGVAR(ultimate_addon_heatmap,mapScale)
+            {
+                value = 0;
+                lockedByDependency = 1;
+            };
+        };
+    };
+    class EGVAR(ultimate_addon_heatmap,mapScale): EGVAR(ultimate,heatMaps)
+    {
+        title = $STR_params_ultimate_addon_heatmap_heatmapScale;
+        tooltip = $STR_params_ultimate_addon_heatmap_heatmapScale_Tooltip;
+        values[] = {50, 125, 250, 500};
+        texts[] = {"50m", "125m", "250m", "500m"};
+        default = 125;
+        lockInGame = 1;
+    };
+    // #endregion
+
+    // #region Development parameters
     class DevelopmentParamsSpacer : AllParams
     {
         type = "Development";
@@ -3182,6 +3235,7 @@ class Params
         texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
         default = 1;
     };
+    // #endregion
 
     // * Ported from community, deliberately not categorized in Ultimate so it's not shown, and default changed to 0 to disable for now to preserve our existing behavior
     // * only included here to not break A3A_fnc_manageFlagAccess
