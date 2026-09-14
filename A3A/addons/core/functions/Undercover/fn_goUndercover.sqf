@@ -77,7 +77,8 @@ private _secureBases = (
 
 private _lastBaseInside = "";
 private _reason = "";
-["Undercover", [""]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_CLIENT_UNDERCOVER_CHANGED, [true]] call FUNCMAIN(triggerLocalEvent);
 
 while {_reason == ""} do
 {
@@ -370,6 +371,6 @@ if ([_reason, _notificationText] call _recordReason) then {
     ["Undercover", _notificationText] call A3A_fnc_customHint;
 };
 
-["Undercover", [_reason]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_CLIENT_UNDERCOVER_CHANGED, [false, _reason]] call FUNCMAIN(triggerLocalEvent);
 
 nil;
