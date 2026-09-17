@@ -73,18 +73,16 @@ switch (_mode) do
             private _default = getNumber (_x/"default");
             private _defaultIndex = _vals find _default;
 
-            if (!isNil "_title") then {
-                private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
-                _allTextCtrls pushBack [configName _x, _textCtrl];
-                _textCtrl ctrlEnable false;
-                _textCtrl ctrlSetFade 1;
-                _textCtrl ctrlSetText _title;
-                if (_tooltip isNotEqualTo "") then {
-                    _textCtrl ctrlSetTooltip _tooltip;
-                };
-                _textCtrl setVariable ["type", _type];
-                _textCtrl ctrlCommit 0;
+            private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
+            _allTextCtrls pushBack [configName _x, _textCtrl];
+            _textCtrl ctrlEnable false;
+            _textCtrl ctrlSetFade 1;
+            _textCtrl ctrlSetText _title;
+            if (_tooltip isNotEqualTo "") then {
+                _textCtrl ctrlSetTooltip _tooltip;
             };
+            _textCtrl setVariable ["type", _type];
+            _textCtrl ctrlCommit 0;
 
             if (_title isNotEqualTo "" && {_texts isNotEqualTo []}) then {
                 private _valsCtrl = _display ctrlCreate ["A3A_ComboBox_Small", A3A_IDC_SETUP_PARAMSVALS + _forEachIndex, _paramsTable];
