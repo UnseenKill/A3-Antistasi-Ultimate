@@ -64,6 +64,7 @@ switch (_mode) do
         private _allCtrls = [];
         private _allTextCtrls = [];
         private _allValsCtrls = [];
+        private _reorderCtrls = createHashMap;
         {
             private _type = getText(_x >> "type");
             private _title = getText(_x >> "title");
@@ -72,9 +73,11 @@ switch (_mode) do
             private _vals = getArray(_x >> "values");
             private _default = getNumber(_x >> "default");
             private _defaultIndex = _vals find _default;
+            private _reorderAfter = [_x >> "after", "STRING", false] call CBA_fnc_getConfigEntry;
 
+            private _configName = configName _x;
             private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
-            _allTextCtrls pushBack [configName _x, _textCtrl];
+            _allTextCtrls pushBack [_configName, _textCtrl];
             _textCtrl ctrlEnable false;
             _textCtrl ctrlSetFade 1;
             _textCtrl ctrlSetText _title;
@@ -84,9 +87,15 @@ switch (_mode) do
             _textCtrl setVariable ["type", _type];
             _textCtrl ctrlCommit 0;
 
+            if !(_reorderAfter isEqualType true) then {
+                // Nice try
+                if (_reorderAfter isEqualTo _configName) exitWith {};
+                (_reorderCtrls getOrDefault[_reorderAfter, [], true]) pushBack _configName;
+            };
+
             if (_title isNotEqualTo "" && {_texts isNotEqualTo []}) then {
                 private _valsCtrl = _display ctrlCreate ["A3A_ComboBox_Small", A3A_IDC_SETUP_PARAMSVALS + _forEachIndex, _paramsTable];
-                _allValsCtrls pushBack [configName _x, _valsCtrl];
+                _allValsCtrls pushBack [_configName, _valsCtrl];
                 _valsCtrl ctrlEnable false;
                 _valsCtrl ctrlSetFade 1;
                 _valsCtrl setVariable ["config", _x];
@@ -102,7 +111,42 @@ switch (_mode) do
 
                 _valsCtrl ctrlAddEventHandler ["LBSelChanged", { ["paramChangedHandler", _this] call A3A_fnc_setupParamsTab; }];
             };
-        } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE/"A3A"/"Params"));
+        } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE >> "A3A" >> "Params"));
+
+        Trace_1(QFUNCMAIN(setupParamsTab),_reorderCtrls);
+
+        if (count _reorderCtrls > 0) then {
+            _reorderCtrls apply {
+                private _targetClassName = _x;
+                private _reorderClassNames = _y;
+
+                _reorderClassNames apply {
+                    private _reorderClassName = _x;
+
+                    // Find the current index of the element to be reordered
+                    // and remove it _before_ finding the target index
+                    private _oldIndex = _allTextCtrls findIf { _x select 0 isEqualTo _reorderClassName };
+
+                    if !assert(_oldIndex >= 0) then { continue };
+
+                    private _element = _allTextCtrls deleteAt _oldIndex;
+
+                    // Sadly, this very efficient loop-in-loop-in-loop has to
+                    // happen for each reordered element since we don't know
+                    // if we're going to insert _before_ or _after_ the target
+                    private _targetIndex = _allTextCtrls findIf { _x select 0 isEqualTo _targetClassName };
+
+                    if !assert(_targetIndex >= 0) then {
+                        // If the target index is not found, just append the
+                        // element back to the end
+                        _allTextCtrls pushBack _element;
+                        continue;
+                    };
+
+                    _allTextCtrls insert[_targetIndex + 1, [_element]];
+                };
+            };
+        };
 
         _paramsTable setVariable ["allCtrls", _allCtrls];
         _paramsTable setVariable ["allTextCtrls", _allTextCtrls];
