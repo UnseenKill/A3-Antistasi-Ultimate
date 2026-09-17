@@ -65,12 +65,12 @@ switch (_mode) do
         private _allTextCtrls = [];
         private _allValsCtrls = [];
         {
-            private _type = getText (_x/"type");
-            private _title = getText (_x/"title");
-            private _tooltip = getText (_x/"tooltip");
-            private _texts = getArray (_x/"texts");
-            private _vals = getArray (_x/"values");
-            private _default = getNumber (_x/"default");
+            private _type = getText(_x >> "type");
+            private _title = getText(_x >> "title");
+            private _tooltip = getText(_x >> "tooltip");
+            private _texts = getArray(_x >> "texts");
+            private _vals = getArray(_x >> "values");
+            private _default = getNumber(_x >> "default");
             private _defaultIndex = _vals find _default;
 
             private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
@@ -197,15 +197,15 @@ switch (_mode) do
             private _saveExists = !isNil {serverInitDone} || {_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}};
             private _thisCtrl = _x;
             private _cfg = _x getVariable "config";
-            private _vals = getArray (_cfg/"values");
-            private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
-            /*private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+            private _vals = getArray(_cfg >> "values");
+            private _lockOnSave = (getNumber(_cfg >> "lockOnSave")) isNotEqualTo 0;
+            /*private _lockInGame = !isNil {serverInitDone} && {(getNumber(_cfg >> "lockInGame")) isNotEqualTo 0};
             private _locked = _lockOnSave || _lockInGame;*/
             
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber(_cfg >> "default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
@@ -410,15 +410,15 @@ switch (_mode) do
         private _cfg = _thisCtrl getVariable "config";
 
         switch true do {
-            case (_saveExists && {getNumber (_cfg/"lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
-            case (!isNil {serverInitDone} && {getNumber (_cfg/"lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
+            case (_saveExists && {getNumber(_cfg >> "lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
+            case (!isNil {serverInitDone} && {getNumber(_cfg >> "lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
             case (_thisCtrl getVariable ["lockedByDependency", false]): {
                 private _dependencyTooltip = if (!isNil "_depCtrl") then { getTextRaw ((_depCtrl getVariable "config")/"dependencies"/(configName _cfg)/"dependencyTooltip") } else { "" };
                 if (isNil "_dependencyTooltip" || {_dependencyTooltip isEqualTo ""}) then { _dependencyTooltip = "STR_antistasi_dialogs_setup_param_locked_bydependency" };
                 [true, localize _dependencyTooltip]
             };
-            case (call compile getText (_cfg/"lockCondition")): {
-                private _lockCondTooltip = getTextRaw (_cfg/"lockConditionTooltip");
+            case (call compile getText(_cfg >> "lockCondition")): {
+                private _lockCondTooltip = getTextRaw(_cfg >> "lockConditionTooltip");
                 if (isNil "_lockCondTooltip" || {_lockCondTooltip isEqualTo ""}) then { _lockCondTooltip = "STR_antistasi_dialogs_setup_param_locked_bycondition" };
                 [true, localize _lockCondTooltip]
             };
@@ -441,15 +441,15 @@ switch (_mode) do
         {
             private _cfg = _x;
             private _cfgName = configName _cfg;
-            private _value = getNumber (_cfg/"value");
+            private _value = getNumber(_cfg >> "value");
             private _depVal = [_cfg, "dependentValue"] call BIS_fnc_returnConfigEntry;
-            private _lockByDep = getNumber (_cfg/"lockedByDependency") isEqualTo 1;
+            private _lockByDep = getNumber(_cfg >> "lockedByDependency") isEqualTo 1;
 
             private _depCtrl = _allValsCtrls select {_x select 0 isEqualTo _cfgName } select 0 select 1;
             private _depCfg = _depCtrl getVariable "config";
             
             if ((_thisCtrl lbValue _index) isEqualTo _value) then {
-                private _depVals = getArray (_depCfg/"values");
+                private _depVals = getArray(_depCfg >> "values");
                 private _depIdx = _depVals find _depVal;
                 if (!isNil "_depVal" && {_depIdx isNotEqualTo -1}) then { _depCtrl lbSetCurSel _depIdx };
                 _depCtrl setVariable ["lockedByDependency", _lockByDep];
