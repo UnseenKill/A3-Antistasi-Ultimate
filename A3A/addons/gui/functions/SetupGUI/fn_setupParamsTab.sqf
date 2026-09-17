@@ -64,7 +64,9 @@ switch (_mode) do
         private _allCtrls = [];
         private _allTextCtrls = [];
         private _allValsCtrls = [];
-        private _reorderCtrls = createHashMap;
+        // Should be a hashmap but their arbitrary key order breaks the required
+        // order of the parameters in the GUI
+        private _reorderCtrls = [];
         {
             private _type = getText(_x >> "type");
             private _title = getText(_x >> "title");
@@ -90,7 +92,12 @@ switch (_mode) do
             if !(_reorderAfter isEqualType true) then {
                 // Nice try
                 if (_reorderAfter isEqualTo _configName) exitWith {};
-                (_reorderCtrls getOrDefault[_reorderAfter, [], true]) pushBack _configName;
+                private _reorderAfterIndex = _reorderCtrls findIf { _x select 0 isEqualTo _reorderAfter };
+                if (_reorderAfterIndex < 0) then {
+                    _reorderAfterIndex = _reorderCtrls pushBack[_reorderAfter, []];
+                };
+
+                _reorderCtrls select _reorderAfterIndex select 1 pushBack _configName;
             };
 
             if (_title isNotEqualTo "" && {_texts isNotEqualTo []}) then {
@@ -117,8 +124,7 @@ switch (_mode) do
 
         if (count _reorderCtrls > 0) then {
             _reorderCtrls apply {
-                private _targetClassName = _x;
-                private _reorderClassNames = _y;
+                _x params["_targetClassName", "_reorderClassNames"];
 
                 _reorderClassNames apply {
                     private _reorderClassName = _x;
