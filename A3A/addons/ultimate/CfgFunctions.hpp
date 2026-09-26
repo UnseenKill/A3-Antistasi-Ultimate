@@ -73,6 +73,12 @@ class CfgFunctions
             class getTierModifier {};
             class IMS_stealthKill {};
         };
+        class ObjectOriented
+        {
+            SPATHTO_FNC(OO,createObject);
+            SPATHTO_FNC(OO,getParentMethod);
+            SPATHTO_FNC(OO,registerObjectDefinition);
+        };
         class STALKER
         {
             file = QPATHTOFOLDER(functions\STALKER);
@@ -89,6 +95,8 @@ class CfgFunctions
             class exportPylons {};
             class exportTowns {};
             class hasAddon {};
+            class interpolateColor {};
+            class interpolateColors {};
             class log {};
             class logisticsGrabSeats {};
             class useMagazineItem {};

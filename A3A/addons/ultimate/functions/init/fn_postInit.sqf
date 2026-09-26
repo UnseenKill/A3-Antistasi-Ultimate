@@ -19,3 +19,6 @@
     params["_unit","_target"];
     _unit distance _target < 10;
 }] call A3U_fnc_addInteractionCondition;
+
+Info("A3U object definition is now sealed");
+GVAR(objectRegistry) = compileFinal GVAR(objectRegistry);

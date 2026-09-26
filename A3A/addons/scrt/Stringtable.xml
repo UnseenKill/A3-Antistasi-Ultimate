@@ -7356,6 +7356,41 @@
                 <Korean>잠금 해제 키트를 사용할 때 파손될 확률</Korean>
                 <French>Chance qu'un kit de crochetage se casse lors de son utilisation</French>
             </Key>
+            <Key ID="STR_params_ultimate_heatMaps">
+                <Original>ACTIVITY HEAT MAPS</Original>
+                <Russian>ТЕПЛОВЫЕ КАРТЫ АКТИВНОСТИ</Russian>
+                <Chinesesimp>活动热力图</Chinesesimp>
+                <Korean>활동 히트맵</Korean>
+                <French>Cartes thermiques d'activité</French>
+            </Key>
+            <Key ID="STR_params_ultimate_useHeatMaps">
+                <Original>Heat maps: enable feature</Original>
+                <Russian>Тепловые карты: включить функцию</Russian>
+                <Chinesesimp>热力图：启用功能</Chinesesimp>
+                <Korean>히트맵: 기능 활성화</Korean>
+                <French>Cartes thermiques: activer la fonctionnalité</French>
+            </Key>
+            <Key ID="STR_params_ultimate_useHeatMaps_Tooltip">
+                <Original>Use heatmaps to record your activity on the map, increasing in intensity the more you interact with an area. Kills, mission completions and general destruction will make an area more hostile than "cold" areas.</Original>
+                <Russian>Используйте тепловые карты для записи вашей активности на карте, которая будет увеличиваться по интенсивности, чем больше вы взаимодействуете с областью. Убийства, выполнение миссий и общее разрушение сделают область более враждебной, чем "холодные" области.</Russian>
+                <Chinesesimp>使用热力图记录您在地图上的活动，您与某个区域的互动越多，该区域的热度就越高。击杀、完成任务和一般破坏会使一个区域比“冷”区域更具敌意。</Chinesesimp>
+                <Korean>히트맵을 사용하여 지도에서 활동을 기록합니다. 특정 지역과 상호 작용할수록 강도가 증가합니다. 킬, 임무 완료 및 일반적인 파괴는 "차가운" 지역보다 해당 지역을 더 적대적으로 만듭니다.</Korean>
+                <French>Utilisez des cartes thermiques pour enregistrer votre activité sur la carte, augmentant en intensité plus vous interagissez avec une zone. Les tueries, les missions accomplies et la destruction générale rendront une zone plus hostile que les zones "froides".</French>
+            </Key>
+            <Key ID="STR_params_ultimate_addon_heatmap_heatmapScale">
+                <Original>Heat maps: map scale</Original>
+                <Russian>Тепловые карты: масштаб карты</Russian>
+                <Chinesesimp>热力图：地图缩放</Chinesesimp>
+                <Korean>히트맵: 지도 축척</Korean>
+                <French>Cartes thermiques: échelle de la carte</French>
+            </Key>
+            <Key ID="STR_params_ultimate_addon_heatmap_heatmapScale_Tooltip">
+                <Original>Scale of the heatmap overlay on the map; higher values will make the heatmap more coarse, while lower values will make it more detailed. Low values will cause SIGNIFICANT performance issues client-side when rendering on the map.</Original>
+                <Russian>Масштаб наложения тепловой карты на карте; более высокие значения сделают тепловую карту более грубой, в то время как более низкие значения сделают ее более детализированной. Низкие значения вызовут ЗНАЧИТЕЛЬНЫЕ проблемы с производительностью на стороне клиента при отображении на карте.</Russian>
+                <Chinesesimp>热力图覆盖在地图上的缩放比例；较高的值会使热力图更粗糙，而较低的值会使其更详细。较低的值在地图上渲染时会导致客户端出现显著的性能问题。</Chinesesimp>
+                <Korean>지도에 히트맵 오버레이의 축척; 값이 높을수록 히트맵이 더 거칠어지고, 값이 낮을수록 더 세밀해집니다. 낮은 값은 지도에서 렌더링할 때 클라이언트 측에서 심각한 성능 문제를 일으킬 수 있습니다.</Korean>
+                <French>Échelle de la superposition de la carte thermique sur la carte ; des valeurs plus élevées rendront la carte thermique plus grossière, tandis que des valeurs plus basses la rendront plus détaillée. Des valeurs basses provoqueront des problèmes de performance SIGNIFICATIFS côté client lors du rendu sur la carte.</French>
+            </Key>
             <Key ID="STR_params_saveZeusBuildings">
                 <Original>Persistent Save for Zeus-placed Constructions</Original>
                 <Russian>Постоянное сохранение для построек, размещенных через Zeus</Russian>
