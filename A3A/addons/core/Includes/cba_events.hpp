@@ -432,6 +432,24 @@
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_PLAYER_SAVE
+        Triggered when the server saves a player's data.
+
+    Parameters:
+        0: uuid - the unique identifier of the player <STRING>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Client
+------------------------------------------- */
+#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_SPAWN_LOCATION
         Triggered when a location is spawned on the server.
 
