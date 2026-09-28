@@ -274,6 +274,27 @@
 #define CBA_EVENT_SERVER_CREATE_REBEL_CONTROL QUOTE(TRIPLES(PREFIX_CONST,event,serverCreateRebelControl))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_ENTITY_POSTMORTEM
+        Triggered when an entity dies.
+
+    Parameters:
+        0: entity - the entity that died <OBJECT>
+    
+    Optional:
+        1: killer - the entity that killed the entity (if any) <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX_CONST,event,serverEntityPostMortem))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
         Triggered when an AI unit is initialized on the server.
 
@@ -409,6 +430,24 @@
 
 // UNUSED
 #define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_PLAYER_SAVE
+        Triggered when the server saves a player's data.
+
+    Parameters:
+        0: uuid - the unique identifier of the player <STRING>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Client
+------------------------------------------- */
+#define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_SPAWN_LOCATION
