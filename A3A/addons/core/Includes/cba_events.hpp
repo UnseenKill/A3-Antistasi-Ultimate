@@ -295,6 +295,26 @@
 #define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX_CONST,event,serverEntityPostMortem))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_DELETED
+        Triggered when a game is deleted on the server.
+
+    Parameters:
+        0: serverID - the ID of the server <STRING|BOOLEAN>
+        1: campaignID - the ID of the campaign <STRING>
+        2: mapName - the name of the map <STRING>
+
+    Broadcast:
+        Yes
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server + Clients
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_DELETED QUOTE(TRIPLES(PREFIX,event,onGameDeleted))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
         Triggered when an AI unit is initialized on the server.
 
