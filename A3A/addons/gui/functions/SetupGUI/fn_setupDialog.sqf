@@ -21,7 +21,7 @@ FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
 
-Debug_1("Setup dialog called with mode %1", _mode);
+Debug_1("Setup dialog called with mode %1",_mode);
 
 // Function to give a short time difference string from two serverTimeUTC inputs
 private _fnc_getTimeDiffString = {
@@ -38,11 +38,29 @@ private _fnc_getTimeDiffString = {
     };
 
     // now find first non-zero
-    private _nzi = _diffTime findif {_x!=0};
+    private _nzi = _diffTime findIf {_x!=0};
     if (_nzi == -1) exitWith { "0min" };									// zero time diff
     if (_diffTime#_nzi < 0) exitWith { "???" };							// negative time diff
     if (_nzi == 4) exitWith { format ["%1min", _diffTime#4] };		// just minutes
     format ["%1%2 %3%4", _diffTime#_nzi, _text#_nzi, _diffTime#(_nzi+1), _text#(_nzi+1)];
+};
+
+private _fnc_decorateSaves = {
+    params ["_saveData"];
+    _saveData apply {
+        private _realMap = _x get "map";
+        private _mapDescription = [_realMap] call SCRT_fnc_misc_getWorldName;
+        _x set ["mapStr", _mapDescription];
+        _x set ["mapStrShort", _realMap];
+        _x set ["fileStr", ["Old", "New"] select ((_x get "serverID") isEqualType false)];
+        if (!isNil {_x get "ended"}) then { _x set ["timeStr", "Ended"]; continue };
+        if (!isNil {_x get "saveTime"}) then {
+            _x set ["timeStr", [_x get "saveTime", systemTimeUTC] call _fnc_getTimeDiffString];
+        };
+        if (!isNil {_x get "version"}) then {
+            _x set ["verStr", (_x get "version") splitString "." select [0, 3] joinString "."];        // cap to a.b.c
+        };
+    };
 };
 
 // Get display
@@ -91,7 +109,7 @@ switch (_mode) do
     {
         _params params ["_selectedTab"];
 
-        Debug_1("SetupDialog switching tab to %1.", _selectedTab);
+        Debug_1("SetupDialog switching tab to %1.",_selectedTab);
 
         private _selectedTabIDC = switch (_selectedTab) do
         {
@@ -113,24 +131,25 @@ switch (_mode) do
         };
     };
 
+    case ("refreshSaves"):
+    {
+        _params params ["_saveData"];
+
+        [_saveData] call _fnc_decorateSaves;
+        A3A_setup_saveData = _saveData;
+
+        // refresh ui after importing new save data
+        if (isNull _display) exitWith {};
+        ["setSaveData"] call A3A_fnc_setupLoadgameTab;
+        ["update"] call A3A_fnc_setupLoadgameTab;
+        ["enableParamsTab"] call A3A_fnc_setupDialog;
+    };
+
     case ("sendData"):
     {
         _params params ["_saveData", "_loadedPatches", "_loadedDLC", "_platform"];
 
-        _saveData apply {
-            private _realMap = _x get "map";
-            private _mapDescription = [_realMap] call SCRT_fnc_misc_getWorldName;
-            _x set ["mapStr", _mapDescription];
-            _x set ["mapStrShort", _realMap];
-            _x set ["fileStr", ["Old", "New"] select ((_x get "serverID") isEqualType false)];
-            if (!isNil {_x get "ended"}) then { _x set ["timeStr", "Ended"]; continue };
-            if (!isNil {_x get "saveTime"}) then {
-                _x set ["timeStr", [_x get "saveTime", systemTimeUTC] call _fnc_getTimeDiffString];
-            };
-            if (!isNil {_x get "version"}) then {
-                _x set ["verStr", (_x get "version") splitString "." select [0, 3] joinString "."];        // cap to a.b.c
-            };
-        };
+        [_saveData] call _fnc_decorateSaves;
 
         A3A_setup_saveData = _saveData;
         A3A_setup_loadedPatches = _loadedPatches;
@@ -160,6 +179,6 @@ switch (_mode) do
 
     default {
     // Log error if attempting to call a mode that doesn't exist
-        Error_1("Mode %1 does not exist", _mode);
+        Error_1("Mode %1 does not exist",_mode);
     };
 };

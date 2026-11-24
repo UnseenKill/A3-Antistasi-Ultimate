@@ -47,7 +47,7 @@ if (_unlockVehicle) then {
 
         [_vehicle, false] remoteExecCall ["A3U_fnc_setLock", owner _vehicle];
     } catch {
-        Error_1("Vehicle won't be unlocked: %1", _exception);
+        Error_1("Vehicle won't be unlocked: %1",_exception);
         _removeOk = false;
     };
 };
@@ -57,7 +57,7 @@ if (_removeOk) then {
     _vehicle setVariable[QGVAR(lockpickWillBreak), nil];
 
     if (_vehicle getVariable[QGVAR(lockpickAction), false] isNotEqualTo false) then {
-        [_vehicle, _vehicle getVariable QGVAR(lockpickAction)] call BIS_fnc_holdActionRemove;
+        _vehicle removeAction (_vehicle getVariable QGVAR(lockpickAction));
         _vehicle setVariable[QGVAR(lockpickAction), nil];
     };
 };
