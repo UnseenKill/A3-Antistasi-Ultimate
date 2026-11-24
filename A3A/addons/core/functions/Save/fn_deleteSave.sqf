@@ -65,4 +65,8 @@ _saveIndex = _saveList findIf { _x#0 == _campaignID };
 _saveList deleteAt _saveIndex;
 _namespace setVariable ["antistasiUltimate2SavedGames", _saveList];
 
+[CBA_EVENT_SERVER_GAME_DELETED, [_serverID, _campaignID, _worldname]] call FUNCMAIN(triggerGlobalEvent);
+
 if (_serverID isEqualType false) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
+nil;

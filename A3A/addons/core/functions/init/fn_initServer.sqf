@@ -7,7 +7,7 @@ A3A_logDebugConsole = "A3A_logDebugConsole" call BIS_fnc_getParamValue; publicVa
 
 
 Info("Server init started");
-A3A_serverVersion = QUOTE(VERSION); publicVariable "A3A_serverVersion";
+SET_PUBLIC_VAR(A3A_serverVersion,QUOTE(VERSION));
 Info_1("Server version: %1",QUOTE(VERSION_FULL));
 
 // ********************** Pre-setup init ****************************************************
@@ -76,7 +76,7 @@ Info("Server Initialising PATCOM Variables");
 // Wait until we have selected/created save data
 waitUntil {sleep 0.1; !isNil "A3A_saveData"};
 
-A3A_startupState = "starting"; publicVariable "A3A_startupState";
+SET_PUBLIC_VAR(A3A_startupState,"starting");
 
 // Use true params list in case we're loading an autosave from a different version
 private _savedParams = A3A_saveData get "params";
@@ -228,7 +228,7 @@ if (isClass (configFile >> "AntistasiServerMembers")) then
 if (isPlayer A3A_setupPlayer) then {
     // Add current admin (setupPlayer) to members list and make them commander
     membersX pushBackUnique getPlayerUID A3A_setupPlayer;
-    theBoss = A3A_setupPlayer; publicVariable "theBoss";
+    SET_PUBLIC_VAR(theBoss,A3A_setupPlayer);
 };
 
 //add admin as member if not on loggin
@@ -310,14 +310,13 @@ addMissionEventHandler ["EntityKilled", {
     };
 }];
 
-
-serverInitDone = true; publicVariable "serverInitDone";
+SET_PUBLIC_VAR(serverInitDone,true);
 Info("Setting serverInitDone as true");
-A3A_startupState = "completed"; publicVariable "A3A_startupState";
+SET_PUBLIC_VAR(A3A_startupState,"completed");
 
 // Because CBA events are blocking, we can't have third party stuff block us 
 // from executing the stuff below. So we spawn it.
-[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
+[CBA_EVENT_SERVER_INIT_DONE, A3A_saveTarget] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 

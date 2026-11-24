@@ -599,6 +599,8 @@ _fuelAmountleftArray = [];
 // Store the entire save data hashmap as a single hashmap in the selected namespace
 _namespace setVariable [format ["A3A_saveData_%1", _campaignID], A3A_saveDataHM];
 
+[CBA_EVENT_SERVER_GAME_SAVED, []] call FUNCMAIN(triggerGlobalEvent);
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
 // Trigger local (server) event informing listeners that we're done saving the game, allowing them to perform actions with the finalized data
